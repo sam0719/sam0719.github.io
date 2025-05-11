@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股價趨勢比率計算器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>股價趨勢比率計算器</h1>
+        
+        <div class="card">
+            <h2>設置參數</h2>
+            <div class="form-group">
+                <label for="initialMoney">初始資金:</label>
+                <input type="number" id="initialMoney" value="10000" min="1">
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>股票選擇與配置</h2>
+            <div class="batch-actions">
+                <button id="selectAllBtn" class="btn small">全選</button>
+                <button id="deselectAllBtn" class="btn small">全不選</button>
+                <button id="resetPercentagesBtn" class="btn small">重置百分比</button>
+                <button id="distributeEvenlyBtn" class="btn small">平均分配</button>
+            </div>
+            <div class="file-browser-container">
+                <h3>股價數據選擇</h3>
+                <div class="directory-browser">
+                    <div class="directory-section">
+                        <label>分類目錄:</label>
+                        <div class="directory-select">
+                            <select id="categorySelect">
+                                <option value="">載入中...</option>
+                            </select>
+                            <button id="refreshCategoriesBtn" class="btn small">刷新</button>
+                        </div>
+                    </div>
+                    <div class="files-section">
+                        <label>股價檔案:</label>
+                        <div class="files-list" id="filesList">
+                            <div class="no-files">請先選擇分類</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-section">
+                    <div class="upload-container">
+                        <label for="uploadFile" class="btn">上傳自定義股價檔</label>
+                        <input type="file" id="uploadFile" accept=".csv">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="stockList" class="stock-list">
+                <!-- 股票列表將在這裡動態生成 -->
+                <div class="no-stocks">尚未載入股票數據，請載入預設股票或上傳股價檔</div>
+            </div>
+            
+            <div class="form-actions">
+                <button id="calculateBtn" class="btn primary">計算趨勢比率</button>
+                <button id="resetBtn" class="btn">重置</button>
+            </div>
+        </div>
+
+        <div class="card result-card" id="resultCard">
+            <h2>計算結果</h2>
+            <div class="result-container">
+                <div class="result-item">
+                    <span class="result-label">趨勢比率 (Trend Ratio):</span>
+                    <span id="trendRatio" class="result-value">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">報酬 (Return):</span>
+                    <span id="returnValue" class="result-value">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">風險 (Risk):</span>
+                    <span id="riskValue" class="result-value">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
