@@ -412,6 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+
     // 將百分比轉換為小數
     const decimalRates = stockRatios.map((ratio) => ratio / 100)
 
@@ -431,8 +432,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 計算每天的組合價值
     const FS = []
     const stockPrices = stockPriceData.stockPrices
-    const rowCount = stockPriceData.rowCount
-
+    const rowCount = stockPriceData.rowCount-1
+    
     for (let i = 0; i < rowCount; i++) {
       let money = 0
 
@@ -459,11 +460,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // 計算報酬
     let returnNumerator = 0
     let returnDenominator = 0
-
     for (let i = 0; i < rowCount; i++) {
-      returnNumerator += FS[i] * (i + 1) - (i + 1) * initialMoney
-      returnDenominator += Math.pow(i + 1, 2)
+      returnNumerator += (FS[i] * (i + 1) - (i + 1) * initialMoney)
+      returnDenominator += Math.pow(i + 1, 2);
+
     }
+
 
     const returns = returnNumerator / returnDenominator
 
@@ -478,6 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 計算TrendRatio
     const trendRatio = returns / risk
+
 
     return {
       trendRatio,
