@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 目錄和文件瀏覽相關元素
   const categorySelect = document.getElementById("categorySelect")
+  const fileSelect = document.getElementById("fileSelect")
   const refreshCategoriesBtn = document.getElementById("refreshCategoriesBtn")
-  const filesList = document.getElementById("filesList")
 
   // 存儲目錄和文件數據
   let categories = []
   const files = {}
-  let selectedFiles = []
+  let selectedFile = ""
+  let selectedCategory = ""
 
   // 為GitHub Pages準備的靜態數據結構
   // 這個索引文件應該放在倉庫的根目錄下
@@ -43,11 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初始化目錄和文件數據
   async function initializeFileBrowser() {
     try {
-      showLoading(filesList, "初始化中...")
+      showLoading(fileSelect, "初始化中...")
       await loadCategories()
     } catch (error) {
       console.error("初始化文件瀏覽器失敗:", error)
-      showError(filesList, "初始化文件瀏覽器失敗，請刷新頁面重試")
+      showError(fileSelect, "初始化文件瀏覽器失敗，請刷新頁面重試")
     }
   }
 
@@ -67,15 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // 如果是本地文件系統錯誤，提供更友好的錯誤信息
         console.error("獲取JSON時出錯:", e)
         categorySelect.innerHTML = '<option value="">無法載入分類</option>'
-        filesList.innerHTML = `
-          <div class="error-message">
-            <p>無法載入索引文件。這可能是由於瀏覽器安全限制導致的。</p>
-            <p>請嘗試以下解決方案：</p>
-            <ol>
-              <li>使用本地開發服務器運行此應用</li>
-              <li>或使用 Chrome 瀏覽器並添加 --allow-file-access-from-files 參數啟動</li>
-            </ol>
-          </div>`
+        fileSelect.innerHTML = `
+          <option value="">無法載入文件</option>
+        `
         return
       }
 
@@ -91,19 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (categories.length === 0) {
           categorySelect.innerHTML = '<option value="">沒有可用的分類</option>'
-          filesList.innerHTML = '<div class="no-files">沒有可用的分類</div>'
+          fileSelect.innerHTML = '<option value="">沒有可用的文件</option>'
         } else {
           updateCategorySelect()
         }
       } else {
         console.error("無法載入索引文件:", xhr.status)
         categorySelect.innerHTML = '<option value="">沒有可用的分類</option>'
-        filesList.innerHTML = '<div class="no-files">無法載入索引文件</div>'
+        fileSelect.innerHTML = '<option value="">無法載入文件</option>'
       }
     } catch (error) {
       console.error("載入分類目錄失敗:", error)
       categorySelect.innerHTML = '<option value="">沒有可用的分類</option>'
-      filesList.innerHTML = '<div class="no-files">載入分類失敗</div>'
+      fileSelect.innerHTML = '<option value="">載入分類失敗</option>'
     }
   }
 
@@ -121,85 +116,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 當選擇分類時載入該分類下的文件
   categorySelect.addEventListener("change", async () => {
-    const selectedCategory = categorySelect.value
+    selectedCategory = categorySelect.value
 
     if (!selectedCategory) {
-      filesList.innerHTML = '<div class="no-files">請先選擇分類</div>'
+      fileSelect.innerHTML = '<option value="">請先選擇分類</option>'
+      fileSelect.disabled = true
       return
     }
 
     try {
       // 由於我們已經在loadCategories中載入了所有文件列表，
       // 這裡只需要更新UI
-      updateFilesList(selectedCategory)
+      updateFileSelect(selectedCategory)
+      fileSelect.disabled = false
     } catch (error) {
       console.error(`載入 ${selectedCategory} 分類下的文件失敗:`, error)
-      filesList.innerHTML = `<div class="no-files">${selectedCategory} 分類下沒有文件</div>`
+      fileSelect.innerHTML = `<option value="">${selectedCategory} 分類下沒有文件</option>`
+      fileSelect.disabled = true
     }
   })
 
-  // 更新文件列表
-  function updateFilesList(category) {
+  // 更新文件下拉選單
+  function updateFileSelect(category) {
     const categoryFiles = files[category] || []
 
     if (categoryFiles.length === 0) {
-      filesList.innerHTML = `<div class="no-files">${category} 分類下沒有文件</div>`
+      fileSelect.innerHTML = `<option value="">${category} 分類下沒有文件</option>`
+      fileSelect.disabled = true
       return
     }
 
-    filesList.innerHTML = ""
+    fileSelect.innerHTML = '<option value="">請選擇文件</option>'
 
     categoryFiles.forEach((file) => {
-      const fileItem = document.createElement("div")
-      fileItem.className = `file-item ${selectedFiles.includes(file) ? "selected" : ""}`
-      fileItem.dataset.file = file
-      fileItem.dataset.category = category
-
-      fileItem.innerHTML = `
-        <input type="checkbox" class="file-item-checkbox" ${selectedFiles.includes(file) ? "checked" : ""}>
-        <span>${file}</span>
-      `
-
-      fileItem.addEventListener("click", () => toggleFileSelection(file, category, fileItem))
-
-      filesList.appendChild(fileItem)
+      const option = document.createElement("option")
+      option.value = file
+      option.textContent = file
+      fileSelect.appendChild(option)
     })
   }
 
-  // 切換文件選擇狀態
-  async function toggleFileSelection(file, category, fileItem) {
-    const checkbox = fileItem.querySelector(".file-item-checkbox")
-    const isSelected = selectedFiles.includes(file)
-    const originalContent = fileItem.innerHTML // 声明 originalContent 变量
+  // 當選擇文件時自動載入該文件
+  fileSelect.addEventListener("change", async () => {
+    selectedFile = fileSelect.value
 
-    if (isSelected) {
-      // 取消選擇
-      selectedFiles = selectedFiles.filter((f) => f !== file)
-      fileItem.classList.remove("selected")
-      checkbox.checked = false
-    } else {
-      // 選擇文件
-      try {
-        // 顯示加載狀態
-        fileItem.innerHTML = `<div class="loading">載入中...</div>`
-
-        // 載入文件內容
-        await loadFileContent(file, category)
-
-        // 更新選擇狀態
-        selectedFiles.push(file)
-        fileItem.classList.add("selected")
-        fileItem.innerHTML = originalContent
-        fileItem.querySelector(".file-item-checkbox").checked = true
-      } catch (error) {
-        console.error(`載入文件 ${file} 失敗:`, error)
-        alert(`載入文件 ${file} 失敗: ${error.message}`)
-
-        // 恢復原始內容
-        fileItem.innerHTML = originalContent
-      }
+    if (!selectedFile || !selectedCategory) {
+      return
     }
-  }
+
+    try {
+      // 顯示加載狀態
+      stockListContainer.innerHTML = '<div class="loading">載入文件中...</div>'
+
+      // 載入文件內容
+      await loadFileContent(selectedFile, selectedCategory)
+
+      // 更新UI
+      renderStockList()
+    } catch (error) {
+      console.error(`載入文件 ${selectedFile} 失敗:`, error)
+      stockListContainer.innerHTML = `<div class="error-message">載入文件失敗: ${error.message}</div>`
+    }
+  })
 
   // 載入文件內容
   function loadFileContent(file, category) {
@@ -238,17 +216,13 @@ document.addEventListener("DOMContentLoaded", () => {
   refreshCategoriesBtn.addEventListener("click", async () => {
     try {
       categorySelect.innerHTML = '<option value="">載入中...</option>'
-      filesList.innerHTML = '<div class="loading">載入中...</div>'
+      fileSelect.innerHTML = '<option value="">請先選擇分類</option>'
+      fileSelect.disabled = true
       await loadCategories()
-      if (categories.length === 0) {
-        filesList.innerHTML = '<div class="no-files">沒有可用的分類</div>'
-      } else {
-        filesList.innerHTML = '<div class="no-files">請先選擇分類</div>'
-      }
     } catch (error) {
       console.error("刷新分類失敗:", error)
       categorySelect.innerHTML = '<option value="">沒有可用的分類</option>'
-      filesList.innerHTML = '<div class="no-files">沒有可用的分類</div>'
+      fileSelect.innerHTML = '<option value="">沒有可用的文件</option>'
     }
   })
 
@@ -412,7 +386,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-
     // 將百分比轉換為小數
     const decimalRates = stockRatios.map((ratio) => ratio / 100)
 
@@ -432,8 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 計算每天的組合價值
     const FS = []
     const stockPrices = stockPriceData.stockPrices
-    const rowCount = stockPriceData.rowCount-1
-    
+    const rowCount = stockPriceData.rowCount - 1
+
     for (let i = 0; i < rowCount; i++) {
       let money = 0
 
@@ -461,11 +434,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let returnNumerator = 0
     let returnDenominator = 0
     for (let i = 0; i < rowCount; i++) {
-      returnNumerator += (FS[i] * (i + 1) - (i + 1) * initialMoney)
-      returnDenominator += Math.pow(i + 1, 2);
-
+      returnNumerator += FS[i] * (i + 1) - (i + 1) * initialMoney
+      returnDenominator += Math.pow(i + 1, 2)
     }
-
 
     const returns = returnNumerator / returnDenominator
 
@@ -480,7 +451,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 計算TrendRatio
     const trendRatio = returns / risk
-
 
     return {
       trendRatio,
