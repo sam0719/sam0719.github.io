@@ -491,7 +491,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 重置按鈕
   resetBtn.addEventListener("click", () => {
-    initialMoneyInput.value = 10000
+    initialMoneyInput.value = 10000000
     stockData = stockData.map((stock) => ({
       ...stock,
       percentage: 0,
