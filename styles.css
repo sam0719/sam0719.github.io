@@ -267,13 +267,15 @@ input[type="number"] {
   font-weight: 600;
 }
 
-.directory-select {
+.directory-select,
+.file-select {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-.directory-select select {
+.directory-select select,
+.file-select select {
   flex: 1;
   padding: 0.5rem;
   border: 1px solid var(--border-color);
