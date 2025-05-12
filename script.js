@@ -394,9 +394,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = calculateTrendRatio(initialMoney)
 
     // 顯示結果
-    trendRatioElement.textContent = result.trendRatio.toFixed(4)
-    returnValueElement.textContent = result.returns.toFixed(4)
-    riskValueElement.textContent = result.risk.toFixed(4)
+    trendRatioElement.textContent = result.trendRatio.toFixed(30)
+    returnValueElement.textContent = result.returns.toFixed(30)
+    riskValueElement.textContent = result.risk.toFixed(30)
     resultCard.style.display = "block"
   })
 
