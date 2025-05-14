@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const trendRatioElement = document.getElementById("trendRatio")
   const returnValueElement = document.getElementById("returnValue")
   const riskValueElement = document.getElementById("riskValue")
+  const allWeightsInput = document.getElementById("allWeights")
+  const allWeightsContainer = document.getElementById("allWeightsContainer")
 
   // 全局變量
   let stockData = []
@@ -21,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const categorySelect = document.getElementById("categorySelect")
   const fileSelect = document.getElementById("fileSelect")
   const refreshCategoriesBtn = document.getElementById("refreshCategoriesBtn")
+  
+  // 為所有股票權重輸入框添加事件監聽器
+  allWeightsInput.addEventListener("change", updateFromAllWeights)
 
   // 存儲目錄和文件數據
   let categories = []
@@ -290,8 +295,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderStockList() {
     if (stockData.length === 0) {
       stockListContainer.innerHTML = '<div class="no-stocks">尚未載入股票數據，請載入預設股票或上傳股價檔</div>'
+      allWeightsContainer.style.display = "none"
       return
     }
+
+    // 顯示所有股票權重輸入框
+    allWeightsContainer.style.display = "block"
+    
+    // 更新所有股票權重輸入框的值
+    updateAllWeightsDisplay()
 
     stockListContainer.innerHTML = ""
 
@@ -339,6 +351,48 @@ document.addEventListener("DOMContentLoaded", () => {
     // 確保值是整數
     value = Math.floor(value)
     stockData[index].percentage = isNaN(value) ? 0 : value
+    
+    // 更新所有股票權重輸入框
+    updateAllWeightsDisplay()
+  }
+  
+  // 更新所有股票權重輸入框的顯示
+  function updateAllWeightsDisplay() {
+    if (stockData.length === 0) return
+    
+    // 將所有股票的百分比轉換為空格分隔的字符串
+    const weightsString = stockData.map(stock => stock.percentage).join(' ')
+    allWeightsInput.value = weightsString
+  }
+  
+  // 從所有股票權重輸入框更新個別股票權重
+  function updateFromAllWeights() {
+    const weightsString = allWeightsInput.value.trim()
+    const weights = weightsString.split(/\s+/).map(w => parseInt(w, 10))
+    
+    // 確保權重數量與股票數量相符
+    if (weights.length !== stockData.length) {
+      alert(`請輸入 ${stockData.length} 個數字，用空格分隔`)
+      updateAllWeightsDisplay() // 重置為原始值
+      return
+    }
+    
+    // 更新每個股票的權重
+    weights.forEach((weight, index) => {
+      if (isNaN(weight)) {
+        weight = 0
+      }
+      
+      // 如果權重大於 0，確保股票被包含
+      if (weight > 0 && !stockData[index].included) {
+        stockData[index].included = true
+      }
+      
+      stockData[index].percentage = weight
+    })
+    
+    // 重新渲染股票列表
+    renderStockList()
   }
 
   // 計算趨勢比率
@@ -359,8 +413,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 檢查百分比總和是否為100%
     const totalPercentage = stockData.reduce((sum, stock) => sum + (stock.included ? stock.percentage : 0), 0)
-    if (Math.abs(totalPercentage - 100) > 0.01) {
-      alert("所有股票的投資百分比總和必須為100%")
+    if (totalPercentage - 100 > 0.01) {
+      alert("所有股票的投資百分比總和必須小於等於100%")
       return
     }
 
