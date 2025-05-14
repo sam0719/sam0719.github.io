@@ -316,6 +316,72 @@ input[type="number"] {
   border-color: var(--primary-color);
 }
 
+/* 所有股票权重输入框样式 */
+.all-weights-container {
+  margin-bottom: 1.5rem;
+  background-color: #f0f9ff;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #bae6fd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.all-weights-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.all-weights-header {
+  margin-bottom: 0.75rem;
+}
+
+.all-weights-header h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.all-weights-info {
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+}
+
+.all-weights-input-container {
+  position: relative;
+}
+
+.all-weights-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--card-color);
+  font-family: monospace;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.all-weights-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.all-weights-hint {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 .file-item-checkbox {
   width: 18px;
   height: 18px;

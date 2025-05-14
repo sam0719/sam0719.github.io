@@ -55,9 +55,15 @@
                 </div>
             </div>
             
-            <div id="allWeightsContainer" class="form-group" style="display: none;">
-                <label for="allWeights">所有股票權重 (空格分隔):</label>
-                <input type="text" id="allWeights" placeholder="例如: 0 21 38 30 0">
+            <div id="allWeightsContainer" class="all-weights-container" style="display: none;">
+                <div class="all-weights-header">
+                    <h3>所有股票權重</h3>
+                    <div class="all-weights-info">輸入所有股票的權重，以空格分隔</div>
+                </div>
+                <div class="all-weights-input-container">
+                    <input type="text" id="allWeights" placeholder="例如: 0 21 38 30 0" class="all-weights-input">
+                    <div class="all-weights-hint">輸入後按 Enter 確認</div>
+                </div>
             </div>
             
             <div id="stockList" class="stock-list">
