@@ -1,7 +1,7 @@
 {
   "US": {
     "interval": "1d",
-    "start": "auto_latest_month_start",
+    "start": "2025-01-01",
     "end": "auto_latest_month_end",
     "filename_format": "train_{year}_{month}({year} Q1).csv",
     "stocks": [
