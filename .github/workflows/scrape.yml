@@ -34,3 +34,9 @@ jobs:
           git add data/
           git commit -m "📈 Update stock data $(date +'%Y-%m')" || echo "No changes to commit"
           git push
+
+      - name: ▶️ Trigger index generator
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: trigger-generate-index
