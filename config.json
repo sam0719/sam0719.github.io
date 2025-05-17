@@ -1,5 +1,5 @@
 {
-  "US": {
+  "DJIA": {
     "interval": "1d",
     "start": "auto_latest_month_start",
     "end": "auto_latest_month_end",
@@ -10,7 +10,7 @@
       "CAT", "INTC", "AXP", "BA", "MMM", "TRV", "DD", "HON", "NKE", "WBA"
     ]
   },
-  "JP": {
+  "Nikkei": {
     "interval": "1d",
     "start": "auto_latest_month_start",
     "end": "auto_latest_month_end",
