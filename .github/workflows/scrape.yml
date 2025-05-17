@@ -1,0 +1,36 @@
+name: Monthly Stock Scraper
+
+on:
+  schedule:
+    - cron: '0 23 1 * *'  # 每月 1 日 UTC 23:00 執行
+  workflow_dispatch:      # 支援手動執行
+
+permissions:
+  contents: write
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 🧪 Install dependencies
+        run: pip install yfinance pandas
+
+      - name: 🕷️ Run scraper
+        run: python scrape.py
+
+      - name: 📝 Commit & push result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add date/
+          git commit -m "📈 Update stock data $(date +'%Y-%m')" || echo "No changes to commit"
+          git push

@@ -1,0 +1,24 @@
+{
+  "US": {
+    "interval": "1d",
+    "start": "auto_latest_month_start",
+    "end": "auto_latest_month_end",
+    "filename_format": "train_{year}_{month}({year} Q1).csv",
+    "stocks": [
+      "AAPL", "MSFT", "UNH", "JNJ", "V", "WMT", "JPM", "PG", "CVX", "HD",
+      "MRK", "KO", "PEP", "CSCO", "DIS", "IBM", "MCD", "AMGN", "CRM", "GS",
+      "CAT", "INTC", "AXP", "BA", "MMM", "TRV", "DD", "HON", "NKE", "WBA"
+    ]
+  },
+  "JP": {
+    "interval": "1d",
+    "start": "auto_latest_month_start",
+    "end": "auto_latest_month_end",
+    "filename_format": "train_{year}_{month}({year} Q1).csv",
+    "stocks": [
+      "7203.T", "6758.T", "9432.T", "8306.T", "9984.T", "9433.T", "9983.T", "4568.T", "8035.T", "4063.T",
+      "6501.T", "6367.T", "8058.T", "8316.T", "8001.T", "4502.T", "4519.T", "8031.T", "6902.T", "8766.T",
+      "7267.T", "2914.T", "3382.T", "8411.T", "6954.T", "4503.T", "6702.T", "5108.T", "7733.T", "9022.T"
+    ]
+  }
+}
