@@ -1,5 +1,5 @@
 {
-  "US": {
+  "DJIA": {
     "interval": "1d",
     "start": "auto_latest_month_start",
     "end": "auto_latest_month_end",
@@ -10,7 +10,7 @@
       "CAT", "INTC", "AXP", "BA", "MMM", "TRV", "DD", "HON", "NKE", "WBA"
     ]
   },
-  "JP": {
+  "Nikkei": {
     "interval": "1d",
     "start": "auto_latest_month_start",
     "end": "auto_latest_month_end",
@@ -19,6 +19,39 @@
       "7203.T", "6758.T", "9432.T", "8306.T", "9984.T", "9433.T", "9983.T", "4568.T", "8035.T", "4063.T",
       "6501.T", "6367.T", "8058.T", "8316.T", "8001.T", "4502.T", "4519.T", "8031.T", "6902.T", "8766.T",
       "7267.T", "2914.T", "3382.T", "8411.T", "6954.T", "4503.T", "6702.T", "5108.T", "7733.T", "9022.T"
+    ]
+  },
+  "FTSE": {
+    "interval": "1d",
+    "start": "2012-01-01",
+    "end": "auto_latest_month_end",
+    "filename_format": "train_{year}_{month}({year} Q1).csv",
+    "stocks": [
+      "AZN.L", "SHEL.L", "ULVR.L", "HSBA.L", "RIO.L", "DGE.L", "BP.L", "BATS.L", "GLEN.L", "GSK.L",
+      "REL.L", "AAL.L", "RKT.L", "LSEG.L", "NG.L", "CPG.L", "LLOY.L", "PRU.L", "EXPN.L", "NWG.L",
+      "BA.L", "VOD.L", "BARC.L", "CRH.L", "AHT.L", "FLTR.L", "IMB.L", "SSE.L", "STAN.L", "TSCO.L"
+    ]
+  },
+  "TSX": {
+    "interval": "1d",
+    "start": "2012-01-01",
+    "end": "auto_latest_month_end",
+    "filename_format": "train_{year}_{month}({year} Q1).csv",
+    "stocks": [
+      "RY.TO", "TD.TO", "CNR.TO", "ENB.TO", "CP.TO", "BAM-A.TO", "CNQ.TO", "BMO.TO", "BNS.TO", "TRI.TO",
+      "ATD.TO", "BCE.TO", "NTR.TO", "TRP.TO", "SU.TO", "CM.TO", "CVE.TO", "WCN.TO", "MFC.TO", "CSU.TO",
+      "IMO.TO", "T.TO", "ABX.TO", "L.TO", "FNV.TO", "SLF.TO", "IFC.TO", "RCI-B.TO", "NA.TO", "AEM.TO"
+    ]
+  },
+  "CAC": {
+    "interval": "1d",
+    "start": "2012-01-01",
+    "end": "auto_latest_month_end",
+    "filename_format": "train_{year}_{month}({year} Q1).csv",
+    "stocks": [
+      "MC.PA", "OR.PA", "RMS.PA", "TTE.PA", "SAN.PA", "AIR.PA", "EL.PA", "SU.PA", "AI.PA", "KER.PA",
+      "BNP.PA", "CS.PA", "DG.PA", "SAF.PA", "RI.PA", "DSY.PA", "STLA.PA", "ENGI.PA", "STM.PA", "BN.PA",
+      "CAP.PA", "ACA.PA", "HO.PA", "ORA.PA", "SGO.PA", "LR.PA", "ML.PA", "GLE.PA", "VIE.PA", "PUB.PA"
     ]
   }
 }
