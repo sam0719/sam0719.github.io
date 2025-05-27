@@ -307,19 +307,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     stockListContainer.innerHTML = ""
 
+    // 檢查平均分配開關是否開啟
+    const isEvenlyDistributeEnabled = distributeEvenlyToggle.checked
+
     stockData.forEach((stock, index) => {
       const stockItem = document.createElement("div")
       stockItem.className = `stock-item ${stock.included ? "" : "excluded"}`
+
+      // 根據平均分配開關狀態顯示不同的輸入方式
+      let inputHtml = ''
+      if (isEvenlyDistributeEnabled) {
+        // 平均分配模式：輸入0或1
+        const value = stock.percentage > 0 ? 1 : 0
+        inputHtml = `
+          <div class="stock-percentage-container">
+            <input type="number" id="percentage-${index}" value="${value}" min="0" max="1" step="1" ${!stock.included ? "disabled" : ""}>
+            <span>選擇</span>
+          </div>
+        `
+      } else {
+        // 正常模式：輸入百分比
+        inputHtml = `
+          <div class="stock-percentage-container">
+            <input type="number" id="percentage-${index}" value="${stock.percentage}" min="0" max="100" step="1" ${!stock.included ? "disabled" : ""}>
+            <span>%</span>
+          </div>
+        `
+      }
 
       stockItem.innerHTML = `
                 <div class="stock-checkbox">
                     <input type="checkbox" id="checkbox-${index}" ${stock.included ? "checked" : ""}>
                 </div>
                 <div class="stock-name">${stock.name}</div>
-                <div class="stock-percentage-container">
-                    <input type="number" id="percentage-${index}" value="${stock.percentage}" min="0" max="100" step="1" ${!stock.included ? "disabled" : ""}>
-                    <span>%</span>
-                </div>
+                ${inputHtml}
             `
 
       stockListContainer.appendChild(stockItem)
@@ -330,7 +351,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
 
       document.getElementById(`percentage-${index}`).addEventListener("change", (e) => {
-        updateStockPercentage(index, Number.parseInt(e.target.value))
+        const value = Number.parseInt(e.target.value)
+        if (isEvenlyDistributeEnabled) {
+          // 平均分配模式下，確保值只能是0或1
+          updateStockPercentage(index, value > 0 ? 1 : 0)
+        } else {
+          // 正常模式
+          updateStockPercentage(index, value)
+        }
       })
     })
   }
@@ -410,17 +438,27 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("請至少選擇一支股票")
       return
     }
-
-    // 檢查百分比總和是否為100%
-    const totalPercentage = stockData.reduce((sum, stock) => sum + (stock.included ? stock.percentage : 0), 0)
-    if (totalPercentage - 100 > 0.01) {
-      alert("所有股票的投資百分比總和必須小於等於100%")
-      return
+    
+    // 檢查是否開啟平均分配模式
+    let result
+    if (distributeEvenlyToggle.checked) {
+      // 使用平均分配算法
+      const selectedStocks = stockData.filter((stock) => stock.included && stock.percentage === 1)
+      if (selectedStocks.length === 0) {
+        alert("平均分配模式下，請至少將一支股票設為1")
+        return
+      }
+      result = calculateEvenDistribution()
+    } else {
+      // 使用正常算法
+      // 檢查百分比總和是否為100%
+      const totalPercentage = stockData.reduce((sum, stock) => sum + (stock.included ? stock.percentage : 0), 0)
+      if (totalPercentage - 100 > 0.01) {
+        alert("所有股票的投資百分比總和必須小於等於100%")
+        return
+      }
+      result = calculateTrendRatio(initialMoney)
     }
-
-    // 計算趨勢比率
-    const result = calculateTrendRatio(initialMoney)
-
     // 顯示結果
     trendRatioElement.textContent = result.trendRatio.toFixed(30)
     returnValueElement.textContent = result.returns.toFixed(30)
@@ -529,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectAllBtn = document.getElementById("selectAllBtn")
   const deselectAllBtn = document.getElementById("deselectAllBtn")
   const resetPercentagesBtn = document.getElementById("resetPercentagesBtn")
-  const distributeEvenlyBtn = document.getElementById("distributeEvenlyBtn")
+  const distributeEvenlyToggle = document.getElementById("distributeEvenlyToggle")
 
   // 全選按鈕
   selectAllBtn.addEventListener("click", () => {
@@ -559,38 +597,127 @@ document.addEventListener("DOMContentLoaded", () => {
     renderStockList()
   })
 
-  // 平均分配按鈕
-  distributeEvenlyBtn.addEventListener("click", () => {
-    const includedStocks = stockData.filter((stock) => stock.included)
-    if (includedStocks.length === 0) {
-      alert("請至少選擇一支股票")
-      return
+  // 平均分配開關事件監聽器
+  distributeEvenlyToggle.addEventListener("change", () => {
+    // 重新渲染股票列表，以更新輸入模式
+    renderStockList()
+    
+    // 如果開關被打開，將現有的百分比轉換為0或1
+    if (distributeEvenlyToggle.checked) {
+      stockData = stockData.map((stock) => ({
+        ...stock,
+        percentage: stock.percentage > 0 ? 1 : 0,
+      }))
+      
+      // 在這裡計算平均分配
+      const result = calculateEvenDistribution()
+      
+      // 如果有返回結果，則更新股票數據
+      if (result && result.stockData) {
+        stockData = result.stockData
+      }
     }
-
-    // 計算基本百分比（向下取整）
-    const basePercentage = Math.floor(100 / includedStocks.length)
-
-    // 計算剩餘的百分比
-    const remainingPercentage = 100 - basePercentage * includedStocks.length
-
-    // 先將所有選中的股票設置為基本百分比
-    stockData = stockData.map((stock) => ({
+    
+    // 更新UI
+    renderStockList()
+  })
+  
+  // 平均分配計算函數 - 參考calculateTrendRatio的寫法返回calculateEvenDistribution
+  function calculateEvenDistribution() {
+    // 獲取選中的股票（值為1的股票）
+    const selectedStocks = stockData.filter((stock) => stock.included && stock.percentage === 1)
+    if (selectedStocks.length === 0) {
+      return null
+    }
+    
+    // 實現平均分配計算公式，參考用戶提供的C++代碼
+    const initialMoney = Number.parseFloat(initialMoneyInput.value)
+    const rowCount = stockPriceData.rowCount-1
+    
+    // 初始化每個股票可買的數量和每一天的資金狀況
+    const eachStockCanBuy = Array(stockData.length).fill(0)
+    const FS = Array(rowCount).fill(0)
+    
+    // 計算選中的股票數量
+    const selectStockNum = selectedStocks.length
+    
+    // 每個股票分配的資金
+    const shareMoney = Math.floor(initialMoney / selectStockNum)
+    // 剩餘的資金
+    const remainMoney = initialMoney - shareMoney * selectStockNum
+    
+    // 將選中的股票分配百分比
+    let updatedStockData = stockData.map((stock) => ({
       ...stock,
-      percentage: stock.included ? basePercentage : 0,
+      percentage: (stock.included && stock.percentage === 1) ? Math.floor(100 / selectStockNum) : 0,
     }))
-
-    // 將剩餘的百分比分配到前面幾個選中的股票（每個加1%）
-    let remainingCount = remainingPercentage
+    
+    // 分配剩餘的百分比
+    let remainingPercentage = 100 - Math.floor(100 / selectStockNum) * selectStockNum
     let index = 0
-
-    while (remainingCount > 0 && index < stockData.length) {
-      if (stockData[index].included) {
-        stockData[index].percentage += 1
-        remainingCount--
+    
+    while (remainingPercentage > 0 && index < updatedStockData.length) {
+      if (updatedStockData[index].included && updatedStockData[index].percentage > 0) {
+        updatedStockData[index].percentage += 1
+        remainingPercentage--
       }
       index++
     }
-
-    renderStockList()
-  })
+    // 模擬每一天的投資情況
+    for (let i = 0; i < rowCount; i++) {
+      let money = 0
+      
+      for (let j = 0; j < stockData.length; j++) {
+        if (stockData[j].included && stockData[j].percentage === 1) {
+          // 獲取股票價格
+          const stockPrices = stockPriceData.stockPrices[j] || []
+          
+          if (i === 0) { // 第一天
+            // 計算可買的股票數量
+            eachStockCanBuy[j] = Math.floor(shareMoney / stockPrices[0])
+            
+            // 計算資金（股票價值 + 剩餘的現金）
+            money += eachStockCanBuy[j] * stockPrices[0] + (shareMoney - eachStockCanBuy[j] * stockPrices[0])
+          } else {
+            // 後續天數的資金計算
+            money += eachStockCanBuy[j] * stockPrices[i] + (shareMoney - eachStockCanBuy[j] * stockPrices[0])
+          }
+        } else {
+          eachStockCanBuy[j] = 0
+        }
+      }
+      
+      // 加上剩餘的資金
+      money += remainMoney
+      FS[i] = money
+    }
+    
+    // 計算回報
+    let returnNumerator = 0
+    let returnDenominator = 0
+    
+    for (let i = 0; i < rowCount; i++) {
+      returnNumerator += (FS[i] * (i + 1) - (i + 1) * initialMoney)
+      returnDenominator += Math.pow(i + 1, 2)
+    }
+    
+    const returns = returnNumerator / returnDenominator
+    
+    // 計算風險
+    let risk = 0
+    for (let i = 0; i < rowCount; i++) {
+      risk += Math.pow(FS[i] - (returns * (i + 1) + initialMoney), 2.0)
+    }
+    
+    risk = risk / rowCount
+    risk = Math.sqrt(risk)
+    
+    // 返回結果對象，包含更新後的股票數據和計算結果
+    return {
+      stockData: updatedStockData,
+      returns: returns,
+      risk: risk,
+      trendRatio: returns / risk
+    }
+  }
 })

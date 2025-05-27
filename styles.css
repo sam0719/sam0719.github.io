@@ -316,6 +316,56 @@ input[type="number"] {
   border-color: var(--primary-color);
 }
 
+/* 开关按钮样式 */
+.toggle-container {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.toggle-label:before {
+  content: '';
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: var(--primary-color);
+}
+
+.toggle-checkbox:checked + .toggle-label:before {
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* 所有股票权重输入框样式 */
 .all-weights-container {
   margin-bottom: 1.5rem;
