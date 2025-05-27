@@ -317,12 +317,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // 根據平均分配開關狀態顯示不同的輸入方式
       let inputHtml = ''
       if (isEvenlyDistributeEnabled) {
-        // 平均分配模式：輸入0或1
+        // 平均分配模式：選擇按鈕
         const value = stock.percentage > 0 ? 1 : 0
+        const buttonClass = value === 1 ? "select-btn selected" : "select-btn"
         inputHtml = `
           <div class="stock-percentage-container">
-            <input type="number" id="percentage-${index}" value="${value}" min="0" max="1" step="1" ${!stock.included ? "disabled" : ""}>
-            <span>選擇</span>
+            <input type="hidden" id="percentage-${index}" value="${value}">
+            <button type="button" id="select-btn-${index}" class="${buttonClass}">
+              ${value === 1 ? '已選擇' : '未選擇'}
+            </button>
           </div>
         `
       } else {
@@ -336,9 +339,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       stockItem.innerHTML = `
-                <div class="stock-checkbox">
-                    <input type="checkbox" id="checkbox-${index}" ${stock.included ? "checked" : ""}>
-                </div>
                 <div class="stock-name">${stock.name}</div>
                 ${inputHtml}
             `
@@ -346,23 +346,55 @@ document.addEventListener("DOMContentLoaded", () => {
       stockListContainer.appendChild(stockItem)
 
       // 添加事件監聽器
-      document.getElementById(`checkbox-${index}`).addEventListener("change", (e) => {
-        toggleStockInclusion(index, e.target.checked)
-      })
-
-      document.getElementById(`percentage-${index}`).addEventListener("change", (e) => {
-        const value = Number.parseInt(e.target.value)
-        if (isEvenlyDistributeEnabled) {
-          // 平均分配模式下，確保值只能是0或1
-          updateStockPercentage(index, value > 0 ? 1 : 0)
-        } else {
-          // 正常模式
-          updateStockPercentage(index, value)
+      if (isEvenlyDistributeEnabled) {
+        // 平均分配模式：為選擇按鈕添加點擊事件
+        const selectBtn = document.getElementById(`select-btn-${index}`)
+        if (selectBtn) {
+          selectBtn.addEventListener("click", () => {
+            // 切換選擇狀態
+            const currentValue = Number.parseInt(document.getElementById(`percentage-${index}`).value)
+            const newValue = currentValue === 1 ? 0 : 1
+            
+            // 更新輸入框值和按鈕樣式
+            document.getElementById(`percentage-${index}`).value = newValue
+            selectBtn.classList.toggle("selected", newValue === 1)
+            selectBtn.textContent = newValue === 1 ? '已選擇' : '未選擇'
+            
+            // 更新股票數據
+            updateStockPercentage(index, newValue)
+            stockData[index].included = newValue === 1
+            renderStockItem(index)
+          })
         }
-      })
+      } else {
+        // 正常模式：為百分比輸入框添加變更事件
+        document.getElementById(`percentage-${index}`).addEventListener("change", (e) => {
+          const value = Number.parseInt(e.target.value)
+          updateStockPercentage(index, value)
+          
+          // 如果百分比為0，則設置為不包含，否則設置為包含
+          stockData[index].included = value > 0
+          renderStockItem(index)
+        })
+      }
     })
   }
 
+  // 更新單個股票項目的顯示
+  function renderStockItem(index) {
+    const stockItem = document.querySelector(`.stock-item:nth-child(${index + 1})`)
+    if (stockItem) {
+      stockItem.classList.toggle("excluded", !stockData[index].included)
+      const percentageInput = document.getElementById(`percentage-${index}`)
+      if (percentageInput) {
+        percentageInput.disabled = !stockData[index].included
+      }
+    }
+    
+    // 更新所有股票權重輸入框
+    updateAllWeightsDisplay()
+  }
+  
   // 切換股票包含狀態
   function toggleStockInclusion(index, included) {
     stockData[index].included = included
@@ -569,16 +601,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetPercentagesBtn = document.getElementById("resetPercentagesBtn")
   const distributeEvenlyToggle = document.getElementById("distributeEvenlyToggle")
 
-  // 全選按鈕
+  // 全選按鈕 - 將所有股票設為包含並設置默認百分比
   selectAllBtn.addEventListener("click", () => {
+    // 計算默認百分比（平均分配）
+    const defaultPercentage = Math.floor(100 / stockData.length)
+    
     stockData = stockData.map((stock) => ({
       ...stock,
       included: true,
+      percentage: defaultPercentage,
     }))
+    
+    // 分配剩餘百分比
+    let remainingPercentage = 100 - defaultPercentage * stockData.length
+    let index = 0
+    
+    while (remainingPercentage > 0 && index < stockData.length) {
+      stockData[index].percentage += 1
+      remainingPercentage--
+      index++
+    }
+    
     renderStockList()
   })
 
-  // 全不選按鈕
+  // 全不選按鈕 - 將所有股票的百分比設為0
   deselectAllBtn.addEventListener("click", () => {
     stockData = stockData.map((stock) => ({
       ...stock,
