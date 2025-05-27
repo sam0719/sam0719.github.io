@@ -38,7 +38,7 @@
     "end": "auto_latest_month_end",
     "filename_format": "train_{year}_{month}({year} Q1).csv",
     "stocks": [
-      "RY.TO", "TD.TO", "CNR.TO", "ENB.TO", "CP.TO", "BAM-A.TO", "CNQ.TO", "BMO.TO", "BNS.TO", "TRI.TO",
+      "RY.TO", "TD.TO", "CNR.TO", "ENB.TO", "CP.TO", "BAM.TO", "CNQ.TO", "BMO.TO", "BNS.TO", "TRI.TO",
       "ATD.TO", "BCE.TO", "NTR.TO", "TRP.TO", "SU.TO", "CM.TO", "CVE.TO", "WCN.TO", "MFC.TO", "CSU.TO",
       "IMO.TO", "T.TO", "ABX.TO", "L.TO", "FNV.TO", "SLF.TO", "IFC.TO", "RCI-B.TO", "NA.TO", "AEM.TO"
     ]
