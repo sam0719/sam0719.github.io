@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票投資組合系統</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        .stock-row {
+            cursor: pointer;
+        }
+        .price-up {
+            color: #28a745;
+        }
+        .price-down {
+            color: #dc3545;
+        }
+        .history-table {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .pagination {
+            margin-bottom: 0;
+        }
+        .stock-summary {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .price-change-icon {
+            margin-right: 5px;
+        }
+        .hover-effect:hover {
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease;
+        }
+        .history-container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .pagination-container {
+            border-top: 1px solid #dee2e6;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        .market-section {
+            margin-bottom: 2rem;
+        }
+        .index-section {
+            margin-bottom: 1rem;
+            border-left: 3px solid #e9ecef;
+            padding-left: 1rem;
+        }
+        .market-header, .index-header {
+            cursor: pointer;
+            padding: 0.5rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .market-header:hover, .index-header:hover {
+            background-color: #e9ecef;
+        }
+        .market-header i, .index-header i {
+            transition: transform 0.3s ease;
+        }
+        .market-header.collapsed i, .index-header.collapsed i {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">股票投資組合系統</h2>
+            <a href="#" class="btn btn-outline-secondary" onclick="history.back(); return false;">
+                <i class="fas fa-arrow-left mr-1"></i>返回主頁
+            </a>
+        </div>
+
+        <!-- 股票列表 -->
+        <div class="row">
+            <div class="col-12">
+                <div id="stock-list-container">
+                    <!-- 股票列表將通過 JavaScript 動態生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 下載功能 -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-download me-1"></i>
+                        下載股價資料
+                    </div>
+                    <div class="card-body">
+                        <form id="downloadForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="start_month" class="form-label">起始月份</label>
+                                    <input type="month" class="form-control" id="start_month" name="start_month" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="end_month" class="form-label">結束月份</label>
+                                    <input type="month" class="form-control" id="end_month" name="end_month" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="train_window_type" class="form-label">訓練期長度</label>
+                                    <select class="form-control" id="train_window_type" name="train_window_type">
+                                        <option value="Y">年(Y)</option>
+                                        <option value="H">半年(H)</option>
+                                        <option value="Q">季(Q)</option>
+                                        <option value="M">月(M)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="test_window_type" class="form-label">測試期長度</label>
+                                    <select class="form-control" id="test_window_type" name="test_window_type">
+                                        <option value="Y">年(Y)</option>
+                                        <option value="H">半年(H)</option>
+                                        <option value="Q">季(Q)</option>
+                                        <option value="M">月(M)</option>
+                                        <option value="H_CROSS">半年(H)*跨年</option>
+                                        <option value="Q_CROSS">季(Q)*跨年</option>
+                                        <option value="M_CROSS">月(M)*跨年</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">選擇指數（可選）</label>
+                                    <select class="form-select" id="index_select" name="index_select">
+                                        <option value="">不選擇指數</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">選擇個股（可多選）</label>
+                                    <select class="form-select" id="stock_select" name="stocks[]" multiple>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">下載Excel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 走勢圖區域 -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">股價走勢圖</h5>
+                            <div class="d-flex align-items-center">
+                                <select id="chart-symbol-selector" class="form-control form-control-sm mr-2" multiple>
+                                </select>
+                                <input type="date" id="start-date" class="form-control form-control-sm mr-2">
+                                <input type="date" id="end-date" class="form-control form-control-sm mr-2">
+                                <button id="update-chart" class="btn btn-primary btn-sm">更新圖表</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container" style="height: 400px;">
+                            <canvas id="trend-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        // 靜態數據管理器
+        const staticDataManager = {
+            indexData: null,
+            marketInfo: null,
+            configData: null,
+            indexStocks: {},
+            stockDataCache: {},
+            allDataCache: {},
+
+            // 初始化
+            async init() {
+                try {
+                    this.stockDataCache = {};
+                    this.allDataCache = {};
+                    await this.loadConfig();
+                    await this.loadIndexData();
+                    console.log('靜態數據管理器初始化完成');
+                } catch (error) {
+                    console.error('靜態數據管理器初始化失敗:', error);
+                }
+            },
+
+            async loadConfig() {
+                try {
+                    const response = await fetch('config.json');
+                    if (!response.ok) {
+                        throw new Error(`無法載入 config.json: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    this.configData = data;
+
+                    this.indexStocks = {};
+                    this.stockToIndex = {};
+                    for (const [indexSymbol, config] of Object.entries(data)) {
+                        if (config && Array.isArray(config.stocks)) {
+                            this.indexStocks[indexSymbol] = config.stocks;
+                            for (const stockSymbol of config.stocks) {
+                                if (!this.stockToIndex[stockSymbol]) {
+                                    this.stockToIndex[stockSymbol] = indexSymbol;
+                                }
+                            }
+                        }
+                    }
+
+                    console.log('配置檔案載入完成，已建立指數股票映射');
+                } catch (error) {
+                    console.warn('載入 config.json 失敗，將無法顯示成份股資訊:', error);
+                    this.configData = null;
+                    this.indexStocks = {};
+                    this.stockToIndex = {};
+                }
+            },
+
+            // 載入索引數據
+            async loadIndexData() {
+                try {
+                    // 嘗試載入包含市場信息的索引文件
+                    let response = await fetch('data/index.json');
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.indexData = data.stockData || data;
+
+                        if (data.marketInfo) {
+                            this.marketInfo = data.marketInfo;
+                            console.log('載入了包含市場信息的索引文件');
+                        } else {
+                            this.marketInfo = this.generateDefaultMarketInfo();
+                            console.log('索引文件缺少市場信息，使用預設市場映射');
+                        }
+                    } else {
+                        // 如果沒有市場信息文件，則載入原始文件並使用默認市場信息
+                        response = await fetch('data/index.json');
+                        if (!response.ok) {
+                            throw new Error('無法載入索引文件');
+                        }
+                        this.indexData = await response.json();
+
+                        // 設置默認市場信息
+                        this.marketInfo = this.generateDefaultMarketInfo();
+                        console.log('載入了原始索引文件，使用默認市場信息');
+                    }
+                } catch (error) {
+                    console.error('載入索引數據時發生錯誤:', error);
+                    // 設置默認值
+                    this.indexData = {};
+                    this.marketInfo = {};
+                }
+            },
+
+            // 生成默認市場信息
+            generateDefaultMarketInfo() {
+                const defaultInfo = {
+                    'CAC': { name: 'CAC 40', country: '法國', market: '法國' },
+                    'DJIA': { name: '道瓊工業指數', country: '美國', market: '美國' },
+                    'DJIA_20251113': { name: '道瓊工業指數 (2025更新)', country: '美國', market: '美國' },
+                    'FTSE': { name: '富時100指數', country: '英國', market: '英國' },
+                    'Nikkei': { name: '日經225指數', country: '日本', market: '日本' },
+                    'TSX': { name: '多倫多證券交易所指數', country: '加拿大', market: '加拿大' }
+                };
+
+                // 為索引文件中的每個股票代碼生成市場信息
+                if (this.indexData) {
+                    for (const symbol of Object.keys(this.indexData)) {
+                        if (!defaultInfo[symbol]) {
+                            defaultInfo[symbol] = {
+                                name: symbol,
+                                country: '未知',
+                                market: '未知'
+                            };
+                        }
+                    }
+                }
+
+                return defaultInfo;
+            },
+
+            // 獲取市場信息
+            getMarketInfo(symbol) {
+                return this.marketInfo && this.marketInfo[symbol]
+                    ? this.marketInfo[symbol]
+                    : { name: symbol, country: '未知', market: '未知' };
+            },
+
+            // 獲取所有市場的結構
+            getMarketStructure() {
+                if (!this.marketInfo) {
+                    return {};
+                }
+
+                const marketStructure = {};
+
+                // 根據市場信息分組
+                for (const [symbol, info] of Object.entries(this.marketInfo)) {
+                    const marketName = info.market || '其他';
+
+                    if (!marketStructure[marketName]) {
+                        marketStructure[marketName] = {
+                            name: marketName,
+                            indices: []
+                        };
+                    }
+
+                    marketStructure[marketName].indices.push({
+                        code: symbol,
+                        name: info.name || symbol
+                    });
+                }
+
+                return marketStructure;
+            },
+
+            getStocksForIndex(symbol) {
+                if (this.indexStocks && this.indexStocks[symbol]) {
+                    return this.indexStocks[symbol];
+                }
+                return [];
+            },
+
+            findIndexForStock(stockSymbol) {
+                if (this.stockToIndex && this.stockToIndex[stockSymbol]) {
+                    return this.stockToIndex[stockSymbol];
+                }
+
+                if (this.indexStocks) {
+                    for (const [indexSymbol, stocks] of Object.entries(this.indexStocks)) {
+                        if (Array.isArray(stocks) && stocks.includes(stockSymbol)) {
+                            if (!this.stockToIndex) {
+                                this.stockToIndex = {};
+                            }
+                            this.stockToIndex[stockSymbol] = indexSymbol;
+                            return indexSymbol;
+                        }
+                    }
+                }
+
+                return null;
+            },
+
+            resolveStocksForDownload(selectedIndex, selectedStocks) {
+                const stockSet = new Set();
+                const stockToIndexMap = {};
+
+                if (selectedIndex) {
+                    const indexStocks = this.getStocksForIndex(selectedIndex) || [];
+                    for (const stock of indexStocks) {
+                        stockSet.add(stock);
+                        stockToIndexMap[stock] = selectedIndex;
+                    }
+                }
+
+                if (Array.isArray(selectedStocks)) {
+                    for (const stock of selectedStocks) {
+                        const trimmed = (stock || '').trim();
+                        if (!trimmed) {
+                            continue;
+                        }
+                        const indexSymbol = this.findIndexForStock(trimmed);
+                        if (indexSymbol) {
+                            stockSet.add(trimmed);
+                            stockToIndexMap[trimmed] = indexSymbol;
+                        } else {
+                            console.warn(`找不到股票 ${trimmed} 所屬的指數，略過`);
+                        }
+                    }
+                }
+
+                return {
+                    allStocks: Array.from(stockSet).sort(),
+                    stockToIndexMap
+                };
+            },
+
+            deduplicateMonthlyData(records) {
+                if (!Array.isArray(records)) {
+                    return [];
+                }
+
+                const uniqueMap = new Map();
+
+                for (let i = records.length - 1; i >= 0; i--) {
+                    const record = records[i];
+                    if (!record || !record.date) {
+                        continue;
+                    }
+                    const key = record.date;
+                    if (!uniqueMap.has(key)) {
+                        uniqueMap.set(key, record);
+                    }
+                }
+
+                return Array.from(uniqueMap.values()).reverse();
+            },
+
+            getSortedFileList(symbol) {
+                if (!this.indexData || !this.indexData[symbol]) {
+                    return [];
+                }
+
+                const files = Array.isArray(this.indexData[symbol])
+                    ? this.indexData[symbol]
+                    : [];
+
+                const parseOrder = (filename) => {
+                    const match = filename && filename.match(/(\d{4})_(\d{2})/);
+                    if (!match) {
+                        return 0;
+                    }
+                    const year = parseInt(match[1], 10);
+                    const month = parseInt(match[2], 10);
+                    return year * 100 + month;
+                };
+
+                return [...files].sort((a, b) => parseOrder(a) - parseOrder(b));
+            },
+
+            // 載入股票或指數數據
+            async loadStockData(symbol, filename, targetStockSymbol = null) {
+                const normalizedTarget = targetStockSymbol ? targetStockSymbol.trim() : null;
+                const cacheKey = `${symbol}-${filename}-${normalizedTarget || '__DEFAULT__'}`;
+                if (this.stockDataCache[cacheKey]) {
+                    return this.stockDataCache[cacheKey];
+                }
+
+                try {
+                    console.log(`開始載入股價數據: ${symbol}/${filename}`);
+                    const response = await fetch(`data/${symbol}/${filename}`);
+                    if (!response.ok) {
+                        throw new Error(`無法載入CSV文件: ${response.status}`);
+                    }
+
+                    const csvText = await response.text();
+                    console.log(`成功載入CSV文件，內容長度: ${csvText.length}`);
+
+                    // 先不用header解析，檢查第一行是否為股票代碼
+                    const lines = csvText.trim().split('\n');
+                    if (lines.length === 0) {
+                        console.log('CSV文件為空');
+                        return [];
+                    }
+
+                    const firstLine = lines[0].trim();
+                    console.log(`CSV第一行內容: ${firstLine}`);
+
+                    // 檢查是否為多股矩陣格式（第一行包含多個股票代碼）
+                    const isMultiStock = firstLine.includes(',') &&
+                        (firstLine.includes('.PA') || firstLine.includes('AAPL') || firstLine.includes('MSFT') ||
+                         firstLine.includes('UNH') || firstLine.includes('JNJ') || firstLine.includes('V'));
+
+                    console.log(`是否為多股格式: ${isMultiStock}`);
+
+                    if (isMultiStock) {
+                        // 多股矩陣格式
+                        console.log('處理多股矩陣格式');
+                        const stockSymbols = firstLine.split(',').map(item => item.trim());
+                        console.log(`識別到股票代碼: ${stockSymbols.slice(0, 5).join(', ')}...`); // 只顯示前5個
+
+                        const collectAll = !normalizedTarget;
+                        let targetIndex = 0;
+
+                        if (!collectAll) {
+                            targetIndex = stockSymbols.findIndex(symbolCode => symbolCode === normalizedTarget);
+                            if (targetIndex === -1) {
+                                console.warn(`在 ${filename} 中找不到股票 ${normalizedTarget}`);
+                                this.stockDataCache[cacheKey] = [];
+                                return [];
+                            }
+                        }
+
+                        const stockData = collectAll ? Array.from({ length: stockSymbols.length }, () => []) : [];
+
+                        const dateMatch = filename.match(/(\d{4})_(\d{2})/);
+                        const fileYear = dateMatch ? parseInt(dateMatch[1], 10) : 1970;
+                        const monthIndex = dateMatch ? parseInt(dateMatch[2], 10) - 1 : 0;
+                        const daysInMonth = new Date(fileYear, monthIndex + 1, 0).getDate();
+                        console.log(`提取月份: ${fileYear}-${String(monthIndex + 1).padStart(2, '0')}`);
+
+                        for (let i = 1; i < lines.length; i++) {
+                            const values = lines[i].split(',');
+                            const day = Math.min(i, daysInMonth);
+                            const currentDate = new Date(fileYear, monthIndex, day);
+                            const isoDate = currentDate.toISOString().slice(0, 10);
+
+                            if (collectAll) {
+                                for (let j = 0; j < Math.min(stockSymbols.length, values.length); j++) {
+                                    const price = parseFloat(values[j]);
+
+                                    if (!isNaN(price)) {
+                                        stockData[j].push({
+                                            symbol: stockSymbols[j],
+                                            date: isoDate,
+                                            price: price
+                                        });
+                                    }
+                                }
+                            } else {
+                                if (targetIndex < values.length) {
+                                    const price = parseFloat(values[targetIndex]);
+                                    if (!isNaN(price)) {
+                                        stockData.push({
+                                            symbol: normalizedTarget,
+                                            date: isoDate,
+                                            price: price
+                                        });
+                                    }
+                                }
+                            }
+                        }
+
+                        if (collectAll) {
+                            const primarySeries = stockData[0] || [];
+                            console.log(`成功解析 ${primarySeries.length} 條數據`);
+                            this.stockDataCache[cacheKey] = primarySeries;
+                            return primarySeries;
+                        }
+
+                        console.log(`成功解析 ${stockData.length} 條 ${normalizedTarget} 的數據`);
+                        this.stockDataCache[cacheKey] = stockData;
+                        return stockData;
+                    } else {
+                        // 單股時間序列格式，使用標準CSV解析
+                        console.log('處理單股時間序列格式');
+                        const results = Papa.parse(csvText, {
+                            header: true,
+                            dynamicTyping: true,
+                            skipEmptyLines: true
+                        });
+
+                        console.log(`PapaParse 解析到 ${results.data.length} 行數據`);
+
+                        const parsedData = results.data.map(row => ({
+                            date: row.Date || row.date || Object.values(row)[0],
+                            price: parseFloat(row.Close || row.close || row.Price || row.price || Object.values(row)[1])
+                        })).filter(item => item.date && !isNaN(item.price));
+
+                        console.log(`解析後得到 ${parsedData.length} 條有效數據`);
+                        this.stockDataCache[cacheKey] = parsedData;
+                        return parsedData;
+                    }
+
+                } catch (error) {
+                    console.error(`載入 ${filename} 失敗:`, error);
+                    return null;
+                }
+            },
+
+            // 獲取指數的所有數據
+            async getAllIndexData(symbol) {
+                if (!this.indexData || !this.indexData[symbol]) {
+                    console.log(`沒有找到 ${symbol} 的數據文件`);
+                    return [];
+                }
+
+                const files = this.getSortedFileList(symbol);
+                console.log(`${symbol} 有 ${files.length} 個數據文件`);
+
+                const allData = [];
+
+                // 只載入最近幾個文件以避免載入過多數據
+                const recentFiles = files.slice(-10); // 只載入最近10個文件
+                console.log(`將載入最近 ${recentFiles.length} 個文件: ${recentFiles.join(', ')}`);
+
+                for (const file of recentFiles) {
+                    console.log(`正在載入: ${file}`);
+                    const data = await this.loadStockData(symbol, file);
+                    if (data && data.length > 0) {
+                        console.log(`成功載入 ${data.length} 條數據從 ${file}`);
+                        allData.push(...data);
+                    } else {
+                        console.log(`載入 ${file} 失敗或無數據`);
+                    }
+                }
+
+                console.log(`${symbol} 總共載入 ${allData.length} 條數據`);
+
+                // 按日期排序
+                allData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                return allData;
+            },
+
+            async getStockHistory(indexSymbol, stockSymbol) {
+                const cacheKey = `${indexSymbol}::${stockSymbol}`;
+                if (this.allDataCache[cacheKey]) {
+                    return this.allDataCache[cacheKey];
+                }
+
+                if (!this.indexData || !this.indexData[indexSymbol]) {
+                    console.log(`沒有找到 ${indexSymbol} 的數據文件`);
+                    return [];
+                }
+
+                const files = this.getSortedFileList(indexSymbol);
+                console.log(`${indexSymbol}/${stockSymbol} 有 ${files.length} 個數據文件`);
+
+                const allData = [];
+                console.log(`將載入全部 ${files.length} 個文件以建立完整歷史`);
+
+                for (const file of files) {
+                    console.log(`正在載入 ${stockSymbol}: ${file}`);
+                    const data = await this.loadStockData(indexSymbol, file, stockSymbol);
+                    if (data && data.length > 0) {
+                        console.log(`成功載入 ${data.length} 條 ${stockSymbol} 數據從 ${file}`);
+                        allData.push(...data);
+                    } else {
+                        console.log(`載入 ${stockSymbol} 的 ${file} 失敗或無數據`);
+                    }
+                }
+
+                allData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                this.allDataCache[cacheKey] = allData;
+                return allData;
+            },
+
+            // 過濾日期範圍
+            filterDataByDate(data, startDate, endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                return data.filter(item => {
+                    const itemDate = new Date(item.date);
+                    return itemDate >= start && itemDate <= end;
+                });
+            },
+
+            // 格式化數據為圖表格式
+            formatDataForChart(data) {
+                return {
+                    dates: data.map(item => item.date),
+                    prices: data.map(item => item.price)
+                };
+            }
+        };
+
+        function cloneDateToMonthStart(date) {
+            return new Date(date.getFullYear(), date.getMonth(), 1);
+        }
+
+        function addMonths(date, months) {
+            const start = cloneDateToMonthStart(date);
+            start.setMonth(start.getMonth() + months);
+            return start;
+        }
+
+        function getPeriodEnd(startDate, months) {
+            const nextStart = addMonths(startDate, months);
+            return new Date(nextStart.getFullYear(), nextStart.getMonth(), 0);
+        }
+
+        function getTestMonths(type) {
+            switch (type) {
+                case 'Y':
+                    return 12;
+                case 'H':
+                case 'H_CROSS':
+                    return 6;
+                case 'Q':
+                case 'Q_CROSS':
+                    return 3;
+                default:
+                    return 1;
+            }
+        }
+
+        function getTrainMonths(type) {
+            switch (type) {
+                case 'Y':
+                    return 12;
+                case 'H':
+                    return 6;
+                case 'Q':
+                    return 3;
+                default:
+                    return 1;
+            }
+        }
+
+        function computeWindowIntervals(startDate, endDate, trainWindowType, testWindowType) {
+            const intervals = [];
+
+            const trainMonths = getTrainMonths(trainWindowType || 'M');
+            const slideMonths = getTestMonths((testWindowType || 'M').replace('_CROSS', ''));
+            const testMonths = getTestMonths(testWindowType || 'M');
+            const isCrossYear = (testWindowType || '').endsWith('_CROSS');
+
+            let currentStart = cloneDateToMonthStart(startDate);
+            const normalizedEnd = cloneDateToMonthStart(endDate);
+
+            while (currentStart <= normalizedEnd) {
+                const trainEnd = getPeriodEnd(currentStart, trainMonths);
+                if (trainEnd > endDate) {
+                    break;
+                }
+
+                let testRange = null;
+                if (testWindowType) {
+                    const testStart = isCrossYear
+                        ? new Date(currentStart.getFullYear() + 1, currentStart.getMonth(), 1)
+                        : addMonths(currentStart, trainMonths);
+                    const testEnd = getPeriodEnd(testStart, testMonths);
+                    testRange = {
+                        start: testStart,
+                        end: testEnd
+                    };
+                }
+
+                intervals.push({
+                    train: {
+                        start: new Date(currentStart),
+                        end: trainEnd
+                    },
+                    test: testRange
+                });
+
+                currentStart = addMonths(currentStart, slideMonths);
+            }
+
+            return intervals;
+        }
+
+        function groupStocksByIndex(stocks, stockToIndexMap) {
+            const grouped = new Map();
+
+            for (const stock of stocks) {
+                const indexSymbol = stockToIndexMap[stock] || staticDataManager.findIndexForStock(stock);
+                if (!indexSymbol) {
+                    console.warn(`股票 ${stock} 找不到對應指數，略過`);
+                    continue;
+                }
+                if (!grouped.has(indexSymbol)) {
+                    grouped.set(indexSymbol, new Set());
+                }
+                grouped.get(indexSymbol).add(stock);
+            }
+
+            return Array.from(grouped.entries())
+                .map(([indexSymbol, stockSet]) => ({ indexSymbol, stocks: Array.from(stockSet).sort() }))
+                .sort((a, b) => a.indexSymbol.localeCompare(b.indexSymbol));
+        }
+
+        async function loadAllDailyData(indexSymbol, stocks) {
+            const dayMap = new Map();
+
+            for (const stockSymbol of stocks) {
+                const history = await staticDataManager.getStockHistory(indexSymbol, stockSymbol);
+                if (!history || history.length === 0) {
+                    continue;
+                }
+
+                for (const record of history) {
+                    const dayKey = (record.date || '').slice(0, 10);
+                    if (!dayKey) {
+                        continue;
+                    }
+                    if (!dayMap.has(dayKey)) {
+                        dayMap.set(dayKey, {});
+                    }
+                    dayMap.get(dayKey)[stockSymbol] = record.price;
+                }
+            }
+
+            return dayMap;
+        }
+
+        function formatMonthLabel(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            return `${year}${month}`;
+        }
+
+        function formatMonthKey(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            return `${year}-${month}`;
+        }
+
+        function buildCsvForInterval(dayMap, stocks, startDate, endDate) {
+            const rows = [stocks.join(',')];
+
+            let current = new Date(startDate);
+            current.setHours(0, 0, 0, 0);
+            const targetEnd = new Date(endDate);
+            targetEnd.setHours(0, 0, 0, 0);
+            let hasData = false;
+
+            while (current <= targetEnd) {
+                const key = current.toISOString().slice(0, 10);
+                const prices = dayMap.get(key) || {};
+                const row = [];
+                let rowHasValue = false;
+
+                for (const stock of stocks) {
+                    if (prices[stock] !== undefined) {
+                        row.push(prices[stock]);
+                        rowHasValue = true;
+                    } else {
+                        row.push('');
+                    }
+                }
+
+                if (rowHasValue) {
+                    rows.push(row.join(','));
+                    hasData = true;
+                }
+
+                current.setDate(current.getDate() + 1);
+            }
+
+            if (!hasData) {
+                return null;
+            }
+
+            return rows.join('\n');
+        }
+
+        function getQuarter(date) {
+            return Math.floor(date.getMonth() / 3) + 1;
+        }
+
+        function pad2(value) {
+            return String(value).padStart(2, '0');
+        }
+
+        function getHalfYearLabel(date) {
+            return date.getMonth() < 6 ? 'Q1-Q2' : 'Q3-Q4';
+        }
+
+        function formatDateISO(date) {
+            return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+        }
+
+        function formatDateCompact(date) {
+            return `${date.getFullYear()}${pad2(date.getMonth() + 1)}${pad2(date.getDate())}`;
+        }
+
+        function generateStaticFilename(type, indexSymbol, interval, windowType, testWindowType) {
+            const range = type === 'train' ? interval.train : interval.test;
+            if (!range) {
+                return `${indexSymbol}_${type}.csv`;
+            }
+
+            const start = range.start;
+            const end = range.end;
+
+            const startYear = start.getFullYear();
+            const endYear = end.getFullYear();
+            const startMonth = start.getMonth() + 1;
+            const endMonth = end.getMonth() + 1;
+            const startQuarter = getQuarter(start);
+            const endQuarter = getQuarter(end);
+
+            const normalizedWindow = (windowType || 'M').toUpperCase();
+            const normalizedTest = (testWindowType || 'M').toUpperCase();
+            const baseTestType = normalizedTest.replace('_CROSS', '');
+
+            let namePart = null;
+
+            if (normalizedTest.endsWith('_CROSS')) {
+                const testPrefix = normalizedTest.split('_')[0];
+                if (testPrefix === 'Q') {
+                    if (type === 'test') {
+                        namePart = `${type}_${startYear}_Q${startQuarter}(${endYear} Q${endQuarter}).csv`;
+                    } else {
+                        namePart = `${type}_${startYear}_Q${startQuarter}(${startYear} Q${startQuarter}).csv`;
+                    }
+                } else if (testPrefix === 'H') {
+                    const halfLabel = getHalfYearLabel(start);
+                    if (type === 'test') {
+                        namePart = `${type}_${startYear}_${halfLabel}(${endYear} Q${endQuarter}).csv`;
+                    } else {
+                        namePart = `${type}_${startYear}_${halfLabel}(${startYear} Q${startQuarter}).csv`;
+                    }
+                } else { // M_CROSS
+                    const monthLabel = pad2(startMonth);
+                    if (type === 'test') {
+                        namePart = `${type}_${startYear}_${monthLabel}(${endYear} Q${endQuarter}).csv`;
+                    } else {
+                        namePart = `${type}_${startYear}_${monthLabel}(${startYear} Q${startQuarter}).csv`;
+                    }
+                }
+            } else if (type === 'train') {
+                switch (normalizedWindow) {
+                    case 'Y':
+                        if (baseTestType === 'Y') {
+                            namePart = `${type}_${startYear}(${startYear} Q1).csv`;
+                        } else if (baseTestType === 'H' || baseTestType === 'Q') {
+                            if (startYear === endYear) {
+                                namePart = `${type}_${startYear}(${startYear} Q1).csv`;
+                            } else {
+                                namePart = `${type}_${startYear}_Q${startQuarter}~${endYear}_Q${endQuarter}(${startYear} Q1).csv`;
+                            }
+                        } else if (baseTestType === 'M') {
+                            if (startYear === endYear) {
+                                namePart = `${type}_${startYear}(${startYear} Q1).csv`;
+                            } else {
+                                namePart = `${type}_${startYear}_${pad2(startMonth)}~${endYear}_${pad2(endMonth)}(${startYear} Q1).csv`;
+                            }
+                        }
+                        break;
+                    case 'H':
+                        if (baseTestType === 'H') {
+                            namePart = `${type}_${startYear}_Q${startQuarter}~Q${endQuarter}(${startYear} Q1).csv`;
+                        } else if (baseTestType === 'Q') {
+                            if (startYear === endYear) {
+                                namePart = `${type}_${startYear}_Q${startQuarter}~Q${endQuarter}(${startYear} Q1).csv`;
+                            } else {
+                                namePart = `${type}_${startYear}_Q${startQuarter}~${endYear}_Q${endQuarter}(${startYear} Q1).csv`;
+                            }
+                        } else if (baseTestType === 'M') {
+                            if (startYear === endYear) {
+                                namePart = `${type}_${startYear}_${pad2(startMonth)}-${pad2(endMonth)}(${startYear} Q1).csv`;
+                            } else {
+                                namePart = `${type}_${startYear}_${pad2(startMonth)}~${endYear}_${pad2(endMonth)}(${startYear} Q1).csv`;
+                            }
+                        }
+                        break;
+                    case 'Q':
+                        if (baseTestType === 'Q') {
+                            namePart = `${type}_${startYear}_Q${startQuarter}(${startYear} Q1).csv`;
+                        } else if (baseTestType === 'M') {
+                            if (startYear === endYear) {
+                                namePart = `${type}_${startYear}_${pad2(startMonth)}-${pad2(endMonth)}(${startYear} Q1).csv`;
+                            } else {
+                                namePart = `${type}_${startYear}_${pad2(startMonth)}~${endYear}_${pad2(endMonth)}(${startYear} Q1).csv`;
+                            }
+                        }
+                        break;
+                    case 'M':
+                        if (baseTestType === 'M') {
+                            namePart = `${type}_${startYear}_${pad2(startMonth)}(${startYear} Q1).csv`;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            } else { // type === 'test'
+                switch (baseTestType) {
+                    case 'Y':
+                        namePart = `${type}_${startYear}(${startYear} Q1).csv`;
+                        break;
+                    case 'H':
+                        namePart = `${type}_${startYear}_Q${startQuarter}-Q${endQuarter}(${startYear} Q1).csv`;
+                        break;
+                    case 'Q':
+                        namePart = `${type}_${startYear}_Q${startQuarter}(${startYear} Q1).csv`;
+                        break;
+                    case 'M':
+                        namePart = `${type}_${startYear}_${pad2(startMonth)}(${startYear} Q1).csv`;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!namePart) {
+                const startLabel = formatMonthLabel(start);
+                const endLabel = formatMonthLabel(end);
+                namePart = `${type}_${startLabel}_${endLabel}.csv`;
+            }
+
+            return `${indexSymbol}_${namePart}`;
+        }
+
+        // 存儲每個股票的圖表實例
+        const charts = {};
+        const colors = [
+            'rgb(75, 192, 192)',   // 青綠
+            'rgb(255, 99, 132)',   // 粉紅
+            'rgb(255, 159, 64)',   // 橙色
+            'rgb(153, 102, 255)',  // 紫色
+            'rgb(54, 162, 235)',   // 藍色
+            'rgb(255, 205, 86)',   // 黃色
+            'rgb(201, 203, 207)'   // 灰色
+        ];
+
+        const HISTORY_PAGE_SIZE = 20;
+        const historyDataCache = {};
+        const historyPageState = {};
+        const loadedIndexStocks = new Set();
+
+        function createSafeId(...parts) {
+            return parts
+                .filter(Boolean)
+                .map(part => String(part).replace(/[^a-zA-Z0-9]/g, '_'))
+                .join('__');
+        }
+
+        function getHistoryCacheKey(symbol, stockSymbol = null) {
+            return stockSymbol ? `${symbol}::${stockSymbol}` : symbol;
+        }
+
+        // 初始化日期選擇器
+        function initializeDatePickers() {
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            const thisMonth = todayStr.slice(0, 7);
+
+            const start = new Date(today);
+            start.setFullYear(today.getFullYear() - 1);
+            const startDateStr = start.toISOString().split('T')[0];
+            const startMonth = startDateStr.slice(0, 7);
+
+            $('#start-date').val(startDateStr);
+            $('#end-date').val(todayStr);
+            $('#start-date').attr('max', todayStr);
+            $('#end-date').attr('max', todayStr);
+
+            $('#start_month').val(startMonth);
+            $('#end_month').val(thisMonth);
+            $('#start_month').attr('max', thisMonth);
+            $('#end_month').attr('max', thisMonth);
+            $('#end_month').attr('min', startMonth);
+        }
+
+    
+
+        // 渲染股票列表 - 保持原本的市場和指數分層結構
+        async function renderStockList() {
+            console.log('🏗️ 開始渲染股票列表...');
+            const container = $('#stock-list-container');
+            container.empty();
+            loadedIndexStocks.clear();
+
+            const marketStructure = staticDataManager.getMarketStructure();
+            console.log('市場結構:', marketStructure);
+
+            for (const [marketName, marketData] of Object.entries(marketStructure)) {
+                const marketCode = marketName.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+                console.log(`處理市場: ${marketName}, ${marketData.indices.length} 個指數`);
+
+                let marketHtml = `
+                    <div class="market-section">
+                        <div class="market-header d-flex justify-content-between align-items-center"
+                             data-toggle="collapse"
+                             data-target="#market-${marketCode}">
+                            <h4 class="mb-0">${marketName}</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+
+                        <div class="collapse show" id="market-${marketCode}">
+                `;
+
+                for (const indexData of marketData.indices) {
+                    const indexSymbol = indexData.code;
+                    const safeIndexId = createSafeId('index', indexSymbol);
+                    const summaryId = createSafeId('index-summary', indexSymbol);
+                    const files = staticDataManager.indexData && staticDataManager.indexData[indexSymbol] ? staticDataManager.indexData[indexSymbol] : [];
+                    const latestFile = files[files.length - 1];
+                    const stocks = staticDataManager.getStocksForIndex(indexSymbol);
+
+                    console.log(`處理指數 ${indexSymbol}: ${files.length} 個文件, 最新文件: ${latestFile}, 成份股 ${stocks.length} 檔`);
+
+                    const stockListHtml = stocks.length === 0
+                        ? '<p class="text-muted small mb-0">未設定成份股</p>'
+                        : stocks.map(stockSymbol => {
+                            const stockId = createSafeId('stock', indexSymbol, stockSymbol);
+                            const historyCollapseId = createSafeId('history', indexSymbol, stockSymbol);
+                            const priceId = createSafeId('price', indexSymbol, stockSymbol);
+                            const changeId = createSafeId('change', indexSymbol, stockSymbol);
+                            const tableBodyId = createSafeId('history-data', indexSymbol, stockSymbol);
+                            const paginationId = createSafeId('pagination', indexSymbol, stockSymbol);
+
+                            return `
+                                <div class="stock-item mb-2">
+                                    <div class="row align-items-center stock-row hover-effect"
+                                         data-toggle="collapse"
+                                         data-target="#${historyCollapseId}"
+                                         data-index="${indexSymbol}"
+                                         data-stock="${stockSymbol}"
+                                         aria-expanded="false">
+                                        <div class="col-md-4">
+                                            <h6 class="mb-0">${stockSymbol}</h6>
+                                            <small class="text-muted">${indexData.name}</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="font-weight-bold" id="${priceId}">
+                                                <i class="fas fa-spinner fa-spin"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span id="${changeId}">
+                                                <i class="fas fa-spinner fa-spin"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-2 text-right">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse stock-history-collapse"
+                                         id="${historyCollapseId}"
+                                         data-index="${indexSymbol}"
+                                         data-stock="${stockSymbol}">
+                                        <div class="history-container">
+                                            <table class="table table-sm history-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>價格</th>
+                                                        <th>漲跌</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="${tableBodyId}">
+                                                    <tr>
+                                                        <td colspan="3" class="text-center">
+                                                            <i class="fas fa-spinner fa-spin"></i> 載入中...
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="pagination-container d-flex justify-content-between align-items-center"
+                                                 id="${paginationId}"
+                                                 data-index="${indexSymbol}"
+                                                 data-stock="${stockSymbol}"
+                                                 style="display: none;">
+                                                <button class="btn btn-sm btn-outline-secondary pagination-button" data-action="prev" disabled>上一頁</button>
+                                                <span class="pagination-info text-muted">第 1 / 1 頁</span>
+                                                <button class="btn btn-sm btn-outline-secondary pagination-button" data-action="next" disabled>下一頁</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+
+                    const summaryCollapseId = createSafeId('history', indexSymbol);
+                    marketHtml += `
+                        <div class="index-section">
+                            <div class="index-header d-flex justify-content-between align-items-center"
+                                 data-toggle="collapse"
+                                 data-target="#${safeIndexId}">
+                                <h5 class="mb-0">${indexData.name}</h5>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+
+                            <div class="collapse show" id="${safeIndexId}">
+                                <div class="stock-summary mb-3">
+                                    <div class="row align-items-center stock-row hover-effect"
+                                         data-toggle="collapse"
+                                         data-target="#${summaryCollapseId}"
+                                         aria-expanded="false">
+                                        <div class="col-md-4">
+                                            <h6 class="mb-0">${indexSymbol}</h6>
+                                            <small class="text-muted">${indexData.name}</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="font-weight-bold" id="price-${indexSymbol}">
+                                                <i class="fas fa-spinner fa-spin"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span id="change-${indexSymbol}">
+                                                <i class="fas fa-spinner fa-spin"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-2 text-right">
+                                            <span class="text-muted">${files.length} 個數據文件</span>
+                                            <i class="fas fa-chevron-down ml-2"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse history-collapse" id="${summaryCollapseId}" data-symbol="${indexSymbol}">
+                                        <div class="history-container">
+                                            <h6 class="text-muted mb-3">成份股 (${stocks.length})</h6>
+                                            <div class="stock-list">
+                                                ${stockListHtml}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    console.log(`⚠️ ${indexSymbol} 沒有數據文件`);
+                    setTimeout(() => {
+                        $(`#price-${indexSymbol}`).text('');
+                        $(`#change-${indexSymbol}`).text('');
+                    }, 100);
+                    
+
+                }
+
+                marketHtml += `
+                        </div>
+                    </div>
+                `;
+
+                container.append(marketHtml);
+            }
+
+            container
+                .off('show.bs.collapse', '.history-collapse')
+                .on('show.bs.collapse', '.history-collapse', async function() {
+                    const symbol = $(this).data('symbol');
+                    if (symbol) {
+                        await loadIndexStocks(symbol);
+                    }
+                })
+                .off('show.bs.collapse', '.stock-history-collapse')
+                .on('show.bs.collapse', '.stock-history-collapse', async function() {
+                    const indexSymbol = $(this).data('index');
+                    const stockSymbol = $(this).data('stock');
+                    if (indexSymbol && stockSymbol) {
+                        await loadStockHistory(indexSymbol, stockSymbol);
+                    }
+                })
+                .off('click', '.pagination-button')
+                .on('click', '.pagination-button', function(event) {
+                    event.preventDefault();
+
+                    const $button = $(this);
+                    const action = $button.data('action');
+                    const $container = $button.closest('.pagination-container');
+                    const indexSymbol = $container.data('index');
+                    const stockSymbol = $container.data('stock') || null;
+                    const cacheKey = getHistoryCacheKey(indexSymbol, stockSymbol);
+
+                    if (!cacheKey || !historyDataCache[cacheKey]) {
+                        return;
+                    }
+
+                    const totalPages = Math.ceil(historyDataCache[cacheKey].length / HISTORY_PAGE_SIZE) || 1;
+                    const currentPage = historyPageState[cacheKey] || 1;
+                    let targetPage = currentPage;
+
+                    if (action === 'prev') {
+                        targetPage = Math.max(1, currentPage - 1);
+                    } else if (action === 'next') {
+                        targetPage = Math.min(totalPages, currentPage + 1);
+                    }
+
+                    if (targetPage !== currentPage) {
+                        renderHistoryPage(indexSymbol, stockSymbol, targetPage);
+                    }
+                });
+
+            console.log('✅ 股票列表渲染完成');
+        }
+
+        async function loadIndexStocks(indexSymbol) {
+            if (!indexSymbol) {
+                return;
+            }
+
+            if (loadedIndexStocks.has(indexSymbol)) {
+                return;
+            }
+
+            const stocks = staticDataManager.getStocksForIndex(indexSymbol) || [];
+            if (stocks.length === 0) {
+                loadedIndexStocks.add(indexSymbol);
+                return;
+            }
+
+            const files = staticDataManager.indexData && staticDataManager.indexData[indexSymbol]
+                ? staticDataManager.indexData[indexSymbol]
+                : [];
+            const latestFile = files.length > 0 ? files[files.length - 1] : null;
+
+            loadedIndexStocks.add(indexSymbol);
+
+            if (!latestFile) {
+                stocks.forEach(stockSymbol => {
+                    const priceId = createSafeId('price', indexSymbol, stockSymbol);
+                    const changeId = createSafeId('change', indexSymbol, stockSymbol);
+                    $(`#${priceId}`).text('無數據');
+                    $(`#${changeId}`).text('-');
+                });
+                return;
+            }
+
+            try {
+                await Promise.all(stocks.map(stockSymbol =>
+                    loadLatestPrice(indexSymbol, latestFile, stockSymbol)
+                ));
+            } catch (error) {
+                console.error(`載入 ${indexSymbol} 成份股最新價格失敗:`, error);
+                stocks.forEach(stockSymbol => {
+                    const priceId = createSafeId('price', indexSymbol, stockSymbol);
+                    const changeId = createSafeId('change', indexSymbol, stockSymbol);
+                    $(`#${priceId}`).text('載入失敗');
+                    $(`#${changeId}`).text('-');
+                });
+                loadedIndexStocks.delete(indexSymbol);
+            }
+        }
+
+        async function loadStockHistory(indexSymbol, stockSymbol) {
+            if (!indexSymbol || !stockSymbol) {
+                return;
+            }
+
+            const cacheKey = getHistoryCacheKey(indexSymbol, stockSymbol);
+            const tbodyId = createSafeId('history-data', indexSymbol, stockSymbol);
+            const paginationId = createSafeId('pagination', indexSymbol, stockSymbol);
+            const tbody = $(`#${tbodyId}`);
+            const pagination = $(`#${paginationId}`);
+
+            if (!tbody.length) {
+                return;
+            }
+
+            try {
+                if (historyDataCache[cacheKey]) {
+                    historyPageState[cacheKey] = 1;
+                    renderHistoryPage(indexSymbol, stockSymbol, 1);
+                    return;
+                }
+
+                const allData = await staticDataManager.getStockHistory(indexSymbol, stockSymbol);
+                console.log(`${indexSymbol}/${stockSymbol} 歷史數據載入完成，共 ${allData ? allData.length : 0} 條記錄`);
+
+                if (allData && allData.length > 0) {
+                    const sortedData = [...allData].sort((a, b) => new Date(b.date) - new Date(a.date));
+                    historyDataCache[cacheKey] = sortedData;
+                    historyPageState[cacheKey] = 1;
+                    renderHistoryPage(indexSymbol, stockSymbol, 1);
+                    console.log(`${indexSymbol}/${stockSymbol} 歷史數據表格更新完成`);
+                } else {
+                    tbody.html('<tr><td colspan="3" class="text-center text-muted">無數據</td></tr>');
+                    pagination.hide();
+                }
+            } catch (error) {
+                console.error(`載入 ${indexSymbol}/${stockSymbol} 歷史數據失敗:`, error);
+                tbody.html('<tr><td colspan="3" class="text-center text-danger">載入失敗</td></tr>');
+                pagination.hide();
+            }
+        }
+
+        // 載入最新價格
+        async function loadLatestPrice(indexSymbol, filename, stockSymbol = null) {
+            const cacheKey = stockSymbol ? `${indexSymbol}-${stockSymbol}` : indexSymbol;
+            const priceElementId = stockSymbol
+                ? createSafeId('price', indexSymbol, stockSymbol)
+                : createSafeId('price', indexSymbol);
+            const changeElementId = stockSymbol
+                ? createSafeId('change', indexSymbol, stockSymbol)
+                : createSafeId('change', indexSymbol);
+
+            console.log(`開始載入 ${cacheKey} 最新價格，文件: ${filename}`);
+
+            try {
+                const data = await staticDataManager.loadStockData(indexSymbol, filename, stockSymbol);
+                console.log(`${cacheKey} 載入結果:`, data ? `成功，${data.length}條數據` : '失敗');
+
+                if (data && data.length > 0) {
+                    const latest = data[data.length - 1];
+                    const previous = data.length > 1 ? data[data.length - 2] : null;
+
+                    console.log(`${cacheKey} 最新價格: ${latest.price}, 日期: ${latest.date}`);
+
+                    const price = latest.price.toFixed(2);
+                    let changeHtml = '';
+
+                    if (previous) {
+                        const priceChange = latest.price - previous.price;
+                        const priceChangePercent = previous.price !== 0 ? (priceChange / previous.price * 100) : 0;
+                        const direction = priceChange >= 0 ? 'up' : 'down';
+                        const icon = priceChange >= 0 ? 'fa-caret-up' : 'fa-caret-down';
+
+                        changeHtml = `
+                            <span class="price-${direction}">
+                                <i class="fas ${icon} price-change-icon"></i>
+                                ${priceChange.toFixed(2)} (${priceChangePercent.toFixed(2)}%)
+                            </span>
+                        `;
+                    } else {
+                        changeHtml = '<span class="text-muted">-</span>';
+                    }
+
+                    console.log(`更新 ${cacheKey} 價格顯示`);
+                    $(`#${priceElementId}`).text(price);
+                    $(`#${changeElementId}`).html(changeHtml);
+                } else {
+                    console.log(`${cacheKey} 沒有數據`);
+                    $(`#${priceElementId}`).text('無數據');
+                    $(`#${changeElementId}`).text('-');
+                }
+            } catch (error) {
+                console.error(`載入 ${cacheKey} 最新價格失敗:`, error);
+                $(`#${priceElementId}`).text('載入失敗');
+                $(`#${changeElementId}`).text('-');
+            }
+        }
+
+        // 載入歷史數據
+        async function loadHistoryData(symbol) {
+            console.log(`開始載入 ${symbol} 歷史數據`);
+            const cacheKey = getHistoryCacheKey(symbol);
+            const tbody = $(`#history-data-${symbol}`);
+            const pagination = $(`#pagination-${symbol}`);
+
+            if (!tbody.length) {
+                return;
+            }
+
+            try {
+                if (historyDataCache[cacheKey]) {
+                    historyPageState[cacheKey] = 1;
+                    renderHistoryPage(symbol, null, 1);
+                    return;
+                }
+
+                const allData = await staticDataManager.getAllIndexData(symbol);
+                console.log(`${symbol} 歷史數據載入完成，共 ${allData ? allData.length : 0} 條記錄`);
+
+                if (allData && allData.length > 0) {
+                    const sortedData = [...allData].sort((a, b) => new Date(b.date) - new Date(a.date));
+                    historyDataCache[cacheKey] = sortedData;
+                    historyPageState[cacheKey] = 1;
+                    renderHistoryPage(symbol, null, 1);
+                    console.log(`${symbol} 歷史數據表格更新完成`);
+                } else {
+                    console.log(`${symbol} 無歷史數據`);
+                    tbody.html('<tr><td colspan="3" class="text-center text-muted">無數據</td></tr>');
+                    pagination.hide();
+                }
+            } catch (error) {
+                console.error(`載入 ${symbol} 歷史數據失敗:`, error);
+                tbody.html('<tr><td colspan="3" class="text-center text-danger">載入失敗</td></tr>');
+                pagination.hide();
+            }
+        }
+
+        function renderHistoryPage(indexSymbol, stockSymbol = null, page = 1) {
+            const cacheKey = getHistoryCacheKey(indexSymbol, stockSymbol);
+            const data = historyDataCache[cacheKey];
+            const tbodyId = stockSymbol
+                ? createSafeId('history-data', indexSymbol, stockSymbol)
+                : `history-data-${indexSymbol}`;
+            const paginationId = stockSymbol
+                ? createSafeId('pagination', indexSymbol, stockSymbol)
+                : `pagination-${indexSymbol}`;
+            const tbody = $(`#${tbodyId}`);
+            const pagination = $(`#${paginationId}`);
+
+            if (!tbody.length) {
+                return;
+            }
+
+            if (!data || data.length === 0) {
+                tbody.html('<tr><td colspan="3" class="text-center text-muted">無數據</td></tr>');
+                pagination.hide();
+                return;
+            }
+
+            const totalPages = Math.ceil(data.length / HISTORY_PAGE_SIZE) || 1;
+            const targetPage = Math.max(1, Math.min(page, totalPages));
+            historyPageState[cacheKey] = targetPage;
+
+            const startIndex = (targetPage - 1) * HISTORY_PAGE_SIZE;
+            const pageData = data.slice(startIndex, startIndex + HISTORY_PAGE_SIZE);
+
+            if (pageData.length === 0) {
+                tbody.html('<tr><td colspan="3" class="text-center text-muted">無數據</td></tr>');
+                pagination.hide();
+                return;
+            }
+
+            const rowsHtml = pageData.map((record, idx) => {
+                const globalIndex = startIndex + idx;
+                const previousRecord = data[globalIndex + 1];
+
+                let priceChangeHtml = '-';
+
+                if (previousRecord) {
+                    const priceChange = record.price - previousRecord.price;
+                    const priceChangePercent = previousRecord.price !== 0
+                        ? (priceChange / previousRecord.price * 100)
+                        : 0;
+                    const direction = priceChange >= 0 ? 'up' : 'down';
+                    const icon = priceChange >= 0 ? 'fa-caret-up' : 'fa-caret-down';
+
+                    priceChangeHtml = `
+                        <span class="price-${direction}">
+                            <i class="fas ${icon} price-change-icon"></i>
+                            ${priceChange.toFixed(2)} (${priceChangePercent.toFixed(2)}%)
+                        </span>
+                    `;
+                }
+
+                return `
+                    <tr>
+                        <td>${record.date}</td>
+                        <td>${record.price.toFixed(2)}</td>
+                        <td>${priceChangeHtml}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            tbody.html(rowsHtml);
+
+            if (pagination.length > 0) {
+                pagination.show();
+                pagination.find('.pagination-info').text(`第 ${targetPage} / ${totalPages} 頁`);
+                pagination.find('[data-action="prev"]').prop('disabled', targetPage === 1);
+                pagination.find('[data-action="next"]').prop('disabled', targetPage === totalPages);
+
+                if (totalPages <= 1) {
+                    pagination.hide();
+                }
+            }
+        }
+
+        // 加載多股票走勢圖
+        async function loadMultiTrendChart() {
+            const selectedSymbols = $('#chart-symbol-selector').val();
+            const startDate = $('#start-date').val();
+            const endDate = $('#end-date').val();
+
+            if (!selectedSymbols || selectedSymbols.length === 0) {
+                return;
+            }
+
+            // 創建一個 Promise 數組來存儲所有的數據請求
+            const promises = selectedSymbols.map(async symbol => {
+                try {
+                    const allData = await staticDataManager.getAllIndexData(symbol);
+                    const filteredData = staticDataManager.filterDataByDate(allData, startDate, endDate);
+                    const chartData = staticDataManager.formatDataForChart(filteredData);
+
+                    return {
+                        symbol: symbol,
+                        data: chartData
+                    };
+                } catch (error) {
+                    console.error(`Error loading data for ${symbol}:`, error);
+                    return null;
+                }
+            });
+
+            // 等待所有請求完成
+            Promise.all(promises).then(results => {
+                // 過濾掉失敗的請求
+                results = results.filter(result => result !== null);
+
+                if (results.length === 0) {
+                    console.error('No valid data received');
+                    return;
+                }
+
+                const ctx = document.getElementById('trend-chart').getContext('2d');
+
+                // 如果圖表已存在，銷毀它
+                if (charts.trend) {
+                    charts.trend.destroy();
+                }
+
+                // 準備數據集
+                const datasets = results.map((result, index) => ({
+                    label: result.symbol,
+                    data: result.data.prices,
+                    borderColor: colors[index % colors.length],
+                    backgroundColor: colors[index % colors.length],
+                    borderWidth: 2,
+                    tension: 0.1,
+                    fill: false,
+                    pointRadius: 3,
+                    pointHoverRadius: 5
+                }));
+
+                // 創建新圖表
+                charts.trend = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: results[0].data.dates,
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            intersect: false,
+                            mode: 'index'
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: `股票價格走勢比較 (${startDate} 至 ${endDate})`,
+                                font: {
+                                    size: 16
+                                }
+                            },
+                            tooltip: {
+                                enabled: true,
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.dataset.label}: $${context.raw.toFixed(2)}`;
+                                    }
+                                }
+                            },
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            x: {
+                                display: true,
+                                title: {
+                                    display: true,
+                                    text: '日期'
+                                }
+                            },
+                            y: {
+                                display: true,
+                                title: {
+                                    display: true,
+                                    text: '價格'
+                                },
+                                beginAtZero: false,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toFixed(2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }).catch(error => {
+                console.error('Error loading charts:', error);
+            });
+        }
+
+        // 更新測試期選項
+        function updateTestWindowOptions() {
+            const trainType = $('#train_window_type').val();
+            const $testSelect = $('#test_window_type');
+            const currentValue = $testSelect.val();
+
+            // 清除現有選項
+            $testSelect.empty();
+
+            // 添加基本選項
+            $testSelect.append('<option value="Y">年(Y)</option>');
+            $testSelect.append('<option value="H">半年(H)</option>');
+            $testSelect.append('<option value="Q">季(Q)</option>');
+            $testSelect.append('<option value="M">月(M)</option>');
+
+            // 根據訓練期類型添加跨年選項
+            if (trainType === 'H') {
+                $testSelect.append('<option value="H_CROSS">半年(H)*跨年</option>');
+            } else if (trainType === 'Q') {
+                $testSelect.append('<option value="Q_CROSS">季(Q)*跨年</option>');
+            } else if (trainType === 'M') {
+                $testSelect.append('<option value="M_CROSS">月(M)*跨年</option>');
+            }
+
+            // 如果之前選擇的值仍然存在，則保持選中
+            if ($testSelect.find(`option[value="${currentValue}"]`).length > 0) {
+                $testSelect.val(currentValue);
+            }
+        }
+
+        // 初始化 Select2 和日期選擇器
+        $(document).ready(async function() {
+            console.log('🚀 開始初始化應用程序...');
+
+            // 初始化靜態數據管理器
+            await staticDataManager.init();
+
+            // 生成股票列表
+            await renderStockList();
+
+            // 初始化股票選擇器
+            const selector = $('#chart-symbol-selector');
+            selector.empty();
+
+            // 添加所有可用的股票指數（只顯示有數據文件的指數）
+            if (staticDataManager.indexData) {
+                for (const symbol of Object.keys(staticDataManager.indexData)) {
+                    const files = staticDataManager.indexData[symbol];
+                    if (files && files.length > 0) {  // 只顯示有數據文件的指數
+                        const marketInfo = staticDataManager.getMarketInfo(symbol);
+                        selector.append(`<option value="${symbol}">${marketInfo.name}</option>`);
+                    }
+                }
+            }
+
+            $('#chart-symbol-selector').select2({
+                placeholder: '選擇股票',
+                allowClear: true
+            });
+
+            // 初始化日期選擇器
+            initializeDatePickers();
+
+            // 初始化下載功能中的選擇器
+            const indexSelector = $('#index_select');
+            indexSelector.empty();
+            indexSelector.append('<option value="">不選擇指數</option>');
+
+            const stockSelector = $('#stock_select');
+            stockSelector.empty();
+
+            const buildAllStocks = () => {
+                const seen = new Set();
+                const stocks = [];
+
+                if (staticDataManager.indexStocks) {
+                    for (const stockList of Object.values(staticDataManager.indexStocks)) {
+                        if (!Array.isArray(stockList)) {
+                            continue;
+                        }
+                        for (const stock of stockList) {
+                            if (!seen.has(stock)) {
+                                seen.add(stock);
+                                stocks.push(stock);
+                            }
+                        }
+                    }
+                }
+
+                return stocks.sort();
+            };
+
+            const refreshStockSelector = (targetIndex) => {
+                stockSelector.empty();
+
+                let stocks = [];
+
+                if (targetIndex) {
+                    stocks = staticDataManager.getStocksForIndex(targetIndex) || [];
+                } else {
+                    stocks = buildAllStocks();
+                }
+
+                if (!stocks || stocks.length === 0) {
+                    stockSelector.append('<option value="" disabled>無可選股票</option>');
+                    stockSelector.prop('disabled', true);
+                } else {
+                    for (const stockSymbol of stocks) {
+                        stockSelector.append(`<option value="${stockSymbol}">${stockSymbol}</option>`);
+                    }
+                    stockSelector.prop('disabled', false);
+                }
+
+                stockSelector.val(null);
+
+                if (stockSelector.data('select2')) {
+                    stockSelector.trigger('change.select2');
+                } else {
+                    stockSelector.trigger('change');
+                }
+            };
+
+            if (staticDataManager.indexData) {
+                const sortedIndices = Object.keys(staticDataManager.indexData)
+                    .filter(symbol => {
+                        const files = staticDataManager.indexData[symbol];
+                        return files && files.length > 0;
+                    })
+                    .sort();
+
+                for (const symbol of sortedIndices) {
+                    const marketInfo = staticDataManager.getMarketInfo(symbol);
+                    const label = marketInfo && marketInfo.name ? `${marketInfo.name} (${symbol})` : symbol;
+                    indexSelector.append(`<option value="${symbol}">${label}</option>`);
+                }
+            }
+
+            // 預設顯示全部可選股票
+            refreshStockSelector('');
+
+            // 初始化Select2
+            $('#stock_select').select2({
+                placeholder: '選擇股票（可多選）',
+                allowClear: true
+            });
+
+            // 重新套用一次以更新 Select2 狀態
+            refreshStockSelector(indexSelector.val());
+
+            // 當選擇指數時，自動選中該指數的所有股票
+            $('#index_select').change(function() {
+                const indexId = $(this).val();
+                refreshStockSelector(indexId);
+            });
+
+            // 處理下載表單提交
+            $('#downloadForm').submit(async function(e) {
+                e.preventDefault();
+
+                const indexId = $('#index_select').val();
+                const selectedStocks = $('#stock_select').val() || [];
+                const startMonthValue = $('#start_month').val();
+                const endMonthValue = $('#end_month').val();
+                const trainWindowType = $('#train_window_type').val();
+                const testWindowType = $('#test_window_type').val();
+
+                if (!indexId && selectedStocks.length === 0) {
+                    alert('請選擇至少一支股票或一個指數');
+                    return;
+                }
+
+                if (!startMonthValue || !endMonthValue) {
+                    alert('請選擇完整的月份區間');
+                    return;
+                }
+
+                if (startMonthValue > endMonthValue) {
+                    alert('起始月份不能晚於結束月份');
+                    return;
+                }
+
+                const startDate = new Date(`${startMonthValue}-01T00:00:00`);
+                const [endYearStr, endMonthStr] = endMonthValue.split('-');
+                const endYear = parseInt(endYearStr, 10);
+                const endMonthIndex = parseInt(endMonthStr, 10) - 1;
+                const endDate = new Date(endYear, endMonthIndex + 1, 0);
+
+                if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) {
+                    alert('日期格式不正確');
+                    return;
+                }
+
+                if (startDate > endDate) {
+                    alert('起始日期不能晚於結束日期');
+                    return;
+                }
+
+                try {
+                    const { allStocks, stockToIndexMap } = staticDataManager.resolveStocksForDownload(indexId, selectedStocks);
+
+                    if (allStocks.length === 0) {
+                        alert('找不到對應的股票資料');
+                        return;
+                    }
+
+                    $('#downloadForm button[type="submit"]').prop('disabled', true).text('生成中...');
+
+                    const intervals = computeWindowIntervals(startDate, endDate, trainWindowType, testWindowType);
+
+                    if (intervals.length === 0) {
+                        alert('指定的時間範圍內沒有對應的訓練/測試區間');
+                        $('#downloadForm button[type="submit"]').prop('disabled', false).text('下載Excel');
+                        return;
+                    }
+
+                    const zip = new JSZip();
+                    const groupedStocks = groupStocksByIndex(allStocks, stockToIndexMap);
+
+                    for (const { indexSymbol, stocks } of groupedStocks) {
+                        if (!staticDataManager.indexData || !staticDataManager.indexData[indexSymbol]) {
+                            console.warn(`索引 ${indexSymbol} 沒有資料檔案`);
+                            continue;
+                        }
+
+                        const files = staticDataManager.getSortedFileList(indexSymbol);
+
+                        if (!files || files.length === 0) {
+                            console.warn(`索引 ${indexSymbol} 沒有可用檔案`);
+                            continue;
+                        }
+
+                        const dailyData = await loadAllDailyData(indexSymbol, stocks);
+
+                        if (!dailyData || dailyData.size === 0) {
+                            console.warn(`${indexSymbol} 沒有載入到任何數據`);
+                            continue;
+                        }
+
+                        for (const interval of intervals) {
+                            const trainCsv = buildCsvForInterval(dailyData, stocks, interval.train.start, interval.train.end);
+                            if (trainCsv) {
+                                const filename = generateStaticFilename('train', indexSymbol, interval, trainWindowType, testWindowType);
+                                zip.file(filename, trainCsv);
+                            }
+
+                            if (interval.test) {
+                                const testCsv = buildCsvForInterval(dailyData, stocks, interval.test.start, interval.test.end);
+                                if (testCsv) {
+                                    const filename = generateStaticFilename('test', indexSymbol, interval, trainWindowType, testWindowType);
+                                    zip.file(filename, testCsv);
+                                }
+                            }
+                        }
+                    }
+
+                    const zipContent = await zip.generateAsync({ type: 'blob' });
+                    const fileName = `stock_prices_${formatDateCompact(startDate)}_${formatDateCompact(endDate)}.zip`;
+                    saveAs(zipContent, fileName);
+
+                    $('#downloadForm button[type="submit"]').prop('disabled', false).text('下載Excel');
+                } catch (error) {
+                    console.error('生成下載檔案時發生錯誤:', error);
+                    alert('生成下載檔案時發生錯誤，請查看控制台以取得詳細資訊。');
+                    $('#downloadForm button[type="submit"]').prop('disabled', false).text('下載Excel');
+                }
+            });
+
+            // 監聽訓練期長度的變化
+            $('#train_window_type').change(function() {
+                updateTestWindowOptions();
+            });
+
+            // 初始化測試期選項
+            updateTestWindowOptions();
+
+            // 預設選擇第一個股票
+            const firstSymbol = $('#chart-symbol-selector option:first').val();
+            if (firstSymbol) {
+                $('#chart-symbol-selector').val([firstSymbol]).trigger('change');
+                loadMultiTrendChart();
+            }
+
+            // 監聽日期變更事件
+            $('#start-date').change(function() {
+                const startDate = $(this).val();
+                $('#end-date').attr('min', startDate);
+            });
+
+            $('#end-date').change(function() {
+                const endDate = $(this).val();
+                $('#start-date').attr('max', endDate);
+            });
+
+            $('#start_month').change(function() {
+                const value = $(this).val();
+                if (value) {
+                    $('#end_month').attr('min', value);
+                    const currentEnd = $('#end_month').val();
+                    if (currentEnd && currentEnd < value) {
+                        $('#end_month').val(value);
+                    }
+                }
+            });
+        });
+
+        // 監聽更新按鈕事件
+        $('#update-chart').click(function() {
+            loadMultiTrendChart();
+        });
+    </script>
+</body>
+</html>
