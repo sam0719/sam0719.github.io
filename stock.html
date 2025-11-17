@@ -120,19 +120,19 @@
                                 <div class="col-md-6">
                                     <label for="train_window_type" class="form-label">訓練期長度</label>
                                     <select class="form-control" id="train_window_type" name="train_window_type">
+                                        <option value="M" selected>月(M)</option>
                                         <option value="Y">年(Y)</option>
                                         <option value="H">半年(H)</option>
                                         <option value="Q">季(Q)</option>
-                                        <option value="M">月(M)</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="test_window_type" class="form-label">測試期長度</label>
                                     <select class="form-control" id="test_window_type" name="test_window_type">
+                                        <option value="M" selected>月(M)</option>
                                         <option value="Y">年(Y)</option>
                                         <option value="H">半年(H)</option>
                                         <option value="Q">季(Q)</option>
-                                        <option value="M">月(M)</option>
                                         <option value="H_CROSS">半年(H)*跨年</option>
                                         <option value="Q_CROSS">季(Q)*跨年</option>
                                         <option value="M_CROSS">月(M)*跨年</option>
@@ -206,7 +206,6 @@
                     this.allDataCache = {};
                     await this.loadConfig();
                     await this.loadIndexData();
-                    console.log('靜態數據管理器初始化完成');
                 } catch (error) {
                     console.error('靜態數據管理器初始化失敗:', error);
                 }
@@ -235,7 +234,6 @@
                         }
                     }
 
-                    console.log('配置檔案載入完成，已建立指數股票映射');
                 } catch (error) {
                     console.warn('載入 config.json 失敗，將無法顯示成份股資訊:', error);
                     this.configData = null;
@@ -255,10 +253,8 @@
 
                         if (data.marketInfo) {
                             this.marketInfo = data.marketInfo;
-                            console.log('載入了包含市場信息的索引文件');
                         } else {
                             this.marketInfo = this.generateDefaultMarketInfo();
-                            console.log('索引文件缺少市場信息，使用預設市場映射');
                         }
                     } else {
                         // 如果沒有市場信息文件，則載入原始文件並使用默認市場信息
@@ -270,7 +266,6 @@
 
                         // 設置默認市場信息
                         this.marketInfo = this.generateDefaultMarketInfo();
-                        console.log('載入了原始索引文件，使用默認市場信息');
                     }
                 } catch (error) {
                     console.error('載入索引數據時發生錯誤:', error);
@@ -433,17 +428,61 @@
                     ? this.indexData[symbol]
                     : [];
 
-                const parseOrder = (filename) => {
-                    const match = filename && filename.match(/(\d{4})_(\d{2})/);
-                    if (!match) {
-                        return 0;
+                return [...files].sort((a, b) => {
+                    const aValue = this.parseFileMonthValue(a) ?? 0;
+                    const bValue = this.parseFileMonthValue(b) ?? 0;
+                    return aValue - bValue;
+                });
+            },
+
+            parseFileMonthValue(filename) {
+                if (!filename) {
+                    return null;
+                }
+                const match = filename.match(/(\d{4})_(\d{2})/);
+                if (!match) {
+                    return null;
+                }
+                const year = parseInt(match[1], 10);
+                const month = parseInt(match[2], 10);
+                if (Number.isNaN(year) || Number.isNaN(month)) {
+                    return null;
+                }
+                return year * 100 + month;
+            },
+
+            getFilesInRange(symbol, startDate, endDate) {
+                const files = this.getSortedFileList(symbol);
+                if (!files || files.length === 0) {
+                    return [];
+                }
+
+                const normalizeDate = (date) => {
+                    if (!date) {
+                        return null;
                     }
-                    const year = parseInt(match[1], 10);
-                    const month = parseInt(match[2], 10);
-                    return year * 100 + month;
+                    const normalized = date instanceof Date ? new Date(date) : new Date(date);
+                    return Number.isNaN(normalized.getTime()) ? null : normalized;
                 };
 
-                return [...files].sort((a, b) => parseOrder(a) - parseOrder(b));
+                const start = normalizeDate(startDate);
+                const end = normalizeDate(endDate);
+
+                if (!start && !end) {
+                    return files;
+                }
+
+                const monthValue = (date) => date.getFullYear() * 100 + (date.getMonth() + 1);
+                const startValue = start ? monthValue(start) : -Infinity;
+                const endValue = end ? monthValue(end) : Infinity;
+
+                return files.filter(file => {
+                    const value = this.parseFileMonthValue(file);
+                    if (value === null) {
+                        return false;
+                    }
+                    return value >= startValue && value <= endValue;
+                });
             },
 
             // 載入股票或指數數據
@@ -455,37 +494,29 @@
                 }
 
                 try {
-                    console.log(`開始載入股價數據: ${symbol}/${filename}`);
                     const response = await fetch(`data/${symbol}/${filename}`);
                     if (!response.ok) {
                         throw new Error(`無法載入CSV文件: ${response.status}`);
                     }
 
                     const csvText = await response.text();
-                    console.log(`成功載入CSV文件，內容長度: ${csvText.length}`);
 
                     // 先不用header解析，檢查第一行是否為股票代碼
                     const lines = csvText.trim().split('\n');
                     if (lines.length === 0) {
-                        console.log('CSV文件為空');
                         return [];
                     }
 
                     const firstLine = lines[0].trim();
-                    console.log(`CSV第一行內容: ${firstLine}`);
 
                     // 檢查是否為多股矩陣格式（第一行包含多個股票代碼）
                     const isMultiStock = firstLine.includes(',') &&
                         (firstLine.includes('.PA') || firstLine.includes('AAPL') || firstLine.includes('MSFT') ||
                          firstLine.includes('UNH') || firstLine.includes('JNJ') || firstLine.includes('V'));
 
-                    console.log(`是否為多股格式: ${isMultiStock}`);
-
                     if (isMultiStock) {
                         // 多股矩陣格式
-                        console.log('處理多股矩陣格式');
                         const stockSymbols = firstLine.split(',').map(item => item.trim());
-                        console.log(`識別到股票代碼: ${stockSymbols.slice(0, 5).join(', ')}...`); // 只顯示前5個
 
                         const collectAll = !normalizedTarget;
                         let targetIndex = 0;
@@ -505,7 +536,6 @@
                         const fileYear = dateMatch ? parseInt(dateMatch[1], 10) : 1970;
                         const monthIndex = dateMatch ? parseInt(dateMatch[2], 10) - 1 : 0;
                         const daysInMonth = new Date(fileYear, monthIndex + 1, 0).getDate();
-                        console.log(`提取月份: ${fileYear}-${String(monthIndex + 1).padStart(2, '0')}`);
 
                         for (let i = 1; i < lines.length; i++) {
                             const values = lines[i].split(',');
@@ -541,31 +571,25 @@
 
                         if (collectAll) {
                             const primarySeries = stockData[0] || [];
-                            console.log(`成功解析 ${primarySeries.length} 條數據`);
                             this.stockDataCache[cacheKey] = primarySeries;
                             return primarySeries;
                         }
 
-                        console.log(`成功解析 ${stockData.length} 條 ${normalizedTarget} 的數據`);
                         this.stockDataCache[cacheKey] = stockData;
                         return stockData;
                     } else {
                         // 單股時間序列格式，使用標準CSV解析
-                        console.log('處理單股時間序列格式');
                         const results = Papa.parse(csvText, {
                             header: true,
                             dynamicTyping: true,
                             skipEmptyLines: true
                         });
 
-                        console.log(`PapaParse 解析到 ${results.data.length} 行數據`);
-
                         const parsedData = results.data.map(row => ({
                             date: row.Date || row.date || Object.values(row)[0],
                             price: parseFloat(row.Close || row.close || row.Price || row.price || Object.values(row)[1])
                         })).filter(item => item.date && !isNaN(item.price));
 
-                        console.log(`解析後得到 ${parsedData.length} 條有效數據`);
                         this.stockDataCache[cacheKey] = parsedData;
                         return parsedData;
                     }
@@ -579,68 +603,96 @@
             // 獲取指數的所有數據
             async getAllIndexData(symbol) {
                 if (!this.indexData || !this.indexData[symbol]) {
-                    console.log(`沒有找到 ${symbol} 的數據文件`);
                     return [];
                 }
 
                 const files = this.getSortedFileList(symbol);
-                console.log(`${symbol} 有 ${files.length} 個數據文件`);
 
                 const allData = [];
 
                 // 只載入最近幾個文件以避免載入過多數據
                 const recentFiles = files.slice(-10); // 只載入最近10個文件
-                console.log(`將載入最近 ${recentFiles.length} 個文件: ${recentFiles.join(', ')}`);
 
                 for (const file of recentFiles) {
-                    console.log(`正在載入: ${file}`);
                     const data = await this.loadStockData(symbol, file);
                     if (data && data.length > 0) {
-                        console.log(`成功載入 ${data.length} 條數據從 ${file}`);
                         allData.push(...data);
                     } else {
-                        console.log(`載入 ${file} 失敗或無數據`);
                     }
                 }
-
-                console.log(`${symbol} 總共載入 ${allData.length} 條數據`);
 
                 // 按日期排序
                 allData.sort((a, b) => new Date(a.date) - new Date(b.date));
                 return allData;
             },
 
-            async getStockHistory(indexSymbol, stockSymbol) {
-                const cacheKey = `${indexSymbol}::${stockSymbol}`;
+            async getStockHistory(indexSymbol, stockSymbol, options = {}) {
+                const hasRange = options && (options.startDate || options.endDate);
+                const normalizeDate = (date) => {
+                    if (!date) {
+                        return null;
+                    }
+                    const normalized = date instanceof Date ? new Date(date) : new Date(date);
+                    return Number.isNaN(normalized.getTime()) ? null : normalized;
+                };
+
+                const rangeStart = normalizeDate(options.startDate);
+                const rangeEnd = normalizeDate(options.endDate);
+
+                let cacheKey = `${indexSymbol}::${stockSymbol}`;
+                if (hasRange) {
+                    const startKey = rangeStart ? formatDateISO(rangeStart) : 'MIN';
+                    const endKey = rangeEnd ? formatDateISO(rangeEnd) : 'MAX';
+                    cacheKey += `::${startKey}_${endKey}`;
+                }
+
                 if (this.allDataCache[cacheKey]) {
                     return this.allDataCache[cacheKey];
                 }
 
                 if (!this.indexData || !this.indexData[indexSymbol]) {
-                    console.log(`沒有找到 ${indexSymbol} 的數據文件`);
                     return [];
                 }
 
-                const files = this.getSortedFileList(indexSymbol);
-                console.log(`${indexSymbol}/${stockSymbol} 有 ${files.length} 個數據文件`);
+                let files = [];
+                if (options.files && Array.isArray(options.files)) {
+                    files = options.files;
+                } else {
+                    files = hasRange
+                        ? this.getFilesInRange(indexSymbol, rangeStart, rangeEnd)
+                        : this.getSortedFileList(indexSymbol);
+                }
 
                 const allData = [];
-                console.log(`將載入全部 ${files.length} 個文件以建立完整歷史`);
 
                 for (const file of files) {
-                    console.log(`正在載入 ${stockSymbol}: ${file}`);
                     const data = await this.loadStockData(indexSymbol, file, stockSymbol);
                     if (data && data.length > 0) {
-                        console.log(`成功載入 ${data.length} 條 ${stockSymbol} 數據從 ${file}`);
                         allData.push(...data);
                     } else {
-                        console.log(`載入 ${stockSymbol} 的 ${file} 失敗或無數據`);
                     }
                 }
 
                 allData.sort((a, b) => new Date(a.date) - new Date(b.date));
-                this.allDataCache[cacheKey] = allData;
-                return allData;
+
+                const filteredData = hasRange
+                    ? allData.filter(record => {
+                        const recordDate = new Date(record.date);
+                        if (Number.isNaN(recordDate.getTime())) {
+                            return false;
+                        }
+                        if (rangeStart && recordDate < rangeStart) {
+                            return false;
+                        }
+                        if (rangeEnd && recordDate > rangeEnd) {
+                            return false;
+                        }
+                        return true;
+                    })
+                    : allData;
+
+                this.allDataCache[cacheKey] = filteredData;
+                return filteredData;
             },
 
             // 過濾日期範圍
@@ -708,41 +760,31 @@
         function computeWindowIntervals(startDate, endDate, trainWindowType, testWindowType) {
             const intervals = [];
 
-            const trainMonths = getTrainMonths(trainWindowType || 'M');
-            const slideMonths = getTestMonths((testWindowType || 'M').replace('_CROSS', ''));
-            const testMonths = getTestMonths(testWindowType || 'M');
-            const isCrossYear = (testWindowType || '').endsWith('_CROSS');
+            const trainMonths = Math.max(1, getTrainMonths(trainWindowType || 'M'));
+            const testMonths = Math.max(1, getTestMonths(testWindowType || 'M'));
 
-            let currentStart = cloneDateToMonthStart(startDate);
+            let currentTestStart = cloneDateToMonthStart(startDate);
             const normalizedEnd = cloneDateToMonthStart(endDate);
 
-            while (currentStart <= normalizedEnd) {
-                const trainEnd = getPeriodEnd(currentStart, trainMonths);
-                if (trainEnd > endDate) {
-                    break;
-                }
+            while (currentTestStart <= normalizedEnd) {
+                const testStart = new Date(currentTestStart);
+                const testEnd = getPeriodEnd(testStart, testMonths);
 
-                let testRange = null;
-                if (testWindowType) {
-                    const testStart = isCrossYear
-                        ? new Date(currentStart.getFullYear() + 1, currentStart.getMonth(), 1)
-                        : addMonths(currentStart, trainMonths);
-                    const testEnd = getPeriodEnd(testStart, testMonths);
-                    testRange = {
-                        start: testStart,
-                        end: testEnd
-                    };
-                }
+                const trainStart = addMonths(testStart, -trainMonths);
+                const trainEnd = getPeriodEnd(trainStart, trainMonths);
 
                 intervals.push({
                     train: {
-                        start: new Date(currentStart),
+                        start: trainStart,
                         end: trainEnd
                     },
-                    test: testRange
+                    test: {
+                        start: testStart,
+                        end: testEnd
+                    }
                 });
 
-                currentStart = addMonths(currentStart, slideMonths);
+                currentTestStart = addMonths(currentTestStart, testMonths);
             }
 
             return intervals;
@@ -768,11 +810,26 @@
                 .sort((a, b) => a.indexSymbol.localeCompare(b.indexSymbol));
         }
 
-        async function loadAllDailyData(indexSymbol, stocks) {
+        async function loadAllDailyData(indexSymbol, stocks, startDate = null, endDate = null) {
             const dayMap = new Map();
 
+            const hasRange = !!(startDate || endDate);
+            const options = {};
+
+            if (hasRange) {
+                options.startDate = startDate;
+                options.endDate = endDate;
+
+                const filesInRange = staticDataManager.getFilesInRange(indexSymbol, startDate, endDate);
+                options.files = filesInRange;
+
+                if (!filesInRange || filesInRange.length === 0) {
+                    return dayMap;
+                }
+            }
+
             for (const stockSymbol of stocks) {
-                const history = await staticDataManager.getStockHistory(indexSymbol, stockSymbol);
+                const history = await staticDataManager.getStockHistory(indexSymbol, stockSymbol, options);
                 if (!history || history.length === 0) {
                     continue;
                 }
@@ -1046,17 +1103,14 @@
 
         // 渲染股票列表 - 保持原本的市場和指數分層結構
         async function renderStockList() {
-            console.log('🏗️ 開始渲染股票列表...');
             const container = $('#stock-list-container');
             container.empty();
             loadedIndexStocks.clear();
 
             const marketStructure = staticDataManager.getMarketStructure();
-            console.log('市場結構:', marketStructure);
 
             for (const [marketName, marketData] of Object.entries(marketStructure)) {
                 const marketCode = marketName.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
-                console.log(`處理市場: ${marketName}, ${marketData.indices.length} 個指數`);
 
                 let marketHtml = `
                     <div class="market-section">
@@ -1077,8 +1131,6 @@
                     const files = staticDataManager.indexData && staticDataManager.indexData[indexSymbol] ? staticDataManager.indexData[indexSymbol] : [];
                     const latestFile = files[files.length - 1];
                     const stocks = staticDataManager.getStocksForIndex(indexSymbol);
-
-                    console.log(`處理指數 ${indexSymbol}: ${files.length} 個文件, 最新文件: ${latestFile}, 成份股 ${stocks.length} 檔`);
 
                     const stockListHtml = stocks.length === 0
                         ? '<p class="text-muted small mb-0">未設定成份股</p>'
@@ -1202,7 +1254,6 @@
                         </div>
                     `;
 
-                    console.log(`⚠️ ${indexSymbol} 沒有數據文件`);
                     setTimeout(() => {
                         $(`#price-${indexSymbol}`).text('');
                         $(`#change-${indexSymbol}`).text('');
@@ -1265,7 +1316,6 @@
                     }
                 });
 
-            console.log('✅ 股票列表渲染完成');
         }
 
         async function loadIndexStocks(indexSymbol) {
@@ -1339,14 +1389,12 @@
                 }
 
                 const allData = await staticDataManager.getStockHistory(indexSymbol, stockSymbol);
-                console.log(`${indexSymbol}/${stockSymbol} 歷史數據載入完成，共 ${allData ? allData.length : 0} 條記錄`);
 
                 if (allData && allData.length > 0) {
                     const sortedData = [...allData].sort((a, b) => new Date(b.date) - new Date(a.date));
                     historyDataCache[cacheKey] = sortedData;
                     historyPageState[cacheKey] = 1;
                     renderHistoryPage(indexSymbol, stockSymbol, 1);
-                    console.log(`${indexSymbol}/${stockSymbol} 歷史數據表格更新完成`);
                 } else {
                     tbody.html('<tr><td colspan="3" class="text-center text-muted">無數據</td></tr>');
                     pagination.hide();
@@ -1368,17 +1416,12 @@
                 ? createSafeId('change', indexSymbol, stockSymbol)
                 : createSafeId('change', indexSymbol);
 
-            console.log(`開始載入 ${cacheKey} 最新價格，文件: ${filename}`);
-
             try {
                 const data = await staticDataManager.loadStockData(indexSymbol, filename, stockSymbol);
-                console.log(`${cacheKey} 載入結果:`, data ? `成功，${data.length}條數據` : '失敗');
 
                 if (data && data.length > 0) {
                     const latest = data[data.length - 1];
                     const previous = data.length > 1 ? data[data.length - 2] : null;
-
-                    console.log(`${cacheKey} 最新價格: ${latest.price}, 日期: ${latest.date}`);
 
                     const price = latest.price.toFixed(2);
                     let changeHtml = '';
@@ -1399,11 +1442,9 @@
                         changeHtml = '<span class="text-muted">-</span>';
                     }
 
-                    console.log(`更新 ${cacheKey} 價格顯示`);
                     $(`#${priceElementId}`).text(price);
                     $(`#${changeElementId}`).html(changeHtml);
                 } else {
-                    console.log(`${cacheKey} 沒有數據`);
                     $(`#${priceElementId}`).text('無數據');
                     $(`#${changeElementId}`).text('-');
                 }
@@ -1416,7 +1457,6 @@
 
         // 載入歷史數據
         async function loadHistoryData(symbol) {
-            console.log(`開始載入 ${symbol} 歷史數據`);
             const cacheKey = getHistoryCacheKey(symbol);
             const tbody = $(`#history-data-${symbol}`);
             const pagination = $(`#pagination-${symbol}`);
@@ -1433,16 +1473,13 @@
                 }
 
                 const allData = await staticDataManager.getAllIndexData(symbol);
-                console.log(`${symbol} 歷史數據載入完成，共 ${allData ? allData.length : 0} 條記錄`);
 
                 if (allData && allData.length > 0) {
                     const sortedData = [...allData].sort((a, b) => new Date(b.date) - new Date(a.date));
                     historyDataCache[cacheKey] = sortedData;
                     historyPageState[cacheKey] = 1;
                     renderHistoryPage(symbol, null, 1);
-                    console.log(`${symbol} 歷史數據表格更新完成`);
                 } else {
-                    console.log(`${symbol} 無歷史數據`);
                     tbody.html('<tr><td colspan="3" class="text-center text-muted">無數據</td></tr>');
                     pagination.hide();
                 }
@@ -1686,7 +1723,6 @@
 
         // 初始化 Select2 和日期選擇器
         $(document).ready(async function() {
-            console.log('🚀 開始初始化應用程序...');
 
             // 初始化靜態數據管理器
             await staticDataManager.init();
@@ -1869,6 +1905,39 @@
                         return;
                     }
 
+                    let dataRangeStart = intervals[0].train && intervals[0].train.start < intervals[0].test.start
+                        ? new Date(intervals[0].train.start)
+                        : new Date(intervals[0].test.start);
+                    dataRangeStart.setHours(0, 0, 0, 0);
+
+                    let dataRangeEndBase = intervals[0].train && intervals[0].train.end
+                        ? new Date(intervals[0].train.end)
+                        : new Date(intervals[0].test.end);
+                    dataRangeEndBase.setHours(0, 0, 0, 0);
+
+                    for (const interval of intervals) {
+                        if (interval.test) {
+                            if (interval.test.start < dataRangeStart) {
+                                dataRangeStart = new Date(interval.test.start);
+                                dataRangeStart.setHours(0, 0, 0, 0);
+                            }
+                            if (interval.test.end > dataRangeEndBase) {
+                                dataRangeEndBase = new Date(interval.test.end);
+                                dataRangeEndBase.setHours(0, 0, 0, 0);
+                            }
+                        }
+                        if (interval.train) {
+                            if (interval.train.start < dataRangeStart) {
+                                dataRangeStart = new Date(interval.train.start);
+                                dataRangeStart.setHours(0, 0, 0, 0);
+                            }
+                            if (interval.train.end > dataRangeEndBase) {
+                                dataRangeEndBase = new Date(interval.train.end);
+                                dataRangeEndBase.setHours(0, 0, 0, 0);
+                            }
+                        }
+                    }
+
                     const zip = new JSZip();
                     const groupedStocks = groupStocksByIndex(allStocks, stockToIndexMap);
 
@@ -1878,14 +1947,14 @@
                             continue;
                         }
 
-                        const files = staticDataManager.getSortedFileList(indexSymbol);
+                        const files = staticDataManager.getFilesInRange(indexSymbol, dataRangeStart, dataRangeEndBase);
 
                         if (!files || files.length === 0) {
-                            console.warn(`索引 ${indexSymbol} 沒有可用檔案`);
+                            console.warn(`索引 ${indexSymbol} 在所選日期範圍內沒有檔案`);
                             continue;
                         }
 
-                        const dailyData = await loadAllDailyData(indexSymbol, stocks);
+                        const dailyData = await loadAllDailyData(indexSymbol, stocks, dataRangeStart, dataRangeEndBase);
 
                         if (!dailyData || dailyData.size === 0) {
                             console.warn(`${indexSymbol} 沒有載入到任何數據`);
@@ -1893,18 +1962,34 @@
                         }
 
                         for (const interval of intervals) {
-                            const trainCsv = buildCsvForInterval(dailyData, stocks, interval.train.start, interval.train.end);
+                            const hasTestRange = !!interval.test;
+                            const testCsv = hasTestRange
+                                ? buildCsvForInterval(dailyData, stocks, interval.test.start, interval.test.end)
+                                : null;
+
+                            if (hasTestRange && !testCsv) {
+                                console.warn(`測試區間 ${formatDateISO(interval.test.start)} ~ ${formatDateISO(interval.test.end)} 無資料，跳過對應視窗`);
+                                continue;
+                            }
+
+                            const hasTrainRange = !!interval.train;
+                            const trainCsv = hasTrainRange
+                                ? buildCsvForInterval(dailyData, stocks, interval.train.start, interval.train.end)
+                                : null;
+
+                            if (hasTrainRange && !trainCsv) {
+                                console.warn(`訓練區間 ${formatDateISO(interval.train.start)} ~ ${formatDateISO(interval.train.end)} 無資料，跳過對應視窗`);
+                                continue;
+                            }
+
                             if (trainCsv) {
                                 const filename = generateStaticFilename('train', indexSymbol, interval, trainWindowType, testWindowType);
                                 zip.file(filename, trainCsv);
                             }
 
-                            if (interval.test) {
-                                const testCsv = buildCsvForInterval(dailyData, stocks, interval.test.start, interval.test.end);
-                                if (testCsv) {
-                                    const filename = generateStaticFilename('test', indexSymbol, interval, trainWindowType, testWindowType);
-                                    zip.file(filename, testCsv);
-                                }
+                            if (testCsv) {
+                                const filename = generateStaticFilename('test', indexSymbol, interval, trainWindowType, testWindowType);
+                                zip.file(filename, testCsv);
                             }
                         }
                     }
