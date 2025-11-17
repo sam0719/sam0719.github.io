@@ -193,7 +193,6 @@
         // 靜態數據管理器
         const staticDataManager = {
             indexData: null,
-            marketInfo: null,
             configData: null,
             indexStocks: {},
             stockDataCache: {},
@@ -245,96 +244,61 @@
             // 載入索引數據
             async loadIndexData() {
                 try {
-                    // 嘗試載入包含市場信息的索引文件
                     let response = await fetch('data/index.json');
-                    if (response.ok) {
-                        const data = await response.json();
-                        this.indexData = data.stockData || data;
-
-                        if (data.marketInfo) {
-                            this.marketInfo = data.marketInfo;
-                        } else {
-                            this.marketInfo = this.generateDefaultMarketInfo();
-                        }
-                    } else {
-                        // 如果沒有市場信息文件，則載入原始文件並使用默認市場信息
+                    if (!response.ok) {
                         response = await fetch('data/index.json');
                         if (!response.ok) {
                             throw new Error('無法載入索引文件');
                         }
-                        this.indexData = await response.json();
-
-                        // 設置默認市場信息
-                        this.marketInfo = this.generateDefaultMarketInfo();
                     }
+
+                    const data = await response.json();
+                    this.indexData = data.stockData || data;
                 } catch (error) {
                     console.error('載入索引數據時發生錯誤:', error);
                     // 設置默認值
                     this.indexData = {};
-                    this.marketInfo = {};
                 }
             },
 
-            // 生成默認市場信息
-            generateDefaultMarketInfo() {
-                const defaultInfo = {
-                    'CAC': { name: 'CAC 40', country: '法國', market: '法國' },
-                    'DJIA': { name: '道瓊工業指數', country: '美國', market: '美國' },
-                    'DJIA_20251113': { name: '道瓊工業指數 (2025更新)', country: '美國', market: '美國' },
-                    'FTSE': { name: '富時100指數', country: '英國', market: '英國' },
-                    'Nikkei': { name: '日經225指數', country: '日本', market: '日本' },
-                    'TSX': { name: '多倫多證券交易所指數', country: '加拿大', market: '加拿大' }
-                };
+            getIndexDisplayName(symbol) {
+                if (!symbol) {
+                    return '';
+                }
 
-                // 為索引文件中的每個股票代碼生成市場信息
+                if (this.configData && this.configData[symbol] && this.configData[symbol].displayName) {
+                    return this.configData[symbol].displayName;
+                }
+
+                return symbol;
+            },
+
+            getIndexEntries() {
+                const entries = [];
+                const seen = new Set();
+
+                if (this.configData) {
+                    for (const symbol of Object.keys(this.configData)) {
+                        entries.push({
+                            code: symbol,
+                            name: this.getIndexDisplayName(symbol)
+                        });
+                        seen.add(symbol);
+                    }
+                }
+
                 if (this.indexData) {
                     for (const symbol of Object.keys(this.indexData)) {
-                        if (!defaultInfo[symbol]) {
-                            defaultInfo[symbol] = {
-                                name: symbol,
-                                country: '未知',
-                                market: '未知'
-                            };
+                        if (!seen.has(symbol)) {
+                            entries.push({
+                                code: symbol,
+                                name: this.getIndexDisplayName(symbol)
+                            });
                         }
                     }
                 }
 
-                return defaultInfo;
-            },
-
-            // 獲取市場信息
-            getMarketInfo(symbol) {
-                return this.marketInfo && this.marketInfo[symbol]
-                    ? this.marketInfo[symbol]
-                    : { name: symbol, country: '未知', market: '未知' };
-            },
-
-            // 獲取所有市場的結構
-            getMarketStructure() {
-                if (!this.marketInfo) {
-                    return {};
-                }
-
-                const marketStructure = {};
-
-                // 根據市場信息分組
-                for (const [symbol, info] of Object.entries(this.marketInfo)) {
-                    const marketName = info.market || '其他';
-
-                    if (!marketStructure[marketName]) {
-                        marketStructure[marketName] = {
-                            name: marketName,
-                            indices: []
-                        };
-                    }
-
-                    marketStructure[marketName].indices.push({
-                        code: symbol,
-                        name: info.name || symbol
-                    });
-                }
-
-                return marketStructure;
+                return entries;
             },
 
             getStocksForIndex(symbol) {
@@ -1067,9 +1031,31 @@
 
         function createSafeId(...parts) {
             return parts
-                .filter(Boolean)
-                .map(part => String(part).replace(/[^a-zA-Z0-9]/g, '_'))
-                .join('__');
+                .filter(part => part !== null && part !== undefined)
+                .map(part => String(part).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_\-]/g, ''))
+                .join('-');
+        }
+
+        function formatYearMonth(value) {
+            if (!value) {
+                return '';
+            }
+
+            if (value instanceof Date) {
+                const year = value.getFullYear();
+                const month = String(value.getMonth() + 1).padStart(2, '0');
+                return `${year}-${month}`;
+            }
+
+            const str = String(value).trim();
+            const match = str.match(/(\d{4})[-/]?([0-1]?\d)/);
+            if (match) {
+                const year = match[1];
+                const month = String(parseInt(match[2], 10)).padStart(2, '0');
+                return `${year}-${month}`;
+            }
+
+            return str;
         }
 
         function getHistoryCacheKey(symbol, stockSymbol = null) {
@@ -1099,144 +1085,123 @@
             $('#end_month').attr('min', startMonth);
         }
 
-    
-
-        // 渲染股票列表 - 保持原本的市場和指數分層結構
+        // 渲染股票列表（依照 config.json 的指數定義）
         async function renderStockList() {
             const container = $('#stock-list-container');
             container.empty();
             loadedIndexStocks.clear();
 
-            const marketStructure = staticDataManager.getMarketStructure();
+            const indexEntries = staticDataManager.getIndexEntries();
 
-            for (const [marketName, marketData] of Object.entries(marketStructure)) {
-                const marketCode = marketName.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+            for (const entry of indexEntries) {
+                const indexSymbol = entry.code;
+                const indexName = entry.name || indexSymbol;
+                const safeIndexId = createSafeId('index', indexSymbol);
+                const summaryCollapseId = createSafeId('history', indexSymbol);
+                const files = staticDataManager.indexData && staticDataManager.indexData[indexSymbol]
+                    ? staticDataManager.indexData[indexSymbol]
+                    : [];
+                const latestFile = files.length > 0 ? files[files.length - 1] : null;
+                const stocks = staticDataManager.getStocksForIndex(indexSymbol);
 
-                let marketHtml = `
-                    <div class="market-section">
-                        <div class="market-header d-flex justify-content-between align-items-center"
-                             data-toggle="collapse"
-                             data-target="#market-${marketCode}">
-                            <h4 class="mb-0">${marketName}</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
+                const stockListHtml = stocks.length === 0
+                    ? '<p class="text-muted small mb-0">未設定成份股</p>'
+                    : stocks.map(stockSymbol => {
+                        const historyCollapseId = createSafeId('history', indexSymbol, stockSymbol);
+                        const priceId = createSafeId('price', indexSymbol, stockSymbol);
+                        const changeId = createSafeId('change', indexSymbol, stockSymbol);
+                        const tableBodyId = createSafeId('history-data', indexSymbol, stockSymbol);
+                        const paginationId = createSafeId('pagination', indexSymbol, stockSymbol);
 
-                        <div class="collapse show" id="market-${marketCode}">
-                `;
-
-                for (const indexData of marketData.indices) {
-                    const indexSymbol = indexData.code;
-                    const safeIndexId = createSafeId('index', indexSymbol);
-                    const summaryId = createSafeId('index-summary', indexSymbol);
-                    const files = staticDataManager.indexData && staticDataManager.indexData[indexSymbol] ? staticDataManager.indexData[indexSymbol] : [];
-                    const latestFile = files[files.length - 1];
-                    const stocks = staticDataManager.getStocksForIndex(indexSymbol);
-
-                    const stockListHtml = stocks.length === 0
-                        ? '<p class="text-muted small mb-0">未設定成份股</p>'
-                        : stocks.map(stockSymbol => {
-                            const stockId = createSafeId('stock', indexSymbol, stockSymbol);
-                            const historyCollapseId = createSafeId('history', indexSymbol, stockSymbol);
-                            const priceId = createSafeId('price', indexSymbol, stockSymbol);
-                            const changeId = createSafeId('change', indexSymbol, stockSymbol);
-                            const tableBodyId = createSafeId('history-data', indexSymbol, stockSymbol);
-                            const paginationId = createSafeId('pagination', indexSymbol, stockSymbol);
-
-                            return `
-                                <div class="stock-item mb-2">
-                                    <div class="row align-items-center stock-row hover-effect"
-                                         data-toggle="collapse"
-                                         data-target="#${historyCollapseId}"
-                                         data-index="${indexSymbol}"
-                                         data-stock="${stockSymbol}"
-                                         aria-expanded="false">
-                                        <div class="col-md-4">
-                                            <h6 class="mb-0">${stockSymbol}</h6>
-                                            <small class="text-muted">${indexData.name}</small>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span class="font-weight-bold" id="${priceId}">
-                                                <i class="fas fa-spinner fa-spin"></i>
-                                            </span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span id="${changeId}">
-                                                <i class="fas fa-spinner fa-spin"></i>
-                                            </span>
-                                        </div>
-                                        <div class="col-md-2 text-right">
-                                            <i class="fas fa-chevron-down"></i>
-                                        </div>
+                        return `
+                            <div class="stock-item mb-2">
+                                <div class="row align-items-center stock-row hover-effect"
+                                     data-toggle="collapse"
+                                     data-target="#${historyCollapseId}"
+                                     data-index="${indexSymbol}"
+                                     data-stock="${stockSymbol}"
+                                     aria-expanded="false">
+                                    <div class="col-md-4">
+                                        <h6 class="mb-0">${stockSymbol}</h6>
+                                        <small class="text-muted">${indexName}</small>
                                     </div>
+                                    <div class="col-md-3">
+                                        <span class="font-weight-bold" id="${priceId}">
+                                            <i class="fas fa-spinner fa-spin"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span id="${changeId}">
+                                            <i class="fas fa-spinner fa-spin"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-2 text-right">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
 
-                                    <div class="collapse stock-history-collapse"
-                                         id="${historyCollapseId}"
-                                         data-index="${indexSymbol}"
-                                         data-stock="${stockSymbol}">
-                                        <div class="history-container">
-                                            <table class="table table-sm history-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>日期</th>
-                                                        <th>價格</th>
-                                                        <th>漲跌</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="${tableBodyId}">
-                                                    <tr>
-                                                        <td colspan="3" class="text-center">
-                                                            <i class="fas fa-spinner fa-spin"></i> 載入中...
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="pagination-container d-flex justify-content-between align-items-center"
-                                                 id="${paginationId}"
-                                                 data-index="${indexSymbol}"
-                                                 data-stock="${stockSymbol}"
-                                                 style="display: none;">
-                                                <button class="btn btn-sm btn-outline-secondary pagination-button" data-action="prev" disabled>上一頁</button>
-                                                <span class="pagination-info text-muted">第 1 / 1 頁</span>
-                                                <button class="btn btn-sm btn-outline-secondary pagination-button" data-action="next" disabled>下一頁</button>
-                                            </div>
+                                <div class="collapse stock-history-collapse"
+                                     id="${historyCollapseId}"
+                                     data-index="${indexSymbol}"
+                                     data-stock="${stockSymbol}">
+                                    <div class="history-container">
+                                        <table class="table table-sm history-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>日期</th>
+                                                    <th>價格</th>
+                                                    <th>漲跌</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="${tableBodyId}">
+                                                <tr>
+                                                    <td colspan="3" class="text-center">
+                                                        <i class="fas fa-spinner fa-spin"></i> 載入中...
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="pagination-container d-flex justify-content-between align-items-center"
+                                             id="${paginationId}"
+                                             data-index="${indexSymbol}"
+                                             data-stock="${stockSymbol}"
+                                             style="display: none;">
+                                            <button class="btn btn-sm btn-outline-secondary pagination-button" data-action="prev" disabled>上一頁</button>
+                                            <span class="pagination-info text-muted">第 1 / 1 頁</span>
+                                            <button class="btn btn-sm btn-outline-secondary pagination-button" data-action="next" disabled>下一頁</button>
                                         </div>
                                     </div>
                                 </div>
-                            `;
-                        }).join('');
-
-                    const summaryCollapseId = createSafeId('history', indexSymbol);
-                    marketHtml += `
-                        <div class="index-section">
-                            <div class="index-header d-flex justify-content-between align-items-center"
-                                 data-toggle="collapse"
-                                 data-target="#${safeIndexId}">
-                                <h5 class="mb-0">${indexData.name}</h5>
-                                <i class="fas fa-chevron-down"></i>
                             </div>
+                        `;
+                    }).join('');
 
-                            <div class="collapse show" id="${safeIndexId}">
-                                <div class="stock-summary mb-3">
-                                    <div class="row align-items-center stock-row hover-effect"
-                                         data-toggle="collapse"
-                                         data-target="#${summaryCollapseId}"
-                                         aria-expanded="false">
-                                        <div class="col-md-4">
-                                            <h6 class="mb-0">${indexSymbol}</h6>
-                                            <small class="text-muted">${indexData.name}</small>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span class="font-weight-bold" id="price-${indexSymbol}">
-                                                <i class="fas fa-spinner fa-spin"></i>
-                                            </span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span id="change-${indexSymbol}">
-                                                <i class="fas fa-spinner fa-spin"></i>
-                                            </span>
-                                        </div>
-                                        <div class="col-md-2 text-right">
-                                            <span class="text-muted">${files.length} 個數據文件</span>
+                const sectionHtml = `
+                    <div class="market-section">
+                        <div class="market-header d-flex justify-content-between align-items-center"
+                             data-toggle="collapse"
+                             data-target="#${safeIndexId}">
+                            <h4 class="mb-0">${indexName}</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+
+                        <div class="collapse show" id="${safeIndexId}">
+                            <div class="stock-summary mb-3">
+                                <div class="row align-items-center stock-row hover-effect"
+                                     data-toggle="collapse"
+                                     data-target="#${summaryCollapseId}"
+                                     aria-expanded="false">
+                                    <div class="col-md-4">
+                                        <h6 class="mb-0">${indexSymbol}</h6>
+                                        <small class="text-muted">${indexName}</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="font-weight-bold" id="price-${indexSymbol}">
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span id="change-${indexSymbol}">
+                                        </span>
                                             <i class="fas fa-chevron-down ml-2"></i>
                                         </div>
                                     </div>
@@ -1252,22 +1217,24 @@
                                 </div>
                             </div>
                         </div>
-                    `;
-
-                    setTimeout(() => {
-                        $(`#price-${indexSymbol}`).text('');
-                        $(`#change-${indexSymbol}`).text('');
-                    }, 100);
-                    
-
-                }
-
-                marketHtml += `
-                        </div>
                     </div>
                 `;
 
-                container.append(marketHtml);
+                container.append(sectionHtml);
+
+                const priceEl = $(`#price-${indexSymbol}`);
+                const changeEl = $(`#change-${indexSymbol}`);
+
+                if (latestFile) {
+                    loadLatestPrice(indexSymbol, latestFile).catch(() => {
+                        priceEl.text('-');
+                        changeEl.text('-');
+                    });
+                } else {
+                    priceEl.text('無數據');
+                    changeEl.text('-');
+                }
+
             }
 
             container
@@ -1549,7 +1516,7 @@
 
                 return `
                     <tr>
-                        <td>${record.date}</td>
+                        <td>${formatYearMonth(record.date)}</td>
                         <td>${record.price.toFixed(2)}</td>
                         <td>${priceChangeHtml}</td>
                     </tr>
@@ -1736,12 +1703,15 @@
 
             // 添加所有可用的股票指數（只顯示有數據文件的指數）
             if (staticDataManager.indexData) {
-                for (const symbol of Object.keys(staticDataManager.indexData)) {
-                    const files = staticDataManager.indexData[symbol];
-                    if (files && files.length > 0) {  // 只顯示有數據文件的指數
-                        const marketInfo = staticDataManager.getMarketInfo(symbol);
-                        selector.append(`<option value="${symbol}">${marketInfo.name}</option>`);
-                    }
+                const availableIndices = staticDataManager.getIndexEntries()
+                    .filter(entry => {
+                        const files = staticDataManager.indexData[entry.code];
+                        return files && files.length > 0;
+                    })
+                    .sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant'));
+
+                for (const entry of availableIndices) {
+                    selector.append(`<option value="${entry.code}">${entry.name}</option>`);
                 }
             }
 
@@ -1813,17 +1783,16 @@
             };
 
             if (staticDataManager.indexData) {
-                const sortedIndices = Object.keys(staticDataManager.indexData)
-                    .filter(symbol => {
-                        const files = staticDataManager.indexData[symbol];
+                const availableIndices = staticDataManager.getIndexEntries()
+                    .filter(entry => {
+                        const files = staticDataManager.indexData[entry.code];
                         return files && files.length > 0;
                     })
-                    .sort();
+                    .sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant'));
 
-                for (const symbol of sortedIndices) {
-                    const marketInfo = staticDataManager.getMarketInfo(symbol);
-                    const label = marketInfo && marketInfo.name ? `${marketInfo.name} (${symbol})` : symbol;
-                    indexSelector.append(`<option value="${symbol}">${label}</option>`);
+                for (const entry of availableIndices) {
+                    const label = `${entry.name} (${entry.code})`;
+                    indexSelector.append(`<option value="${entry.code}">${label}</option>`);
                 }
             }
 
