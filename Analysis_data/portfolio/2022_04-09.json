@@ -1,0 +1,144 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "AAPL",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "AMGN",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "AXP",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CRM",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CVX",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "GS",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "HD",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "HON",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "JPM",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CAT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "DD",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "DIS",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "INTC",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MMM",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "V",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "VZ",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "INTC",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "long",
+      "category": "long"
+    }
+  ]
+}

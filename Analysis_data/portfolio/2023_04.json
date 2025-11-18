@@ -1,0 +1,244 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "BA",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "WMT",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "GS",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CVX",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "HD",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "DIS",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "VZ",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "JPM",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "WMT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "AMGN",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "HON",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "GS",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "INTC",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "AXP",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "BA",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "DD",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "WMT",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "GS",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "BA",
+      "strategy_type": "short",
+      "category": "short"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "AXP",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CAT",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "GS",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "MMM",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "V",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "AMGN",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "BA",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "CVX",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "DD",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "WMT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "AXP",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "CAT",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MMM",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "WMT",
+      "strategy_type": "long",
+      "category": "long"
+    }
+  ]
+}

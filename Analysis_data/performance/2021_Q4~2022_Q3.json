@@ -1,0 +1,24 @@
+{
+  "performance": [
+    {
+      "trend_value": 0.051748132301699196,
+      "risk": 233479.65696200676,
+      "expected_return": 12082.13617822527,
+      "strategy_type": "short",
+      "dataset_name": "Y2Q",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2021_Q4~2022_Q3"
+    },
+    {
+      "trend_value": 0.02783369951027027,
+      "risk": 496164.29733241576,
+      "expected_return": 13810.087959674853,
+      "strategy_type": "long",
+      "dataset_name": "Y2Q",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2021_Q4~2022_Q3"
+    }
+  ]
+}

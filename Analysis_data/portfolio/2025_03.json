@@ -1,0 +1,149 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "CRM",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "V",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CVX",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CAT",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "AAPL",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "DIS",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "VZ",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "HON",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "GS",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MMM",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "DD",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "CRM",
+      "strategy_type": "short",
+      "category": "short"
+    }
+  ]
+}

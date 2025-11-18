@@ -1,0 +1,19 @@
+{
+  "count": 1,
+  "results": [
+    {
+      "window": "M2M",
+      "train_str": "2020_04",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "M2M",
+          "result_name": "2020_04",
+          "trend_value": 2.870001035012229,
+          "risk": 21151.590662321294,
+          "expected_return": 60705.087093017115
+        }
+      ]
+    }
+  ]
+}

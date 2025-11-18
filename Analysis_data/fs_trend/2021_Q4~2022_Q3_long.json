@@ -1,0 +1,5044 @@
+{
+  "trend": [
+    {
+      "day": 1,
+      "long_fs": {
+        "CVX": 2500000.0,
+        "MCD": 2500000.0,
+        "MRK": 2500000.0,
+        "UNH": 2500000.0
+      },
+      "long_total": 10000000.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000000.0,
+      "stock_caps": {
+        "CVX": 2500000.0,
+        "MCD": 2500000.0,
+        "MRK": 2500000.0,
+        "UNH": 2500000.0
+      }
+    },
+    {
+      "day": 2,
+      "long_fs": {
+        "CVX": 2509528.4000000004,
+        "MCD": 2501560.75,
+        "MRK": 2552299.0,
+        "UNH": 2465488.6
+      },
+      "long_total": 10028876.75,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10028876.75,
+      "stock_caps": {
+        "CVX": 2509528.4000000004,
+        "MCD": 2501560.75,
+        "MRK": 2552299.0,
+        "UNH": 2465488.6
+      }
+    },
+    {
+      "day": 3,
+      "long_fs": {
+        "CVX": 2536752.4000000004,
+        "MCD": 2523619.35,
+        "MRK": 2506034.5,
+        "UNH": 2506391.0
+      },
+      "long_total": 10072797.25,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10072797.25,
+      "stock_caps": {
+        "CVX": 2536752.4000000004,
+        "MCD": 2523619.35,
+        "MRK": 2506034.5,
+        "UNH": 2506391.0
+      }
+    },
+    {
+      "day": 4,
+      "long_fs": {
+        "CVX": 2514428.72,
+        "MCD": 2542972.65,
+        "MRK": 2477203.0,
+        "UNH": 2511631.62
+      },
+      "long_total": 10046235.99,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10046235.99,
+      "stock_caps": {
+        "CVX": 2514428.72,
+        "MCD": 2542972.65,
+        "MRK": 2477203.0,
+        "UNH": 2511631.62
+      }
+    },
+    {
+      "day": 5,
+      "long_fs": {
+        "CVX": 2532396.56,
+        "MCD": 2555458.65,
+        "MRK": 2516427.25,
+        "UNH": 2578161.93
+      },
+      "long_total": 10182444.39,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10182444.39,
+      "stock_caps": {
+        "CVX": 2532396.56,
+        "MCD": 2555458.65,
+        "MRK": 2516427.25,
+        "UNH": 2578161.93
+      }
+    },
+    {
+      "day": 6,
+      "long_fs": {
+        "CVX": 2589294.72,
+        "MCD": 2549111.6,
+        "MRK": 2476197.25,
+        "UNH": 2602128.18
+      },
+      "long_total": 10216731.75,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10216731.75,
+      "stock_caps": {
+        "CVX": 2589294.72,
+        "MCD": 2549111.6,
+        "MRK": 2476197.25,
+        "UNH": 2602128.18
+      }
+    },
+    {
+      "day": 7,
+      "long_fs": {
+        "CVX": 2567243.28,
+        "MCD": 2537562.0500000003,
+        "MRK": 2454741.25,
+        "UNH": 2580015.3200000003
+      },
+      "long_total": 10139561.9,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10139561.9,
+      "stock_caps": {
+        "CVX": 2567243.28,
+        "MCD": 2537562.0500000003,
+        "MRK": 2454741.25,
+        "UNH": 2580015.3200000003
+      }
+    },
+    {
+      "day": 8,
+      "long_fs": {
+        "CVX": 2567515.52,
+        "MCD": 2516439.9,
+        "MRK": 2444348.5,
+        "UNH": 2568894.98
+      },
+      "long_total": 10097198.9,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10097198.9,
+      "stock_caps": {
+        "CVX": 2567515.52,
+        "MCD": 2516439.9,
+        "MRK": 2444348.5,
+        "UNH": 2568894.98
+      }
+    },
+    {
+      "day": 9,
+      "long_fs": {
+        "CVX": 2583033.1999999997,
+        "MCD": 2497190.65,
+        "MRK": 2424904.0,
+        "UNH": 2570876.19
+      },
+      "long_total": 10076004.04,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10076004.04,
+      "stock_caps": {
+        "CVX": 2583033.1999999997,
+        "MCD": 2497190.65,
+        "MRK": 2424904.0,
+        "UNH": 2570876.19
+      }
+    },
+    {
+      "day": 10,
+      "long_fs": {
+        "CVX": 2607534.8000000003,
+        "MCD": 2516752.0500000003,
+        "MRK": 2405794.75,
+        "UNH": 2677925.44
+      },
+      "long_total": 10208007.040000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10208007.040000001,
+      "stock_caps": {
+        "CVX": 2607534.8000000003,
+        "MCD": 2516752.0500000003,
+        "MRK": 2405794.75,
+        "UNH": 2677925.44
+      }
+    },
+    {
+      "day": 11,
+      "long_fs": {
+        "CVX": 2626591.6,
+        "MCD": 2493028.65,
+        "MRK": 2405794.75,
+        "UNH": 2727072.23
+      },
+      "long_total": 10252487.23,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10252487.23,
+      "stock_caps": {
+        "CVX": 2626591.6,
+        "MCD": 2493028.65,
+        "MRK": 2405794.75,
+        "UNH": 2727072.23
+      }
+    },
+    {
+      "day": 12,
+      "long_fs": {
+        "CVX": 2625502.64,
+        "MCD": 2493132.7,
+        "MRK": 2369587.75,
+        "UNH": 2705087.19
+      },
+      "long_total": 10193310.28,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10193310.28,
+      "stock_caps": {
+        "CVX": 2625502.64,
+        "MCD": 2493132.7,
+        "MRK": 2369587.75,
+        "UNH": 2705087.19
+      }
+    },
+    {
+      "day": 13,
+      "long_fs": {
+        "CVX": 2676683.76,
+        "MCD": 2498439.25,
+        "MRK": 2441331.25,
+        "UNH": 2703553.35
+      },
+      "long_total": 10320007.61,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10320007.61,
+      "stock_caps": {
+        "CVX": 2676683.76,
+        "MCD": 2498439.25,
+        "MRK": 2441331.25,
+        "UNH": 2703553.35
+      }
+    },
+    {
+      "day": 14,
+      "long_fs": {
+        "CVX": 2711530.48,
+        "MCD": 2467016.15,
+        "MRK": 2489942.5,
+        "UNH": 2771809.23
+      },
+      "long_total": 10440298.36,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10440298.36,
+      "stock_caps": {
+        "CVX": 2711530.48,
+        "MCD": 2467016.15,
+        "MRK": 2489942.5,
+        "UNH": 2771809.23
+      }
+    },
+    {
+      "day": 15,
+      "long_fs": {
+        "CVX": 2677500.48,
+        "MCD": 2484288.45,
+        "MRK": 2492959.75,
+        "UNH": 2817568.79
+      },
+      "long_total": 10472317.469999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10472317.469999999,
+      "stock_caps": {
+        "CVX": 2677500.48,
+        "MCD": 2484288.45,
+        "MRK": 2492959.75,
+        "UNH": 2817568.79
+      }
+    },
+    {
+      "day": 16,
+      "long_fs": {
+        "CVX": 2703091.04,
+        "MCD": 2453801.8,
+        "MRK": 2492289.25,
+        "UNH": 2861411.05
+      },
+      "long_total": 10510593.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10510593.14,
+      "stock_caps": {
+        "CVX": 2703091.04,
+        "MCD": 2453801.8,
+        "MRK": 2492289.25,
+        "UNH": 2861411.05
+      }
+    },
+    {
+      "day": 17,
+      "long_fs": {
+        "CVX": 2728137.12,
+        "MCD": 2442564.4,
+        "MRK": 2508046.0,
+        "UNH": 2863520.08
+      },
+      "long_total": 10542267.6,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10542267.6,
+      "stock_caps": {
+        "CVX": 2728137.12,
+        "MCD": 2442564.4,
+        "MRK": 2508046.0,
+        "UNH": 2863520.08
+      }
+    },
+    {
+      "day": 18,
+      "long_fs": {
+        "CVX": 2734126.4000000004,
+        "MCD": 2433095.85,
+        "MRK": 2526149.5,
+        "UNH": 2896305.91
+      },
+      "long_total": 10589677.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10589677.66,
+      "stock_caps": {
+        "CVX": 2734126.4000000004,
+        "MCD": 2433095.85,
+        "MRK": 2526149.5,
+        "UNH": 2896305.91
+      }
+    },
+    {
+      "day": 19,
+      "long_fs": {
+        "CVX": 2685395.44,
+        "MCD": 2498023.05,
+        "MRK": 2504358.25,
+        "UNH": 2888956.2600000002
+      },
+      "long_total": 10576733.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10576733.0,
+      "stock_caps": {
+        "CVX": 2685395.44,
+        "MCD": 2498023.05,
+        "MRK": 2504358.25,
+        "UNH": 2888956.2600000002
+      }
+    },
+    {
+      "day": 20,
+      "long_fs": {
+        "CVX": 2710713.76,
+        "MCD": 2526532.75,
+        "MRK": 2658238.0,
+        "UNH": 2901418.71
+      },
+      "long_total": 10796903.219999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10796903.219999999,
+      "stock_caps": {
+        "CVX": 2710713.76,
+        "MCD": 2526532.75,
+        "MRK": 2658238.0,
+        "UNH": 2901418.71
+      }
+    },
+    {
+      "day": 21,
+      "long_fs": {
+        "CVX": 2743382.56,
+        "MCD": 2527053.0,
+        "MRK": 2704167.25,
+        "UNH": 2933437.62
+      },
+      "long_total": 10908040.43,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10908040.43,
+      "stock_caps": {
+        "CVX": 2743382.56,
+        "MCD": 2527053.0,
+        "MRK": 2704167.25,
+        "UNH": 2933437.62
+      }
+    },
+    {
+      "day": 22,
+      "long_fs": {
+        "CVX": 2744471.52,
+        "MCD": 2578765.85,
+        "MRK": 2697797.5,
+        "UNH": 2892918.68
+      },
+      "long_total": 10913953.55,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10913953.55,
+      "stock_caps": {
+        "CVX": 2744471.52,
+        "MCD": 2578765.85,
+        "MRK": 2697797.5,
+        "UNH": 2892918.68
+      }
+    },
+    {
+      "day": 23,
+      "long_fs": {
+        "CVX": 2727592.64,
+        "MCD": 2564927.2,
+        "MRK": 2734004.5,
+        "UNH": 2879753.22
+      },
+      "long_total": 10906277.56,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10906277.56,
+      "stock_caps": {
+        "CVX": 2727592.64,
+        "MCD": 2564927.2,
+        "MRK": 2734004.5,
+        "UNH": 2879753.22
+      }
+    },
+    {
+      "day": 24,
+      "long_fs": {
+        "CVX": 2707991.36,
+        "MCD": 2576892.9499999997,
+        "MRK": 2723611.75,
+        "UNH": 2913433.79
+      },
+      "long_total": 10921929.85,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10921929.85,
+      "stock_caps": {
+        "CVX": 2707991.36,
+        "MCD": 2576892.9499999997,
+        "MRK": 2723611.75,
+        "UNH": 2913433.79
+      }
+    },
+    {
+      "day": 25,
+      "long_fs": {
+        "CVX": 2719969.92,
+        "MCD": 2608420.1,
+        "MRK": 2780604.25,
+        "UNH": 2909854.83
+      },
+      "long_total": 11018849.1,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11018849.1,
+      "stock_caps": {
+        "CVX": 2719969.92,
+        "MCD": 2608420.1,
+        "MRK": 2780604.25,
+        "UNH": 2909854.83
+      }
+    },
+    {
+      "day": 26,
+      "long_fs": {
+        "CVX": 2749644.08,
+        "MCD": 2621218.25,
+        "MRK": 2506369.75,
+        "UNH": 2903783.38
+      },
+      "long_total": 10781015.46,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10781015.46,
+      "stock_caps": {
+        "CVX": 2749644.08,
+        "MCD": 2621218.25,
+        "MRK": 2506369.75,
+        "UNH": 2903783.38
+      }
+    },
+    {
+      "day": 27,
+      "long_fs": {
+        "CVX": 2759444.72,
+        "MCD": 2604674.3,
+        "MRK": 2539224.25,
+        "UNH": 2947178.27
+      },
+      "long_total": 10850521.54,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10850521.54,
+      "stock_caps": {
+        "CVX": 2759444.72,
+        "MCD": 2604674.3,
+        "MRK": 2539224.25,
+        "UNH": 2947178.27
+      }
+    },
+    {
+      "day": 28,
+      "long_fs": {
+        "CVX": 2779590.48,
+        "MCD": 2600096.1,
+        "MRK": 2540565.25,
+        "UNH": 2958170.79
+      },
+      "long_total": 10878422.620000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10878422.620000001,
+      "stock_caps": {
+        "CVX": 2779590.48,
+        "MCD": 2600096.1,
+        "MRK": 2540565.25,
+        "UNH": 2958170.79
+      }
+    },
+    {
+      "day": 29,
+      "long_fs": {
+        "CVX": 2735487.6,
+        "MCD": 2604986.45,
+        "MRK": 2580124.75,
+        "UNH": 2929794.75
+      },
+      "long_total": 10850393.55,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10850393.55,
+      "stock_caps": {
+        "CVX": 2735487.6,
+        "MCD": 2604986.45,
+        "MRK": 2580124.75,
+        "UNH": 2929794.75
+      }
+    },
+    {
+      "day": 30,
+      "long_fs": {
+        "CVX": 2735487.6,
+        "MCD": 2574395.75,
+        "MRK": 2580460.0,
+        "UNH": 2913817.25
+      },
+      "long_total": 10804160.6,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10804160.6,
+      "stock_caps": {
+        "CVX": 2735487.6,
+        "MCD": 2574395.75,
+        "MRK": 2580460.0,
+        "UNH": 2913817.25
+      }
+    },
+    {
+      "day": 31,
+      "long_fs": {
+        "CVX": 2737393.28,
+        "MCD": 2579702.3,
+        "MRK": 2579789.5,
+        "UNH": 2924042.85
+      },
+      "long_total": 10820927.93,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10820927.93,
+      "stock_caps": {
+        "CVX": 2737393.28,
+        "MCD": 2579702.3,
+        "MRK": 2579789.5,
+        "UNH": 2924042.85
+      }
+    },
+    {
+      "day": 32,
+      "long_fs": {
+        "CVX": 2799464.0,
+        "MCD": 2603009.5,
+        "MRK": 2570402.5,
+        "UNH": 2871828.38
+      },
+      "long_total": 10844704.379999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10844704.379999999,
+      "stock_caps": {
+        "CVX": 2799464.0,
+        "MCD": 2603009.5,
+        "MRK": 2570402.5,
+        "UNH": 2871828.38
+      }
+    },
+    {
+      "day": 33,
+      "long_fs": {
+        "CVX": 2810353.6,
+        "MCD": 2598119.15,
+        "MRK": 2583142.0,
+        "UNH": 2864350.91
+      },
+      "long_total": 10855965.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10855965.66,
+      "stock_caps": {
+        "CVX": 2810353.6,
+        "MCD": 2598119.15,
+        "MRK": 2583142.0,
+        "UNH": 2864350.91
+      }
+    },
+    {
+      "day": 34,
+      "long_fs": {
+        "CVX": 2797830.56,
+        "MCD": 2600512.3,
+        "MRK": 2536877.5,
+        "UNH": 2860068.94
+      },
+      "long_total": 10795289.299999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10795289.299999999,
+      "stock_caps": {
+        "CVX": 2797830.56,
+        "MCD": 2600512.3,
+        "MRK": 2536877.5,
+        "UNH": 2860068.94
+      }
+    },
+    {
+      "day": 35,
+      "long_fs": {
+        "CVX": 2774145.68,
+        "MCD": 2608628.2,
+        "MRK": 2550622.75,
+        "UNH": 2863392.2600000002
+      },
+      "long_total": 10796788.89,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10796788.89,
+      "stock_caps": {
+        "CVX": 2774145.68,
+        "MCD": 2608628.2,
+        "MRK": 2550622.75,
+        "UNH": 2863392.2600000002
+      }
+    },
+    {
+      "day": 36,
+      "long_fs": {
+        "CVX": 2712619.44,
+        "MCD": 2592812.6,
+        "MRK": 2478544.0,
+        "UNH": 2803061.22
+      },
+      "long_total": 10587037.26,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10587037.26,
+      "stock_caps": {
+        "CVX": 2712619.44,
+        "MCD": 2592812.6,
+        "MRK": 2478544.0,
+        "UNH": 2803061.22
+      }
+    },
+    {
+      "day": 37,
+      "long_fs": {
+        "CVX": 2761078.16,
+        "MCD": 2608628.2,
+        "MRK": 2507375.5,
+        "UNH": 2787403.27
+      },
+      "long_total": 10664485.13,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10664485.13,
+      "stock_caps": {
+        "CVX": 2761078.16,
+        "MCD": 2608628.2,
+        "MRK": 2507375.5,
+        "UNH": 2787403.27
+      }
+    },
+    {
+      "day": 38,
+      "long_fs": {
+        "CVX": 2819065.28,
+        "MCD": 2630894.9,
+        "MRK": 2542912.0,
+        "UNH": 2848501.23
+      },
+      "long_total": 10841373.41,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10841373.41,
+      "stock_caps": {
+        "CVX": 2819065.28,
+        "MCD": 2630894.9,
+        "MRK": 2542912.0,
+        "UNH": 2848501.23
+      }
+    },
+    {
+      "day": 39,
+      "long_fs": {
+        "CVX": 2840572.24,
+        "MCD": 2645982.15,
+        "MRK": 2527155.25,
+        "UNH": 2867802.05
+      },
+      "long_total": 10881511.690000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10881511.690000001,
+      "stock_caps": {
+        "CVX": 2840572.24,
+        "MCD": 2645982.15,
+        "MRK": 2527155.25,
+        "UNH": 2867802.05
+      }
+    },
+    {
+      "day": 40,
+      "long_fs": {
+        "CVX": 2775779.12,
+        "MCD": 2572939.05,
+        "MRK": 2431273.75,
+        "UNH": 2802486.0300000003
+      },
+      "long_total": 10582477.95,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10582477.95,
+      "stock_caps": {
+        "CVX": 2775779.12,
+        "MCD": 2572939.05,
+        "MRK": 2431273.75,
+        "UNH": 2802486.0300000003
+      }
+    },
+    {
+      "day": 41,
+      "long_fs": {
+        "CVX": 2783946.3200000003,
+        "MCD": 2575852.4499999997,
+        "MRK": 2300191.0,
+        "UNH": 2879497.58
+      },
+      "long_total": 10539487.35,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10539487.35,
+      "stock_caps": {
+        "CVX": 2783946.3200000003,
+        "MCD": 2575852.4499999997,
+        "MRK": 2300191.0,
+        "UNH": 2879497.58
+      }
+    },
+    {
+      "day": 42,
+      "long_fs": {
+        "CVX": 2736032.08,
+        "MCD": 2531215.0,
+        "MRK": 2300526.25,
+        "UNH": 2829967.33
+      },
+      "long_total": 10397740.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10397740.66,
+      "stock_caps": {
+        "CVX": 2736032.08,
+        "MCD": 2531215.0,
+        "MRK": 2300526.25,
+        "UNH": 2829967.33
+      }
+    },
+    {
+      "day": 43,
+      "long_fs": {
+        "CVX": 2717247.52,
+        "MCD": 2526844.9,
+        "MRK": 2286110.5,
+        "UNH": 2830734.25
+      },
+      "long_total": 10360937.17,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10360937.17,
+      "stock_caps": {
+        "CVX": 2717247.52,
+        "MCD": 2526844.9,
+        "MRK": 2286110.5,
+        "UNH": 2830734.25
+      }
+    },
+    {
+      "day": 44,
+      "long_fs": {
+        "CVX": 2791024.56,
+        "MCD": 2574603.85,
+        "MRK": 2269348.0,
+        "UNH": 2841407.22
+      },
+      "long_total": 10476383.63,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10476383.63,
+      "stock_caps": {
+        "CVX": 2791024.56,
+        "MCD": 2574603.85,
+        "MRK": 2269348.0,
+        "UNH": 2841407.22
+      }
+    },
+    {
+      "day": 45,
+      "long_fs": {
+        "CVX": 2773328.9600000004,
+        "MCD": 2580118.5,
+        "MRK": 2252585.5,
+        "UNH": 2871764.47
+      },
+      "long_total": 10477797.430000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10477797.430000002,
+      "stock_caps": {
+        "CVX": 2773328.9600000004,
+        "MCD": 2580118.5,
+        "MRK": 2252585.5,
+        "UNH": 2871764.47
+      }
+    },
+    {
+      "day": 46,
+      "long_fs": {
+        "CVX": 2816615.12,
+        "MCD": 2646918.6,
+        "MRK": 2254932.25,
+        "UNH": 2940723.3600000003
+      },
+      "long_total": 10659189.330000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10659189.330000002,
+      "stock_caps": {
+        "CVX": 2816615.12,
+        "MCD": 2646918.6,
+        "MRK": 2254932.25,
+        "UNH": 2940723.3600000003
+      }
+    },
+    {
+      "day": 47,
+      "long_fs": {
+        "CVX": 2858267.84,
+        "MCD": 2689579.1,
+        "MRK": 2220066.25,
+        "UNH": 2970249.7800000003
+      },
+      "long_total": 10738162.969999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10738162.969999999,
+      "stock_caps": {
+        "CVX": 2858267.84,
+        "MCD": 2689579.1,
+        "MRK": 2220066.25,
+        "UNH": 2970249.7800000003
+      }
+    },
+    {
+      "day": 48,
+      "long_fs": {
+        "CVX": 2871335.36,
+        "MCD": 2686145.4499999997,
+        "MRK": 2248562.5,
+        "UNH": 2996644.6100000003
+      },
+      "long_total": 10802687.92,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10802687.92,
+      "stock_caps": {
+        "CVX": 2871335.36,
+        "MCD": 2686145.4499999997,
+        "MRK": 2248562.5,
+        "UNH": 2996644.6100000003
+      }
+    },
+    {
+      "day": 49,
+      "long_fs": {
+        "CVX": 2863712.64,
+        "MCD": 2714759.1999999997,
+        "MRK": 2237834.5,
+        "UNH": 3025148.47
+      },
+      "long_total": 10841454.81,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10841454.81,
+      "stock_caps": {
+        "CVX": 2863712.64,
+        "MCD": 2714759.1999999997,
+        "MRK": 2237834.5,
+        "UNH": 3025148.47
+      }
+    },
+    {
+      "day": 50,
+      "long_fs": {
+        "CVX": 2868612.9600000004,
+        "MCD": 2741916.25,
+        "MRK": 2230459.0,
+        "UNH": 3056528.2800000003
+      },
+      "long_total": 10897516.490000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10897516.490000002,
+      "stock_caps": {
+        "CVX": 2868612.9600000004,
+        "MCD": 2741916.25,
+        "MRK": 2230459.0,
+        "UNH": 3056528.2800000003
+      }
+    },
+    {
+      "day": 51,
+      "long_fs": {
+        "CVX": 2808992.4000000004,
+        "MCD": 2722458.9,
+        "MRK": 2254932.25,
+        "UNH": 3055953.09
+      },
+      "long_total": 10842336.64,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10842336.64,
+      "stock_caps": {
+        "CVX": 2808992.4000000004,
+        "MCD": 2722458.9,
+        "MRK": 2254932.25,
+        "UNH": 3055953.09
+      }
+    },
+    {
+      "day": 52,
+      "long_fs": {
+        "CVX": 2817159.6,
+        "MCD": 2716632.1,
+        "MRK": 2285775.25,
+        "UNH": 3064389.21
+      },
+      "long_total": 10883956.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10883956.16,
+      "stock_caps": {
+        "CVX": 2817159.6,
+        "MCD": 2716632.1,
+        "MRK": 2285775.25,
+        "UNH": 3064389.21
+      }
+    },
+    {
+      "day": 53,
+      "long_fs": {
+        "CVX": 2801097.44,
+        "MCD": 2737338.05,
+        "MRK": 2334386.5,
+        "UNH": 3159742.93
+      },
+      "long_total": 11032564.92,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11032564.92,
+      "stock_caps": {
+        "CVX": 2801097.44,
+        "MCD": 2737338.05,
+        "MRK": 2334386.5,
+        "UNH": 3159742.93
+      }
+    },
+    {
+      "day": 54,
+      "long_fs": {
+        "CVX": 2827232.48,
+        "MCD": 2747951.15,
+        "MRK": 2353495.75,
+        "UNH": 3150028.6100000003
+      },
+      "long_total": 11078707.99,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11078707.99,
+      "stock_caps": {
+        "CVX": 2827232.48,
+        "MCD": 2747951.15,
+        "MRK": 2353495.75,
+        "UNH": 3150028.6100000003
+      }
+    },
+    {
+      "day": 55,
+      "long_fs": {
+        "CVX": 2753727.68,
+        "MCD": 2708100.0,
+        "MRK": 2346790.75,
+        "UNH": 3113344.27
+      },
+      "long_total": 10921962.7,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10921962.7,
+      "stock_caps": {
+        "CVX": 2753727.68,
+        "MCD": 2708100.0,
+        "MRK": 2346790.75,
+        "UNH": 3113344.27
+      }
+    },
+    {
+      "day": 56,
+      "long_fs": {
+        "CVX": 2754816.64,
+        "MCD": 2708412.15,
+        "MRK": 2368917.25,
+        "UNH": 3091678.7800000003
+      },
+      "long_total": 10923824.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10923824.82,
+      "stock_caps": {
+        "CVX": 2754816.64,
+        "MCD": 2708412.15,
+        "MRK": 2368917.25,
+        "UNH": 3091678.7800000003
+      }
+    },
+    {
+      "day": 57,
+      "long_fs": {
+        "CVX": 2798919.52,
+        "MCD": 2735985.4,
+        "MRK": 2342097.25,
+        "UNH": 3113919.46
+      },
+      "long_total": 10990921.629999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10990921.629999999,
+      "stock_caps": {
+        "CVX": 2798919.52,
+        "MCD": 2735985.4,
+        "MRK": 2342097.25,
+        "UNH": 3113919.46
+      }
+    },
+    {
+      "day": 58,
+      "long_fs": {
+        "CVX": 2814981.68,
+        "MCD": 2741604.1,
+        "MRK": 2361206.5,
+        "UNH": 3158145.18
+      },
+      "long_total": 11075937.46,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11075937.46,
+      "stock_caps": {
+        "CVX": 2814981.68,
+        "MCD": 2741604.1,
+        "MRK": 2361206.5,
+        "UNH": 3158145.18
+      }
+    },
+    {
+      "day": 59,
+      "long_fs": {
+        "CVX": 2821787.68,
+        "MCD": 2752113.1500000004,
+        "MRK": 2347796.5,
+        "UNH": 3166133.93
+      },
+      "long_total": 11087831.26,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11087831.26,
+      "stock_caps": {
+        "CVX": 2821787.68,
+        "MCD": 2752113.1500000004,
+        "MRK": 2347796.5,
+        "UNH": 3166133.93
+      }
+    },
+    {
+      "day": 60,
+      "long_fs": {
+        "CVX": 2879502.56,
+        "MCD": 2775836.55,
+        "MRK": 2373946.0,
+        "UNH": 3192464.85
+      },
+      "long_total": 11221749.959999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11221749.959999999,
+      "stock_caps": {
+        "CVX": 2879502.56,
+        "MCD": 2775836.55,
+        "MRK": 2373946.0,
+        "UNH": 3192464.85
+      }
+    },
+    {
+      "day": 61,
+      "long_fs": {
+        "CVX": 2873785.52,
+        "MCD": 2772090.7499999995,
+        "MRK": 2381321.5,
+        "UNH": 3214449.89
+      },
+      "long_total": 11241647.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11241647.66,
+      "stock_caps": {
+        "CVX": 2873785.52,
+        "MCD": 2772090.7499999995,
+        "MRK": 2381321.5,
+        "UNH": 3214449.89
+      }
+    },
+    {
+      "day": 62,
+      "long_fs": {
+        "CVX": 2859084.56,
+        "MCD": 2778333.75,
+        "MRK": 2385679.75,
+        "UNH": 3231322.13
+      },
+      "long_total": 11254420.190000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11254420.190000001,
+      "stock_caps": {
+        "CVX": 2859084.56,
+        "MCD": 2778333.75,
+        "MRK": 2385679.75,
+        "UNH": 3231322.13
+      }
+    },
+    {
+      "day": 63,
+      "long_fs": {
+        "CVX": 2846561.52,
+        "MCD": 2765119.4000000004,
+        "MRK": 2391714.25,
+        "UNH": 3223972.48
+      },
+      "long_total": 11227367.65,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11227367.65,
+      "stock_caps": {
+        "CVX": 2846561.52,
+        "MCD": 2765119.4000000004,
+        "MRK": 2391714.25,
+        "UNH": 3223972.48
+      }
+    },
+    {
+      "day": 64,
+      "long_fs": {
+        "CVX": 2844655.84,
+        "MCD": 2774067.6999999997,
+        "MRK": 2376292.75,
+        "UNH": 3209337.09
+      },
+      "long_total": 11204353.379999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11204353.379999999,
+      "stock_caps": {
+        "CVX": 2844655.84,
+        "MCD": 2774067.6999999997,
+        "MRK": 2376292.75,
+        "UNH": 3209337.09
+      }
+    },
+    {
+      "day": 65,
+      "long_fs": {
+        "CVX": 2890936.64,
+        "MCD": 2779270.1999999997,
+        "MRK": 2383333.0,
+        "UNH": 3210231.83
+      },
+      "long_total": 11263771.67,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11263771.67,
+      "stock_caps": {
+        "CVX": 2890936.64,
+        "MCD": 2779270.1999999997,
+        "MRK": 2383333.0,
+        "UNH": 3210231.83
+      }
+    },
+    {
+      "day": 66,
+      "long_fs": {
+        "CVX": 2943478.9600000004,
+        "MCD": 2778541.8499999996,
+        "MRK": 2387691.25,
+        "UNH": 3137502.25
+      },
+      "long_total": 11247214.31,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11247214.31,
+      "stock_caps": {
+        "CVX": 2943478.9600000004,
+        "MCD": 2778541.8499999996,
+        "MRK": 2387691.25,
+        "UNH": 3137502.25
+      }
+    },
+    {
+      "day": 67,
+      "long_fs": {
+        "CVX": 2962535.76,
+        "MCD": 2764911.3,
+        "MRK": 2445689.5,
+        "UNH": 3129769.14
+      },
+      "long_total": 11302905.7,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11302905.7,
+      "stock_caps": {
+        "CVX": 2962535.76,
+        "MCD": 2764911.3,
+        "MRK": 2445689.5,
+        "UNH": 3129769.14
+      }
+    },
+    {
+      "day": 68,
+      "long_fs": {
+        "CVX": 2987854.08,
+        "MCD": 2790819.75,
+        "MRK": 2444013.25,
+        "UNH": 3001693.5
+      },
+      "long_total": 11224380.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11224380.58,
+      "stock_caps": {
+        "CVX": 2987854.08,
+        "MCD": 2790819.75,
+        "MRK": 2444013.25,
+        "UNH": 3001693.5
+      }
+    },
+    {
+      "day": 69,
+      "long_fs": {
+        "CVX": 3030595.76,
+        "MCD": 2763558.65,
+        "MRK": 2489607.25,
+        "UNH": 2931072.95
+      },
+      "long_total": 11214834.61,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11214834.61,
+      "stock_caps": {
+        "CVX": 3030595.76,
+        "MCD": 2763558.65,
+        "MRK": 2489607.25,
+        "UNH": 2931072.95
+      }
+    },
+    {
+      "day": 70,
+      "long_fs": {
+        "CVX": 3032773.68,
+        "MCD": 2736193.5,
+        "MRK": 2553640.0,
+        "UNH": 2971975.35
+      },
+      "long_total": 11294582.53,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11294582.53,
+      "stock_caps": {
+        "CVX": 3032773.68,
+        "MCD": 2736193.5,
+        "MRK": 2553640.0,
+        "UNH": 2971975.35
+      }
+    },
+    {
+      "day": 71,
+      "long_fs": {
+        "CVX": 3101922.64,
+        "MCD": 2712470.1,
+        "MRK": 2532184.0,
+        "UNH": 2997539.35
+      },
+      "long_total": 11344116.09,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11344116.09,
+      "stock_caps": {
+        "CVX": 3101922.64,
+        "MCD": 2712470.1,
+        "MRK": 2532184.0,
+        "UNH": 2997539.35
+      }
+    },
+    {
+      "day": 72,
+      "long_fs": {
+        "CVX": 3086404.9600000004,
+        "MCD": 2700088.1500000004,
+        "MRK": 2517433.0,
+        "UNH": 3027704.87
+      },
+      "long_total": 11331630.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11331630.98,
+      "stock_caps": {
+        "CVX": 3086404.9600000004,
+        "MCD": 2700088.1500000004,
+        "MRK": 2517433.0,
+        "UNH": 3027704.87
+      }
+    },
+    {
+      "day": 73,
+      "long_fs": {
+        "CVX": 3073609.68,
+        "MCD": 2705082.55,
+        "MRK": 2521120.75,
+        "UNH": 2987505.48
+      },
+      "long_total": 11287318.46,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11287318.46,
+      "stock_caps": {
+        "CVX": 3073609.68,
+        "MCD": 2705082.55,
+        "MRK": 2521120.75,
+        "UNH": 2987505.48
+      }
+    },
+    {
+      "day": 74,
+      "long_fs": {
+        "CVX": 3125879.76,
+        "MCD": 2666792.15,
+        "MRK": 2523132.25,
+        "UNH": 2995558.14
+      },
+      "long_total": 11311362.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11311362.3,
+      "stock_caps": {
+        "CVX": 3125879.76,
+        "MCD": 2666792.15,
+        "MRK": 2523132.25,
+        "UNH": 2995558.14
+      }
+    },
+    {
+      "day": 75,
+      "long_fs": {
+        "CVX": 3136224.8800000004,
+        "MCD": 2654098.05,
+        "MRK": 2528161.0,
+        "UNH": 2946347.44
+      },
+      "long_total": 11264831.37,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11264831.37,
+      "stock_caps": {
+        "CVX": 3136224.8800000004,
+        "MCD": 2654098.05,
+        "MRK": 2528161.0,
+        "UNH": 2946347.44
+      }
+    },
+    {
+      "day": 76,
+      "long_fs": {
+        "CVX": 3124790.8000000003,
+        "MCD": 2641091.8,
+        "MRK": 2520450.25,
+        "UNH": 2956125.67
+      },
+      "long_total": 11242458.52,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11242458.52,
+      "stock_caps": {
+        "CVX": 3124790.8000000003,
+        "MCD": 2641091.8,
+        "MRK": 2520450.25,
+        "UNH": 2956125.67
+      }
+    },
+    {
+      "day": 77,
+      "long_fs": {
+        "CVX": 3113628.9600000004,
+        "MCD": 2619449.4,
+        "MRK": 2503687.75,
+        "UNH": 2959193.35
+      },
+      "long_total": 11195959.46,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11195959.46,
+      "stock_caps": {
+        "CVX": 3113628.9600000004,
+        "MCD": 2619449.4,
+        "MRK": 2503687.75,
+        "UNH": 2959193.35
+      }
+    },
+    {
+      "day": 78,
+      "long_fs": {
+        "CVX": 3076332.08,
+        "MCD": 2634536.65,
+        "MRK": 2479549.75,
+        "UNH": 2947497.8200000003
+      },
+      "long_total": 11137916.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11137916.3,
+      "stock_caps": {
+        "CVX": 3076332.08,
+        "MCD": 2634536.65,
+        "MRK": 2479549.75,
+        "UNH": 2947497.8200000003
+      }
+    },
+    {
+      "day": 79,
+      "long_fs": {
+        "CVX": 3082865.84,
+        "MCD": 2624443.8000000003,
+        "MRK": 2444013.25,
+        "UNH": 2954527.92
+      },
+      "long_total": 11105850.81,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11105850.81,
+      "stock_caps": {
+        "CVX": 3082865.84,
+        "MCD": 2624443.8000000003,
+        "MRK": 2444013.25,
+        "UNH": 2954527.92
+      }
+    },
+    {
+      "day": 80,
+      "long_fs": {
+        "CVX": 3214085.52,
+        "MCD": 2594061.1999999997,
+        "MRK": 2463457.75,
+        "UNH": 2919824.79
+      },
+      "long_total": 11191429.26,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11191429.26,
+      "stock_caps": {
+        "CVX": 3214085.52,
+        "MCD": 2594061.1999999997,
+        "MRK": 2463457.75,
+        "UNH": 2919824.79
+      }
+    },
+    {
+      "day": 81,
+      "long_fs": {
+        "CVX": 3216263.44,
+        "MCD": 2585529.1,
+        "MRK": 2453735.5,
+        "UNH": 2929986.48
+      },
+      "long_total": 11185514.52,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11185514.52,
+      "stock_caps": {
+        "CVX": 3216263.44,
+        "MCD": 2585529.1,
+        "MRK": 2453735.5,
+        "UNH": 2929986.48
+      }
+    },
+    {
+      "day": 82,
+      "long_fs": {
+        "CVX": 3281328.8000000003,
+        "MCD": 2573979.5500000003,
+        "MRK": 2498323.75,
+        "UNH": 2950245.95
+      },
+      "long_total": 11303878.05,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11303878.05,
+      "stock_caps": {
+        "CVX": 3281328.8000000003,
+        "MCD": 2573979.5500000003,
+        "MRK": 2498323.75,
+        "UNH": 2950245.95
+      }
+    },
+    {
+      "day": 83,
+      "long_fs": {
+        "CVX": 3165899.04,
+        "MCD": 2650040.1,
+        "MRK": 2508381.25,
+        "UNH": 2978749.81
+      },
+      "long_total": 11303070.200000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11303070.200000001,
+      "stock_caps": {
+        "CVX": 3165899.04,
+        "MCD": 2650040.1,
+        "MRK": 2508381.25,
+        "UNH": 2978749.81
+      }
+    },
+    {
+      "day": 84,
+      "long_fs": {
+        "CVX": 3183322.4000000004,
+        "MCD": 2684792.8,
+        "MRK": 2526149.5,
+        "UNH": 3020355.22
+      },
+      "long_total": 11414619.92,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11414619.92,
+      "stock_caps": {
+        "CVX": 3183322.4000000004,
+        "MCD": 2684792.8,
+        "MRK": 2526149.5,
+        "UNH": 3020355.22
+      }
+    },
+    {
+      "day": 85,
+      "long_fs": {
+        "CVX": 3267172.3200000003,
+        "MCD": 2680110.55,
+        "MRK": 2539894.75,
+        "UNH": 2993768.66
+      },
+      "long_total": 11480946.280000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11480946.280000001,
+      "stock_caps": {
+        "CVX": 3267172.3200000003,
+        "MCD": 2680110.55,
+        "MRK": 2539894.75,
+        "UNH": 2993768.66
+      }
+    },
+    {
+      "day": 86,
+      "long_fs": {
+        "CVX": 3282417.76,
+        "MCD": 2714134.9,
+        "MRK": 2542576.75,
+        "UNH": 3066434.33
+      },
+      "long_total": 11605563.74,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11605563.74,
+      "stock_caps": {
+        "CVX": 3282417.76,
+        "MCD": 2714134.9,
+        "MRK": 2542576.75,
+        "UNH": 3066434.33
+      }
+    },
+    {
+      "day": 87,
+      "long_fs": {
+        "CVX": 3253015.84,
+        "MCD": 2697174.75,
+        "MRK": 2449712.5,
+        "UNH": 3123889.42
+      },
+      "long_total": 11523792.51,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11523792.51,
+      "stock_caps": {
+        "CVX": 3253015.84,
+        "MCD": 2697174.75,
+        "MRK": 2449712.5,
+        "UNH": 3123889.42
+      }
+    },
+    {
+      "day": 88,
+      "long_fs": {
+        "CVX": 3293579.6,
+        "MCD": 2691139.85,
+        "MRK": 2435632.0,
+        "UNH": 3088099.8200000003
+      },
+      "long_total": 11508451.27,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11508451.27,
+      "stock_caps": {
+        "CVX": 3293579.6,
+        "MCD": 2691139.85,
+        "MRK": 2435632.0,
+        "UNH": 3088099.8200000003
+      }
+    },
+    {
+      "day": 89,
+      "long_fs": {
+        "CVX": 3358372.72,
+        "MCD": 2688954.8000000003,
+        "MRK": 2405124.25,
+        "UNH": 3091487.05
+      },
+      "long_total": 11543938.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11543938.82,
+      "stock_caps": {
+        "CVX": 3358372.72,
+        "MCD": 2688954.8000000003,
+        "MRK": 2405124.25,
+        "UNH": 3091487.05
+      }
+    },
+    {
+      "day": 90,
+      "long_fs": {
+        "CVX": 3307191.6,
+        "MCD": 2691347.9499999997,
+        "MRK": 2384674.0,
+        "UNH": 3153543.66
+      },
+      "long_total": 11536757.21,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11536757.21,
+      "stock_caps": {
+        "CVX": 3307191.6,
+        "MCD": 2691347.9499999997,
+        "MRK": 2384674.0,
+        "UNH": 3153543.66
+      }
+    },
+    {
+      "day": 91,
+      "long_fs": {
+        "CVX": 3340132.64,
+        "MCD": 2689058.85,
+        "MRK": 2372605.0,
+        "UNH": 3183517.45
+      },
+      "long_total": 11585313.940000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11585313.940000001,
+      "stock_caps": {
+        "CVX": 3340132.64,
+        "MCD": 2689058.85,
+        "MRK": 2372605.0,
+        "UNH": 3183517.45
+      }
+    },
+    {
+      "day": 92,
+      "long_fs": {
+        "CVX": 3297663.1999999997,
+        "MCD": 2658156.0,
+        "MRK": 2373610.75,
+        "UNH": 3110787.87
+      },
+      "long_total": 11440217.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11440217.82,
+      "stock_caps": {
+        "CVX": 3297663.1999999997,
+        "MCD": 2658156.0,
+        "MRK": 2373610.75,
+        "UNH": 3110787.87
+      }
+    },
+    {
+      "day": 93,
+      "long_fs": {
+        "CVX": 3364634.24,
+        "MCD": 2640467.5,
+        "MRK": 2376292.75,
+        "UNH": 3055889.18
+      },
+      "long_total": 11437283.67,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11437283.67,
+      "stock_caps": {
+        "CVX": 3364634.24,
+        "MCD": 2640467.5,
+        "MRK": 2376292.75,
+        "UNH": 3055889.18
+      }
+    },
+    {
+      "day": 94,
+      "long_fs": {
+        "CVX": 3312908.64,
+        "MCD": 2622154.7,
+        "MRK": 2370928.75,
+        "UNH": 3032050.75
+      },
+      "long_total": 11338042.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11338042.84,
+      "stock_caps": {
+        "CVX": 3312908.64,
+        "MCD": 2622154.7,
+        "MRK": 2370928.75,
+        "UNH": 3032050.75
+      }
+    },
+    {
+      "day": 95,
+      "long_fs": {
+        "CVX": 3288679.28,
+        "MCD": 2626524.8,
+        "MRK": 2412499.75,
+        "UNH": 3056528.2800000003
+      },
+      "long_total": 11384232.11,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11384232.11,
+      "stock_caps": {
+        "CVX": 3288679.28,
+        "MCD": 2626524.8,
+        "MRK": 2412499.75,
+        "UNH": 3056528.2800000003
+      }
+    },
+    {
+      "day": 96,
+      "long_fs": {
+        "CVX": 3289496.0,
+        "MCD": 2619033.2,
+        "MRK": 2394061.0,
+        "UNH": 3068159.9000000004
+      },
+      "long_total": 11370750.100000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11370750.100000001,
+      "stock_caps": {
+        "CVX": 3289496.0,
+        "MCD": 2619033.2,
+        "MRK": 2394061.0,
+        "UNH": 3068159.9000000004
+      }
+    },
+    {
+      "day": 97,
+      "long_fs": {
+        "CVX": 3272617.12,
+        "MCD": 2596662.4499999997,
+        "MRK": 2367576.25,
+        "UNH": 3006103.29
+      },
+      "long_total": 11242959.11,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11242959.11,
+      "stock_caps": {
+        "CVX": 3272617.12,
+        "MCD": 2596662.4499999997,
+        "MRK": 2367576.25,
+        "UNH": 3006103.29
+      }
+    },
+    {
+      "day": 98,
+      "long_fs": {
+        "CVX": 3267989.04,
+        "MCD": 2593228.8000000003,
+        "MRK": 2367911.5,
+        "UNH": 2989934.06
+      },
+      "long_total": 11219063.4,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11219063.4,
+      "stock_caps": {
+        "CVX": 3267989.04,
+        "MCD": 2593228.8000000003,
+        "MRK": 2367911.5,
+        "UNH": 2989934.06
+      }
+    },
+    {
+      "day": 99,
+      "long_fs": {
+        "CVX": 3242942.9600000004,
+        "MCD": 2614975.25,
+        "MRK": 2354836.75,
+        "UNH": 2956061.7600000002
+      },
+      "long_total": 11168816.72,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11168816.72,
+      "stock_caps": {
+        "CVX": 3242942.9600000004,
+        "MCD": 2614975.25,
+        "MRK": 2354836.75,
+        "UNH": 2956061.7600000002
+      }
+    },
+    {
+      "day": 100,
+      "long_fs": {
+        "CVX": 3320259.12,
+        "MCD": 2564198.85,
+        "MRK": 2351484.25,
+        "UNH": 2937591.77
+      },
+      "long_total": 11173533.99,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11173533.99,
+      "stock_caps": {
+        "CVX": 3320259.12,
+        "MCD": 2564198.85,
+        "MRK": 2351484.25,
+        "UNH": 2937591.77
+      }
+    },
+    {
+      "day": 101,
+      "long_fs": {
+        "CVX": 3303108.0,
+        "MCD": 2535585.1,
+        "MRK": 2279070.25,
+        "UNH": 2913753.34
+      },
+      "long_total": 11031516.69,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11031516.69,
+      "stock_caps": {
+        "CVX": 3303108.0,
+        "MCD": 2535585.1,
+        "MRK": 2279070.25,
+        "UNH": 2913753.34
+      }
+    },
+    {
+      "day": 102,
+      "long_fs": {
+        "CVX": 3438411.28,
+        "MCD": 2581367.1,
+        "MRK": 2366235.25,
+        "UNH": 3040678.6
+      },
+      "long_total": 11426692.23,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11426692.23,
+      "stock_caps": {
+        "CVX": 3438411.28,
+        "MCD": 2581367.1,
+        "MRK": 2366235.25,
+        "UNH": 3040678.6
+      }
+    },
+    {
+      "day": 103,
+      "long_fs": {
+        "CVX": 3527161.52,
+        "MCD": 2547030.6,
+        "MRK": 2374281.25,
+        "UNH": 3041445.52
+      },
+      "long_total": 11489918.89,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11489918.89,
+      "stock_caps": {
+        "CVX": 3527161.52,
+        "MCD": 2547030.6,
+        "MRK": 2374281.25,
+        "UNH": 3041445.52
+      }
+    },
+    {
+      "day": 104,
+      "long_fs": {
+        "CVX": 3667365.12,
+        "MCD": 2493548.9,
+        "MRK": 2366905.75,
+        "UNH": 3043874.1
+      },
+      "long_total": 11571693.87,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11571693.87,
+      "stock_caps": {
+        "CVX": 3667365.12,
+        "MCD": 2493548.9,
+        "MRK": 2366905.75,
+        "UNH": 3043874.1
+      }
+    },
+    {
+      "day": 105,
+      "long_fs": {
+        "CVX": 3775444.4000000004,
+        "MCD": 2507179.45,
+        "MRK": 2376963.25,
+        "UNH": 3102223.93
+      },
+      "long_total": 11761811.030000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11761811.030000001,
+      "stock_caps": {
+        "CVX": 3775444.4000000004,
+        "MCD": 2507179.45,
+        "MRK": 2376963.25,
+        "UNH": 3102223.93
+      }
+    },
+    {
+      "day": 106,
+      "long_fs": {
+        "CVX": 3826625.52,
+        "MCD": 2462542.0,
+        "MRK": 2392049.5,
+        "UNH": 3109957.04
+      },
+      "long_total": 11791174.059999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11791174.059999999,
+      "stock_caps": {
+        "CVX": 3826625.52,
+        "MCD": 2462542.0,
+        "MRK": 2392049.5,
+        "UNH": 3109957.04
+      }
+    },
+    {
+      "day": 107,
+      "long_fs": {
+        "CVX": 3885973.8400000003,
+        "MCD": 2453801.8,
+        "MRK": 2413170.25,
+        "UNH": 3187032.5
+      },
+      "long_total": 11939978.39,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11939978.39,
+      "stock_caps": {
+        "CVX": 3885973.8400000003,
+        "MCD": 2453801.8,
+        "MRK": 2413170.25,
+        "UNH": 3187032.5
+      }
+    },
+    {
+      "day": 108,
+      "long_fs": {
+        "CVX": 3969007.04,
+        "MCD": 2334352.4,
+        "MRK": 2409817.75,
+        "UNH": 3111746.52
+      },
+      "long_total": 11824923.709999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11824923.709999999,
+      "stock_caps": {
+        "CVX": 3969007.04,
+        "MCD": 2334352.4,
+        "MRK": 2409817.75,
+        "UNH": 3111746.52
+      }
+    },
+    {
+      "day": 109,
+      "long_fs": {
+        "CVX": 4176998.4000000004,
+        "MCD": 2318328.6999999997,
+        "MRK": 2385679.75,
+        "UNH": 3026043.21
+      },
+      "long_total": 11907050.059999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11907050.059999999,
+      "stock_caps": {
+        "CVX": 4176998.4000000004,
+        "MCD": 2318328.6999999997,
+        "MRK": 2385679.75,
+        "UNH": 3026043.21
+      }
+    },
+    {
+      "day": 110,
+      "long_fs": {
+        "CVX": 4072730.48,
+        "MCD": 2314999.1,
+        "MRK": 2411829.25,
+        "UNH": 3103438.22
+      },
+      "long_total": 11902997.05,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11902997.05,
+      "stock_caps": {
+        "CVX": 4072730.48,
+        "MCD": 2314999.1,
+        "MRK": 2411829.25,
+        "UNH": 3103438.22
+      }
+    },
+    {
+      "day": 111,
+      "long_fs": {
+        "CVX": 4184076.64,
+        "MCD": 2310108.75,
+        "MRK": 2414846.5,
+        "UNH": 3140953.39
+      },
+      "long_total": 12049985.280000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12049985.280000001,
+      "stock_caps": {
+        "CVX": 4184076.64,
+        "MCD": 2310108.75,
+        "MRK": 2414846.5,
+        "UNH": 3140953.39
+      }
+    },
+    {
+      "day": 112,
+      "long_fs": {
+        "CVX": 4185982.32,
+        "MCD": 2360781.1,
+        "MRK": 2426245.0,
+        "UNH": 3086182.52
+      },
+      "long_total": 12059190.94,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12059190.94,
+      "stock_caps": {
+        "CVX": 4185982.32,
+        "MCD": 2360781.1,
+        "MRK": 2426245.0,
+        "UNH": 3086182.52
+      }
+    },
+    {
+      "day": 113,
+      "long_fs": {
+        "CVX": 4083620.08,
+        "MCD": 2353601.65,
+        "MRK": 2432950.0,
+        "UNH": 3118457.0700000003
+      },
+      "long_total": 11988628.8,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11988628.8,
+      "stock_caps": {
+        "CVX": 4083620.08,
+        "MCD": 2353601.65,
+        "MRK": 2432950.0,
+        "UNH": 3118457.0700000003
+      }
+    },
+    {
+      "day": 114,
+      "long_fs": {
+        "CVX": 3876989.92,
+        "MCD": 2420089.6,
+        "MRK": 2459770.0,
+        "UNH": 3182303.16
+      },
+      "long_total": 11939152.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11939152.68,
+      "stock_caps": {
+        "CVX": 3876989.92,
+        "MCD": 2420089.6,
+        "MRK": 2459770.0,
+        "UNH": 3182303.16
+      }
+    },
+    {
+      "day": 115,
+      "long_fs": {
+        "CVX": 3863105.68,
+        "MCD": 2478045.4499999997,
+        "MRK": 2443678.0,
+        "UNH": 3184540.0100000002
+      },
+      "long_total": 11969369.139999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11969369.139999999,
+      "stock_caps": {
+        "CVX": 3863105.68,
+        "MCD": 2478045.4499999997,
+        "MRK": 2443678.0,
+        "UNH": 3184540.0100000002
+      }
+    },
+    {
+      "day": 116,
+      "long_fs": {
+        "CVX": 3929804.48,
+        "MCD": 2471074.1,
+        "MRK": 2469157.0,
+        "UNH": 3240525.17
+      },
+      "long_total": 12110560.75,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12110560.75,
+      "stock_caps": {
+        "CVX": 3929804.48,
+        "MCD": 2471074.1,
+        "MRK": 2469157.0,
+        "UNH": 3240525.17
+      }
+    },
+    {
+      "day": 117,
+      "long_fs": {
+        "CVX": 3961384.32,
+        "MCD": 2486161.35,
+        "MRK": 2474521.0,
+        "UNH": 3234773.27
+      },
+      "long_total": 12156839.94,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12156839.94,
+      "stock_caps": {
+        "CVX": 3961384.32,
+        "MCD": 2486161.35,
+        "MRK": 2474521.0,
+        "UNH": 3234773.27
+      }
+    },
+    {
+      "day": 118,
+      "long_fs": {
+        "CVX": 4032711.1999999997,
+        "MCD": 2448703.35,
+        "MRK": 2472844.75,
+        "UNH": 3244615.41
+      },
+      "long_total": 12198874.71,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12198874.71,
+      "stock_caps": {
+        "CVX": 4032711.1999999997,
+        "MCD": 2448703.35,
+        "MRK": 2472844.75,
+        "UNH": 3244615.41
+      }
+    },
+    {
+      "day": 119,
+      "long_fs": {
+        "CVX": 4019371.4399999995,
+        "MCD": 2477837.35,
+        "MRK": 2480555.5,
+        "UNH": 3229660.47
+      },
+      "long_total": 12207424.76,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12207424.76,
+      "stock_caps": {
+        "CVX": 4019371.4399999995,
+        "MCD": 2477837.35,
+        "MRK": 2480555.5,
+        "UNH": 3229660.47
+      }
+    },
+    {
+      "day": 120,
+      "long_fs": {
+        "CVX": 4062657.5999999996,
+        "MCD": 2457027.35,
+        "MRK": 2493965.5,
+        "UNH": 3216303.2800000003
+      },
+      "long_total": 12229953.73,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12229953.73,
+      "stock_caps": {
+        "CVX": 4062657.5999999996,
+        "MCD": 2457027.35,
+        "MRK": 2493965.5,
+        "UNH": 3216303.2800000003
+      }
+    },
+    {
+      "day": 121,
+      "long_fs": {
+        "CVX": 4073274.9600000004,
+        "MCD": 2500104.05,
+        "MRK": 2515086.25,
+        "UNH": 3281683.2100000004
+      },
+      "long_total": 12370148.47,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12370148.47,
+      "stock_caps": {
+        "CVX": 4073274.9600000004,
+        "MCD": 2500104.05,
+        "MRK": 2515086.25,
+        "UNH": 3281683.2100000004
+      }
+    },
+    {
+      "day": 122,
+      "long_fs": {
+        "CVX": 4147052.0000000005,
+        "MCD": 2513838.65,
+        "MRK": 2544253.0,
+        "UNH": 3278935.08
+      },
+      "long_total": 12484078.73,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12484078.73,
+      "stock_caps": {
+        "CVX": 4147052.0000000005,
+        "MCD": 2513838.65,
+        "MRK": 2544253.0,
+        "UNH": 3278935.08
+      }
+    },
+    {
+      "day": 123,
+      "long_fs": {
+        "CVX": 4074636.1599999997,
+        "MCD": 2527989.45,
+        "MRK": 2540230.0,
+        "UNH": 3280021.5500000003
+      },
+      "long_total": 12422877.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12422877.16,
+      "stock_caps": {
+        "CVX": 4074636.1599999997,
+        "MCD": 2527989.45,
+        "MRK": 2540230.0,
+        "UNH": 3280021.5500000003
+      }
+    },
+    {
+      "day": 124,
+      "long_fs": {
+        "CVX": 4024816.24,
+        "MCD": 2582407.6,
+        "MRK": 2551628.5,
+        "UNH": 3264235.7800000003
+      },
+      "long_total": 12423088.120000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12423088.120000001,
+      "stock_caps": {
+        "CVX": 4024816.24,
+        "MCD": 2582407.6,
+        "MRK": 2551628.5,
+        "UNH": 3264235.7800000003
+      }
+    },
+    {
+      "day": 125,
+      "long_fs": {
+        "CVX": 4053401.4399999995,
+        "MCD": 2591355.9,
+        "MRK": 2577442.75,
+        "UNH": 3328720.97
+      },
+      "long_total": 12550921.06,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12550921.06,
+      "stock_caps": {
+        "CVX": 4053401.4399999995,
+        "MCD": 2591355.9,
+        "MRK": 2577442.75,
+        "UNH": 3328720.97
+      }
+    },
+    {
+      "day": 126,
+      "long_fs": {
+        "CVX": 3988336.08,
+        "MCD": 2573147.15,
+        "MRK": 2566379.5,
+        "UNH": 3259378.62
+      },
+      "long_total": 12387241.350000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12387241.350000001,
+      "stock_caps": {
+        "CVX": 3988336.08,
+        "MCD": 2573147.15,
+        "MRK": 2566379.5,
+        "UNH": 3259378.62
+      }
+    },
+    {
+      "day": 127,
+      "long_fs": {
+        "CVX": 4022366.08,
+        "MCD": 2593645.0,
+        "MRK": 2612644.0,
+        "UNH": 3276123.0400000005
+      },
+      "long_total": 12504778.120000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12504778.120000001,
+      "stock_caps": {
+        "CVX": 4022366.08,
+        "MCD": 2593645.0,
+        "MRK": 2612644.0,
+        "UNH": 3276123.0400000005
+      }
+    },
+    {
+      "day": 128,
+      "long_fs": {
+        "CVX": 4026177.4399999995,
+        "MCD": 2568464.9,
+        "MRK": 2611638.25,
+        "UNH": 3259698.17
+      },
+      "long_total": 12465978.76,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12465978.76,
+      "stock_caps": {
+        "CVX": 4026177.4399999995,
+        "MCD": 2568464.9,
+        "MRK": 2611638.25,
+        "UNH": 3259698.17
+      }
+    },
+    {
+      "day": 129,
+      "long_fs": {
+        "CVX": 4001403.5999999996,
+        "MCD": 2585945.3,
+        "MRK": 2618678.5,
+        "UNH": 3309164.5100000002
+      },
+      "long_total": 12515191.909999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12515191.909999998,
+      "stock_caps": {
+        "CVX": 4001403.5999999996,
+        "MCD": 2585945.3,
+        "MRK": 2618678.5,
+        "UNH": 3309164.5100000002
+      }
+    },
+    {
+      "day": 130,
+      "long_fs": {
+        "CVX": 4036794.8000000003,
+        "MCD": 2616640.0500000003,
+        "MRK": 2657902.75,
+        "UNH": 3398574.6
+      },
+      "long_total": 12709912.200000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12709912.200000001,
+      "stock_caps": {
+        "CVX": 4036794.8000000003,
+        "MCD": 2616640.0500000003,
+        "MRK": 2657902.75,
+        "UNH": 3398574.6
+      }
+    },
+    {
+      "day": 131,
+      "long_fs": {
+        "CVX": 4092876.24,
+        "MCD": 2646814.5500000003,
+        "MRK": 2715230.5,
+        "UNH": 3431807.8000000003
+      },
+      "long_total": 12886729.090000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12886729.090000002,
+      "stock_caps": {
+        "CVX": 4092876.24,
+        "MCD": 2646814.5500000003,
+        "MRK": 2715230.5,
+        "UNH": 3431807.8000000003
+      }
+    },
+    {
+      "day": 132,
+      "long_fs": {
+        "CVX": 4162297.4399999995,
+        "MCD": 2616640.0500000003,
+        "MRK": 2742721.0,
+        "UNH": 3489390.7100000004
+      },
+      "long_total": 13011049.200000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13011049.200000001,
+      "stock_caps": {
+        "CVX": 4162297.4399999995,
+        "MCD": 2616640.0500000003,
+        "MRK": 2742721.0,
+        "UNH": 3489390.7100000004
+      }
+    },
+    {
+      "day": 133,
+      "long_fs": {
+        "CVX": 4055307.12,
+        "MCD": 2606131.0,
+        "MRK": 2709866.5,
+        "UNH": 3434939.3900000006
+      },
+      "long_total": 12806244.010000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12806244.010000002,
+      "stock_caps": {
+        "CVX": 4055307.12,
+        "MCD": 2606131.0,
+        "MRK": 2709866.5,
+        "UNH": 3434939.3900000006
+      }
+    },
+    {
+      "day": 134,
+      "long_fs": {
+        "CVX": 4139701.52,
+        "MCD": 2592812.6,
+        "MRK": 2678353.0,
+        "UNH": 3411100.9600000004
+      },
+      "long_total": 12821968.080000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12821968.080000002,
+      "stock_caps": {
+        "CVX": 4139701.52,
+        "MCD": 2592812.6,
+        "MRK": 2678353.0,
+        "UNH": 3411100.9600000004
+      }
+    },
+    {
+      "day": 135,
+      "long_fs": {
+        "CVX": 4205039.12,
+        "MCD": 2615287.4,
+        "MRK": 2694109.75,
+        "UNH": 3432127.35
+      },
+      "long_total": 12946563.62,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12946563.62,
+      "stock_caps": {
+        "CVX": 4205039.12,
+        "MCD": 2615287.4,
+        "MRK": 2694109.75,
+        "UNH": 3432127.35
+      }
+    },
+    {
+      "day": 136,
+      "long_fs": {
+        "CVX": 4202861.2,
+        "MCD": 2606755.3,
+        "MRK": 2718583.0,
+        "UNH": 3418194.97
+      },
+      "long_total": 12946394.47,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12946394.47,
+      "stock_caps": {
+        "CVX": 4202861.2,
+        "MCD": 2606755.3,
+        "MRK": 2718583.0,
+        "UNH": 3418194.97
+      }
+    },
+    {
+      "day": 137,
+      "long_fs": {
+        "CVX": 4259214.88,
+        "MCD": 2612478.05,
+        "MRK": 2692098.25,
+        "UNH": 3413465.6300000004
+      },
+      "long_total": 12977256.81,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12977256.81,
+      "stock_caps": {
+        "CVX": 4259214.88,
+        "MCD": 2612478.05,
+        "MRK": 2692098.25,
+        "UNH": 3413465.6300000004
+      }
+    },
+    {
+      "day": 138,
+      "long_fs": {
+        "CVX": 4208850.4799999995,
+        "MCD": 2657635.75,
+        "MRK": 2683381.75,
+        "UNH": 3436601.0500000003
+      },
+      "long_total": 12986469.030000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12986469.030000001,
+      "stock_caps": {
+        "CVX": 4208850.4799999995,
+        "MCD": 2657635.75,
+        "MRK": 2683381.75,
+        "UNH": 3436601.0500000003
+      }
+    },
+    {
+      "day": 139,
+      "long_fs": {
+        "CVX": 4226001.6,
+        "MCD": 2662318.0,
+        "MRK": 2704502.5,
+        "UNH": 3489710.2600000002
+      },
+      "long_total": 13082532.36,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13082532.36,
+      "stock_caps": {
+        "CVX": 4226001.6,
+        "MCD": 2662318.0,
+        "MRK": 2704502.5,
+        "UNH": 3489710.2600000002
+      }
+    },
+    {
+      "day": 140,
+      "long_fs": {
+        "CVX": 4031350.0000000005,
+        "MCD": 2656075.0,
+        "MRK": 2697127.0,
+        "UNH": 3434939.3900000006
+      },
+      "long_total": 12819491.39,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12819491.39,
+      "stock_caps": {
+        "CVX": 4031350.0000000005,
+        "MCD": 2656075.0,
+        "MRK": 2697127.0,
+        "UNH": 3434939.3900000006
+      }
+    },
+    {
+      "day": 141,
+      "long_fs": {
+        "CVX": 3942327.52,
+        "MCD": 2603217.6,
+        "MRK": 2645833.75,
+        "UNH": 3329487.8900000006
+      },
+      "long_total": 12520866.760000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12520866.760000002,
+      "stock_caps": {
+        "CVX": 3942327.52,
+        "MCD": 2603217.6,
+        "MRK": 2645833.75,
+        "UNH": 3329487.8900000006
+      }
+    },
+    {
+      "day": 142,
+      "long_fs": {
+        "CVX": 3857660.88,
+        "MCD": 2631415.15,
+        "MRK": 2672653.75,
+        "UNH": 3350769.92
+      },
+      "long_total": 12512499.7,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12512499.7,
+      "stock_caps": {
+        "CVX": 3857660.88,
+        "MCD": 2631415.15,
+        "MRK": 2672653.75,
+        "UNH": 3350769.92
+      }
+    },
+    {
+      "day": 143,
+      "long_fs": {
+        "CVX": 3833976.0000000005,
+        "MCD": 2586673.65,
+        "MRK": 2642481.25,
+        "UNH": 3283728.33
+      },
+      "long_total": 12346859.23,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12346859.23,
+      "stock_caps": {
+        "CVX": 3833976.0000000005,
+        "MCD": 2586673.65,
+        "MRK": 2642481.25,
+        "UNH": 3283728.33
+      }
+    },
+    {
+      "day": 144,
+      "long_fs": {
+        "CVX": 3826897.76,
+        "MCD": 2571690.4499999997,
+        "MRK": 2640469.75,
+        "UNH": 3283920.0599999996
+      },
+      "long_total": 12322978.02,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12322978.02,
+      "stock_caps": {
+        "CVX": 3826897.76,
+        "MCD": 2571690.4499999997,
+        "MRK": 2640469.75,
+        "UNH": 3283920.0599999996
+      }
+    },
+    {
+      "day": 145,
+      "long_fs": {
+        "CVX": 3963017.76,
+        "MCD": 2645045.7,
+        "MRK": 2770882.0,
+        "UNH": 3351728.57
+      },
+      "long_total": 12730674.030000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12730674.030000001,
+      "stock_caps": {
+        "CVX": 3963017.76,
+        "MCD": 2645045.7,
+        "MRK": 2770882.0,
+        "UNH": 3351728.57
+      }
+    },
+    {
+      "day": 146,
+      "long_fs": {
+        "CVX": 3837515.12,
+        "MCD": 2592708.55,
+        "MRK": 2774234.5,
+        "UNH": 3250303.4000000004
+      },
+      "long_total": 12454761.57,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12454761.57,
+      "stock_caps": {
+        "CVX": 3837515.12,
+        "MCD": 2592708.55,
+        "MRK": 2774234.5,
+        "UNH": 3250303.4000000004
+      }
+    },
+    {
+      "day": 147,
+      "long_fs": {
+        "CVX": 3912925.5999999996,
+        "MCD": 2566487.9499999997,
+        "MRK": 2741715.25,
+        "UNH": 3203010.0
+      },
+      "long_total": 12424138.799999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12424138.799999999,
+      "stock_caps": {
+        "CVX": 3912925.5999999996,
+        "MCD": 2566487.9499999997,
+        "MRK": 2741715.25,
+        "UNH": 3203010.0
+      }
+    },
+    {
+      "day": 148,
+      "long_fs": {
+        "CVX": 3980168.88,
+        "MCD": 2558476.1,
+        "MRK": 2724617.5,
+        "UNH": 3193231.77
+      },
+      "long_total": 12456494.25,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12456494.25,
+      "stock_caps": {
+        "CVX": 3980168.88,
+        "MCD": 2558476.1,
+        "MRK": 2724617.5,
+        "UNH": 3193231.77
+      }
+    },
+    {
+      "day": 149,
+      "long_fs": {
+        "CVX": 4105127.04,
+        "MCD": 2646398.35,
+        "MRK": 2768870.5,
+        "UNH": 3244359.77
+      },
+      "long_total": 12764755.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12764755.66,
+      "stock_caps": {
+        "CVX": 4105127.04,
+        "MCD": 2646398.35,
+        "MRK": 2768870.5,
+        "UNH": 3244359.77
+      }
+    },
+    {
+      "day": 150,
+      "long_fs": {
+        "CVX": 4072458.24,
+        "MCD": 2590211.35,
+        "MRK": 2752778.5,
+        "UNH": 3161915.87
+      },
+      "long_total": 12577363.96,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12577363.96,
+      "stock_caps": {
+        "CVX": 4072458.24,
+        "MCD": 2590211.35,
+        "MRK": 2752778.5,
+        "UNH": 3161915.87
+      }
+    },
+    {
+      "day": 151,
+      "long_fs": {
+        "CVX": 4180809.76,
+        "MCD": 2609564.65,
+        "MRK": 2764847.5,
+        "UNH": 3193231.77
+      },
+      "long_total": 12748453.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12748453.68,
+      "stock_caps": {
+        "CVX": 4180809.76,
+        "MCD": 2609564.65,
+        "MRK": 2764847.5,
+        "UNH": 3193231.77
+      }
+    },
+    {
+      "day": 152,
+      "long_fs": {
+        "CVX": 3900674.8000000003,
+        "MCD": 2575332.2,
+        "MRK": 2741380.0,
+        "UNH": 3108870.5700000003
+      },
+      "long_total": 12326257.57,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12326257.57,
+      "stock_caps": {
+        "CVX": 3900674.8000000003,
+        "MCD": 2575332.2,
+        "MRK": 2741380.0,
+        "UNH": 3108870.5700000003
+      }
+    },
+    {
+      "day": 153,
+      "long_fs": {
+        "CVX": 3938243.92,
+        "MCD": 2556499.15,
+        "MRK": 2746744.0,
+        "UNH": 3119032.2600000002
+      },
+      "long_total": 12360519.33,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12360519.33,
+      "stock_caps": {
+        "CVX": 3938243.92,
+        "MCD": 2556499.15,
+        "MRK": 2746744.0,
+        "UNH": 3119032.2600000002
+      }
+    },
+    {
+      "day": 154,
+      "long_fs": {
+        "CVX": 3996503.2800000003,
+        "MCD": 2543492.9,
+        "MRK": 2789991.25,
+        "UNH": 3107145.0
+      },
+      "long_total": 12437132.43,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12437132.43,
+      "stock_caps": {
+        "CVX": 3996503.2800000003,
+        "MCD": 2543492.9,
+        "MRK": 2789991.25,
+        "UNH": 3107145.0
+      }
+    },
+    {
+      "day": 155,
+      "long_fs": {
+        "CVX": 4034344.64,
+        "MCD": 2540995.7,
+        "MRK": 2841284.5,
+        "UNH": 3060171.1500000004
+      },
+      "long_total": 12476795.99,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12476795.99,
+      "stock_caps": {
+        "CVX": 4034344.64,
+        "MCD": 2540995.7,
+        "MRK": 2841284.5,
+        "UNH": 3060171.1500000004
+      }
+    },
+    {
+      "day": 156,
+      "long_fs": {
+        "CVX": 4111933.04,
+        "MCD": 2549839.9499999997,
+        "MRK": 2827874.5,
+        "UNH": 3102351.75
+      },
+      "long_total": 12591999.24,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12591999.24,
+      "stock_caps": {
+        "CVX": 4111933.04,
+        "MCD": 2549839.9499999997,
+        "MRK": 2827874.5,
+        "UNH": 3102351.75
+      }
+    },
+    {
+      "day": 157,
+      "long_fs": {
+        "CVX": 4237707.92,
+        "MCD": 2539434.9499999997,
+        "MRK": 2887884.25,
+        "UNH": 3126765.37
+      },
+      "long_total": 12791792.489999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12791792.489999998,
+      "stock_caps": {
+        "CVX": 4237707.92,
+        "MCD": 2539434.9499999997,
+        "MRK": 2887884.25,
+        "UNH": 3126765.37
+      }
+    },
+    {
+      "day": 158,
+      "long_fs": {
+        "CVX": 4262754.0,
+        "MCD": 2514358.9,
+        "MRK": 2909005.0,
+        "UNH": 3147919.58
+      },
+      "long_total": 12834037.48,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12834037.48,
+      "stock_caps": {
+        "CVX": 4262754.0,
+        "MCD": 2514358.9,
+        "MRK": 2909005.0,
+        "UNH": 3147919.58
+      }
+    },
+    {
+      "day": 159,
+      "long_fs": {
+        "CVX": 4150318.88,
+        "MCD": 2404274.0,
+        "MRK": 2880844.0,
+        "UNH": 3012749.93
+      },
+      "long_total": 12448186.809999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12448186.809999999,
+      "stock_caps": {
+        "CVX": 4150318.88,
+        "MCD": 2404274.0,
+        "MRK": 2880844.0,
+        "UNH": 3012749.93
+      }
+    },
+    {
+      "day": 160,
+      "long_fs": {
+        "CVX": 4120644.7200000007,
+        "MCD": 2382943.75,
+        "MRK": 2880508.75,
+        "UNH": 3058573.4000000004
+      },
+      "long_total": 12442670.620000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12442670.620000001,
+      "stock_caps": {
+        "CVX": 4120644.7200000007,
+        "MCD": 2382943.75,
+        "MRK": 2880508.75,
+        "UNH": 3058573.4000000004
+      }
+    },
+    {
+      "day": 161,
+      "long_fs": {
+        "CVX": 4144329.5999999996,
+        "MCD": 2434032.3,
+        "MRK": 2926102.75,
+        "UNH": 3104460.7800000003
+      },
+      "long_total": 12608925.43,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12608925.43,
+      "stock_caps": {
+        "CVX": 4144329.5999999996,
+        "MCD": 2434032.3,
+        "MRK": 2926102.75,
+        "UNH": 3104460.7800000003
+      }
+    },
+    {
+      "day": 162,
+      "long_fs": {
+        "CVX": 4240702.5600000005,
+        "MCD": 2476588.75,
+        "MRK": 2934819.25,
+        "UNH": 3145043.63
+      },
+      "long_total": 12797154.190000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12797154.190000001,
+      "stock_caps": {
+        "CVX": 4240702.5600000005,
+        "MCD": 2476588.75,
+        "MRK": 2934819.25,
+        "UNH": 3145043.63
+      }
+    },
+    {
+      "day": 163,
+      "long_fs": {
+        "CVX": 4263570.720000001,
+        "MCD": 2544429.35,
+        "MRK": 2960298.25,
+        "UNH": 3180066.31
+      },
+      "long_total": 12948364.63,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12948364.63,
+      "stock_caps": {
+        "CVX": 4263570.720000001,
+        "MCD": 2544429.35,
+        "MRK": 2960298.25,
+        "UNH": 3180066.31
+      }
+    },
+    {
+      "day": 164,
+      "long_fs": {
+        "CVX": 4331902.96,
+        "MCD": 2539122.8,
+        "MRK": 2932472.5,
+        "UNH": 3183453.54
+      },
+      "long_total": 12986951.8,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12986951.8,
+      "stock_caps": {
+        "CVX": 4331902.96,
+        "MCD": 2539122.8,
+        "MRK": 2932472.5,
+        "UNH": 3183453.54
+      }
+    },
+    {
+      "day": 165,
+      "long_fs": {
+        "CVX": 4361032.64,
+        "MCD": 2581575.2,
+        "MRK": 2887549.0,
+        "UNH": 3209912.2800000003
+      },
+      "long_total": 13040069.120000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13040069.120000001,
+      "stock_caps": {
+        "CVX": 4361032.64,
+        "MCD": 2581575.2,
+        "MRK": 2887549.0,
+        "UNH": 3209912.2800000003
+      }
+    },
+    {
+      "day": 166,
+      "long_fs": {
+        "CVX": 4402685.36,
+        "MCD": 2620906.1,
+        "MRK": 2911351.75,
+        "UNH": 3241100.3600000003
+      },
+      "long_total": 13176043.57,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13176043.57,
+      "stock_caps": {
+        "CVX": 4402685.36,
+        "MCD": 2620906.1,
+        "MRK": 2911351.75,
+        "UNH": 3241100.3600000003
+      }
+    },
+    {
+      "day": 167,
+      "long_fs": {
+        "CVX": 4313390.64,
+        "MCD": 2624443.8000000003,
+        "MRK": 2878832.5,
+        "UNH": 3175081.33
+      },
+      "long_total": 12991748.27,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12991748.27,
+      "stock_caps": {
+        "CVX": 4313390.64,
+        "MCD": 2624443.8000000003,
+        "MRK": 2878832.5,
+        "UNH": 3175081.33
+      }
+    },
+    {
+      "day": 168,
+      "long_fs": {
+        "CVX": 4354498.88,
+        "MCD": 2593957.15,
+        "MRK": 2850671.5,
+        "UNH": 3148047.4000000004
+      },
+      "long_total": 12947174.93,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12947174.93,
+      "stock_caps": {
+        "CVX": 4354498.88,
+        "MCD": 2593957.15,
+        "MRK": 2850671.5,
+        "UNH": 3148047.4000000004
+      }
+    },
+    {
+      "day": 169,
+      "long_fs": {
+        "CVX": 4346603.92,
+        "MCD": 2605402.65,
+        "MRK": 2815135.0,
+        "UNH": 3146194.0100000002
+      },
+      "long_total": 12913335.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12913335.58,
+      "stock_caps": {
+        "CVX": 4346603.92,
+        "MCD": 2605402.65,
+        "MRK": 2815135.0,
+        "UNH": 3146194.0100000002
+      }
+    },
+    {
+      "day": 170,
+      "long_fs": {
+        "CVX": 4386078.720000001,
+        "MCD": 2584384.5500000003,
+        "MRK": 2812453.0,
+        "UNH": 3103693.8600000003
+      },
+      "long_total": 12886610.130000003,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12886610.130000003,
+      "stock_caps": {
+        "CVX": 4386078.720000001,
+        "MCD": 2584384.5500000003,
+        "MRK": 2812453.0,
+        "UNH": 3103693.8600000003
+      }
+    },
+    {
+      "day": 171,
+      "long_fs": {
+        "CVX": 4367021.92,
+        "MCD": 2581367.1,
+        "MRK": 2810106.25,
+        "UNH": 3132900.73
+      },
+      "long_total": 12891396.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12891396.0,
+      "stock_caps": {
+        "CVX": 4367021.92,
+        "MCD": 2581367.1,
+        "MRK": 2810106.25,
+        "UNH": 3132900.73
+      }
+    },
+    {
+      "day": 172,
+      "long_fs": {
+        "CVX": 4450327.36,
+        "MCD": 2590419.45,
+        "MRK": 2830221.25,
+        "UNH": 3177126.45
+      },
+      "long_total": 13048094.510000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13048094.510000002,
+      "stock_caps": {
+        "CVX": 4450327.36,
+        "MCD": 2590419.45,
+        "MRK": 2830221.25,
+        "UNH": 3177126.45
+      }
+    },
+    {
+      "day": 173,
+      "long_fs": {
+        "CVX": 4473195.5200000005,
+        "MCD": 2555770.8000000003,
+        "MRK": 2799043.0,
+        "UNH": 3154310.58
+      },
+      "long_total": 12982319.9,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12982319.9,
+      "stock_caps": {
+        "CVX": 4473195.5200000005,
+        "MCD": 2555770.8000000003,
+        "MRK": 2799043.0,
+        "UNH": 3154310.58
+      }
+    },
+    {
+      "day": 174,
+      "long_fs": {
+        "CVX": 4383900.8,
+        "MCD": 2519873.55,
+        "MRK": 2752778.5,
+        "UNH": 3128107.48
+      },
+      "long_total": 12784660.33,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12784660.33,
+      "stock_caps": {
+        "CVX": 4383900.8,
+        "MCD": 2519873.55,
+        "MRK": 2752778.5,
+        "UNH": 3128107.48
+      }
+    },
+    {
+      "day": 175,
+      "long_fs": {
+        "CVX": 4331630.720000001,
+        "MCD": 2470137.65,
+        "MRK": 2726964.25,
+        "UNH": 3097430.68
+      },
+      "long_total": 12626163.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12626163.3,
+      "stock_caps": {
+        "CVX": 4331630.720000001,
+        "MCD": 2470137.65,
+        "MRK": 2726964.25,
+        "UNH": 3097430.68
+      }
+    },
+    {
+      "day": 176,
+      "long_fs": {
+        "CVX": 4132351.04,
+        "MCD": 2481479.1,
+        "MRK": 2658908.5,
+        "UNH": 3002013.05
+      },
+      "long_total": 12274751.690000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12274751.690000001,
+      "stock_caps": {
+        "CVX": 4132351.04,
+        "MCD": 2481479.1,
+        "MRK": 2658908.5,
+        "UNH": 3002013.05
+      }
+    },
+    {
+      "day": 177,
+      "long_fs": {
+        "CVX": 4137795.8400000003,
+        "MCD": 2484496.55,
+        "MRK": 2664607.75,
+        "UNH": 2951204.6
+      },
+      "long_total": 12238104.74,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12238104.74,
+      "stock_caps": {
+        "CVX": 4137795.8400000003,
+        "MCD": 2484496.55,
+        "MRK": 2664607.75,
+        "UNH": 2951204.6
+      }
+    },
+    {
+      "day": 178,
+      "long_fs": {
+        "CVX": 4056668.32,
+        "MCD": 2485953.25,
+        "MRK": 2668966.0,
+        "UNH": 2967693.38
+      },
+      "long_total": 12179280.95,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12179280.95,
+      "stock_caps": {
+        "CVX": 4056668.32,
+        "MCD": 2485953.25,
+        "MRK": 2668966.0,
+        "UNH": 2967693.38
+      }
+    },
+    {
+      "day": 179,
+      "long_fs": {
+        "CVX": 3839693.04,
+        "MCD": 2447350.7,
+        "MRK": 2677012.0,
+        "UNH": 2915031.54
+      },
+      "long_total": 11879087.280000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11879087.280000001,
+      "stock_caps": {
+        "CVX": 3839693.04,
+        "MCD": 2447350.7,
+        "MRK": 2677012.0,
+        "UNH": 2915031.54
+      }
+    },
+    {
+      "day": 180,
+      "long_fs": {
+        "CVX": 3664370.48,
+        "MCD": 2438922.65,
+        "MRK": 2668630.75,
+        "UNH": 2889275.81
+      },
+      "long_total": 11661199.69,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11661199.69,
+      "stock_caps": {
+        "CVX": 3664370.48,
+        "MCD": 2438922.65,
+        "MRK": 2668630.75,
+        "UNH": 2889275.81
+      }
+    },
+    {
+      "day": 181,
+      "long_fs": {
+        "CVX": 3817641.5999999996,
+        "MCD": 2493132.7,
+        "MRK": 2776246.0,
+        "UNH": 3069885.47
+      },
+      "long_total": 12156905.770000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12156905.770000001,
+      "stock_caps": {
+        "CVX": 3817641.5999999996,
+        "MCD": 2493132.7,
+        "MRK": 2776246.0,
+        "UNH": 3069885.47
+      }
+    },
+    {
+      "day": 182,
+      "long_fs": {
+        "CVX": 3651847.4399999995,
+        "MCD": 2529238.05,
+        "MRK": 2811782.5,
+        "UNH": 3129705.23
+      },
+      "long_total": 12122573.219999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12122573.219999999,
+      "stock_caps": {
+        "CVX": 3651847.4399999995,
+        "MCD": 2529238.05,
+        "MRK": 2811782.5,
+        "UNH": 3129705.23
+      }
+    },
+    {
+      "day": 183,
+      "long_fs": {
+        "CVX": 3517360.88,
+        "MCD": 2534648.65,
+        "MRK": 2901294.25,
+        "UNH": 3194446.06
+      },
+      "long_total": 12147749.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12147749.84,
+      "stock_caps": {
+        "CVX": 3517360.88,
+        "MCD": 2534648.65,
+        "MRK": 2901294.25,
+        "UNH": 3194446.06
+      }
+    },
+    {
+      "day": 184,
+      "long_fs": {
+        "CVX": 3575348.0000000005,
+        "MCD": 2579598.25,
+        "MRK": 2936830.75,
+        "UNH": 3167795.59
+      },
+      "long_total": 12259572.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12259572.59,
+      "stock_caps": {
+        "CVX": 3575348.0000000005,
+        "MCD": 2579598.25,
+        "MRK": 2936830.75,
+        "UNH": 3167795.59
+      }
+    },
+    {
+      "day": 185,
+      "long_fs": {
+        "CVX": 3644496.9600000004,
+        "MCD": 2570545.9,
+        "MRK": 2977396.0,
+        "UNH": 3231833.41
+      },
+      "long_total": 12424272.27,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12424272.27,
+      "stock_caps": {
+        "CVX": 3644496.9600000004,
+        "MCD": 2570545.9,
+        "MRK": 2977396.0,
+        "UNH": 3231833.41
+      }
+    },
+    {
+      "day": 186,
+      "long_fs": {
+        "CVX": 3703028.5600000005,
+        "MCD": 2526844.9,
+        "MRK": 2897941.75,
+        "UNH": 3249600.39
+      },
+      "long_total": 12377415.600000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12377415.600000001,
+      "stock_caps": {
+        "CVX": 3703028.5600000005,
+        "MCD": 2526844.9,
+        "MRK": 2897941.75,
+        "UNH": 3249600.39
+      }
+    },
+    {
+      "day": 187,
+      "long_fs": {
+        "CVX": 3629796.0000000005,
+        "MCD": 2577933.45,
+        "MRK": 2917386.25,
+        "UNH": 3296062.9600000004
+      },
+      "long_total": 12421178.660000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12421178.660000002,
+      "stock_caps": {
+        "CVX": 3629796.0000000005,
+        "MCD": 2577933.45,
+        "MRK": 2917386.25,
+        "UNH": 3296062.9600000004
+      }
+    },
+    {
+      "day": 188,
+      "long_fs": {
+        "CVX": 3575348.0000000005,
+        "MCD": 2568985.15,
+        "MRK": 2875144.75,
+        "UNH": 3282769.68
+      },
+      "long_total": 12302247.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12302247.58,
+      "stock_caps": {
+        "CVX": 3575348.0000000005,
+        "MCD": 2568985.15,
+        "MRK": 2875144.75,
+        "UNH": 3282769.68
+      }
+    },
+    {
+      "day": 189,
+      "long_fs": {
+        "CVX": 3618089.68,
+        "MCD": 2632247.5500000003,
+        "MRK": 2914369.0,
+        "UNH": 3306863.75
+      },
+      "long_total": 12471569.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12471569.98,
+      "stock_caps": {
+        "CVX": 3618089.68,
+        "MCD": 2632247.5500000003,
+        "MRK": 2914369.0,
+        "UNH": 3306863.75
+      }
+    },
+    {
+      "day": 190,
+      "long_fs": {
+        "CVX": 3523077.92,
+        "MCD": 2625276.1999999997,
+        "MRK": 2921409.25,
+        "UNH": 3229149.19
+      },
+      "long_total": 12298912.559999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12298912.559999999,
+      "stock_caps": {
+        "CVX": 3523077.92,
+        "MCD": 2625276.1999999997,
+        "MRK": 2921409.25,
+        "UNH": 3229149.19
+      }
+    },
+    {
+      "day": 191,
+      "long_fs": {
+        "CVX": 3476797.12,
+        "MCD": 2616640.0500000003,
+        "MRK": 2936830.75,
+        "UNH": 3293378.7399999998
+      },
+      "long_total": 12323646.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12323646.66,
+      "stock_caps": {
+        "CVX": 3476797.12,
+        "MCD": 2616640.0500000003,
+        "MRK": 2936830.75,
+        "UNH": 3293378.7399999998
+      }
+    },
+    {
+      "day": 192,
+      "long_fs": {
+        "CVX": 3544312.64,
+        "MCD": 2632039.45,
+        "MRK": 2933143.0,
+        "UNH": 3287562.93
+      },
+      "long_total": 12397058.02,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12397058.02,
+      "stock_caps": {
+        "CVX": 3544312.64,
+        "MCD": 2632039.45,
+        "MRK": 2933143.0,
+        "UNH": 3287562.93
+      }
+    },
+    {
+      "day": 193,
+      "long_fs": {
+        "CVX": 3525800.32,
+        "MCD": 2635160.95,
+        "MRK": 2925767.5,
+        "UNH": 3314724.68
+      },
+      "long_total": 12401453.45,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12401453.45,
+      "stock_caps": {
+        "CVX": 3525800.32,
+        "MCD": 2635160.95,
+        "MRK": 2925767.5,
+        "UNH": 3314724.68
+      }
+    },
+    {
+      "day": 194,
+      "long_fs": {
+        "CVX": 3494764.9600000004,
+        "MCD": 2635577.15,
+        "MRK": 2973708.25,
+        "UNH": 3303987.8000000003
+      },
+      "long_total": 12408038.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12408038.16,
+      "stock_caps": {
+        "CVX": 3494764.9600000004,
+        "MCD": 2635577.15,
+        "MRK": 2973708.25,
+        "UNH": 3303987.8000000003
+      }
+    },
+    {
+      "day": 195,
+      "long_fs": {
+        "CVX": 3430788.56,
+        "MCD": 2616848.15,
+        "MRK": 2951581.75,
+        "UNH": 3287818.57
+      },
+      "long_total": 12287037.030000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12287037.030000001,
+      "stock_caps": {
+        "CVX": 3430788.56,
+        "MCD": 2616848.15,
+        "MRK": 2951581.75,
+        "UNH": 3287818.57
+      }
+    },
+    {
+      "day": 196,
+      "long_fs": {
+        "CVX": 3407648.16,
+        "MCD": 2629230.1,
+        "MRK": 2956945.75,
+        "UNH": 3203585.19
+      },
+      "long_total": 12197409.2,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12197409.2,
+      "stock_caps": {
+        "CVX": 3407648.16,
+        "MCD": 2629230.1,
+        "MRK": 2956945.75,
+        "UNH": 3203585.19
+      }
+    },
+    {
+      "day": 197,
+      "long_fs": {
+        "CVX": 3357283.76,
+        "MCD": 2628501.75,
+        "MRK": 2960633.5,
+        "UNH": 3211190.48
+      },
+      "long_total": 12157609.49,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12157609.49,
+      "stock_caps": {
+        "CVX": 3357283.76,
+        "MCD": 2628501.75,
+        "MRK": 2960633.5,
+        "UNH": 3211190.48
+      }
+    },
+    {
+      "day": 198,
+      "long_fs": {
+        "CVX": 3399480.9600000004,
+        "MCD": 2653577.8,
+        "MRK": 2994493.75,
+        "UNH": 3385792.6
+      },
+      "long_total": 12433345.11,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12433345.11,
+      "stock_caps": {
+        "CVX": 3399480.9600000004,
+        "MCD": 2653577.8,
+        "MRK": 2994493.75,
+        "UNH": 3385792.6
+      }
+    },
+    {
+      "day": 199,
+      "long_fs": {
+        "CVX": 3447122.9600000004,
+        "MCD": 2626628.85,
+        "MRK": 2912022.25,
+        "UNH": 3319454.02
+      },
+      "long_total": 12305228.08,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12305228.08,
+      "stock_caps": {
+        "CVX": 3447122.9600000004,
+        "MCD": 2626628.85,
+        "MRK": 2912022.25,
+        "UNH": 3319454.02
+      }
+    },
+    {
+      "day": 200,
+      "long_fs": {
+        "CVX": 3571264.4000000004,
+        "MCD": 2669081.25,
+        "MRK": 2912692.75,
+        "UNH": 3409439.3000000003
+      },
+      "long_total": 12562477.700000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12562477.700000001,
+      "stock_caps": {
+        "CVX": 3571264.4000000004,
+        "MCD": 2669081.25,
+        "MRK": 2912692.75,
+        "UNH": 3409439.3000000003
+      }
+    },
+    {
+      "day": 201,
+      "long_fs": {
+        "CVX": 3618361.92,
+        "MCD": 2649103.65,
+        "MRK": 2827204.0,
+        "UNH": 3320093.12
+      },
+      "long_total": 12414762.690000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12414762.690000001,
+      "stock_caps": {
+        "CVX": 3618361.92,
+        "MCD": 2649103.65,
+        "MRK": 2827204.0,
+        "UNH": 3320093.12
+      }
+    },
+    {
+      "day": 202,
+      "long_fs": {
+        "CVX": 3590865.68,
+        "MCD": 2637554.1,
+        "MRK": 2842625.5,
+        "UNH": 3339202.2100000004
+      },
+      "long_total": 12410247.490000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12410247.490000002,
+      "stock_caps": {
+        "CVX": 3590865.68,
+        "MCD": 2637554.1,
+        "MRK": 2842625.5,
+        "UNH": 3339202.2100000004
+      }
+    },
+    {
+      "day": 203,
+      "long_fs": {
+        "CVX": 3560919.2800000003,
+        "MCD": 2642964.7,
+        "MRK": 2841619.75,
+        "UNH": 3332491.6599999997
+      },
+      "long_total": 12377995.39,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12377995.39,
+      "stock_caps": {
+        "CVX": 3560919.2800000003,
+        "MCD": 2642964.7,
+        "MRK": 2841619.75,
+        "UNH": 3332491.6599999997
+      }
+    },
+    {
+      "day": 204,
+      "long_fs": {
+        "CVX": 3666820.64,
+        "MCD": 2605402.65,
+        "MRK": 2855029.75,
+        "UNH": 3384003.12
+      },
+      "long_total": 12511256.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12511256.16,
+      "stock_caps": {
+        "CVX": 3666820.64,
+        "MCD": 2605402.65,
+        "MRK": 2855029.75,
+        "UNH": 3384003.12
+      }
+    },
+    {
+      "day": 205,
+      "long_fs": {
+        "CVX": 3638235.4399999995,
+        "MCD": 2675220.1999999997,
+        "MRK": 2878832.5,
+        "UNH": 3397552.0400000005
+      },
+      "long_total": 12589840.18,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12589840.18,
+      "stock_caps": {
+        "CVX": 3638235.4399999995,
+        "MCD": 2675220.1999999997,
+        "MRK": 2878832.5,
+        "UNH": 3397552.0400000005
+      }
+    },
+    {
+      "day": 206,
+      "long_fs": {
+        "CVX": 3686149.68,
+        "MCD": 2693949.1999999997,
+        "MRK": 2877156.25,
+        "UNH": 3416852.8600000003
+      },
+      "long_total": 12674107.989999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12674107.989999998,
+      "stock_caps": {
+        "CVX": 3686149.68,
+        "MCD": 2693949.1999999997,
+        "MRK": 2877156.25,
+        "UNH": 3416852.8600000003
+      }
+    },
+    {
+      "day": 207,
+      "long_fs": {
+        "CVX": 3713918.1599999997,
+        "MCD": 2741500.05,
+        "MRK": 2836255.75,
+        "UNH": 3460822.94
+      },
+      "long_total": 12752496.899999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12752496.899999999,
+      "stock_caps": {
+        "CVX": 3713918.1599999997,
+        "MCD": 2741500.05,
+        "MRK": 2836255.75,
+        "UNH": 3460822.94
+      }
+    },
+    {
+      "day": 208,
+      "long_fs": {
+        "CVX": 4044689.76,
+        "MCD": 2740563.6,
+        "MRK": 2817481.75,
+        "UNH": 3466255.2900000005
+      },
+      "long_total": 13068990.4,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13068990.4,
+      "stock_caps": {
+        "CVX": 4044689.76,
+        "MCD": 2740563.6,
+        "MRK": 2817481.75,
+        "UNH": 3466255.2900000005
+      }
+    },
+    {
+      "day": 209,
+      "long_fs": {
+        "CVX": 3963834.48,
+        "MCD": 2749511.9000000004,
+        "MRK": 2792002.75,
+        "UNH": 3421773.93
+      },
+      "long_total": 12927123.06,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12927123.06,
+      "stock_caps": {
+        "CVX": 3963834.48,
+        "MCD": 2749511.9000000004,
+        "MRK": 2792002.75,
+        "UNH": 3421773.93
+      }
+    },
+    {
+      "day": 210,
+      "long_fs": {
+        "CVX": 3930076.7200000007,
+        "MCD": 2716424.0,
+        "MRK": 2762836.0,
+        "UNH": 3422285.2100000004
+      },
+      "long_total": 12831621.930000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12831621.930000002,
+      "stock_caps": {
+        "CVX": 3930076.7200000007,
+        "MCD": 2716424.0,
+        "MRK": 2762836.0,
+        "UNH": 3422285.2100000004
+      }
+    },
+    {
+      "day": 211,
+      "long_fs": {
+        "CVX": 3836698.4000000004,
+        "MCD": 2727245.1999999997,
+        "MRK": 2763171.25,
+        "UNH": 3455454.5
+      },
+      "long_total": 12782569.35,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12782569.35,
+      "stock_caps": {
+        "CVX": 3836698.4000000004,
+        "MCD": 2727245.1999999997,
+        "MRK": 2763171.25,
+        "UNH": 3455454.5
+      }
+    },
+    {
+      "day": 212,
+      "long_fs": {
+        "CVX": 3732430.48,
+        "MCD": 2712157.9499999997,
+        "MRK": 2738027.5,
+        "UNH": 3411356.6
+      },
+      "long_total": 12593972.53,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12593972.53,
+      "stock_caps": {
+        "CVX": 3732430.48,
+        "MCD": 2712157.9499999997,
+        "MRK": 2738027.5,
+        "UNH": 3411356.6
+      }
+    },
+    {
+      "day": 213,
+      "long_fs": {
+        "CVX": 3794228.9600000004,
+        "MCD": 2697486.9000000004,
+        "MRK": 2756466.25,
+        "UNH": 3419728.8099999996
+      },
+      "long_total": 12667910.920000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12667910.920000002,
+      "stock_caps": {
+        "CVX": 3794228.9600000004,
+        "MCD": 2697486.9000000004,
+        "MRK": 2756466.25,
+        "UNH": 3419728.8099999996
+      }
+    },
+    {
+      "day": 214,
+      "long_fs": {
+        "CVX": 3788511.92,
+        "MCD": 2672202.75,
+        "MRK": 2790661.75,
+        "UNH": 3429570.95
+      },
+      "long_total": 12680947.370000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12680947.370000001,
+      "stock_caps": {
+        "CVX": 3788511.92,
+        "MCD": 2672202.75,
+        "MRK": 2790661.75,
+        "UNH": 3429570.95
+      }
+    },
+    {
+      "day": 215,
+      "long_fs": {
+        "CVX": 3838059.5999999996,
+        "MCD": 2706123.05,
+        "MRK": 2823181.0,
+        "UNH": 3433789.0100000002
+      },
+      "long_total": 12801152.659999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12801152.659999998,
+      "stock_caps": {
+        "CVX": 3838059.5999999996,
+        "MCD": 2706123.05,
+        "MRK": 2823181.0,
+        "UNH": 3433789.0100000002
+      }
+    },
+    {
+      "day": 216,
+      "long_fs": {
+        "CVX": 3848132.48,
+        "MCD": 2719649.5500000003,
+        "MRK": 2812788.25,
+        "UNH": 3436728.87
+      },
+      "long_total": 12817299.150000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12817299.150000002,
+      "stock_caps": {
+        "CVX": 3848132.48,
+        "MCD": 2719649.5500000003,
+        "MRK": 2812788.25,
+        "UNH": 3436728.87
+      }
+    },
+    {
+      "day": 217,
+      "long_fs": {
+        "CVX": 3942055.2800000003,
+        "MCD": 2698007.15,
+        "MRK": 2804407.0,
+        "UNH": 3405668.6100000003
+      },
+      "long_total": 12850138.04,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12850138.04,
+      "stock_caps": {
+        "CVX": 3942055.2800000003,
+        "MCD": 2698007.15,
+        "MRK": 2804407.0,
+        "UNH": 3405668.6100000003
+      }
+    },
+    {
+      "day": 218,
+      "long_fs": {
+        "CVX": 3947500.08,
+        "MCD": 2728181.65,
+        "MRK": 2870451.25,
+        "UNH": 3474947.0500000003
+      },
+      "long_total": 13021080.030000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13021080.030000001,
+      "stock_caps": {
+        "CVX": 3947500.08,
+        "MCD": 2728181.65,
+        "MRK": 2870451.25,
+        "UNH": 3474947.0500000003
+      }
+    },
+    {
+      "day": 219,
+      "long_fs": {
+        "CVX": 3872634.08,
+        "MCD": 2762101.95,
+        "MRK": 2857041.25,
+        "UNH": 3480954.59
+      },
+      "long_total": 12972731.870000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12972731.870000001,
+      "stock_caps": {
+        "CVX": 3872634.08,
+        "MCD": 2762101.95,
+        "MRK": 2857041.25,
+        "UNH": 3480954.59
+      }
+    },
+    {
+      "day": 220,
+      "long_fs": {
+        "CVX": 3862561.1999999997,
+        "MCD": 2770946.2,
+        "MRK": 2856706.0,
+        "UNH": 3490413.27
+      },
+      "long_total": 12980626.67,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12980626.67,
+      "stock_caps": {
+        "CVX": 3862561.1999999997,
+        "MCD": 2770946.2,
+        "MRK": 2856706.0,
+        "UNH": 3490413.27
+      }
+    },
+    {
+      "day": 221,
+      "long_fs": {
+        "CVX": 3894413.2800000003,
+        "MCD": 2776460.85,
+        "MRK": 2871121.75,
+        "UNH": 3483255.35
+      },
+      "long_total": 13025251.23,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13025251.23,
+      "stock_caps": {
+        "CVX": 3894413.2800000003,
+        "MCD": 2776460.85,
+        "MRK": 2871121.75,
+        "UNH": 3483255.35
+      }
+    },
+    {
+      "day": 222,
+      "long_fs": {
+        "CVX": 3962745.52,
+        "MCD": 2773963.65,
+        "MRK": 2882520.25,
+        "UNH": 3484661.37
+      },
+      "long_total": 13103890.79,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13103890.79,
+      "stock_caps": {
+        "CVX": 3962745.52,
+        "MCD": 2773963.65,
+        "MRK": 2882520.25,
+        "UNH": 3484661.37
+      }
+    },
+    {
+      "day": 223,
+      "long_fs": {
+        "CVX": 3929804.48,
+        "MCD": 2773547.45,
+        "MRK": 2903641.0,
+        "UNH": 3504473.47
+      },
+      "long_total": 13111466.4,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13111466.4,
+      "stock_caps": {
+        "CVX": 3929804.48,
+        "MCD": 2773547.45,
+        "MRK": 2903641.0,
+        "UNH": 3504473.47
+      }
+    },
+    {
+      "day": 224,
+      "long_fs": {
+        "CVX": 3909930.9600000004,
+        "MCD": 2736193.5,
+        "MRK": 2874809.5,
+        "UNH": 3480507.22
+      },
+      "long_total": 13001441.180000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13001441.180000002,
+      "stock_caps": {
+        "CVX": 3909930.9600000004,
+        "MCD": 2736193.5,
+        "MRK": 2874809.5,
+        "UNH": 3480507.22
+      }
+    },
+    {
+      "day": 225,
+      "long_fs": {
+        "CVX": 4036794.8000000003,
+        "MCD": 2711117.45,
+        "MRK": 2844637.0,
+        "UNH": 3424458.15
+      },
+      "long_total": 13017007.4,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13017007.4,
+      "stock_caps": {
+        "CVX": 4036794.8000000003,
+        "MCD": 2711117.45,
+        "MRK": 2844637.0,
+        "UNH": 3424458.15
+      }
+    },
+    {
+      "day": 226,
+      "long_fs": {
+        "CVX": 4066741.1999999997,
+        "MCD": 2714447.0500000003,
+        "MRK": 2838602.5,
+        "UNH": 3428676.2100000004
+      },
+      "long_total": 13048466.96,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13048466.96,
+      "stock_caps": {
+        "CVX": 4066741.1999999997,
+        "MCD": 2714447.0500000003,
+        "MRK": 2838602.5,
+        "UNH": 3428676.2100000004
+      }
+    },
+    {
+      "day": 227,
+      "long_fs": {
+        "CVX": 4102404.64,
+        "MCD": 2732135.55,
+        "MRK": 2846648.5,
+        "UNH": 3461334.22
+      },
+      "long_total": 13142522.91,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 13142522.91,
+      "stock_caps": {
+        "CVX": 4102404.64,
+        "MCD": 2732135.55,
+        "MRK": 2846648.5,
+        "UNH": 3461334.22
+      }
+    },
+    {
+      "day": 228,
+      "long_fs": {
+        "CVX": 4072186.0000000005,
+        "MCD": 2673763.5,
+        "MRK": 2814799.75,
+        "UNH": 3382597.1
+      },
+      "long_total": 12943346.35,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12943346.35,
+      "stock_caps": {
+        "CVX": 4072186.0000000005,
+        "MCD": 2673763.5,
+        "MRK": 2814799.75,
+        "UNH": 3382597.1
+      }
+    },
+    {
+      "day": 229,
+      "long_fs": {
+        "CVX": 4102676.88,
+        "MCD": 2660341.05,
+        "MRK": 2762165.5,
+        "UNH": 3385920.42
+      },
+      "long_total": 12911103.85,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12911103.85,
+      "stock_caps": {
+        "CVX": 4102676.88,
+        "MCD": 2660341.05,
+        "MRK": 2762165.5,
+        "UNH": 3385920.42
+      }
+    },
+    {
+      "day": 230,
+      "long_fs": {
+        "CVX": 4002764.8000000003,
+        "MCD": 2637762.2,
+        "MRK": 2739703.75,
+        "UNH": 3341630.7900000005
+      },
+      "long_total": 12721861.540000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12721861.540000001,
+      "stock_caps": {
+        "CVX": 4002764.8000000003,
+        "MCD": 2637762.2,
+        "MRK": 2739703.75,
+        "UNH": 3341630.7900000005
+      }
+    },
+    {
+      "day": 231,
+      "long_fs": {
+        "CVX": 3938788.4000000004,
+        "MCD": 2625172.15,
+        "MRK": 2691763.0,
+        "UNH": 3319198.3800000004
+      },
+      "long_total": 12574921.930000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12574921.930000002,
+      "stock_caps": {
+        "CVX": 3938788.4000000004,
+        "MCD": 2625172.15,
+        "MRK": 2691763.0,
+        "UNH": 3319198.3800000004
+      }
+    },
+    {
+      "day": 232,
+      "long_fs": {
+        "CVX": 3876173.1999999997,
+        "MCD": 2668769.1,
+        "MRK": 2748420.25,
+        "UNH": 3349044.35
+      },
+      "long_total": 12642406.9,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12642406.9,
+      "stock_caps": {
+        "CVX": 3876173.1999999997,
+        "MCD": 2668769.1,
+        "MRK": 2748420.25,
+        "UNH": 3349044.35
+      }
+    },
+    {
+      "day": 233,
+      "long_fs": {
+        "CVX": 3933615.8400000003,
+        "MCD": 2648375.3,
+        "MRK": 2719253.5,
+        "UNH": 3300153.2
+      },
+      "long_total": 12601397.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12601397.84,
+      "stock_caps": {
+        "CVX": 3933615.8400000003,
+        "MCD": 2648375.3,
+        "MRK": 2719253.5,
+        "UNH": 3300153.2
+      }
+    },
+    {
+      "day": 234,
+      "long_fs": {
+        "CVX": 3915375.76,
+        "MCD": 2647126.6999999997,
+        "MRK": 2725288.0,
+        "UNH": 3308653.23
+      },
+      "long_total": 12596443.69,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12596443.69,
+      "stock_caps": {
+        "CVX": 3915375.76,
+        "MCD": 2647126.6999999997,
+        "MRK": 2725288.0,
+        "UNH": 3308653.23
+      }
+    },
+    {
+      "day": 235,
+      "long_fs": {
+        "CVX": 3865283.5999999996,
+        "MCD": 2689058.85,
+        "MRK": 2739368.5,
+        "UNH": 3334217.23
+      },
+      "long_total": 12627928.18,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12627928.18,
+      "stock_caps": {
+        "CVX": 3865283.5999999996,
+        "MCD": 2689058.85,
+        "MRK": 2739368.5,
+        "UNH": 3334217.23
+      }
+    },
+    {
+      "day": 236,
+      "long_fs": {
+        "CVX": 3886246.08,
+        "MCD": 2706331.15,
+        "MRK": 2756801.5,
+        "UNH": 3371476.7600000002
+      },
+      "long_total": 12720855.49,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12720855.49,
+      "stock_caps": {
+        "CVX": 3886246.08,
+        "MCD": 2706331.15,
+        "MRK": 2756801.5,
+        "UNH": 3371476.7600000002
+      }
+    },
+    {
+      "day": 237,
+      "long_fs": {
+        "CVX": 3986430.4000000004,
+        "MCD": 2700504.3499999996,
+        "MRK": 2754454.75,
+        "UNH": 3351217.2900000005
+      },
+      "long_total": 12792606.790000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12792606.790000001,
+      "stock_caps": {
+        "CVX": 3986430.4000000004,
+        "MCD": 2700504.3499999996,
+        "MRK": 2754454.75,
+        "UNH": 3351217.2900000005
+      }
+    },
+    {
+      "day": 238,
+      "long_fs": {
+        "CVX": 4049590.08,
+        "MCD": 2709348.6,
+        "MRK": 2780269.0,
+        "UNH": 3395379.1
+      },
+      "long_total": 12934586.78,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12934586.78,
+      "stock_caps": {
+        "CVX": 4049590.08,
+        "MCD": 2709348.6,
+        "MRK": 2780269.0,
+        "UNH": 3395379.1
+      }
+    },
+    {
+      "day": 239,
+      "long_fs": {
+        "CVX": 3972546.1599999997,
+        "MCD": 2646502.4,
+        "MRK": 2720929.75,
+        "UNH": 3284878.7100000004
+      },
+      "long_total": 12624857.02,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12624857.02,
+      "stock_caps": {
+        "CVX": 3972546.1599999997,
+        "MCD": 2646502.4,
+        "MRK": 2720929.75,
+        "UNH": 3284878.7100000004
+      }
+    },
+    {
+      "day": 240,
+      "long_fs": {
+        "CVX": 4068646.88,
+        "MCD": 2660965.35,
+        "MRK": 2764177.0,
+        "UNH": 3258100.42
+      },
+      "long_total": 12751889.65,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12751889.65,
+      "stock_caps": {
+        "CVX": 4068646.88,
+        "MCD": 2660965.35,
+        "MRK": 2764177.0,
+        "UNH": 3258100.42
+      }
+    },
+    {
+      "day": 241,
+      "long_fs": {
+        "CVX": 4002764.8000000003,
+        "MCD": 2637554.1,
+        "MRK": 2757807.25,
+        "UNH": 3342078.1599999997
+      },
+      "long_total": 12740204.31,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12740204.31,
+      "stock_caps": {
+        "CVX": 4002764.8000000003,
+        "MCD": 2637554.1,
+        "MRK": 2757807.25,
+        "UNH": 3342078.1599999997
+      }
+    },
+    {
+      "day": 242,
+      "long_fs": {
+        "CVX": 3898769.12,
+        "MCD": 2652537.3,
+        "MRK": 2788650.25,
+        "UNH": 3329999.17
+      },
+      "long_total": 12669955.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12669955.84,
+      "stock_caps": {
+        "CVX": 3898769.12,
+        "MCD": 2652537.3,
+        "MRK": 2788650.25,
+        "UNH": 3329999.17
+      }
+    },
+    {
+      "day": 243,
+      "long_fs": {
+        "CVX": 3909930.9600000004,
+        "MCD": 2674387.8,
+        "MRK": 2754119.5,
+        "UNH": 3346168.4
+      },
+      "long_total": 12684606.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12684606.66,
+      "stock_caps": {
+        "CVX": 3909930.9600000004,
+        "MCD": 2674387.8,
+        "MRK": 2754119.5,
+        "UNH": 3346168.4
+      }
+    },
+    {
+      "day": 244,
+      "long_fs": {
+        "CVX": 3894413.2800000003,
+        "MCD": 2657635.75,
+        "MRK": 2734004.5,
+        "UNH": 3341375.15
+      },
+      "long_total": 12627428.680000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12627428.680000002,
+      "stock_caps": {
+        "CVX": 3894413.2800000003,
+        "MCD": 2657635.75,
+        "MRK": 2734004.5,
+        "UNH": 3341375.15
+      }
+    },
+    {
+      "day": 245,
+      "long_fs": {
+        "CVX": 3862833.4399999995,
+        "MCD": 2612686.15,
+        "MRK": 2687069.5,
+        "UNH": 3272863.6300000004
+      },
+      "long_total": 12435452.72,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12435452.72,
+      "stock_caps": {
+        "CVX": 3862833.4399999995,
+        "MCD": 2612686.15,
+        "MRK": 2687069.5,
+        "UNH": 3272863.6300000004
+      }
+    },
+    {
+      "day": 246,
+      "long_fs": {
+        "CVX": 3859838.8000000003,
+        "MCD": 2580014.45,
+        "MRK": 2781945.25,
+        "UNH": 3307247.2100000004
+      },
+      "long_total": 12529045.71,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12529045.71,
+      "stock_caps": {
+        "CVX": 3859838.8000000003,
+        "MCD": 2580014.45,
+        "MRK": 2781945.25,
+        "UNH": 3307247.2100000004
+      }
+    },
+    {
+      "day": 247,
+      "long_fs": {
+        "CVX": 3607744.5600000005,
+        "MCD": 2559308.5,
+        "MRK": 2758813.0,
+        "UNH": 3282641.8600000003
+      },
+      "long_total": 12208507.920000002,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12208507.920000002,
+      "stock_caps": {
+        "CVX": 3607744.5600000005,
+        "MCD": 2559308.5,
+        "MRK": 2758813.0,
+        "UNH": 3282641.8600000003
+      }
+    },
+    {
+      "day": 248,
+      "long_fs": {
+        "CVX": 3512732.8000000003,
+        "MCD": 2536521.55,
+        "MRK": 2739703.75,
+        "UNH": 3249089.1100000003
+      },
+      "long_total": 12038047.21,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12038047.21,
+      "stock_caps": {
+        "CVX": 3512732.8000000003,
+        "MCD": 2536521.55,
+        "MRK": 2739703.75,
+        "UNH": 3249089.1100000003
+      }
+    },
+    {
+      "day": 249,
+      "long_fs": {
+        "CVX": 3514366.24,
+        "MCD": 2463062.25,
+        "MRK": 2728975.75,
+        "UNH": 3249153.02
+      },
+      "long_total": 11955557.26,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11955557.26,
+      "stock_caps": {
+        "CVX": 3514366.24,
+        "MCD": 2463062.25,
+        "MRK": 2728975.75,
+        "UNH": 3249153.02
+      }
+    },
+    {
+      "day": 250,
+      "long_fs": {
+        "CVX": 3632790.64,
+        "MCD": 2465559.45,
+        "MRK": 2758813.0,
+        "UNH": 3284750.8900000006
+      },
+      "long_total": 12141913.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12141913.98,
+      "stock_caps": {
+        "CVX": 3632790.64,
+        "MCD": 2465559.45,
+        "MRK": 2758813.0,
+        "UNH": 3284750.8900000006
+      }
+    },
+    {
+      "day": 251,
+      "long_fs": {
+        "CVX": 3607744.5600000005,
+        "MCD": 2439130.75,
+        "MRK": 2754119.5,
+        "UNH": 3252092.88
+      },
+      "long_total": 12053087.690000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 12053087.690000001,
+      "stock_caps": {
+        "CVX": 3607744.5600000005,
+        "MCD": 2439130.75,
+        "MRK": 2754119.5,
+        "UNH": 3252092.88
+      }
+    },
+    {
+      "day": 252,
+      "long_fs": {
+        "CVX": 3580248.32,
+        "MCD": 2401048.45,
+        "MRK": 2737692.25,
+        "UNH": 3227870.99
+      },
+      "long_total": 11946860.01,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11946860.01,
+      "stock_caps": {
+        "CVX": 3580248.32,
+        "MCD": 2401048.45,
+        "MRK": 2737692.25,
+        "UNH": 3227870.99
+      }
+    }
+  ]
+}

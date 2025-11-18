@@ -1,0 +1,2308 @@
+{
+  "trend": [
+    {
+      "day": 1,
+      "long_fs": {
+        "AMGN": 3333333.0,
+        "IBM": 3333333.0,
+        "MSFT": 3333333.0
+      },
+      "long_total": 10000000.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000000.0,
+      "stock_caps": {
+        "AMGN": 3333333.0,
+        "IBM": 3333333.0,
+        "MSFT": 3333333.0
+      }
+    },
+    {
+      "day": 2,
+      "long_fs": {
+        "AMGN": 3292453.6399999997,
+        "IBM": 3308623.26,
+        "MSFT": 3331696.8000000003
+      },
+      "long_total": 9932774.7,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9932774.7,
+      "stock_caps": {
+        "AMGN": 3292453.6399999997,
+        "IBM": 3308623.26,
+        "MSFT": 3331696.8000000003
+      }
+    },
+    {
+      "day": 3,
+      "long_fs": {
+        "AMGN": 3199533.32,
+        "IBM": 3263464.08,
+        "MSFT": 3320679.7199999997
+      },
+      "long_total": 9783678.120000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9783678.120000001,
+      "stock_caps": {
+        "AMGN": 3199533.32,
+        "IBM": 3263464.08,
+        "MSFT": 3320679.7199999997
+      }
+    },
+    {
+      "day": 4,
+      "long_fs": {
+        "AMGN": 3235529.4799999995,
+        "IBM": 3240174.44,
+        "MSFT": 3331696.8000000003
+      },
+      "long_total": 9807401.72,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9807401.72,
+      "stock_caps": {
+        "AMGN": 3235529.4799999995,
+        "IBM": 3240174.44,
+        "MSFT": 3331696.8000000003
+      }
+    },
+    {
+      "day": 5,
+      "long_fs": {
+        "AMGN": 3300266.76,
+        "IBM": 3268860.46,
+        "MSFT": 3388854.7199999997
+      },
+      "long_total": 9957982.94,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9957982.94,
+      "stock_caps": {
+        "AMGN": 3300266.76,
+        "IBM": 3268860.46,
+        "MSFT": 3388854.7199999997
+      }
+    },
+    {
+      "day": 6,
+      "long_fs": {
+        "AMGN": 3273618.44,
+        "IBM": 3262043.9799999995,
+        "MSFT": 3367038.7199999997
+      },
+      "long_total": 9902702.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9902702.14,
+      "stock_caps": {
+        "AMGN": 3273618.44,
+        "IBM": 3262043.9799999995,
+        "MSFT": 3367038.7199999997
+      }
+    },
+    {
+      "day": 7,
+      "long_fs": {
+        "AMGN": 3270967.5599999996,
+        "IBM": 3246990.9199999995,
+        "MSFT": 3349040.52
+      },
+      "long_total": 9866999.999999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9866999.999999998,
+      "stock_caps": {
+        "AMGN": 3270967.5599999996,
+        "IBM": 3246990.9199999995,
+        "MSFT": 3349040.52
+      }
+    },
+    {
+      "day": 8,
+      "long_fs": {
+        "AMGN": 3266502.92,
+        "IBM": 3269712.52,
+        "MSFT": 3406962.0
+      },
+      "long_total": 9943178.44,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9943178.44,
+      "stock_caps": {
+        "AMGN": 3266502.92,
+        "IBM": 3269712.52,
+        "MSFT": 3406962.0
+      }
+    },
+    {
+      "day": 9,
+      "long_fs": {
+        "AMGN": 3241110.28,
+        "IBM": 3239606.4,
+        "MSFT": 3382964.4000000004
+      },
+      "long_total": 9863682.08,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9863682.08,
+      "stock_caps": {
+        "AMGN": 3241110.28,
+        "IBM": 3239606.4,
+        "MSFT": 3382964.4000000004
+      }
+    },
+    {
+      "day": 10,
+      "long_fs": {
+        "AMGN": 3250318.5999999996,
+        "IBM": 3291582.0599999996,
+        "MSFT": 3370529.2800000003
+      },
+      "long_total": 9912430.94,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9912430.94,
+      "stock_caps": {
+        "AMGN": 3250318.5999999996,
+        "IBM": 3291582.0599999996,
+        "MSFT": 3370529.2800000003
+      }
+    },
+    {
+      "day": 11,
+      "long_fs": {
+        "AMGN": 3258410.76,
+        "IBM": 3305499.0399999996,
+        "MSFT": 3375874.1999999997
+      },
+      "long_total": 9939784.999999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9939784.999999998,
+      "stock_caps": {
+        "AMGN": 3258410.76,
+        "IBM": 3305499.0399999996,
+        "MSFT": 3375874.1999999997
+      }
+    },
+    {
+      "day": 12,
+      "long_fs": {
+        "AMGN": 3179581.9599999995,
+        "IBM": 3308339.2399999998,
+        "MSFT": 3400744.44
+      },
+      "long_total": 9888666.639999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9888666.639999999,
+      "stock_caps": {
+        "AMGN": 3179581.9599999995,
+        "IBM": 3308339.2399999998,
+        "MSFT": 3400744.44
+      }
+    },
+    {
+      "day": 13,
+      "long_fs": {
+        "AMGN": 3139679.2399999998,
+        "IBM": 3368551.4799999995,
+        "MSFT": 3425396.52
+      },
+      "long_total": 9933628.239999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9933628.239999998,
+      "stock_caps": {
+        "AMGN": 3139679.2399999998,
+        "IBM": 3368551.4799999995,
+        "MSFT": 3425396.52
+      }
+    },
+    {
+      "day": 14,
+      "long_fs": {
+        "AMGN": 3128657.1599999997,
+        "IBM": 3380196.3,
+        "MSFT": 3474700.6799999997
+      },
+      "long_total": 9983555.139999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9983555.139999999,
+      "stock_caps": {
+        "AMGN": 3128657.1599999997,
+        "IBM": 3380196.3,
+        "MSFT": 3474700.6799999997
+      }
+    },
+    {
+      "day": 15,
+      "long_fs": {
+        "AMGN": 3117356.0399999996,
+        "IBM": 3410018.4,
+        "MSFT": 3472737.2399999998
+      },
+      "long_total": 10000112.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000112.68,
+      "stock_caps": {
+        "AMGN": 3117356.0399999996,
+        "IBM": 3410018.4,
+        "MSFT": 3472737.2399999998
+      }
+    },
+    {
+      "day": 16,
+      "long_fs": {
+        "AMGN": 3125308.6799999997,
+        "IBM": 3416550.86,
+        "MSFT": 3503715.96
+      },
+      "long_total": 10045576.5,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10045576.5,
+      "stock_caps": {
+        "AMGN": 3125308.6799999997,
+        "IBM": 3416550.86,
+        "MSFT": 3503715.96
+      }
+    },
+    {
+      "day": 17,
+      "long_fs": {
+        "AMGN": 3131587.0799999996,
+        "IBM": 3434728.14,
+        "MSFT": 3439140.6
+      },
+      "long_total": 10005456.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10005456.82,
+      "stock_caps": {
+        "AMGN": 3131587.0799999996,
+        "IBM": 3434728.14,
+        "MSFT": 3439140.6
+      }
+    },
+    {
+      "day": 18,
+      "long_fs": {
+        "AMGN": 3088056.84,
+        "IBM": 3367699.4199999995,
+        "MSFT": 3423760.3200000003
+      },
+      "long_total": 9879517.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9879517.58,
+      "stock_caps": {
+        "AMGN": 3088056.84,
+        "IBM": 3367699.4199999995,
+        "MSFT": 3423760.3200000003
+      }
+    },
+    {
+      "day": 19,
+      "long_fs": {
+        "AMGN": 3034202.1199999996,
+        "IBM": 3396669.46,
+        "MSFT": 3555419.8800000004
+      },
+      "long_total": 9986292.46,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 9986292.46,
+      "stock_caps": {
+        "AMGN": 3034202.1199999996,
+        "IBM": 3396669.46,
+        "MSFT": 3555419.8800000004
+      }
+    },
+    {
+      "day": 20,
+      "long_fs": {
+        "AMGN": 3026807.5599999996,
+        "IBM": 3453757.4799999995,
+        "MSFT": 3631448.6399999997
+      },
+      "long_total": 10112014.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10112014.68,
+      "stock_caps": {
+        "AMGN": 3026807.5599999996,
+        "IBM": 3453757.4799999995,
+        "MSFT": 3631448.6399999997
+      }
+    },
+    {
+      "day": 21,
+      "long_fs": {
+        "AMGN": 3049130.76,
+        "IBM": 3469662.5999999996,
+        "MSFT": 3613123.1999999997
+      },
+      "long_total": 10131917.559999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10131917.559999999,
+      "stock_caps": {
+        "AMGN": 3049130.76,
+        "IBM": 3469662.5999999996,
+        "MSFT": 3613123.1999999997
+      }
+    },
+    {
+      "day": 22,
+      "long_fs": {
+        "AMGN": 3078709.0,
+        "IBM": 3445804.9199999995,
+        "MSFT": 3582362.6399999997
+      },
+      "long_total": 10106877.559999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10106877.559999999,
+      "stock_caps": {
+        "AMGN": 3078709.0,
+        "IBM": 3445804.9199999995,
+        "MSFT": 3582362.6399999997
+      }
+    },
+    {
+      "day": 23,
+      "long_fs": {
+        "AMGN": 2989695.2399999998,
+        "IBM": 3478751.2399999998,
+        "MSFT": 3628067.1599999997
+      },
+      "long_total": 10096514.639999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10096514.639999999,
+      "stock_caps": {
+        "AMGN": 2989695.2399999998,
+        "IBM": 3478751.2399999998,
+        "MSFT": 3628067.1599999997
+      }
+    },
+    {
+      "day": 24,
+      "long_fs": {
+        "AMGN": 3042712.84,
+        "IBM": 3548336.14,
+        "MSFT": 3658827.7199999997
+      },
+      "long_total": 10249877.7,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10249877.7,
+      "stock_caps": {
+        "AMGN": 3042712.84,
+        "IBM": 3548336.14,
+        "MSFT": 3658827.7199999997
+      }
+    },
+    {
+      "day": 25,
+      "long_fs": {
+        "AMGN": 3095869.9599999995,
+        "IBM": 3554300.5599999996,
+        "MSFT": 3664718.04
+      },
+      "long_total": 10314889.559999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10314889.559999999,
+      "stock_caps": {
+        "AMGN": 3095869.9599999995,
+        "IBM": 3554300.5599999996,
+        "MSFT": 3664718.04
+      }
+    },
+    {
+      "day": 26,
+      "long_fs": {
+        "AMGN": 3086661.6399999997,
+        "IBM": 3555436.64,
+        "MSFT": 3640065.96
+      },
+      "long_total": 10282165.239999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10282165.239999998,
+      "stock_caps": {
+        "AMGN": 3086661.6399999997,
+        "IBM": 3555436.64,
+        "MSFT": 3640065.96
+      }
+    },
+    {
+      "day": 27,
+      "long_fs": {
+        "AMGN": 3087080.1999999997,
+        "IBM": 3600879.84,
+        "MSFT": 3527713.56
+      },
+      "long_total": 10215674.6,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10215674.6,
+      "stock_caps": {
+        "AMGN": 3087080.1999999997,
+        "IBM": 3600879.84,
+        "MSFT": 3527713.56
+      }
+    },
+    {
+      "day": 28,
+      "long_fs": {
+        "AMGN": 3080243.7199999997,
+        "IBM": 3601731.9,
+        "MSFT": 3548220.6
+      },
+      "long_total": 10230197.219999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10230197.219999999,
+      "stock_caps": {
+        "AMGN": 3080243.7199999997,
+        "IBM": 3601731.9,
+        "MSFT": 3548220.6
+      }
+    },
+    {
+      "day": 29,
+      "long_fs": {
+        "AMGN": 3052339.7199999997,
+        "IBM": 3625589.58,
+        "MSFT": 3564909.8400000003
+      },
+      "long_total": 10242840.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10242840.14,
+      "stock_caps": {
+        "AMGN": 3052339.7199999997,
+        "IBM": 3625589.58,
+        "MSFT": 3564909.8400000003
+      }
+    },
+    {
+      "day": 30,
+      "long_fs": {
+        "AMGN": 3032806.92,
+        "IBM": 3655411.6799999997,
+        "MSFT": 3620104.3200000003
+      },
+      "long_total": 10308323.92,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10308323.92,
+      "stock_caps": {
+        "AMGN": 3032806.92,
+        "IBM": 3655411.6799999997,
+        "MSFT": 3620104.3200000003
+      }
+    },
+    {
+      "day": 31,
+      "long_fs": {
+        "AMGN": 3097404.6799999997,
+        "IBM": 3687221.9199999995,
+        "MSFT": 3646719.8400000003
+      },
+      "long_total": 10431347.44,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10431347.44,
+      "stock_caps": {
+        "AMGN": 3097404.6799999997,
+        "IBM": 3687221.9199999995,
+        "MSFT": 3646719.8400000003
+      }
+    },
+    {
+      "day": 32,
+      "long_fs": {
+        "AMGN": 3101450.76,
+        "IBM": 3676429.1599999997,
+        "MSFT": 3679989.2399999998
+      },
+      "long_total": 10457870.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10457870.16,
+      "stock_caps": {
+        "AMGN": 3101450.76,
+        "IBM": 3676429.1599999997,
+        "MSFT": 3679989.2399999998
+      }
+    },
+    {
+      "day": 33,
+      "long_fs": {
+        "AMGN": 3187395.0799999996,
+        "IBM": 3708523.4199999995,
+        "MSFT": 3797359.3200000003
+      },
+      "long_total": 10693278.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10693278.82,
+      "stock_caps": {
+        "AMGN": 3187395.0799999996,
+        "IBM": 3708523.4199999995,
+        "MSFT": 3797359.3200000003
+      }
+    },
+    {
+      "day": 34,
+      "long_fs": {
+        "AMGN": 3204416.5199999996,
+        "IBM": 3683813.6799999997,
+        "MSFT": 3734420.1599999997
+      },
+      "long_total": 10622651.36,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10622651.36,
+      "stock_caps": {
+        "AMGN": 3204416.5199999996,
+        "IBM": 3683813.6799999997,
+        "MSFT": 3734420.1599999997
+      }
+    },
+    {
+      "day": 35,
+      "long_fs": {
+        "AMGN": 3189487.88,
+        "IBM": 3643198.8200000003,
+        "MSFT": 3687733.92
+      },
+      "long_total": 10520421.620000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10520421.620000001,
+      "stock_caps": {
+        "AMGN": 3189487.88,
+        "IBM": 3643198.8200000003,
+        "MSFT": 3687733.92
+      }
+    },
+    {
+      "day": 36,
+      "long_fs": {
+        "AMGN": 3167862.28,
+        "IBM": 3582418.5399999996,
+        "MSFT": 3638757.0
+      },
+      "long_total": 10389038.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10389038.82,
+      "stock_caps": {
+        "AMGN": 3167862.28,
+        "IBM": 3582418.5399999996,
+        "MSFT": 3638757.0
+      }
+    },
+    {
+      "day": 37,
+      "long_fs": {
+        "AMGN": 3204416.5199999996,
+        "IBM": 3514821.78,
+        "MSFT": 3705841.1999999997
+      },
+      "long_total": 10425080.499999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10425080.499999998,
+      "stock_caps": {
+        "AMGN": 3204416.5199999996,
+        "IBM": 3514821.78,
+        "MSFT": 3705841.1999999997
+      }
+    },
+    {
+      "day": 38,
+      "long_fs": {
+        "AMGN": 3168838.92,
+        "IBM": 3468242.5,
+        "MSFT": 3654682.6799999997
+      },
+      "long_total": 10291765.1,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10291765.1,
+      "stock_caps": {
+        "AMGN": 3168838.92,
+        "IBM": 3468242.5,
+        "MSFT": 3654682.6799999997
+      }
+    },
+    {
+      "day": 39,
+      "long_fs": {
+        "AMGN": 3135633.1599999997,
+        "IBM": 3519366.0999999996,
+        "MSFT": 3584653.3200000003
+      },
+      "long_total": 10239653.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10239653.58,
+      "stock_caps": {
+        "AMGN": 3135633.1599999997,
+        "IBM": 3519366.0999999996,
+        "MSFT": 3584653.3200000003
+      }
+    },
+    {
+      "day": 40,
+      "long_fs": {
+        "AMGN": 3106054.92,
+        "IBM": 3546063.9799999995,
+        "MSFT": 3649774.08
+      },
+      "long_total": 10301893.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10301893.98,
+      "stock_caps": {
+        "AMGN": 3106054.92,
+        "IBM": 3546063.9799999995,
+        "MSFT": 3649774.08
+      }
+    },
+    {
+      "day": 41,
+      "long_fs": {
+        "AMGN": 3087917.32,
+        "IBM": 3530726.9,
+        "MSFT": 3663736.3200000003
+      },
+      "long_total": 10282381.54,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10282381.54,
+      "stock_caps": {
+        "AMGN": 3087917.32,
+        "IBM": 3530726.9,
+        "MSFT": 3663736.3200000003
+      }
+    },
+    {
+      "day": 42,
+      "long_fs": {
+        "AMGN": 3085824.5199999996,
+        "IBM": 3592359.2399999998,
+        "MSFT": 3655009.92
+      },
+      "long_total": 10333194.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10333194.68,
+      "stock_caps": {
+        "AMGN": 3085824.5199999996,
+        "IBM": 3592359.2399999998,
+        "MSFT": 3655009.92
+      }
+    },
+    {
+      "day": 43,
+      "long_fs": {
+        "AMGN": 3097823.2399999998,
+        "IBM": 3585542.76,
+        "MSFT": 3714894.8400000003
+      },
+      "long_total": 10398261.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10398261.84,
+      "stock_caps": {
+        "AMGN": 3097823.2399999998,
+        "IBM": 3585542.76,
+        "MSFT": 3714894.8400000003
+      }
+    },
+    {
+      "day": 44,
+      "long_fs": {
+        "AMGN": 3139539.7199999997,
+        "IBM": 3581850.5,
+        "MSFT": 3687079.44
+      },
+      "long_total": 10408470.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10408470.66,
+      "stock_caps": {
+        "AMGN": 3139539.7199999997,
+        "IBM": 3581850.5,
+        "MSFT": 3687079.44
+      }
+    },
+    {
+      "day": 45,
+      "long_fs": {
+        "AMGN": 3151677.9599999995,
+        "IBM": 3597187.58,
+        "MSFT": 3688824.7199999997
+      },
+      "long_total": 10437691.259999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10437691.259999998,
+      "stock_caps": {
+        "AMGN": 3151677.9599999995,
+        "IBM": 3597187.58,
+        "MSFT": 3688824.7199999997
+      }
+    },
+    {
+      "day": 46,
+      "long_fs": {
+        "AMGN": 3111217.1599999997,
+        "IBM": 3541235.64,
+        "MSFT": 3722857.6799999997
+      },
+      "long_total": 10375311.48,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10375311.48,
+      "stock_caps": {
+        "AMGN": 3111217.1599999997,
+        "IBM": 3541235.64,
+        "MSFT": 3722857.6799999997
+      }
+    },
+    {
+      "day": 47,
+      "long_fs": {
+        "AMGN": 3050805.0,
+        "IBM": 3539247.5,
+        "MSFT": 3678680.2800000003
+      },
+      "long_total": 10268733.780000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10268733.780000001,
+      "stock_caps": {
+        "AMGN": 3050805.0,
+        "IBM": 3539247.5,
+        "MSFT": 3678680.2800000003
+      }
+    },
+    {
+      "day": 48,
+      "long_fs": {
+        "AMGN": 3135633.1599999997,
+        "IBM": 3561117.0399999996,
+        "MSFT": 3619886.1599999997
+      },
+      "long_total": 10316637.36,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10316637.36,
+      "stock_caps": {
+        "AMGN": 3135633.1599999997,
+        "IBM": 3561117.0399999996,
+        "MSFT": 3619886.1599999997
+      }
+    },
+    {
+      "day": 49,
+      "long_fs": {
+        "AMGN": 3123494.92,
+        "IBM": 3602299.94,
+        "MSFT": 3626867.2800000003
+      },
+      "long_total": 10352663.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10352663.14,
+      "stock_caps": {
+        "AMGN": 3123494.92,
+        "IBM": 3602299.94,
+        "MSFT": 3626867.2800000003
+      }
+    },
+    {
+      "day": 50,
+      "long_fs": {
+        "AMGN": 3148887.5599999996,
+        "IBM": 3559696.94,
+        "MSFT": 3678462.12
+      },
+      "long_total": 10387047.620000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10387047.620000001,
+      "stock_caps": {
+        "AMGN": 3148887.5599999996,
+        "IBM": 3559696.94,
+        "MSFT": 3678462.12
+      }
+    },
+    {
+      "day": 51,
+      "long_fs": {
+        "AMGN": 3176512.5199999996,
+        "IBM": 3588382.96,
+        "MSFT": 3738019.8000000003
+      },
+      "long_total": 10502916.28,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10502916.28,
+      "stock_caps": {
+        "AMGN": 3176512.5199999996,
+        "IBM": 3588382.96,
+        "MSFT": 3738019.8000000003
+      }
+    },
+    {
+      "day": 52,
+      "long_fs": {
+        "AMGN": 3173303.5599999996,
+        "IBM": 3574465.9799999995,
+        "MSFT": 3766162.44
+      },
+      "long_total": 10513932.979999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10513932.979999999,
+      "stock_caps": {
+        "AMGN": 3173303.5599999996,
+        "IBM": 3574465.9799999995,
+        "MSFT": 3766162.44
+      }
+    },
+    {
+      "day": 53,
+      "long_fs": {
+        "AMGN": 3179023.88,
+        "IBM": 3597187.58,
+        "MSFT": 3771507.3600000003
+      },
+      "long_total": 10547719.82,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10547719.82,
+      "stock_caps": {
+        "AMGN": 3179023.88,
+        "IBM": 3597187.58,
+        "MSFT": 3771507.3600000003
+      }
+    },
+    {
+      "day": 54,
+      "long_fs": {
+        "AMGN": 3245016.84,
+        "IBM": 3627009.6799999997,
+        "MSFT": 3921601.44
+      },
+      "long_total": 10793628.959999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10793628.959999999,
+      "stock_caps": {
+        "AMGN": 3245016.84,
+        "IBM": 3627009.6799999997,
+        "MSFT": 3921601.44
+      }
+    },
+    {
+      "day": 55,
+      "long_fs": {
+        "AMGN": 3237761.8,
+        "IBM": 3630417.9199999995,
+        "MSFT": 3873497.1599999997
+      },
+      "long_total": 10741677.879999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10741677.879999999,
+      "stock_caps": {
+        "AMGN": 3237761.8,
+        "IBM": 3630417.9199999995,
+        "MSFT": 3873497.1599999997
+      }
+    },
+    {
+      "day": 56,
+      "long_fs": {
+        "AMGN": 3254225.1599999997,
+        "IBM": 3707955.38,
+        "MSFT": 3783942.48
+      },
+      "long_total": 10746124.02,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10746124.02,
+      "stock_caps": {
+        "AMGN": 3254225.1599999997,
+        "IBM": 3707955.38,
+        "MSFT": 3783942.48
+      }
+    },
+    {
+      "day": 57,
+      "long_fs": {
+        "AMGN": 3276408.84,
+        "IBM": 3723008.44,
+        "MSFT": 3750127.6799999997
+      },
+      "long_total": 10749545.959999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10749545.959999999,
+      "stock_caps": {
+        "AMGN": 3276408.84,
+        "IBM": 3723008.44,
+        "MSFT": 3750127.6799999997
+      }
+    },
+    {
+      "day": 58,
+      "long_fs": {
+        "AMGN": 3284780.0399999996,
+        "IBM": 3739197.58,
+        "MSFT": 3764744.4000000004
+      },
+      "long_total": 10788723.02,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10788723.02,
+      "stock_caps": {
+        "AMGN": 3284780.0399999996,
+        "IBM": 3739197.58,
+        "MSFT": 3764744.4000000004
+      }
+    },
+    {
+      "day": 59,
+      "long_fs": {
+        "AMGN": 3283245.32,
+        "IBM": 3760215.0599999996,
+        "MSFT": 3828774.3600000003
+      },
+      "long_total": 10872235.739999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10872235.739999998,
+      "stock_caps": {
+        "AMGN": 3283245.32,
+        "IBM": 3760215.0599999996,
+        "MSFT": 3828774.3600000003
+      }
+    },
+    {
+      "day": 60,
+      "long_fs": {
+        "AMGN": 3281850.1199999996,
+        "IBM": 3780096.46,
+        "MSFT": 3684679.6799999997
+      },
+      "long_total": 10746627.26,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10746627.26,
+      "stock_caps": {
+        "AMGN": 3281850.1199999996,
+        "IBM": 3780096.46,
+        "MSFT": 3684679.6799999997
+      }
+    },
+    {
+      "day": 61,
+      "long_fs": {
+        "AMGN": 3293569.8,
+        "IBM": 3830936.0399999996,
+        "MSFT": 3607778.2800000003
+      },
+      "long_total": 10732285.120000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10732285.120000001,
+      "stock_caps": {
+        "AMGN": 3293569.8,
+        "IBM": 3830936.0399999996,
+        "MSFT": 3607778.2800000003
+      }
+    },
+    {
+      "day": 62,
+      "long_fs": {
+        "AMGN": 3298034.44,
+        "IBM": 3844000.96,
+        "MSFT": 3691224.48
+      },
+      "long_total": 10833260.88,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10833260.88,
+      "stock_caps": {
+        "AMGN": 3298034.44,
+        "IBM": 3844000.96,
+        "MSFT": 3691224.48
+      }
+    },
+    {
+      "day": 63,
+      "long_fs": {
+        "AMGN": 3267061.0,
+        "IBM": 3863314.3200000003,
+        "MSFT": 3664499.8800000004
+      },
+      "long_total": 10794876.200000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10794876.200000001,
+      "stock_caps": {
+        "AMGN": 3267061.0,
+        "IBM": 3863314.3200000003,
+        "MSFT": 3664499.8800000004
+      }
+    },
+    {
+      "day": 64,
+      "long_fs": {
+        "AMGN": 3238738.44,
+        "IBM": 3840592.7199999997,
+        "MSFT": 3669081.2399999998
+      },
+      "long_total": 10748413.4,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10748413.4,
+      "stock_caps": {
+        "AMGN": 3238738.44,
+        "IBM": 3840592.7199999997,
+        "MSFT": 3669081.2399999998
+      }
+    },
+    {
+      "day": 65,
+      "long_fs": {
+        "AMGN": 3214880.5199999996,
+        "IBM": 3863030.2999999993,
+        "MSFT": 3572654.52
+      },
+      "long_total": 10650566.339999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10650566.339999998,
+      "stock_caps": {
+        "AMGN": 3214880.5199999996,
+        "IBM": 3863030.2999999993,
+        "MSFT": 3572654.52
+      }
+    },
+    {
+      "day": 66,
+      "long_fs": {
+        "AMGN": 3218926.5999999996,
+        "IBM": 3870698.84,
+        "MSFT": 3563491.8000000003
+      },
+      "long_total": 10653118.24,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10653118.24,
+      "stock_caps": {
+        "AMGN": 3218926.5999999996,
+        "IBM": 3870698.84,
+        "MSFT": 3563491.8000000003
+      }
+    },
+    {
+      "day": 67,
+      "long_fs": {
+        "AMGN": 3394442.76,
+        "IBM": 3865018.44,
+        "MSFT": 3575708.76
+      },
+      "long_total": 10835170.959999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10835170.959999999,
+      "stock_caps": {
+        "AMGN": 3394442.76,
+        "IBM": 3865018.44,
+        "MSFT": 3575708.76
+      }
+    },
+    {
+      "day": 68,
+      "long_fs": {
+        "AMGN": 3529219.0799999996,
+        "IBM": 3916994.0999999996,
+        "MSFT": 3601124.4000000004
+      },
+      "long_total": 11047338.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11047338.58,
+      "stock_caps": {
+        "AMGN": 3529219.0799999996,
+        "IBM": 3916994.0999999996,
+        "MSFT": 3601124.4000000004
+      }
+    },
+    {
+      "day": 69,
+      "long_fs": {
+        "AMGN": 3638881.8,
+        "IBM": 3909893.5999999996,
+        "MSFT": 3556837.92
+      },
+      "long_total": 11105614.32,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11105614.32,
+      "stock_caps": {
+        "AMGN": 3638881.8,
+        "IBM": 3909893.5999999996,
+        "MSFT": 3556837.92
+      }
+    },
+    {
+      "day": 70,
+      "long_fs": {
+        "AMGN": 3618232.84,
+        "IBM": 3862178.2399999993,
+        "MSFT": 3515169.3600000003
+      },
+      "long_total": 10995581.44,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10995581.44,
+      "stock_caps": {
+        "AMGN": 3618232.84,
+        "IBM": 3862178.2399999993,
+        "MSFT": 3515169.3600000003
+      }
+    },
+    {
+      "day": 71,
+      "long_fs": {
+        "AMGN": 3656461.32,
+        "IBM": 3882627.6799999997,
+        "MSFT": 3522804.96
+      },
+      "long_total": 11061894.96,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11061894.96,
+      "stock_caps": {
+        "AMGN": 3656461.32,
+        "IBM": 3882627.6799999997,
+        "MSFT": 3522804.96
+      }
+    },
+    {
+      "day": 72,
+      "long_fs": {
+        "AMGN": 3662739.7199999997,
+        "IBM": 3879219.44,
+        "MSFT": 3501861.6
+      },
+      "long_total": 11043821.76,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11043821.76,
+      "stock_caps": {
+        "AMGN": 3662739.7199999997,
+        "IBM": 3879219.44,
+        "MSFT": 3501861.6
+      }
+    },
+    {
+      "day": 73,
+      "long_fs": {
+        "AMGN": 3641253.64,
+        "IBM": 3846273.1199999996,
+        "MSFT": 3534912.8400000003
+      },
+      "long_total": 11022440.6,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11022440.6,
+      "stock_caps": {
+        "AMGN": 3641253.64,
+        "IBM": 3846273.1199999996,
+        "MSFT": 3534912.8400000003
+      }
+    },
+    {
+      "day": 74,
+      "long_fs": {
+        "AMGN": 3711571.7199999997,
+        "IBM": 3845137.0399999996,
+        "MSFT": 3511133.4000000004
+      },
+      "long_total": 11067843.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11067843.16,
+      "stock_caps": {
+        "AMGN": 3711571.7199999997,
+        "IBM": 3845137.0399999996,
+        "MSFT": 3511133.4000000004
+      }
+    },
+    {
+      "day": 75,
+      "long_fs": {
+        "AMGN": 3697759.2399999993,
+        "IBM": 3811906.7,
+        "MSFT": 3495207.7199999997
+      },
+      "long_total": 11004874.66,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11004874.66,
+      "stock_caps": {
+        "AMGN": 3697759.2399999993,
+        "IBM": 3811906.7,
+        "MSFT": 3495207.7199999997
+      }
+    },
+    {
+      "day": 76,
+      "long_fs": {
+        "AMGN": 3681435.4,
+        "IBM": 3812474.7399999993,
+        "MSFT": 3456811.56
+      },
+      "long_total": 10950722.7,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10950722.7,
+      "stock_caps": {
+        "AMGN": 3681435.4,
+        "IBM": 3812474.7399999993,
+        "MSFT": 3456811.56
+      }
+    },
+    {
+      "day": 77,
+      "long_fs": {
+        "AMGN": 3653112.84,
+        "IBM": 3832924.1799999997,
+        "MSFT": 3452448.3600000003
+      },
+      "long_total": 10938486.379999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10938486.379999999,
+      "stock_caps": {
+        "AMGN": 3653112.84,
+        "IBM": 3832924.1799999997,
+        "MSFT": 3452448.3600000003
+      }
+    },
+    {
+      "day": 78,
+      "long_fs": {
+        "AMGN": 3637486.5999999996,
+        "IBM": 3856497.84,
+        "MSFT": 3511351.56
+      },
+      "long_total": 11005337.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11005337.0,
+      "stock_caps": {
+        "AMGN": 3637486.5999999996,
+        "IBM": 3856497.84,
+        "MSFT": 3511351.56
+      }
+    },
+    {
+      "day": 79,
+      "long_fs": {
+        "AMGN": 3594514.44,
+        "IBM": 3834912.3200000003,
+        "MSFT": 3517678.1999999997
+      },
+      "long_total": 10947105.959999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10947105.959999999,
+      "stock_caps": {
+        "AMGN": 3594514.44,
+        "IBM": 3834912.3200000003,
+        "MSFT": 3517678.1999999997
+      }
+    },
+    {
+      "day": 80,
+      "long_fs": {
+        "AMGN": 3590886.92,
+        "IBM": 3886887.9799999995,
+        "MSFT": 3567200.52
+      },
+      "long_total": 11044976.42,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11044976.42,
+      "stock_caps": {
+        "AMGN": 3590886.92,
+        "IBM": 3886887.9799999995,
+        "MSFT": 3567200.52
+      }
+    },
+    {
+      "day": 81,
+      "long_fs": {
+        "AMGN": 3580562.44,
+        "IBM": 3890864.2600000002,
+        "MSFT": 3490517.2800000003
+      },
+      "long_total": 10961944.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10961944.98,
+      "stock_caps": {
+        "AMGN": 3580562.44,
+        "IBM": 3890864.2600000002,
+        "MSFT": 3490517.2800000003
+      }
+    },
+    {
+      "day": 82,
+      "long_fs": {
+        "AMGN": 3577213.9599999995,
+        "IBM": 3939715.7,
+        "MSFT": 3523350.3600000003
+      },
+      "long_total": 11040281.02,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11040281.02,
+      "stock_caps": {
+        "AMGN": 3577213.9599999995,
+        "IBM": 3939715.7,
+        "MSFT": 3523350.3600000003
+      }
+    },
+    {
+      "day": 83,
+      "long_fs": {
+        "AMGN": 3579585.8,
+        "IBM": 3957892.9799999995,
+        "MSFT": 3531204.12
+      },
+      "long_total": 11068683.899999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11068683.899999999,
+      "stock_caps": {
+        "AMGN": 3579585.8,
+        "IBM": 3957892.9799999995,
+        "MSFT": 3531204.12
+      }
+    },
+    {
+      "day": 84,
+      "long_fs": {
+        "AMGN": 3622697.4799999995,
+        "IBM": 3969537.7999999993,
+        "MSFT": 3582580.8000000003
+      },
+      "long_total": 11174817.08,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11174817.08,
+      "stock_caps": {
+        "AMGN": 3622697.4799999995,
+        "IBM": 3969537.7999999993,
+        "MSFT": 3582580.8000000003
+      }
+    },
+    {
+      "day": 85,
+      "long_fs": {
+        "AMGN": 3598141.9599999995,
+        "IBM": 3980614.58,
+        "MSFT": 3586725.8400000003
+      },
+      "long_total": 11165483.379999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11165483.379999999,
+      "stock_caps": {
+        "AMGN": 3598141.9599999995,
+        "IBM": 3980614.58,
+        "MSFT": 3586725.8400000003
+      }
+    },
+    {
+      "day": 86,
+      "long_fs": {
+        "AMGN": 3576655.8799999994,
+        "IBM": 3979762.52,
+        "MSFT": 3575490.6
+      },
+      "long_total": 11131910.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11131910.0,
+      "stock_caps": {
+        "AMGN": 3576655.8799999994,
+        "IBM": 3979762.52,
+        "MSFT": 3575490.6
+      }
+    },
+    {
+      "day": 87,
+      "long_fs": {
+        "AMGN": 3581818.1199999996,
+        "IBM": 4009868.64,
+        "MSFT": 3585307.8000000003
+      },
+      "long_total": 11176995.56,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11176995.56,
+      "stock_caps": {
+        "AMGN": 3581818.1199999996,
+        "IBM": 4009868.64,
+        "MSFT": 3585307.8000000003
+      }
+    },
+    {
+      "day": 88,
+      "long_fs": {
+        "AMGN": 3544147.7199999997,
+        "IBM": 4014981.0,
+        "MSFT": 3638647.92
+      },
+      "long_total": 11197777.64,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11197777.64,
+      "stock_caps": {
+        "AMGN": 3544147.7199999997,
+        "IBM": 4014981.0,
+        "MSFT": 3638647.92
+      }
+    },
+    {
+      "day": 89,
+      "long_fs": {
+        "AMGN": 3474387.7199999997,
+        "IBM": 4012992.8599999994,
+        "MSFT": 3631339.56
+      },
+      "long_total": 11118721.139999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11118721.139999999,
+      "stock_caps": {
+        "AMGN": 3474387.7199999997,
+        "IBM": 4012992.8599999994,
+        "MSFT": 3631339.56
+      }
+    },
+    {
+      "day": 90,
+      "long_fs": {
+        "AMGN": 3549449.4799999995,
+        "IBM": 3998507.84,
+        "MSFT": 3598942.8000000003
+      },
+      "long_total": 11146901.12,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11146901.12,
+      "stock_caps": {
+        "AMGN": 3549449.4799999995,
+        "IBM": 3998507.84,
+        "MSFT": 3598942.8000000003
+      }
+    },
+    {
+      "day": 91,
+      "long_fs": {
+        "AMGN": 3619767.5599999996,
+        "IBM": 4002768.14,
+        "MSFT": 3646501.6799999997
+      },
+      "long_total": 11269038.379999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11269038.379999999,
+      "stock_caps": {
+        "AMGN": 3619767.5599999996,
+        "IBM": 4002768.14,
+        "MSFT": 3646501.6799999997
+      }
+    },
+    {
+      "day": 92,
+      "long_fs": {
+        "AMGN": 3651717.64,
+        "IBM": 4021797.4799999995,
+        "MSFT": 3686534.04
+      },
+      "long_total": 11360050.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11360050.16,
+      "stock_caps": {
+        "AMGN": 3651717.64,
+        "IBM": 4021797.4799999995,
+        "MSFT": 3686534.04
+      }
+    },
+    {
+      "day": 93,
+      "long_fs": {
+        "AMGN": 3632045.32,
+        "IBM": 3965277.5,
+        "MSFT": 3619231.6799999997
+      },
+      "long_total": 11216555.5,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11216555.5,
+      "stock_caps": {
+        "AMGN": 3632045.32,
+        "IBM": 3965277.5,
+        "MSFT": 3619231.6799999997
+      }
+    },
+    {
+      "day": 94,
+      "long_fs": {
+        "AMGN": 3589073.16,
+        "IBM": 3972093.9799999995,
+        "MSFT": 3666027.0
+      },
+      "long_total": 11227195.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11227195.14,
+      "stock_caps": {
+        "AMGN": 3589073.16,
+        "IBM": 3972093.9799999995,
+        "MSFT": 3666027.0
+      }
+    },
+    {
+      "day": 95,
+      "long_fs": {
+        "AMGN": 3659809.8,
+        "IBM": 3993679.5,
+        "MSFT": 3694824.12
+      },
+      "long_total": 11348314.42,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11348314.42,
+      "stock_caps": {
+        "AMGN": 3659809.8,
+        "IBM": 3993679.5,
+        "MSFT": 3694824.12
+      }
+    },
+    {
+      "day": 96,
+      "long_fs": {
+        "AMGN": 3637765.64,
+        "IBM": 3957040.9199999995,
+        "MSFT": 3602324.2800000003
+      },
+      "long_total": 11197131.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11197131.84,
+      "stock_caps": {
+        "AMGN": 3637765.64,
+        "IBM": 3957040.9199999995,
+        "MSFT": 3602324.2800000003
+      }
+    },
+    {
+      "day": 97,
+      "long_fs": {
+        "AMGN": 3671668.9999999995,
+        "IBM": 3932615.2,
+        "MSFT": 3589671.0
+      },
+      "long_total": 11193956.2,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11193956.2,
+      "stock_caps": {
+        "AMGN": 3671668.9999999995,
+        "IBM": 3932615.2,
+        "MSFT": 3589671.0
+      }
+    },
+    {
+      "day": 98,
+      "long_fs": {
+        "AMGN": 3687853.32,
+        "IBM": 3971241.9199999995,
+        "MSFT": 3585198.7199999997
+      },
+      "long_total": 11244294.959999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11244294.959999999,
+      "stock_caps": {
+        "AMGN": 3687853.32,
+        "IBM": 3971241.9199999995,
+        "MSFT": 3585198.7199999997
+      }
+    },
+    {
+      "day": 99,
+      "long_fs": {
+        "AMGN": 3787610.1199999996,
+        "IBM": 4060992.2399999993,
+        "MSFT": 3499243.6799999997
+      },
+      "long_total": 11347847.04,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11347847.04,
+      "stock_caps": {
+        "AMGN": 3787610.1199999996,
+        "IBM": 4060992.2399999993,
+        "MSFT": 3499243.6799999997
+      }
+    },
+    {
+      "day": 100,
+      "long_fs": {
+        "AMGN": 3759008.52,
+        "IBM": 3994531.5599999996,
+        "MSFT": 3485717.76
+      },
+      "long_total": 11239258.84,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11239258.84,
+      "stock_caps": {
+        "AMGN": 3759008.52,
+        "IBM": 3994531.5599999996,
+        "MSFT": 3485717.76
+      }
+    },
+    {
+      "day": 101,
+      "long_fs": {
+        "AMGN": 3735150.5999999996,
+        "IBM": 3981750.6599999997,
+        "MSFT": 3458229.6
+      },
+      "long_total": 11175131.86,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11175131.86,
+      "stock_caps": {
+        "AMGN": 3735150.5999999996,
+        "IBM": 3981750.6599999997,
+        "MSFT": 3458229.6
+      }
+    },
+    {
+      "day": 102,
+      "long_fs": {
+        "AMGN": 3723430.92,
+        "IBM": 3970105.84,
+        "MSFT": 3464010.8400000003
+      },
+      "long_total": 11157548.6,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11157548.6,
+      "stock_caps": {
+        "AMGN": 3723430.92,
+        "IBM": 3970105.84,
+        "MSFT": 3464010.8400000003
+      }
+    },
+    {
+      "day": 103,
+      "long_fs": {
+        "AMGN": 3753846.28,
+        "IBM": 3882343.6599999997,
+        "MSFT": 3405107.6399999997
+      },
+      "long_total": 11041298.579999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11041298.579999998,
+      "stock_caps": {
+        "AMGN": 3753846.28,
+        "IBM": 3882343.6599999997,
+        "MSFT": 3405107.6399999997
+      }
+    },
+    {
+      "day": 104,
+      "long_fs": {
+        "AMGN": 3753009.16,
+        "IBM": 3880639.5399999996,
+        "MSFT": 3412197.8400000003
+      },
+      "long_total": 11045847.54,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11045847.54,
+      "stock_caps": {
+        "AMGN": 3753009.16,
+        "IBM": 3880639.5399999996,
+        "MSFT": 3412197.8400000003
+      }
+    },
+    {
+      "day": 105,
+      "long_fs": {
+        "AMGN": 3778680.84,
+        "IBM": 3837468.5,
+        "MSFT": 3421469.6399999997
+      },
+      "long_total": 11037619.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11037619.98,
+      "stock_caps": {
+        "AMGN": 3778680.84,
+        "IBM": 3837468.5,
+        "MSFT": 3421469.6399999997
+      }
+    },
+    {
+      "day": 106,
+      "long_fs": {
+        "AMGN": 3749939.7199999997,
+        "IBM": 3802818.0599999996,
+        "MSFT": 3444485.52
+      },
+      "long_total": 10997244.299999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10997244.299999999,
+      "stock_caps": {
+        "AMGN": 3749939.7199999997,
+        "IBM": 3802818.0599999996,
+        "MSFT": 3444485.52
+      }
+    },
+    {
+      "day": 107,
+      "long_fs": {
+        "AMGN": 3715757.32,
+        "IBM": 3816167.0,
+        "MSFT": 3510478.92
+      },
+      "long_total": 11042404.24,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11042404.24,
+      "stock_caps": {
+        "AMGN": 3715757.32,
+        "IBM": 3816167.0,
+        "MSFT": 3510478.92
+      }
+    },
+    {
+      "day": 108,
+      "long_fs": {
+        "AMGN": 3641811.7199999997,
+        "IBM": 3805090.2199999997,
+        "MSFT": 3418742.6399999997
+      },
+      "long_total": 10865645.579999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10865645.579999998,
+      "stock_caps": {
+        "AMGN": 3641811.7199999997,
+        "IBM": 3805090.2199999997,
+        "MSFT": 3418742.6399999997
+      }
+    },
+    {
+      "day": 109,
+      "long_fs": {
+        "AMGN": 3703619.0799999996,
+        "IBM": 3823551.52,
+        "MSFT": 3479500.1999999997
+      },
+      "long_total": 11006671.799999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11006671.799999999,
+      "stock_caps": {
+        "AMGN": 3703619.0799999996,
+        "IBM": 3823551.52,
+        "MSFT": 3479500.1999999997
+      }
+    },
+    {
+      "day": 110,
+      "long_fs": {
+        "AMGN": 3698596.3599999994,
+        "IBM": 3835764.38,
+        "MSFT": 3483863.4000000004
+      },
+      "long_total": 11018225.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11018225.14,
+      "stock_caps": {
+        "AMGN": 3698596.3599999994,
+        "IBM": 3835764.38,
+        "MSFT": 3483863.4000000004
+      }
+    },
+    {
+      "day": 111,
+      "long_fs": {
+        "AMGN": 3731941.64,
+        "IBM": 3849681.3599999994,
+        "MSFT": 3570036.6
+      },
+      "long_total": 11151660.6,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11151660.6,
+      "stock_caps": {
+        "AMGN": 3731941.64,
+        "IBM": 3849681.3599999994,
+        "MSFT": 3570036.6
+      }
+    },
+    {
+      "day": 112,
+      "long_fs": {
+        "AMGN": 3788726.28,
+        "IBM": 3854225.6799999997,
+        "MSFT": 3597961.08
+      },
+      "long_total": 11240914.04,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11240914.04,
+      "stock_caps": {
+        "AMGN": 3788726.28,
+        "IBM": 3854225.6799999997,
+        "MSFT": 3597961.08
+      }
+    },
+    {
+      "day": 113,
+      "long_fs": {
+        "AMGN": 3784680.1999999997,
+        "IBM": 3851669.5,
+        "MSFT": 3582362.6399999997
+      },
+      "long_total": 11218713.34,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11218713.34,
+      "stock_caps": {
+        "AMGN": 3784680.1999999997,
+        "IBM": 3851669.5,
+        "MSFT": 3582362.6399999997
+      }
+    },
+    {
+      "day": 114,
+      "long_fs": {
+        "AMGN": 3956987.4,
+        "IBM": 3882059.64,
+        "MSFT": 3626321.8800000004
+      },
+      "long_total": 11465369.92,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11465369.92,
+      "stock_caps": {
+        "AMGN": 3956987.4,
+        "IBM": 3882059.64,
+        "MSFT": 3626321.8800000004
+      }
+    },
+    {
+      "day": 115,
+      "long_fs": {
+        "AMGN": 3977078.28,
+        "IBM": 3828095.84,
+        "MSFT": 3612577.8000000003
+      },
+      "long_total": 11417752.92,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11417752.92,
+      "stock_caps": {
+        "AMGN": 3977078.28,
+        "IBM": 3828095.84,
+        "MSFT": 3612577.8000000003
+      }
+    },
+    {
+      "day": 116,
+      "long_fs": {
+        "AMGN": 3963963.4,
+        "IBM": 3752830.5399999996,
+        "MSFT": 3575163.3600000003
+      },
+      "long_total": 11291958.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11291958.3,
+      "stock_caps": {
+        "AMGN": 3963963.4,
+        "IBM": 3752830.5399999996,
+        "MSFT": 3575163.3600000003
+      }
+    },
+    {
+      "day": 117,
+      "long_fs": {
+        "AMGN": 4002749.9599999995,
+        "IBM": 3773279.9799999995,
+        "MSFT": 3628721.6399999997
+      },
+      "long_total": 11404752.579999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11404752.579999998,
+      "stock_caps": {
+        "AMGN": 4002749.9599999995,
+        "IBM": 3773279.9799999995,
+        "MSFT": 3628721.6399999997
+      }
+    },
+    {
+      "day": 118,
+      "long_fs": {
+        "AMGN": 3968428.04,
+        "IBM": 3803386.0999999996,
+        "MSFT": 3622395.0
+      },
+      "long_total": 11394210.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11394210.14,
+      "stock_caps": {
+        "AMGN": 3968428.04,
+        "IBM": 3803386.0999999996,
+        "MSFT": 3622395.0
+      }
+    },
+    {
+      "day": 119,
+      "long_fs": {
+        "AMGN": 3956708.3599999994,
+        "IBM": 3793729.4199999995,
+        "MSFT": 3601124.4000000004
+      },
+      "long_total": 11351563.18,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11351563.18,
+      "stock_caps": {
+        "AMGN": 3956708.3599999994,
+        "IBM": 3793729.4199999995,
+        "MSFT": 3601124.4000000004
+      }
+    },
+    {
+      "day": 120,
+      "long_fs": {
+        "AMGN": 3915131.4,
+        "IBM": 3740617.6799999997,
+        "MSFT": 3614323.08
+      },
+      "long_total": 11270073.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11270073.16,
+      "stock_caps": {
+        "AMGN": 3915131.4,
+        "IBM": 3740617.6799999997,
+        "MSFT": 3614323.08
+      }
+    },
+    {
+      "day": 121,
+      "long_fs": {
+        "AMGN": 3890157.32,
+        "IBM": 3717612.0599999996,
+        "MSFT": 3563600.8800000004
+      },
+      "long_total": 11171371.26,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11171371.26,
+      "stock_caps": {
+        "AMGN": 3890157.32,
+        "IBM": 3717612.0599999996,
+        "MSFT": 3563600.8800000004
+      }
+    },
+    {
+      "day": 122,
+      "long_fs": {
+        "AMGN": 3809933.32,
+        "IBM": 3696594.58,
+        "MSFT": 3592507.08
+      },
+      "long_total": 11099035.98,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11099035.98,
+      "stock_caps": {
+        "AMGN": 3809933.32,
+        "IBM": 3696594.58,
+        "MSFT": 3592507.08
+      }
+    },
+    {
+      "day": 123,
+      "long_fs": {
+        "AMGN": 3852626.44,
+        "IBM": 3734653.2600000002,
+        "MSFT": 3605705.76
+      },
+      "long_total": 11192986.46,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11192986.46,
+      "stock_caps": {
+        "AMGN": 3852626.44,
+        "IBM": 3734653.2600000002,
+        "MSFT": 3605705.76
+      }
+    },
+    {
+      "day": 124,
+      "long_fs": {
+        "AMGN": 3797376.52,
+        "IBM": 3715339.9,
+        "MSFT": 3716312.8800000004
+      },
+      "long_total": 11229030.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11229030.3,
+      "stock_caps": {
+        "AMGN": 3797376.52,
+        "IBM": 3715339.9,
+        "MSFT": 3716312.8800000004
+      }
+    },
+    {
+      "day": 125,
+      "long_fs": {
+        "AMGN": 3763194.1199999996,
+        "IBM": 3896544.6599999997,
+        "MSFT": 3576908.6399999997
+      },
+      "long_total": 11236648.419999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11236648.419999998,
+      "stock_caps": {
+        "AMGN": 3763194.1199999996,
+        "IBM": 3896544.6599999997,
+        "MSFT": 3576908.6399999997
+      }
+    },
+    {
+      "day": 126,
+      "long_fs": {
+        "AMGN": 3649624.84,
+        "IBM": 3863030.2999999993,
+        "MSFT": 3597852.0
+      },
+      "long_total": 11110508.139999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11110508.139999999,
+      "stock_caps": {
+        "AMGN": 3649624.84,
+        "IBM": 3863030.2999999993,
+        "MSFT": 3597852.0
+      }
+    },
+    {
+      "day": 127,
+      "long_fs": {
+        "AMGN": 3672227.0799999996,
+        "IBM": 3865870.5,
+        "MSFT": 3679662.0
+      },
+      "long_total": 11217760.58,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11217760.58,
+      "stock_caps": {
+        "AMGN": 3672227.0799999996,
+        "IBM": 3865870.5,
+        "MSFT": 3679662.0
+      }
+    },
+    {
+      "day": 128,
+      "long_fs": {
+        "AMGN": 3567726.5999999996,
+        "IBM": 3920402.34,
+        "MSFT": 3688388.4000000004
+      },
+      "long_total": 11176518.34,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 11176518.34,
+      "stock_caps": {
+        "AMGN": 3567726.5999999996,
+        "IBM": 3920402.34,
+        "MSFT": 3688388.4000000004
+      }
+    }
+  ]
+}

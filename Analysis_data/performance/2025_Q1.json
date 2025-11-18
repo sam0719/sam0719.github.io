@@ -1,0 +1,34 @@
+{
+  "performance": [
+    {
+      "trend_value": 0.5960939687527727,
+      "risk": 39132.44362465623,
+      "expected_return": 23326.61362721547,
+      "strategy_type": "Qutrit",
+      "dataset_name": "Q#",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2025_Q1"
+    },
+    {
+      "trend_value": 0.12454121844760123,
+      "risk": 145826.9939097375,
+      "expected_return": 18161.471504069632,
+      "strategy_type": "short",
+      "dataset_name": "Q#",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2025_Q1"
+    },
+    {
+      "trend_value": 0.24645969776474405,
+      "risk": 88312.90520686145,
+      "expected_return": 21765.571926009565,
+      "strategy_type": "long",
+      "dataset_name": "Q#",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2025_Q1"
+    }
+  ]
+}

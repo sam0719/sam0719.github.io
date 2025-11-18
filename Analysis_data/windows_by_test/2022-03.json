@@ -1,0 +1,195 @@
+{
+  "count": 5,
+  "results": [
+    {
+      "window": "H2M",
+      "train_str": "2021_09~2022_02",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "H2M",
+          "result_name": "2021_09~2022_02",
+          "trend_value": 0.38771424445041486,
+          "risk": 41156.383811145155,
+          "expected_return": 15956.91625364943
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "H2M",
+          "result_name": "2021_09~2022_02",
+          "trend_value": 0.07031073148382706,
+          "risk": 232750.99446141438,
+          "expected_return": 16364.892674170225
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "H2M",
+          "result_name": "2021_09~2022_02",
+          "trend_value": 0.14997355120842193,
+          "risk": 153451.12143485376,
+          "expected_return": 23013.609618499813
+        }
+      ]
+    },
+    {
+      "window": "M2M",
+      "train_str": "2022_02",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "M#",
+          "result_name": "2022_02",
+          "trend_value": 2.979158050411194,
+          "risk": 14355.67444133038,
+          "expected_return": 42767.82308097162
+        }
+      ]
+    },
+    {
+      "window": "Q2M",
+      "train_str": "2021_12~2022_02",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "Q2M",
+          "result_name": "2021_12~2022_02",
+          "trend_value": 0.6885749489216548,
+          "risk": 39611.6695060158,
+          "expected_return": 27275.6033068063
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "Q2M",
+          "result_name": "2021_12~2022_02",
+          "trend_value": 0.08779784010711639,
+          "risk": 305433.56146459695,
+          "expected_return": 26816.406992815788
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "Q2M",
+          "result_name": "2021_12~2022_02",
+          "trend_value": 0.2120211918565196,
+          "risk": 143093.87333565086,
+          "expected_return": 30338.933571990547
+        }
+      ]
+    },
+    {
+      "window": "Y2M",
+      "train_str": "2021_03~2022_02",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "Y2M",
+          "result_name": "2021_03~2022_02",
+          "trend_value": 0.14662991269076825,
+          "risk": 95625.10197326094,
+          "expected_return": 14021.500353385061
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "Y2M",
+          "result_name": "2021_03~2022_02",
+          "trend_value": 0.03521257368877869,
+          "risk": 272445.33566919854,
+          "expected_return": 9593.5014584157
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "Y2M",
+          "result_name": "2021_03~2022_02",
+          "trend_value": 0.06587397438147659,
+          "risk": 198707.47499962331,
+          "expected_return": 13089.651117533085
+        }
+      ]
+    },
+    {
+      "window": "Y2Y",
+      "train_str": "2021",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "Y2Y",
+          "result_name": "2021",
+          "trend_value": 0.18318232358248945,
+          "risk": 73387.82785186656,
+          "expected_return": 13443.352828576652
+        },
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "Y2M",
+          "result_name": "2021",
+          "trend_value": 0.18318232358248945,
+          "risk": 73387.82785186656,
+          "expected_return": 13443.352828576652
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "Y2Y",
+          "result_name": "2021",
+          "trend_value": 0.011399564752063628,
+          "risk": 239240.9119198657,
+          "expected_return": 2727.24226677326
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "Y2H",
+          "result_name": "2021",
+          "trend_value": 0.011399564752063628,
+          "risk": 239240.9119198657,
+          "expected_return": 2727.24226677326
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "Y2Q",
+          "result_name": "2021",
+          "trend_value": 0.011399564752063628,
+          "risk": 239240.9119198657,
+          "expected_return": 2727.24226677326
+        },
+        {
+          "strategy_type": "short",
+          "dataset_name": "Y2M",
+          "result_name": "2021",
+          "trend_value": 0.011399564752063628,
+          "risk": 239240.9119198657,
+          "expected_return": 2727.24226677326
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "Y2Y",
+          "result_name": "2021",
+          "trend_value": 0.08230698803276366,
+          "risk": 192363.52262912615,
+          "expected_return": 15832.862154975748
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "Y2H",
+          "result_name": "2021",
+          "trend_value": 0.08230698803276366,
+          "risk": 192363.52262912615,
+          "expected_return": 15832.862154975748
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "Y2Q",
+          "result_name": "2021",
+          "trend_value": 0.08230698803276366,
+          "risk": 192363.52262912615,
+          "expected_return": 15832.862154975748
+        },
+        {
+          "strategy_type": "long",
+          "dataset_name": "Y2M",
+          "result_name": "2021",
+          "trend_value": 0.08230698803276366,
+          "risk": 192363.52262912615,
+          "expected_return": 15832.862154975748
+        }
+      ]
+    }
+  ]
+}

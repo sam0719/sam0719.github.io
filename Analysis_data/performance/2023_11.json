@@ -1,0 +1,54 @@
+{
+  "performance": [
+    {
+      "trend_value": 0.12843427173480856,
+      "risk": 119029.2805381769,
+      "expected_return": 15287.438961038972,
+      "strategy_type": "short",
+      "dataset_name": "M2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2023_11"
+    },
+    {
+      "trend_value": 1.2974695665898666,
+      "risk": 38671.75390726955,
+      "expected_return": 50175.423781335005,
+      "strategy_type": "long",
+      "dataset_name": "M2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2023_11"
+    },
+    {
+      "trend_value": 2.3049292783252597,
+      "risk": 13369.137349969327,
+      "expected_return": 30814.916103896077,
+      "strategy_type": "Qutrit",
+      "dataset_name": "M2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2023_11"
+    },
+    {
+      "trend_value": 1.2974695665898666,
+      "risk": 38671.75390726955,
+      "expected_return": 50175.423781335005,
+      "strategy_type": "long",
+      "dataset_name": "M2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2023_11"
+    },
+    {
+      "trend_value": 0.12843427173480856,
+      "risk": 119029.2805381769,
+      "expected_return": 15287.438961038972,
+      "strategy_type": "short",
+      "dataset_name": "M2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2023_11"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "BA",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "PG",
+      "strategy_type": "long",
+      "category": "long"
+    }
+  ]
+}

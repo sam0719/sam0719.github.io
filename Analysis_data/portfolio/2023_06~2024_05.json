@@ -1,0 +1,119 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "AMGN",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "AXP",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CAT",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "DD",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "JPM",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "NKE",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "TRV",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "VZ",
+      "strategy_type": "Qutrit",
+      "category": "long"
+    },
+    {
+      "stock_code": "CVX",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "Qutrit",
+      "category": "short"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "AMGN",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "CVX",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "DD",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "IBM",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MSFT",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "UNH",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "VZ",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "WMT",
+      "strategy_type": "long",
+      "category": "long"
+    }
+  ]
+}

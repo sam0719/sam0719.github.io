@@ -1,0 +1,796 @@
+{
+  "trend": [
+    {
+      "day": 1,
+      "long_fs": {
+        "WMT": 3333333.0,
+        "KO": 3333333.0,
+        "IBM": 3333333.0
+      },
+      "long_total": 10000000.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000000.0,
+      "stock_caps": {
+        "WMT": 3333333.0,
+        "KO": 3333333.0,
+        "IBM": 3333333.0
+      }
+    },
+    {
+      "day": 1,
+      "long_fs": {
+        "WMT": 3333333.0,
+        "KO": 3333333.0,
+        "IBM": 3333333.0
+      },
+      "long_total": 10000000.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000000.0,
+      "stock_caps": {
+        "WMT": 3333333.0,
+        "KO": 3333333.0,
+        "IBM": 3333333.0
+      }
+    },
+    {
+      "day": 2,
+      "long_fs": {
+        "WMT": 3362477.2299999995,
+        "KO": 3326438.32,
+        "IBM": 3375333.3499999996
+      },
+      "long_total": 10064249.899999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10064249.899999999,
+      "stock_caps": {
+        "WMT": 3362477.2299999995,
+        "KO": 3326438.32,
+        "IBM": 3375333.3499999996
+      }
+    },
+    {
+      "day": 2,
+      "long_fs": {
+        "WMT": 3362477.2299999995,
+        "KO": 3326438.32,
+        "IBM": 3375333.3499999996
+      },
+      "long_total": 10064249.899999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10064249.899999999,
+      "stock_caps": {
+        "WMT": 3362477.2299999995,
+        "KO": 3326438.32,
+        "IBM": 3375333.3499999996
+      }
+    },
+    {
+      "day": 3,
+      "long_fs": {
+        "WMT": 3370874.7199999997,
+        "KO": 3335984.8,
+        "IBM": 3345333.1
+      },
+      "long_total": 10052193.62,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10052193.62,
+      "stock_caps": {
+        "WMT": 3370874.7199999997,
+        "KO": 3335984.8,
+        "IBM": 3345333.1
+      }
+    },
+    {
+      "day": 3,
+      "long_fs": {
+        "WMT": 3370874.7199999997,
+        "KO": 3335984.8,
+        "IBM": 3345333.1
+      },
+      "long_total": 10052193.62,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10052193.62,
+      "stock_caps": {
+        "WMT": 3370874.7199999997,
+        "KO": 3335984.8,
+        "IBM": 3345333.1
+      }
+    },
+    {
+      "day": 4,
+      "long_fs": {
+        "WMT": 3459789.3200000003,
+        "KO": 3358790.28,
+        "IBM": 3350946.05
+      },
+      "long_total": 10169526.649999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10169526.649999999,
+      "stock_caps": {
+        "WMT": 3459789.3200000003,
+        "KO": 3358790.28,
+        "IBM": 3350946.05
+      }
+    },
+    {
+      "day": 4,
+      "long_fs": {
+        "WMT": 3459789.3200000003,
+        "KO": 3358790.28,
+        "IBM": 3350946.05
+      },
+      "long_total": 10169526.649999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10169526.649999999,
+      "stock_caps": {
+        "WMT": 3459789.3200000003,
+        "KO": 3358790.28,
+        "IBM": 3350946.05
+      }
+    },
+    {
+      "day": 5,
+      "long_fs": {
+        "WMT": 3442006.4000000004,
+        "KO": 3316361.48,
+        "IBM": 3381720.5
+      },
+      "long_total": 10140089.38,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10140089.38,
+      "stock_caps": {
+        "WMT": 3442006.4000000004,
+        "KO": 3316361.48,
+        "IBM": 3381720.5
+      }
+    },
+    {
+      "day": 5,
+      "long_fs": {
+        "WMT": 3442006.4000000004,
+        "KO": 3316361.48,
+        "IBM": 3381720.5
+      },
+      "long_total": 10140089.38,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10140089.38,
+      "stock_caps": {
+        "WMT": 3442006.4000000004,
+        "KO": 3316361.48,
+        "IBM": 3381720.5
+      }
+    },
+    {
+      "day": 6,
+      "long_fs": {
+        "WMT": 3452873.74,
+        "KO": 3302041.76,
+        "IBM": 3359655.8000000003
+      },
+      "long_total": 10114572.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10114572.3,
+      "stock_caps": {
+        "WMT": 3452873.74,
+        "KO": 3302041.76,
+        "IBM": 3359655.8000000003
+      }
+    },
+    {
+      "day": 6,
+      "long_fs": {
+        "WMT": 3452873.74,
+        "KO": 3302041.76,
+        "IBM": 3359655.8000000003
+      },
+      "long_total": 10114572.3,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10114572.3,
+      "stock_caps": {
+        "WMT": 3452873.74,
+        "KO": 3302041.76,
+        "IBM": 3359655.8000000003
+      }
+    },
+    {
+      "day": 7,
+      "long_fs": {
+        "WMT": 3478066.21,
+        "KO": 3309466.8,
+        "IBM": 3385591.4999999995
+      },
+      "long_total": 10173125.51,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10173125.51,
+      "stock_caps": {
+        "WMT": 3478066.21,
+        "KO": 3309466.8,
+        "IBM": 3385591.4999999995
+      }
+    },
+    {
+      "day": 7,
+      "long_fs": {
+        "WMT": 3478066.21,
+        "KO": 3309466.8,
+        "IBM": 3385591.4999999995
+      },
+      "long_total": 10173125.51,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10173125.51,
+      "stock_caps": {
+        "WMT": 3478066.21,
+        "KO": 3309466.8,
+        "IBM": 3385591.4999999995
+      }
+    },
+    {
+      "day": 8,
+      "long_fs": {
+        "WMT": 3447934.0399999996,
+        "KO": 3323786.52,
+        "IBM": 3394494.8
+      },
+      "long_total": 10166216.36,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10166216.36,
+      "stock_caps": {
+        "WMT": 3447934.0399999996,
+        "KO": 3323786.52,
+        "IBM": 3394494.8
+      }
+    },
+    {
+      "day": 8,
+      "long_fs": {
+        "WMT": 3447934.0399999996,
+        "KO": 3323786.52,
+        "IBM": 3394494.8
+      },
+      "long_total": 10166216.36,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10166216.36,
+      "stock_caps": {
+        "WMT": 3447934.0399999996,
+        "KO": 3323786.52,
+        "IBM": 3394494.8
+      }
+    },
+    {
+      "day": 9,
+      "long_fs": {
+        "WMT": 3420271.7199999997,
+        "KO": 3355608.12,
+        "IBM": 3480624.5500000003
+      },
+      "long_total": 10256505.39,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10256505.39,
+      "stock_caps": {
+        "WMT": 3420271.7199999997,
+        "KO": 3355608.12,
+        "IBM": 3480624.5500000003
+      }
+    },
+    {
+      "day": 9,
+      "long_fs": {
+        "WMT": 3420271.7199999997,
+        "KO": 3355608.12,
+        "IBM": 3480624.5500000003
+      },
+      "long_total": 10256505.39,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10256505.39,
+      "stock_caps": {
+        "WMT": 3420271.7199999997,
+        "KO": 3355608.12,
+        "IBM": 3480624.5500000003
+      }
+    },
+    {
+      "day": 10,
+      "long_fs": {
+        "WMT": 3438548.61,
+        "KO": 3340227.6799999997,
+        "IBM": 3481592.3
+      },
+      "long_total": 10260369.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10260369.59,
+      "stock_caps": {
+        "WMT": 3438548.61,
+        "KO": 3340227.6799999997,
+        "IBM": 3481592.3
+      }
+    },
+    {
+      "day": 10,
+      "long_fs": {
+        "WMT": 3438548.61,
+        "KO": 3340227.6799999997,
+        "IBM": 3481592.3
+      },
+      "long_total": 10260369.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10260369.59,
+      "stock_caps": {
+        "WMT": 3438548.61,
+        "KO": 3340227.6799999997,
+        "IBM": 3481592.3
+      }
+    },
+    {
+      "day": 11,
+      "long_fs": {
+        "WMT": 3457319.4699999997,
+        "KO": 3385308.28,
+        "IBM": 3537334.6999999997
+      },
+      "long_total": 10379963.45,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10379963.45,
+      "stock_caps": {
+        "WMT": 3457319.4699999997,
+        "KO": 3385308.28,
+        "IBM": 3537334.6999999997
+      }
+    },
+    {
+      "day": 11,
+      "long_fs": {
+        "WMT": 3457319.4699999997,
+        "KO": 3385308.28,
+        "IBM": 3537334.6999999997
+      },
+      "long_total": 10379963.45,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10379963.45,
+      "stock_caps": {
+        "WMT": 3457319.4699999997,
+        "KO": 3385308.28,
+        "IBM": 3537334.6999999997
+      }
+    },
+    {
+      "day": 12,
+      "long_fs": {
+        "WMT": 3508692.35,
+        "KO": 3435162.1199999996,
+        "IBM": 3568496.25
+      },
+      "long_total": 10512351.719999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10512351.719999999,
+      "stock_caps": {
+        "WMT": 3508692.35,
+        "KO": 3435162.1199999996,
+        "IBM": 3568496.25
+      }
+    },
+    {
+      "day": 12,
+      "long_fs": {
+        "WMT": 3508692.35,
+        "KO": 3435162.1199999996,
+        "IBM": 3568496.25
+      },
+      "long_total": 10512351.719999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10512351.719999999,
+      "stock_caps": {
+        "WMT": 3508692.35,
+        "KO": 3435162.1199999996,
+        "IBM": 3568496.25
+      }
+    },
+    {
+      "day": 13,
+      "long_fs": {
+        "WMT": 3498318.9799999995,
+        "KO": 3434101.4,
+        "IBM": 3526108.8
+      },
+      "long_total": 10458530.18,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10458530.18,
+      "stock_caps": {
+        "WMT": 3498318.9799999995,
+        "KO": 3434101.4,
+        "IBM": 3526108.8
+      }
+    },
+    {
+      "day": 13,
+      "long_fs": {
+        "WMT": 3498318.9799999995,
+        "KO": 3434101.4,
+        "IBM": 3526108.8
+      },
+      "long_total": 10458530.18,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10458530.18,
+      "stock_caps": {
+        "WMT": 3498318.9799999995,
+        "KO": 3434101.4,
+        "IBM": 3526108.8
+      }
+    },
+    {
+      "day": 14,
+      "long_fs": {
+        "WMT": 3494861.19,
+        "KO": 3439404.9999999995,
+        "IBM": 3488560.1
+      },
+      "long_total": 10422827.29,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10422827.29,
+      "stock_caps": {
+        "WMT": 3494861.19,
+        "KO": 3439404.9999999995,
+        "IBM": 3488560.1
+      }
+    },
+    {
+      "day": 14,
+      "long_fs": {
+        "WMT": 3494861.19,
+        "KO": 3439404.9999999995,
+        "IBM": 3488560.1
+      },
+      "long_total": 10422827.29,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10422827.29,
+      "stock_caps": {
+        "WMT": 3494861.19,
+        "KO": 3439404.9999999995,
+        "IBM": 3488560.1
+      }
+    },
+    {
+      "day": 15,
+      "long_fs": {
+        "WMT": 3476584.3,
+        "KO": 3411826.28,
+        "IBM": 3505786.05
+      },
+      "long_total": 10394197.629999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10394197.629999999,
+      "stock_caps": {
+        "WMT": 3476584.3,
+        "KO": 3411826.28,
+        "IBM": 3505786.05
+      }
+    },
+    {
+      "day": 15,
+      "long_fs": {
+        "WMT": 3476584.3,
+        "KO": 3411826.28,
+        "IBM": 3505786.05
+      },
+      "long_total": 10394197.629999999,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10394197.629999999,
+      "stock_caps": {
+        "WMT": 3476584.3,
+        "KO": 3411826.28,
+        "IBM": 3505786.05
+      }
+    },
+    {
+      "day": 16,
+      "long_fs": {
+        "WMT": 3489921.49,
+        "KO": 3421903.1199999996,
+        "IBM": 3504818.3000000003
+      },
+      "long_total": 10416643.91,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10416643.91,
+      "stock_caps": {
+        "WMT": 3489921.49,
+        "KO": 3421903.1199999996,
+        "IBM": 3504818.3000000003
+      }
+    },
+    {
+      "day": 16,
+      "long_fs": {
+        "WMT": 3489921.49,
+        "KO": 3421903.1199999996,
+        "IBM": 3504818.3000000003
+      },
+      "long_total": 10416643.91,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10416643.91,
+      "stock_caps": {
+        "WMT": 3489921.49,
+        "KO": 3421903.1199999996,
+        "IBM": 3504818.3000000003
+      }
+    },
+    {
+      "day": 17,
+      "long_fs": {
+        "WMT": 3487451.6399999997,
+        "KO": 3466453.36,
+        "IBM": 3503269.9
+      },
+      "long_total": 10457175.9,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10457175.9,
+      "stock_caps": {
+        "WMT": 3487451.6399999997,
+        "KO": 3466453.36,
+        "IBM": 3503269.9
+      }
+    },
+    {
+      "day": 17,
+      "long_fs": {
+        "WMT": 3487451.6399999997,
+        "KO": 3466453.36,
+        "IBM": 3503269.9
+      },
+      "long_total": 10457175.9,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10457175.9,
+      "stock_caps": {
+        "WMT": 3487451.6399999997,
+        "KO": 3466453.36,
+        "IBM": 3503269.9
+      }
+    },
+    {
+      "day": 18,
+      "long_fs": {
+        "WMT": 3458801.38,
+        "KO": 3480242.72,
+        "IBM": 3654819.5500000003
+      },
+      "long_total": 10593864.65,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10593864.65,
+      "stock_caps": {
+        "WMT": 3458801.38,
+        "KO": 3480242.72,
+        "IBM": 3654819.5500000003
+      }
+    },
+    {
+      "day": 18,
+      "long_fs": {
+        "WMT": 3458801.38,
+        "KO": 3480242.72,
+        "IBM": 3654819.5500000003
+      },
+      "long_total": 10593864.65,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10593864.65,
+      "stock_caps": {
+        "WMT": 3458801.38,
+        "KO": 3480242.72,
+        "IBM": 3654819.5500000003
+      }
+    },
+    {
+      "day": 19,
+      "long_fs": {
+        "WMT": 3446946.1,
+        "KO": 3531687.64,
+        "IBM": 3650367.9
+      },
+      "long_total": 10629002.64,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10629002.64,
+      "stock_caps": {
+        "WMT": 3446946.1,
+        "KO": 3531687.64,
+        "IBM": 3650367.9
+      }
+    },
+    {
+      "day": 19,
+      "long_fs": {
+        "WMT": 3446946.1,
+        "KO": 3531687.64,
+        "IBM": 3650367.9
+      },
+      "long_total": 10629002.64,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10629002.64,
+      "stock_caps": {
+        "WMT": 3446946.1,
+        "KO": 3531687.64,
+        "IBM": 3650367.9
+      }
+    },
+    {
+      "day": 20,
+      "long_fs": {
+        "WMT": 3439042.58,
+        "KO": 3520019.72,
+        "IBM": 3645722.7
+      },
+      "long_total": 10604786.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10604786.0,
+      "stock_caps": {
+        "WMT": 3439042.58,
+        "KO": 3520019.72,
+        "IBM": 3645722.7
+      }
+    },
+    {
+      "day": 20,
+      "long_fs": {
+        "WMT": 3439042.58,
+        "KO": 3520019.72,
+        "IBM": 3645722.7
+      },
+      "long_total": 10604786.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10604786.0,
+      "stock_caps": {
+        "WMT": 3439042.58,
+        "KO": 3520019.72,
+        "IBM": 3645722.7
+      }
+    },
+    {
+      "day": 21,
+      "long_fs": {
+        "WMT": 3417801.8699999996,
+        "KO": 3565100.32,
+        "IBM": 3636819.4
+      },
+      "long_total": 10619722.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10619722.59,
+      "stock_caps": {
+        "WMT": 3417801.8699999996,
+        "KO": 3565100.32,
+        "IBM": 3636819.4
+      }
+    },
+    {
+      "day": 21,
+      "long_fs": {
+        "WMT": 3417801.8699999996,
+        "KO": 3565100.32,
+        "IBM": 3636819.4
+      },
+      "long_total": 10619722.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10619722.59,
+      "stock_caps": {
+        "WMT": 3417801.8699999996,
+        "KO": 3565100.32,
+        "IBM": 3636819.4
+      }
+    },
+    {
+      "day": 22,
+      "long_fs": {
+        "WMT": 3390633.52,
+        "KO": 3515776.8400000003,
+        "IBM": 3657722.8
+      },
+      "long_total": 10564134.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10564134.16,
+      "stock_caps": {
+        "WMT": 3390633.52,
+        "KO": 3515776.8400000003,
+        "IBM": 3657722.8
+      }
+    },
+    {
+      "day": 22,
+      "long_fs": {
+        "WMT": 3390633.52,
+        "KO": 3515776.8400000003,
+        "IBM": 3657722.8
+      },
+      "long_total": 10564134.16,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10564134.16,
+      "stock_caps": {
+        "WMT": 3390633.52,
+        "KO": 3515776.8400000003,
+        "IBM": 3657722.8
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "performance": [
+    {
+      "trend_value": 0.6009782814663143,
+      "risk": 24339.034295515048,
+      "expected_return": 14627.23100346832,
+      "strategy_type": "Qutrit",
+      "dataset_name": "Q2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2021_05-07"
+    },
+    {
+      "trend_value": 0.10554206879581644,
+      "risk": 106673.62154486492,
+      "expected_return": 11258.55470378702,
+      "strategy_type": "short",
+      "dataset_name": "Q2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2021_05-07"
+    },
+    {
+      "trend_value": 0.19507003062597525,
+      "risk": 70657.56712386069,
+      "expected_return": 13783.173782808406,
+      "strategy_type": "long",
+      "dataset_name": "Q2M",
+      "data_type": "Train",
+      "index_name": "DJIA",
+      "result_name": "2021_05-07"
+    }
+  ]
+}

@@ -1,0 +1,764 @@
+{
+  "trend": [
+    {
+      "day": 1,
+      "long_fs": {
+        "AAPL": 2500000.0,
+        "MRK": 2500000.0,
+        "CSCO": 2500000.0,
+        "JPM": 2500000.0
+      },
+      "long_total": 10000000.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000000.0,
+      "stock_caps": {
+        "AAPL": 2500000.0,
+        "MRK": 2500000.0,
+        "CSCO": 2500000.0,
+        "JPM": 2500000.0
+      }
+    },
+    {
+      "day": 1,
+      "long_fs": {
+        "AAPL": 2500000.0,
+        "MRK": 2500000.0,
+        "CSCO": 2500000.0,
+        "JPM": 2500000.0
+      },
+      "long_total": 10000000.0,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10000000.0,
+      "stock_caps": {
+        "AAPL": 2500000.0,
+        "MRK": 2500000.0,
+        "CSCO": 2500000.0,
+        "JPM": 2500000.0
+      }
+    },
+    {
+      "day": 2,
+      "long_fs": {
+        "AAPL": 2592654.0999999996,
+        "MRK": 2417737.12,
+        "CSCO": 2538604.0,
+        "JPM": 2488359.15
+      },
+      "long_total": 10037354.37,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10037354.37,
+      "stock_caps": {
+        "AAPL": 2592654.0999999996,
+        "MRK": 2417737.12,
+        "CSCO": 2538604.0,
+        "JPM": 2488359.15
+      }
+    },
+    {
+      "day": 2,
+      "long_fs": {
+        "AAPL": 2592654.0999999996,
+        "MRK": 2417737.12,
+        "CSCO": 2538604.0,
+        "JPM": 2488359.15
+      },
+      "long_total": 10037354.37,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10037354.37,
+      "stock_caps": {
+        "AAPL": 2592654.0999999996,
+        "MRK": 2417737.12,
+        "CSCO": 2538604.0,
+        "JPM": 2488359.15
+      }
+    },
+    {
+      "day": 3,
+      "long_fs": {
+        "AAPL": 2655913.3,
+        "MRK": 2405740.45,
+        "CSCO": 2503088.3200000003,
+        "JPM": 2526863.5
+      },
+      "long_total": 10091605.57,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10091605.57,
+      "stock_caps": {
+        "AAPL": 2655913.3,
+        "MRK": 2405740.45,
+        "CSCO": 2503088.3200000003,
+        "JPM": 2526863.5
+      }
+    },
+    {
+      "day": 3,
+      "long_fs": {
+        "AAPL": 2655913.3,
+        "MRK": 2405740.45,
+        "CSCO": 2503088.3200000003,
+        "JPM": 2526863.5
+      },
+      "long_total": 10091605.57,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10091605.57,
+      "stock_caps": {
+        "AAPL": 2655913.3,
+        "MRK": 2405740.45,
+        "CSCO": 2503088.3200000003,
+        "JPM": 2526863.5
+      }
+    },
+    {
+      "day": 4,
+      "long_fs": {
+        "AAPL": 2608296.9999999995,
+        "MRK": 2431202.77,
+        "CSCO": 2448528.0,
+        "JPM": 2541727.9699999997
+      },
+      "long_total": 10029755.739999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10029755.739999998,
+      "stock_caps": {
+        "AAPL": 2608296.9999999995,
+        "MRK": 2431202.77,
+        "CSCO": 2448528.0,
+        "JPM": 2541727.9699999997
+      }
+    },
+    {
+      "day": 4,
+      "long_fs": {
+        "AAPL": 2608296.9999999995,
+        "MRK": 2431202.77,
+        "CSCO": 2448528.0,
+        "JPM": 2541727.9699999997
+      },
+      "long_total": 10029755.739999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10029755.739999998,
+      "stock_caps": {
+        "AAPL": 2608296.9999999995,
+        "MRK": 2431202.77,
+        "CSCO": 2448528.0,
+        "JPM": 2541727.9699999997
+      }
+    },
+    {
+      "day": 5,
+      "long_fs": {
+        "AAPL": 2658491.8,
+        "MRK": 2469641.08,
+        "CSCO": 2462425.44,
+        "JPM": 2572710.54
+      },
+      "long_total": 10163268.86,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10163268.86,
+      "stock_caps": {
+        "AAPL": 2658491.8,
+        "MRK": 2469641.08,
+        "CSCO": 2462425.44,
+        "JPM": 2572710.54
+      }
+    },
+    {
+      "day": 5,
+      "long_fs": {
+        "AAPL": 2658491.8,
+        "MRK": 2469641.08,
+        "CSCO": 2462425.44,
+        "JPM": 2572710.54
+      },
+      "long_total": 10163268.86,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10163268.86,
+      "stock_caps": {
+        "AAPL": 2658491.8,
+        "MRK": 2469641.08,
+        "CSCO": 2462425.44,
+        "JPM": 2572710.54
+      }
+    },
+    {
+      "day": 6,
+      "long_fs": {
+        "AAPL": 2611563.0999999996,
+        "MRK": 2492165.4400000004,
+        "CSCO": 2417130.08,
+        "JPM": 2554622.4499999997
+      },
+      "long_total": 10075481.07,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10075481.07,
+      "stock_caps": {
+        "AAPL": 2611563.0999999996,
+        "MRK": 2492165.4400000004,
+        "CSCO": 2417130.08,
+        "JPM": 2554622.4499999997
+      }
+    },
+    {
+      "day": 6,
+      "long_fs": {
+        "AAPL": 2611563.0999999996,
+        "MRK": 2492165.4400000004,
+        "CSCO": 2417130.08,
+        "JPM": 2554622.4499999997
+      },
+      "long_total": 10075481.07,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10075481.07,
+      "stock_caps": {
+        "AAPL": 2611563.0999999996,
+        "MRK": 2492165.4400000004,
+        "CSCO": 2417130.08,
+        "JPM": 2554622.4499999997
+      }
+    },
+    {
+      "day": 7,
+      "long_fs": {
+        "AAPL": 2593513.6,
+        "MRK": 2494124.08,
+        "CSCO": 2405291.52,
+        "JPM": 2514864.4699999997
+      },
+      "long_total": 10007793.669999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10007793.669999998,
+      "stock_caps": {
+        "AAPL": 2593513.6,
+        "MRK": 2494124.08,
+        "CSCO": 2405291.52,
+        "JPM": 2514864.4699999997
+      }
+    },
+    {
+      "day": 7,
+      "long_fs": {
+        "AAPL": 2593513.6,
+        "MRK": 2494124.08,
+        "CSCO": 2405291.52,
+        "JPM": 2514864.4699999997
+      },
+      "long_total": 10007793.669999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10007793.669999998,
+      "stock_caps": {
+        "AAPL": 2593513.6,
+        "MRK": 2494124.08,
+        "CSCO": 2405291.52,
+        "JPM": 2514864.4699999997
+      }
+    },
+    {
+      "day": 8,
+      "long_fs": {
+        "AAPL": 2595920.1999999997,
+        "MRK": 2537214.16,
+        "CSCO": 2432571.6799999997,
+        "JPM": 2525968.05
+      },
+      "long_total": 10091674.09,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10091674.09,
+      "stock_caps": {
+        "AAPL": 2595920.1999999997,
+        "MRK": 2537214.16,
+        "CSCO": 2432571.6799999997,
+        "JPM": 2525968.05
+      }
+    },
+    {
+      "day": 8,
+      "long_fs": {
+        "AAPL": 2595920.1999999997,
+        "MRK": 2537214.16,
+        "CSCO": 2432571.6799999997,
+        "JPM": 2525968.05
+      },
+      "long_total": 10091674.09,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10091674.09,
+      "stock_caps": {
+        "AAPL": 2595920.1999999997,
+        "MRK": 2537214.16,
+        "CSCO": 2432571.6799999997,
+        "JPM": 2525968.05
+      }
+    },
+    {
+      "day": 9,
+      "long_fs": {
+        "AAPL": 2644739.8,
+        "MRK": 2560228.18,
+        "CSCO": 2463454.88,
+        "JPM": 2553368.82
+      },
+      "long_total": 10221791.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10221791.68,
+      "stock_caps": {
+        "AAPL": 2644739.8,
+        "MRK": 2560228.18,
+        "CSCO": 2463454.88,
+        "JPM": 2553368.82
+      }
+    },
+    {
+      "day": 9,
+      "long_fs": {
+        "AAPL": 2644739.8,
+        "MRK": 2560228.18,
+        "CSCO": 2463454.88,
+        "JPM": 2553368.82
+      },
+      "long_total": 10221791.68,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10221791.68,
+      "stock_caps": {
+        "AAPL": 2644739.8,
+        "MRK": 2560228.18,
+        "CSCO": 2463454.88,
+        "JPM": 2553368.82
+      }
+    },
+    {
+      "day": 10,
+      "long_fs": {
+        "AAPL": 2633566.3,
+        "MRK": 2541131.4400000004,
+        "CSCO": 2455219.3600000003,
+        "JPM": 2564651.4899999998
+      },
+      "long_total": 10194568.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10194568.59,
+      "stock_caps": {
+        "AAPL": 2633566.3,
+        "MRK": 2541131.4400000004,
+        "CSCO": 2455219.3600000003,
+        "JPM": 2564651.4899999998
+      }
+    },
+    {
+      "day": 10,
+      "long_fs": {
+        "AAPL": 2633566.3,
+        "MRK": 2541131.4400000004,
+        "CSCO": 2455219.3600000003,
+        "JPM": 2564651.4899999998
+      },
+      "long_total": 10194568.59,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10194568.59,
+      "stock_caps": {
+        "AAPL": 2633566.3,
+        "MRK": 2541131.4400000004,
+        "CSCO": 2455219.3600000003,
+        "JPM": 2564651.4899999998
+      }
+    },
+    {
+      "day": 11,
+      "long_fs": {
+        "AAPL": 2670181.0,
+        "MRK": 2516403.6100000003,
+        "CSCO": 2493823.3600000003,
+        "JPM": 2575396.89
+      },
+      "long_total": 10255804.860000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10255804.860000001,
+      "stock_caps": {
+        "AAPL": 2670181.0,
+        "MRK": 2516403.6100000003,
+        "CSCO": 2493823.3600000003,
+        "JPM": 2575396.89
+      }
+    },
+    {
+      "day": 11,
+      "long_fs": {
+        "AAPL": 2670181.0,
+        "MRK": 2516403.6100000003,
+        "CSCO": 2493823.3600000003,
+        "JPM": 2575396.89
+      },
+      "long_total": 10255804.860000001,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10255804.860000001,
+      "stock_caps": {
+        "AAPL": 2670181.0,
+        "MRK": 2516403.6100000003,
+        "CSCO": 2493823.3600000003,
+        "JPM": 2575396.89
+      }
+    },
+    {
+      "day": 12,
+      "long_fs": {
+        "AAPL": 2642333.1999999997,
+        "MRK": 2489227.48,
+        "CSCO": 2624562.24,
+        "JPM": 2539937.07
+      },
+      "long_total": 10296059.99,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10296059.99,
+      "stock_caps": {
+        "AAPL": 2642333.1999999997,
+        "MRK": 2489227.48,
+        "CSCO": 2624562.24,
+        "JPM": 2539937.07
+      }
+    },
+    {
+      "day": 12,
+      "long_fs": {
+        "AAPL": 2642333.1999999997,
+        "MRK": 2489227.48,
+        "CSCO": 2624562.24,
+        "JPM": 2539937.07
+      },
+      "long_total": 10296059.99,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10296059.99,
+      "stock_caps": {
+        "AAPL": 2642333.1999999997,
+        "MRK": 2489227.48,
+        "CSCO": 2624562.24,
+        "JPM": 2539937.07
+      }
+    },
+    {
+      "day": 13,
+      "long_fs": {
+        "AAPL": 2622392.8,
+        "MRK": 2559493.6900000004,
+        "CSCO": 2613238.4,
+        "JPM": 2547458.85
+      },
+      "long_total": 10342583.74,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10342583.74,
+      "stock_caps": {
+        "AAPL": 2622392.8,
+        "MRK": 2559493.6900000004,
+        "CSCO": 2613238.4,
+        "JPM": 2547458.85
+      }
+    },
+    {
+      "day": 13,
+      "long_fs": {
+        "AAPL": 2622392.8,
+        "MRK": 2559493.6900000004,
+        "CSCO": 2613238.4,
+        "JPM": 2547458.85
+      },
+      "long_total": 10342583.74,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10342583.74,
+      "stock_caps": {
+        "AAPL": 2622392.8,
+        "MRK": 2559493.6900000004,
+        "CSCO": 2613238.4,
+        "JPM": 2547458.85
+      }
+    },
+    {
+      "day": 14,
+      "long_fs": {
+        "AAPL": 2552429.4999999995,
+        "MRK": 2548966.0,
+        "CSCO": 2557648.6399999997,
+        "JPM": 2500716.36
+      },
+      "long_total": 10159760.5,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10159760.5,
+      "stock_caps": {
+        "AAPL": 2552429.4999999995,
+        "MRK": 2548966.0,
+        "CSCO": 2557648.6399999997,
+        "JPM": 2500716.36
+      }
+    },
+    {
+      "day": 14,
+      "long_fs": {
+        "AAPL": 2552429.4999999995,
+        "MRK": 2548966.0,
+        "CSCO": 2557648.6399999997,
+        "JPM": 2500716.36
+      },
+      "long_total": 10159760.5,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10159760.5,
+      "stock_caps": {
+        "AAPL": 2552429.4999999995,
+        "MRK": 2548966.0,
+        "CSCO": 2557648.6399999997,
+        "JPM": 2500716.36
+      }
+    },
+    {
+      "day": 15,
+      "long_fs": {
+        "AAPL": 2559821.1999999997,
+        "MRK": 2550924.64,
+        "CSCO": 2538089.2800000003,
+        "JPM": 2481553.73
+      },
+      "long_total": 10130388.85,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10130388.85,
+      "stock_caps": {
+        "AAPL": 2559821.1999999997,
+        "MRK": 2550924.64,
+        "CSCO": 2538089.2800000003,
+        "JPM": 2481553.73
+      }
+    },
+    {
+      "day": 15,
+      "long_fs": {
+        "AAPL": 2559821.1999999997,
+        "MRK": 2550924.64,
+        "CSCO": 2538089.2800000003,
+        "JPM": 2481553.73
+      },
+      "long_total": 10130388.85,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10130388.85,
+      "stock_caps": {
+        "AAPL": 2559821.1999999997,
+        "MRK": 2550924.64,
+        "CSCO": 2538089.2800000003,
+        "JPM": 2481553.73
+      }
+    },
+    {
+      "day": 16,
+      "long_fs": {
+        "AAPL": 2568244.3,
+        "MRK": 2584466.35,
+        "CSCO": 2532942.08,
+        "JPM": 2501432.7199999997
+      },
+      "long_total": 10187085.45,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10187085.45,
+      "stock_caps": {
+        "AAPL": 2568244.3,
+        "MRK": 2584466.35,
+        "CSCO": 2532942.08,
+        "JPM": 2501432.7199999997
+      }
+    },
+    {
+      "day": 16,
+      "long_fs": {
+        "AAPL": 2568244.3,
+        "MRK": 2584466.35,
+        "CSCO": 2532942.08,
+        "JPM": 2501432.7199999997
+      },
+      "long_total": 10187085.45,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10187085.45,
+      "stock_caps": {
+        "AAPL": 2568244.3,
+        "MRK": 2584466.35,
+        "CSCO": 2532942.08,
+        "JPM": 2501432.7199999997
+      }
+    },
+    {
+      "day": 17,
+      "long_fs": {
+        "AAPL": 2522003.1999999997,
+        "MRK": 2568062.74,
+        "CSCO": 2495367.52,
+        "JPM": 2523998.06
+      },
+      "long_total": 10109431.52,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10109431.52,
+      "stock_caps": {
+        "AAPL": 2522003.1999999997,
+        "MRK": 2568062.74,
+        "CSCO": 2495367.52,
+        "JPM": 2523998.06
+      }
+    },
+    {
+      "day": 17,
+      "long_fs": {
+        "AAPL": 2522003.1999999997,
+        "MRK": 2568062.74,
+        "CSCO": 2495367.52,
+        "JPM": 2523998.06
+      },
+      "long_total": 10109431.52,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10109431.52,
+      "stock_caps": {
+        "AAPL": 2522003.1999999997,
+        "MRK": 2568062.74,
+        "CSCO": 2495367.52,
+        "JPM": 2523998.06
+      }
+    },
+    {
+      "day": 18,
+      "long_fs": {
+        "AAPL": 2542803.0999999996,
+        "MRK": 2555821.24,
+        "CSCO": 2508235.52,
+        "JPM": 2546026.13
+      },
+      "long_total": 10152885.989999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10152885.989999998,
+      "stock_caps": {
+        "AAPL": 2542803.0999999996,
+        "MRK": 2555821.24,
+        "CSCO": 2508235.52,
+        "JPM": 2546026.13
+      }
+    },
+    {
+      "day": 18,
+      "long_fs": {
+        "AAPL": 2542803.0999999996,
+        "MRK": 2555821.24,
+        "CSCO": 2508235.52,
+        "JPM": 2546026.13
+      },
+      "long_total": 10152885.989999998,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10152885.989999998,
+      "stock_caps": {
+        "AAPL": 2542803.0999999996,
+        "MRK": 2555821.24,
+        "CSCO": 2508235.52,
+        "JPM": 2546026.13
+      }
+    },
+    {
+      "day": 19,
+      "long_fs": {
+        "AAPL": 2534036.1999999997,
+        "MRK": 2482861.9,
+        "CSCO": 2492279.2,
+        "JPM": 2567337.84
+      },
+      "long_total": 10076515.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10076515.14,
+      "stock_caps": {
+        "AAPL": 2534036.1999999997,
+        "MRK": 2482861.9,
+        "CSCO": 2492279.2,
+        "JPM": 2567337.84
+      }
+    },
+    {
+      "day": 19,
+      "long_fs": {
+        "AAPL": 2534036.1999999997,
+        "MRK": 2482861.9,
+        "CSCO": 2492279.2,
+        "JPM": 2567337.84
+      },
+      "long_total": 10076515.14,
+      "short_fs": {},
+      "short_total": null,
+      "qutrit_total": null,
+      "total_cap": 10076515.14,
+      "stock_caps": {
+        "AAPL": 2534036.1999999997,
+        "MRK": 2482861.9,
+        "CSCO": 2492279.2,
+        "JPM": 2567337.84
+      }
+    }
+  ]
+}

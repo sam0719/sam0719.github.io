@@ -1,0 +1,74 @@
+{
+  "portfolio": [
+    {
+      "stock_code": "AAPL",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "AMGN",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "INTC",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "JNJ",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "KO",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "MCD",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "MRK",
+      "strategy_type": "short",
+      "category": "short"
+    },
+    {
+      "stock_code": "AAPL",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "BA",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "CSCO",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "DIS",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "MMM",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "V",
+      "strategy_type": "long",
+      "category": "long"
+    },
+    {
+      "stock_code": "WBA",
+      "strategy_type": "long",
+      "category": "long"
+    }
+  ]
+}
