@@ -3,702 +3,708 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>投資組合分析 - 月報</title>
+  <title>股票投資組合系統 - 分析頁面</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
   <style>
-    .bg-gradient {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      min-height: 100vh;
+    .card { margin-bottom: 20px; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+    .window-list { max-height: 400px; overflow-y: auto; }
+    .window-btn { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    #btnAddConstituents { margin-bottom: 20px; }
+    /* 資料集控制卡片內部樣式 */
+    .control-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
     }
-    .content-wrapper {
-      padding: 2rem 0;
+    .control-item label {
+      flex: 1;
+      margin-left: 5px;
     }
-    .sidebar {
-      width: 350px;
-      max-height: calc(100vh - 150px);
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      padding: 20px;
+    .control-item input[type="color"] {
+      margin: 0 5px;
     }
-    .dynamic-button {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 8px 12px;
-      font-size: 16px;
-      text-align: left;
-      transition: background-color 0.3s;
-      border-radius: 5px;
-      border: 2px solid #ccc;
-    }
-    .btn-produced {
-      background-color: #d4edda !important;
-      color: #155724;
-      border-color: #c3e6cb !important;
-    }
-    .btn-not-produced {
-      background-color: #f8d7da !important;
-      color: #721c24;
-      border-color: #f5c6cb !important;
-    }
-    #trendChart {
-      width: 100%;
-      height: 600px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-    }
+  /* ...原有樣式... */
+  .side-menu {
+  display: flex;
+  flex-wrap: nowrap; /* 不換行 */
+  gap: 10px;
+  margin-top: 5px;
+  overflow-x: auto; /* 當按鈕超過寬度時出現水平捲軸 */
+}
+.strategy-btn {
+  white-space: nowrap;
+}
+
+
   </style>
 </head>
-<body class="bg-gradient">
-  <!-- Navbar -->
+<body>
+  <!-- 導覽列（靜態連結） -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">股票投資組合系統</a>
-    <!-- <div class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa-arrow-left mr-2"></i>返回主頁
-          </a>
+    <a class="navbar-brand" href="index.html">投資組合系統</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">股價查看</a></li>
+        <li class="nav-item"><a class="nav-link" href="admin.html">管理員入口</a></li>
+        <li class="nav-item active">
+          <a class="nav-link" href="analysis_new.html">預報結果 <span class="sr-only">(current)</span></a>
         </li>
       </ul>
-    </div> -->
+    </div>
   </nav>
-
-  <!-- 載入 Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <div class="container-fluid" id="app">
-    <div class="content-wrapper">
-      <!-- Title 與下拉選單 -->
-      <div class="text-center mt-4">
-        <h1 class="display-4">投資組合分析 - 月報</h1>
-      </div>
-      <div class="text-center mb-1">
-        <p class="lead">請選擇國家與測試期起始時間以生成滑動視窗</p>
-      </div>
-      <div class="text-center mb-4">
-        <div class="form-inline justify-content-center">
-          <label for="countrySelect" class="mr-2">選擇國家:</label>
-          <select id="countrySelect" class="form-control mr-2" v-model="selectedCountry" @change="updateTestPeriodRange">
-            <option v-for="country in countries" :key="country" :value="country">[[ country ]]</option>
-          </select>
-          <label for="yearSelect" class="mr-2">選擇年:</label>
-          <select id="yearSelect" class="form-control mr-2" v-model="selectedYear">
-            <option v-for="year in availableYears" :key="year" :value="year">[[ year ]]</option>
-          </select>
-          <label for="monthSelect" class="mr-2">選擇月:</label>
-          <select id="monthSelect" class="form-control" v-model="selectedMonth">
-            <option v-for="(m, index) in months" :key="index" :value="index">[[ m ]]</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- 走勢圖與滑動視窗列表 -->
-      <div class="row">
-        <!-- 左側：滑動視窗列表 -->
-        <div class="col-md-3">
-          <div class="sidebar">
-            <h5>滑動視窗列表</h5>
-            <ul class="list-unstyled">
-              <li v-for="(win, index) in slidingWindows" :key="index">
-                <button @click="selectWindow(index)" class="dynamic-button"
-                  :class="{'btn-produced': win.status==='已產生', 'btn-not-produced': win.status==='未產生'}">
-                  [[ transformWindowName(win.name) ]] - 訓練期: [[ formatDate(win.trainStart) ]] ~ [[ formatDate(win.trainEnd) ]] ([[ win.status ]])
-                </button>
-              </li>
-            </ul>
-            <p v-if="!slidingWindows || slidingWindows.length === 0">請先選擇測試期起始時間。</p>
+  
+  <div class="container mt-4">
+    <h2 class="mb-3">預報結果</h2>
+    
+    <!-- 測試期選擇區塊 -->
+    <div class="card mb-3">
+      <div class="card-header">選擇測試期</div>
+      <div class="card-body">
+        <form id="testPeriodForm" class="form-inline">
+          <div class="form-group mr-3">
+            <label for="testYear" class="mr-2">年份:</label>
+            <select id="testYear" class="form-control">
+              <option value="2024">2024</option>
+            </select>
           </div>
-        </div>
-        <!-- 右側：走勢圖 -->
-        <div class="col-md-9">
-          <canvas id="trendChart"></canvas>
-        </div>
+          <div class="form-group mr-3">
+            <label for="testMonth" class="mr-2">月份:</label>
+            <select id="testMonth" class="form-control">
+              <option value="04">04</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="findTrainingByTest()">查詢</button>
+        </form>
       </div>
-
-      <!-- 顯示選中滑動視窗詳細資訊（移到圖表下方） -->
-      <div class="container mt-4" v-if="currentWindow !== null">
+    </div>
+    
+    <!-- 功能列表區塊（保持不變） -->
+    <div class="card mb-3">
+      <div class="card-header">功能列表</div>
+      <div class="card-body">
+        <button id="btnAddConstituents" class="btn btn-secondary mb-3" onclick="addConstituentsToChart()">顯示成分股 FS (副座標軸)</button>
+        <button id="btnShowLongShortFS" class="btn btn-secondary mb-3" onclick="showLongShortFS()">顯示 Qutrit-Long/Short</button>
+      </div>
+    </div>
+    
+    <!-- 主畫面：滑動視窗列表與走勢圖 -->
+    <div class="row">
+      <div class="col-md-3">
         <div class="card">
+          <div class="card-header">滑動視窗列表</div>
+          <div class="card-body window-list">
+            <!-- 滑動視窗列表由以下 ul 顯示 -->
+            <ul id="windowList" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-9">
+        <div class="card mb-3">
+          <div class="card-header">投資組合走勢圖</div>
           <div class="card-body">
-            <h5 class="card-title">滑動視窗：[[ transformWindowName(slidingWindows[currentWindow].name) ]]</h5>
-            <p class="card-text">
-              <strong>測試期:</strong> [[ formatDate(slidingWindows[currentWindow].testStart) ]] ~ [[ formatDate(slidingWindows[currentWindow].testEnd) ]]<br>
-              <strong>訓練期:</strong> [[ formatDate(slidingWindows[currentWindow].trainStart) ]] ~ [[ formatDate(slidingWindows[currentWindow].trainEnd) ]]
-            </p>
+            <div style="width: 100%; height: 500px;">
+              <canvas id="trendChart"></canvas>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- 圖表下方：投資組合結果 -->
-      <div class="container mt-4">
+        <!-- 圖表控制卡片 -->
         <div class="row">
-          <!-- 投資組合評估結果 -->
-          <div class="col-md-6">
-            <h5>投資組合評估結果</h5>
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>趨勢值</th>
-                    <th>風險</th>
-                    <th>預期報酬率</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="perf in performanceData" :key="perf.id">
-                    <td>[[ perf.trend_value ]]</td>
-                    <td>[[ perf.risk ]]</td>
-                    <td>[[ perf.expected_return ]]</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-- 投資組合股票資訊 -->
-          <div class="col-md-6">
-            <h5>投資組合股票資訊</h5>
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>股票代號</th>
-                    <th>策略分類</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="port in portfolioData" :key="port.id">
-                    <td>[[ port.stock_code ]]</td>
-                    <td>[[ port.category ]]</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="col-md-12">
+            <div class="card mb-3">
+              <div class="card-header">圖表控制</div>
+              <div class="card-body" id="datasetControls">
+                <!-- 控制項由 JavaScript 動態產生 -->
+              </div>
             </div>
           </div>
         </div>
       </div>
-
+    </div>
+            <!-- 投資組合評估結果 -->
+    <div class="card">
+      <div class="card-header">投資組合評估結果</div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>趨勢值</th>
+                <th>風險</th>
+                <th>預期報酬</th>
+                <th>策略</th>
+                <th>成分股來源</th>
+                <th>滑動視窗</th>
+                <th>訓練區間</th>
+              </tr>
+            </thead>
+            <tbody id="performanceTableBody">
+              <!-- 使用 AJAX 載入結果 -->
+            </tbody>
+          </table>
+        </div>
+      </div> 
+    
+        
+        <!-- 投資組合成分股 -->
+        <div class="card">
+          <div class="card-header">投資組合成分股</div>
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>股票代號</th>
+                  <th>交易方式</th>
+                </tr>
+              </thead>
+              <tbody id="portfolioTableBody">
+                <!-- 使用 AJAX 載入結果 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
     </div>
   </div>
+</body>
+<!-- 前端 JS 區塊 -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // 全域變數：currentWindow 存放滑動視窗類型 (例如 "Y2Y", "M2M", "Q2Q" 等)
+  var sliding_windows = [];
+  var currentWindow = null;
+  var currentTestYear = null;
+  var currentTestMonth = null;
+  var currentStrategy = null;
+  var portfolioFS = null; // 投資組合 FS 資料
 
-  <!-- 載入 Vue、jQuery、Bootstrap 與 select2 -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      delimiters: ['[[', ']]'],
-      data: {
-        startYear: 1970,
-        availableYears: [],
-        years: [],
-        months: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-        selectedYear: null,
-        selectedMonth: new Date().getMonth(), // 0-indexed
-        selectedCountry: null,
-        countries: [],
-        slidingWindows: [],
-        currentWindow: null,
-        chart: null,
-        performanceData: [],
-        portfolioData: [],
-        trainingPeriod: "",
-        fsConfig: null,
-        portfolioConfig: null,
-        windowConfigs: [
-          { name: "Y2Y", mode: "symmetric", testLength: 12, trainLength: 12 },
-          { name: "H2H", mode: "symmetric", testLength: 6, trainLength: 6 },
-          { name: "Q2Q", mode: "symmetric", testLength: 3, trainLength: 3 },
-          { name: "M2M", mode: "symmetric", testLength: 1, trainLength: 1 },
-          { name: "Y2H", mode: "nonsymmetric", testLength: 6, trainLength: 12 },
-          { name: "Y2Q", mode: "nonsymmetric", testLength: 3, trainLength: 12 },
-          { name: "Y2M", mode: "nonsymmetric", testLength: 1, trainLength: 12 },
-          { name: "H2Q", mode: "nonsymmetric", testLength: 3, trainLength: 6 },
-          { name: "H2M", mode: "nonsymmetric", testLength: 1, trainLength: 6 },
-          { name: "Q2M", mode: "nonsymmetric", testLength: 1, trainLength: 3 },
-          { name: "H*", mode: "corresponding", testLength: 6 },
-          { name: "Q*", mode: "corresponding", testLength: 3 },
-          { name: "M*", mode: "corresponding", testLength: 1 }
-        ]
-      },
-      computed: {
-        testPeriodYears() {
-          if (!this.slidingWindows.length) return [];
-          const years = this.slidingWindows.map(win => win.testStart.getFullYear());
-          const minYear = Math.min(...years);
-          const maxYear = Math.max(...years);
-          let arr = [];
-          for (let y = minYear; y <= maxYear; y++) {
-            arr.push(y);
-          }
-          this.availableYears = arr;
-          return arr;
+  // 初始化 Chart.js
+  var ctx = document.getElementById('trendChart').getContext('2d');
+  var trendChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: []
+    },
+    options: {
+      responsive: true,
+      scales: {
+        x: {
+          title: { display: true, text: "天數" }
+        },
+        y: {
+          position: "left",
+          title: { display: true, text: "投資組合 FS" },
+          beginAtZero: false
+        },
+        y2: {
+          position: "right",
+          title: { display: true, text: "成分股 FS" },
+          grid: { drawOnChartArea: false },
+          beginAtZero: false,
+          display: false,
+          ticks: { callback: function(value) { return value; } }
         }
-      },
-      created() {
-        const currentYear = new Date().getFullYear();
-        for (let y = this.startYear; y <= currentYear; y++) {
-          this.years.push(y);
+      }
+    }
+  });
+  
+  // 產生隨機顏色
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
+  // 更新資料集控制區塊（保持不變）
+  function updateDatasetControls() {
+    var container = document.getElementById("datasetControls");
+    container.innerHTML = "";
+    var allowedLabels = ["投資組合總資金水位", "一般交易 FS", "融券交易 FS"];
+    trendChart.data.datasets.forEach(function(ds) {
+      if (allowedLabels.indexOf(ds.label) !== -1 || ds.yAxisID === "y2") {
+        var div = document.createElement("div");
+        div.className = "control-item";
+
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = !ds.hidden;
+        checkbox.addEventListener("change", function() {
+          ds.hidden = !checkbox.checked;
+          trendChart.update();
+        });
+        div.appendChild(checkbox);
+
+        var label = document.createElement("label");
+        label.textContent = ds.label;
+        div.appendChild(label);
+
+        var colorPicker = document.createElement("input");
+        colorPicker.type = "color";
+        colorPicker.value = getColor(ds.borderColor);
+        colorPicker.addEventListener("input", function() {
+          var alpha = getAlphaFromColor(ds.borderColor) || 1;
+          ds.borderColor = hexToRgba(colorPicker.value, alpha);
+          trendChart.update();
+        });
+        div.appendChild(colorPicker);
+
+        var alphaSlider = document.createElement("input");
+        alphaSlider.type = "range";
+        alphaSlider.min = 0;
+        alphaSlider.max = 1;
+        alphaSlider.step = 0.05;
+        alphaSlider.value = getAlphaFromColor(ds.borderColor) || 1;
+        alphaSlider.addEventListener("input", function() {
+          ds.borderColor = hexToRgba(colorPicker.value, alphaSlider.value);
+          trendChart.update();
+        });
+        div.appendChild(alphaSlider);
+
+        container.appendChild(div);
+      }
+    });
+  }
+  
+  function getColor(color) {
+    if (!color) return "#0000FF";
+    if (color.charAt(0) === "#") return color;
+    return rgb2hex(color);
+  }
+  
+  function rgb2hex(rgb) {
+    if (!rgb) return "#0000FF";
+    var result = /^rgba?\((\d+),\s*(\d+),\s*(\d+)/i.exec(rgb);
+    return result ? "#" +
+      ("0" + parseInt(result[1],10).toString(16)).slice(-2) +
+      ("0" + parseInt(result[2],10).toString(16)).slice(-2) +
+      ("0" + parseInt(result[3],10).toString(16)).slice(-2) : "#0000FF";
+  }
+  
+  function hexToRgba(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+  }
+  
+  function getAlphaFromColor(color) {
+    if (!color) return 1;
+    var result = /rgba?\(\d+,\s*\d+,\s*\d+,\s*(\d*\.?\d+)\)/.exec(color);
+    return result ? parseFloat(result[1]) : 1;
+  }
+  
+  function updateTrendChart(trendData) {
+    var labels = [];
+    var portfolioData = [];
+    // 假設 trendData 為陣列，每筆記錄有 day 與 total_cap
+    trendData.forEach(function(item) {
+      labels.push("Day " + item.day);
+      portfolioData.push(item.total_cap);
+    });
+    trendChart.data.labels = labels;
+    var mainDataset = {
+       label: "投資組合總資金水位",
+       data: portfolioData,
+       borderColor: "rgba(0,0,255,1)",
+       fill: false,
+       yAxisID: "y"
+    };
+    trendChart.data.datasets = [mainDataset];
+    if (portfolioData.length > 0) {
+        var base = portfolioData[0];
+        trendChart.options.scales.y.suggestedMin = base * 0.95;
+    }
+    trendChart.update();
+    updateDatasetControls();
+  }
+
+  function findTrainingByTest() {
+    var year = document.getElementById('testYear').value;
+    var month = document.getElementById('testMonth').value;
+    currentTestYear = parseInt(year);
+    currentTestMonth = parseInt(month);
+
+    var key = year + '-' + month; // 對應 windows_by_test/YYYY-MM.json
+    $.getJSON('Analysis_data/windows_by_test/' + key + '.json', function(data) {
+      console.log('find_training_by_test (static) =>', data);
+      renderWindowList((data && data.results) || []);
+    }).fail(function(err){
+      alert('查詢失敗或找不到資料');
+    });
+  }
+
+  function renderWindowList(resultsArray) {
+    var ul = document.getElementById('windowList');
+    ul.innerHTML = "";
+
+    resultsArray.forEach(function(group) {
+      var li = document.createElement("li");
+      li.className = "list-group-item";
+
+      // 顯示滑動視窗名稱與訓練期資訊
+      var intervalDiv = document.createElement("div");
+      intervalDiv.className = "interval-info";
+      intervalDiv.innerHTML = group.window + " [" + group.train_str + "]";
+      li.appendChild(intervalDiv);
+
+      // 建立水平排列的策略按鈕列（side-menu）
+      var sideMenu = document.createElement("div");
+      sideMenu.className = "side-menu";
+
+      // 先過濾重複策略（只以 strategy_type 為依據）
+      var uniqueRecords = group.records.filter(function(rec, index, self) {
+        return index === self.findIndex(function(r) {
+          return r.strategy_type === rec.strategy_type;
+        });
+      });
+
+      uniqueRecords.forEach(function(rec) {
+        var btn = document.createElement("button");
+        btn.className = "btn btn-sm btn-outline-secondary strategy-btn";
+        btn.innerHTML = rec.strategy_type;
+        btn.addEventListener("click", function() {
+          selectWindow(group.window, rec.strategy_type, group.train_str);
+        });
+        sideMenu.appendChild(btn);
+      });
+
+      li.appendChild(sideMenu);
+      ul.appendChild(li);
+    });
+  }
+
+
+
+
+
+function selectWindow(slidingWindowType, strategyType, trainingPeriod) {
+currentWindow = slidingWindowType;
+currentStrategy = strategyType;
+currentTrainingPeriod = trainingPeriod;  // 儲存正確的訓練期
+
+console.log("選擇的滑動視窗:", currentWindow, "策略:", currentStrategy, "訓練期:", currentTrainingPeriod);
+
+// 清空走勢圖與隱藏副軸
+trendChart.data.labels = [];
+trendChart.data.datasets = [];
+trendChart.options.scales.y2.display = false;
+trendChart.update();
+
+// 靜態載入投資組合 FS 走勢（主圖），檔名：{trainingPeriod}_{strategy}.json
+var safeStrategy = (currentStrategy || '').replace(/\//g, '-');
+var trendFile = 'Analysis_data/fs_trend/' + currentTrainingPeriod + '_' + safeStrategy + '.json';
+$.getJSON(trendFile, function(data) {
+    console.log('Trend data (portfolio static):', data);
+    if (data && data.trend && data.trend.length > 0) {
+      portfolioFS = data.trend;
+      updateTrendChart(data.trend);
+    }
+}).fail(function(err){
+    console.error('讀取 FS 走勢失敗:', trendFile, err);
+});
+
+// 靜態載入投資組合評估結果
+var perfFile = 'Analysis_data/performance/' + currentTrainingPeriod + '.json';
+$.getJSON(perfFile, function(data) {
+    updatePerformanceTable((data && data.performance) || []);
+}).fail(function(err){
+    console.error('讀取評估結果失敗:', perfFile, err);
+    updatePerformanceTable([]);
+});
+
+// 靜態載入投資組合成分股
+var portFile = 'Analysis_data/portfolio/' + currentTrainingPeriod + '.json';
+$.getJSON(portFile, function(data) {
+    updatePortfolioTable((data && data.portfolio) || []);
+}).fail(function(err){
+    console.error('讀取成分股結果失敗:', portFile, err);
+    updatePortfolioTable([]);
+});
+}
+
+
+function loadTestPeriodOptions() {
+  $.getJSON('Analysis_data/test_periods.json', function(data) {
+    // 取得的資料為 test_periods 陣列，例如 ["2025-01", "2025-02", "2025-03", "2026-01", ...]
+    var testPeriods = data.test_periods;
+    var yearDict = {};
+    testPeriods.forEach(function(tp) {
+      var parts = tp.split("-");
+      if(parts.length === 2) {
+        var year = parts[0];
+        var month = parts[1];
+        if(!yearDict[year]) {
+          yearDict[year] = [];
         }
-        this.selectedYear = currentYear;
-
-        // 載入 FS 資料的索引設定檔，從中取得國家列表與可用年份範圍
-        fetch('FS_data/config.json')
-          .then(response => response.json())
-          .then(cfg => {
-            this.fsConfig = cfg;
-            const countries = Array.from(new Set(cfg.files.map(f => f.country)));
-            this.countries = countries;
-            if (countries.length > 0) {
-              this.selectedCountry = countries[0];
-            }
-            this.updateTestPeriodRange();
-          })
-          .catch(err => {
-            console.error('Failed to load FS config:', err);
-          });
-
-        // 載入投資組合股票資訊的索引設定檔
-        fetch('Portfolio_data/config.json')
-          .then(response => response.json())
-          .then(cfg => {
-            this.portfolioConfig = cfg;
-          })
-          .catch(err => {
-            console.error('Failed to load Portfolio config:', err);
-          });
-      },
-      watch: {
-        selectedYear() {
-          this.updateSlidingWindows();
-        },
-        selectedMonth() {
-          this.updateSlidingWindows();
-        },
-        availableYears(newYears) {
-          if (!newYears.includes(this.selectedYear)) {
-            this.selectedYear = newYears[0];
-          }
-          this.updateSlidingWindows();
-        }
-      },
-      methods: {
-        updateTestPeriodRange() {
-          if (!this.fsConfig || !this.selectedCountry) return;
-
-          // 根據 FS 設定檔中該國家的 Test 資料，推算可用的測試年份範圍
-          const files = this.fsConfig.files.filter(f => f.country === this.selectedCountry && f.data_type === 'Test');
-          if (!files.length) {
-            console.warn('No FS Test data found for country:', this.selectedCountry);
-            return;
-          }
-
-          const years = files.map(f => {
-            const m = f.cleaned_filename.match(/\d{4}/);
-            return m ? parseInt(m[0]) : null;
-          }).filter(y => y);
-
-          if (!years.length) return;
-
-          const minYear = Math.min(...years);
-          const maxYear = Math.max(...years);
-          let arr = [];
-          for (let y = minYear; y <= maxYear; y++) {
-            arr.push(y);
-          }
-          this.availableYears = arr;
-          if (!arr.includes(this.selectedYear)) {
-            this.selectedYear = arr[0];
-          }
-          this.updateSlidingWindows();
-        },
-        isAlignedForTest(date, testLength) {
-          const m = date.getMonth();
-          if (testLength === 1) return true;
-          if (testLength === 3) return [0, 3, 6, 9].includes(m);
-          if (testLength === 6) return [0, 6].includes(m);
-          if (testLength === 12) return m === 0;
-          return true;
-        },
-        adjustTestStart(date, testLength) {
-          if (testLength === 1) {
-            return new Date(date.getFullYear(), date.getMonth(), 1);
-          } else if (testLength === 3) {
-            const month = date.getMonth();
-            const quarterStartMonth = Math.floor(month / 3) * 3;
-            return new Date(date.getFullYear(), quarterStartMonth, 1);
-          } else if (testLength === 6) {
-            const month = date.getMonth();
-            return (month < 6) ? new Date(date.getFullYear(), 0, 1) : new Date(date.getFullYear(), 6, 1);
-          } else if (testLength === 12) {
-            return new Date(date.getFullYear(), 0, 1);
-          } else {
-            return date;
-          }
-        },
-        updateSlidingWindows() {
-          const baseDate = new Date(this.selectedYear, this.selectedMonth, 1);
-          this.slidingWindows = this.windowConfigs.map(config => {
-            const testStart = this.adjustTestStart(baseDate, config.testLength);
-            let testEnd = this.addMonths(testStart, config.testLength);
-            testEnd.setDate(testEnd.getDate() - 1);
-            let trainStart, trainEnd;
-            if (config.mode === "symmetric" || config.mode === "nonsymmetric") {
-              trainStart = this.addMonths(testStart, -config.trainLength);
-              trainEnd = this.addMonths(trainStart, config.trainLength);
-              trainEnd.setDate(trainEnd.getDate() - 1);
-            } else if (config.mode === "corresponding") {
-              trainStart = new Date(testStart.getFullYear() - 1, testStart.getMonth(), testStart.getDate());
-              trainEnd = this.addMonths(trainStart, config.testLength);
-              trainEnd.setDate(trainEnd.getDate() - 1);
-            }
-            let status = "未產生";
-            if (this.fsConfig) {
-              const datasetName = this.transformWindowName(config.name);
-              const trainingPeriod = this.computeTrainingPeriodForConfig(config.name);
-              const hasFsTrain = trainingPeriod && this.fsConfig.files.some(f =>
-                f.country === this.selectedCountry &&
-                f.dataset_name === datasetName &&
-                f.cleaned_filename === trainingPeriod &&
-                f.data_type === 'Train'
-              );
-              status = hasFsTrain ? "已產生" : "未產生";
-            }
-            return {
-              name: config.name,
-              testStart: new Date(testStart),
-              testEnd: new Date(testEnd),
-              trainStart: trainStart,
-              trainEnd: trainEnd,
-              status: status
-            };
-          });
-          if (this.slidingWindows.length > 0) {
-            this.currentWindow = 0;
-          } else {
-            this.currentWindow = null;
-          }
-        },
-        // 根據 window 名稱、國家、年、月計算對應的 trainingPeriod（不依賴 currentWindow）
-        computeTrainingPeriodForConfig(configName) {
-          if (configName === "Y2Y") {
-            return (this.selectedYear - 1).toString();
-          } else if (configName === "M2M") {
-            if ((this.selectedMonth + 1) === 1) {
-              return `${this.selectedYear - 1}_12`;
-            } else {
-              return `${this.selectedYear}_${String(this.selectedMonth).padStart(2, '0')}`;
-            }
-          } else if (configName === "Y2M") {
-            if ((this.selectedMonth + 1) === 1) {
-              return (this.selectedYear - 1).toString();
-            } else {
-              return `${this.selectedYear - 1}_${String(this.selectedMonth + 1).padStart(2, '0')}~${this.selectedYear}_${String(this.selectedMonth).padStart(2, '0')}`;
-            }
-          } else if (configName === "H2H") {
-            if ((this.selectedMonth + 1) <= 6) {
-              return `${this.selectedYear - 1}_Q3-Q4`;
-            } else {
-              return `${this.selectedYear}_Q1-Q2`;
-            }
-          } else if (configName === "Y2H") {
-            if ((this.selectedMonth + 1) <= 6) {
-              return (this.selectedYear - 1).toString();
-            } else {
-              return `${this.selectedYear - 1}_Q3~${this.selectedYear}_Q2`;
-            }
-          } else if (configName === "Y2Q") {
-            const quarter = Math.floor(this.selectedMonth / 3) + 1;
-            if (quarter === 1) {
-              return (this.selectedYear - 1).toString();
-            } else if (quarter === 2) {
-              return `${this.selectedYear - 1}_Q2~${this.selectedYear}_Q1`;
-            } else if (quarter === 3) {
-              return `${this.selectedYear - 1}_Q3~${this.selectedYear}_Q2`;
-            } else if (quarter === 4) {
-              return `${this.selectedYear - 1}_Q4~${this.selectedYear}_Q3`;
-            }
-          } else if (configName === "Q2Q") {
-            const quarter = Math.floor(this.selectedMonth / 3) + 1;
-            if (quarter === 1) {
-              return `${this.selectedYear - 1}_Q4`;
-            } else {
-              return `${this.selectedYear}_Q${quarter - 1}`;
-            }
-          } else if (configName === "H2Q") {
-            const quarter = Math.floor(this.selectedMonth / 3) + 1;
-            if (quarter === 1) {
-              return `${this.selectedYear - 1}_Q3-Q4`;
-            } else if (quarter === 2) {
-              return `${this.selectedYear - 1}_Q4~${this.selectedYear}_Q1`;
-            } else if (quarter === 3) {
-              return `${this.selectedYear}_Q1-Q2`;
-            } else if (quarter === 4) {
-              return `${this.selectedYear}_Q2-Q3`;
-            }
-          } else if (configName === "H2M") {
-            if ((this.selectedMonth + 1) <= 6) {
-              if ((this.selectedMonth + 1) === 1) {
-                return `${this.selectedYear - 1}_07~${this.selectedYear - 1}_12`;
-              } else {
-                return `${this.selectedYear - 1}_${String(this.selectedMonth + 1 + 6).padStart(2, '0')}~${this.selectedYear}_${String(this.selectedMonth).padStart(2, '0')}`;
-              }
-            } else {
-              return `${this.selectedYear}_${String(this.selectedMonth + 1 - 6).padStart(2, '0')}~${this.selectedYear}_${String(this.selectedMonth).padStart(2, '0')}`;
-            }
-          } else if (configName === "Q2M") {
-            if ((this.selectedMonth + 1) <= 3) {
-              if ((this.selectedMonth + 1) === 1) {
-                return `${this.selectedYear - 1}_10~${this.selectedYear - 1}_12`;
-              } else {
-                return `${this.selectedYear - 1}_${String(this.selectedMonth + 1 + 9).padStart(2, '0')}~${this.selectedYear}_${String(this.selectedMonth).padStart(2, '0')}`;
-              }
-            } else {
-              return `${this.selectedYear}_${String(this.selectedMonth + 1 - 3).padStart(2, '0')}~${this.selectedYear}_${String(this.selectedMonth).padStart(2, '0')}`;
-            }
-          } else if (configName === "M*") {
-            return `${this.selectedYear - 1}_${String(this.selectedMonth + 1).padStart(2, '0')}`;
-          } else if (configName === "H*") {
-            if ((this.selectedMonth + 1) <= 6) {
-              return `${this.selectedYear - 1}_Q1-Q2`;
-            } else {
-              return `${this.selectedYear - 1}_Q3-Q4`;
-            }
-          } else if (configName === "Q*") {
-            const quarter = Math.floor(this.selectedMonth / 3) + 1;
-            return `${this.selectedYear - 1}_Q${quarter}`;
-          }
-          return "";
-        },
-        // 根據選定的滑動視窗及國家、年、月計算目前選中 window 的 trainingPeriod
-        computeTrainingPeriod() {
-          if (this.currentWindow === null) return "";
-          const windowData = this.slidingWindows[this.currentWindow];
-          return this.computeTrainingPeriodForConfig(windowData.name);
-        },
-        loadAllData() {
-          this.trainingPeriod = this.computeTrainingPeriod();
-          console.log("Computed trainingPeriod:", this.trainingPeriod);
-          this.loadTrendChart();
-          this.loadPerformanceData();
-          this.loadPortfolioData();
-        },
-        loadTrendChart() {
-          if (!this.fsConfig || this.currentWindow === null) return;
-
-          const entry = this.getFsEntry();
-          if (!entry) {
-            console.error('No matching FS CSV found for parameters');
-            return;
-          }
-
-          const csvPath = `FS_data/${encodeURIComponent(entry.file)}`;
-
-          fetch(csvPath)
-            .then(response => response.text())
-            .then(text => {
-              const trend = this.parseFSTrendFromCsv(text);
-              console.log('Trend data loaded from CSV:', entry.file, trend.length);
-              this.renderChart(trend);
-            })
-            .catch(err => {
-              console.error('Failed to load FS CSV:', csvPath, err);
-            });
-        },
-        loadPerformanceData() {
-          if (!this.fsConfig || this.currentWindow === null) {
-            this.performanceData = [];
-            return;
-          }
-
-          const entry = this.getFsEntry();
-          if (!entry) {
-            this.performanceData = [];
-            return;
-          }
-
-          const csvPath = `FS_data/${encodeURIComponent(entry.file)}`;
-
-          fetch(csvPath)
-            .then(response => response.text())
-            .then(text => {
-              const perf = this.parsePerformanceFromCsv(text);
-              if (perf) {
-                this.performanceData = [{
-                  id: `${entry.country}_${entry.dataset_name}_${entry.cleaned_filename}_${entry.data_type}`,
-                  trend_value: perf.trend_value,
-                  risk: perf.risk,
-                  expected_return: perf.expected_return
-                }];
-              } else {
-                this.performanceData = [];
-              }
-            })
-            .catch(err => {
-              console.error('Failed to load FS CSV for performance:', csvPath, err);
-              this.performanceData = [];
-            });
-        },
-        loadPortfolioData() {
-          if (!this.portfolioConfig || this.currentWindow === null) {
-            this.portfolioData = [];
-            return;
-          }
-
-          const windowData = this.slidingWindows[this.currentWindow];
-          const windowName = windowData.name;
-          const datasetName = this.transformWindowName(windowName); // 例如 H* -> H#
-
-          const entry = this.portfolioConfig.files.find(f =>
-            f.country === this.selectedCountry &&
-            f.dataset_name === datasetName &&
-            f.cleaned_filename === this.trainingPeriod &&
-            f.data_type === 'Train'
-          );
-
-          if (!entry) {
-            console.warn('No matching Portfolio CSV found for parameters');
-            this.portfolioData = [];
-            return;
-          }
-
-          const csvPath = `Portfolio_data/${encodeURIComponent(entry.file)}`;
-
-          fetch(csvPath)
-            .then(response => response.text())
-            .then(text => {
-              this.portfolioData = this.parsePortfolioFromCsv(text);
-            })
-            .catch(err => {
-              console.error('Failed to load Portfolio CSV:', csvPath, err);
-              this.portfolioData = [];
-            });
-        },
-        selectWindow(index) {
-          this.currentWindow = index;
-          this.trainingPeriod = this.computeTrainingPeriod();
-          this.loadAllData();
-        },
-        addMonths(date, months) {
-          const d = new Date(date);
-          d.setMonth(d.getMonth() + months);
-          return d;
-        },
-        formatDate(date) {
-          if (!date) return "";
-          const yyyy = date.getFullYear();
-          const mm = (date.getMonth() + 1).toString().padStart(2, "0");
-          const dd = date.getDate().toString().padStart(2, "0");
-          return `${yyyy}/${mm}/${dd}`;
-        },
-        transformWindowName(name) {
-          return name.replace('*', '#');
-        },
-        getFsEntry() {
-          if (!this.fsConfig || this.currentWindow === null) return null;
-          const windowData = this.slidingWindows[this.currentWindow];
-          const windowName = windowData.name;
-          const datasetName = this.transformWindowName(windowName);
-          return this.fsConfig.files.find(f =>
-            f.country === this.selectedCountry &&
-            f.dataset_name === datasetName &&
-            f.cleaned_filename === this.trainingPeriod &&
-            f.data_type === 'Train'
-          ) || null;
-        },
-        parseFSTrendFromCsv(csvText) {
-          const lines = csvText.trim().split(/\r?\n/);
-          if (lines.length <= 1) return [];
-          const header = lines[0].split(',');
-          const fsIndex = header.indexOf('total_fs');
-          if (fsIndex === -1) return [];
-
-          const trend = [];
-          for (let i = 1; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (!line) continue;
-            const cols = line.split(',');
-            const v = parseFloat(cols[fsIndex]);
-            if (!isNaN(v)) trend.push(v);
-          }
-          return trend;
-        },
-        parsePerformanceFromCsv(csvText) {
-          const lines = csvText.trim().split(/\r?\n/);
-          if (lines.length <= 1) return null;
-          const header = lines[0].split(',');
-          const trendIdx = header.indexOf('trend_value');
-          const riskIdx = header.indexOf('risk');
-          const retIdx = header.indexOf('expected_return');
-          if (trendIdx === -1 || riskIdx === -1 || retIdx === -1) return null;
-
-          const first = lines[1].split(',');
-          return {
-            trend_value: parseFloat(first[trendIdx]),
-            risk: parseFloat(first[riskIdx]),
-            expected_return: parseFloat(first[retIdx])
-          };
-        },
-        parsePortfolioFromCsv(csvText) {
-          const lines = csvText.trim().split(/\r?\n/);
-          if (lines.length <= 1) return [];
-          const header = lines[0].split(',');
-          const codeIdx = header.indexOf('stock_code');
-          const catIdx = header.indexOf('category');
-          if (codeIdx === -1 || catIdx === -1) return [];
-
-          const result = [];
-          for (let i = 1; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (!line) continue;
-            const cols = line.split(',');
-            const stock_code = cols[codeIdx];
-            const category = cols[catIdx];
-            result.push({
-              id: `${stock_code}_${category}_${i}`,
-              stock_code,
-              category
-            });
-          }
-          return result;
-        },
-        renderChart(trendData) {
-          const labels = trendData.map((_, i) => i + 1);
-          if (this.chart) {
-            this.chart.data.labels = labels;
-            this.chart.data.datasets[0].data = trendData;
-            this.chart.update();
-          } else {
-            const ctx = document.getElementById('trendChart').getContext('2d');
-            this.chart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: labels,
-                datasets: [{
-                  label: '訓練期走勢',
-                  data: trendData,
-                  borderColor: 'rgba(75, 192, 192, 1)',
-                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                  fill: false,
-                  tension: 0.1
-                }]
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                  x: { title: { display: true, text: '天數' } },
-                  y: { title: { display: true, text: '走勢值' } }
-                }
-              }
-            });
-          }
+        // 若月份尚未加入則加入
+        if(yearDict[year].indexOf(month) === -1) {
+          yearDict[year].push(month);
         }
       }
     });
-  </script>
-</body>
+    // 對每個年份的月份進行排序
+    for(var year in yearDict) {
+      yearDict[year].sort();
+    }
+    // 填入年份下拉式選單
+    var yearSelect = document.getElementById("testYear");
+    yearSelect.innerHTML = "";
+    Object.keys(yearDict).sort().forEach(function(year) {
+      var option = document.createElement("option");
+      option.value = year;
+      option.text = year;
+      yearSelect.appendChild(option);
+    });
+    // 當年份改變時更新月份選項
+    yearSelect.addEventListener("change", function() {
+      updateMonthOptions(yearDict[this.value]);
+    });
+    // 初始載入時根據預設選取的年份更新月份
+    updateMonthOptions(yearSelect.value ? yearDict[yearSelect.value] : []);
+  });
+}
+
+function updateMonthOptions(monthArray) {
+  var monthSelect = document.getElementById("testMonth");
+  monthSelect.innerHTML = "";
+  monthArray.forEach(function(month) {
+    var option = document.createElement("option");
+    option.value = month;
+    option.text = month;
+    monthSelect.appendChild(option);
+  });
+}
+
+// 在文件載入完成後執行
+$(document).ready(function() {
+  loadTestPeriodOptions();
+});
+
+
+
+  
+  // 按下「顯示成分股 FS」後，透過 API 取得並加入副軸資料
+  function addConstituentsToChart() {
+  if (!currentWindow) {
+    alert("請先選擇一筆訓練期結果");
+    return;
+  }
+  var btn = document.getElementById("btnAddConstituents");
+
+  // 如果目前已經有 y2 的成分股線，視為「關閉」：清掉並關閉副軸
+  var hasY2 = trendChart.data.datasets.some(function(ds) {
+    return ds.yAxisID === "y2";
+  });
+  if (hasY2) {
+    trendChart.data.datasets = trendChart.data.datasets.filter(function(ds) {
+      return ds.yAxisID !== "y2";
+    });
+    trendChart.options.scales.y2.display = false;
+    trendChart.update();
+    updateDatasetControls();
+    if (btn) btn.innerText = "顯示成分股 FS (副座標軸)";
+    return;
+  }
+
+  // 「開啟」：從靜態 JSON 載入成分股 FS，畫在 y2 副軸
+  var safeStrategy = (currentStrategy || '').replace(/\//g, '-');
+  var constFile = 'Analysis_data/constituent_fs/' + currentTrainingPeriod + '_' + safeStrategy + '.json';
+  $.getJSON(constFile, function(data) {
+      console.log("Constituent FS data:", data);
+      if (!data.datasets || data.datasets.length === 0) {
+        alert("未取得成分股 FS 資料");
+        return;
+      }
+      data.datasets.forEach(function(ds) {
+        if (!ds.borderColor) {
+          ds.borderColor = getRandomColor();
+        }
+      });
+      // 先確保清掉舊的 y2 再加新的
+      trendChart.data.datasets = trendChart.data.datasets.filter(function(ds) {
+        return ds.yAxisID !== "y2";
+      });
+      data.datasets.forEach(function(ds) {
+        ds.yAxisID = "y2";
+        trendChart.data.datasets.push(ds);
+      });
+      trendChart.options.scales.y2.display = true;
+      adjustSecondaryAxis();
+      trendChart.update();
+      updateDatasetControls();
+      if (btn) btn.innerText = "隱藏成分股 FS";
+  }).fail(function(err){
+      alert("取得成分股 FS 資料失敗");
+  });
+  }
+
+  
+  function adjustSecondaryAxis() {
+    if (!portfolioFS || portfolioFS.length === 0) {
+      console.error("尚未取得投資組合 FS 資料");
+      return;
+    }
+    var portfolioBase = portfolioFS[0].total_cap;
+    var y2Datasets = trendChart.data.datasets.filter(function(ds) {
+      return ds.yAxisID === "y2";
+    });
+    if (y2Datasets.length === 0 || y2Datasets[0].data.length === 0) {
+      console.error("沒有成分股 FS 資料");
+      return;
+    }
+    var constituentBase = y2Datasets[0].data[0];
+    var mainScale = trendChart.scales.y;
+    var secondaryScale = trendChart.scales.y2;
+    var portfolioPixel = mainScale.getPixelForValue(portfolioBase);
+    var constituentPixel = secondaryScale.getPixelForValue(constituentBase);
+    var deltaPixel = portfolioPixel - constituentPixel;
+    var range = secondaryScale.max - secondaryScale.min;
+    var valuePerPixel = range / secondaryScale.height;
+    var valueDelta = deltaPixel * valuePerPixel;
+    secondaryScale.options.min = secondaryScale.options.min - valueDelta;
+    secondaryScale.options.suggestedMin = secondaryScale.options.min;
+  }
+  
+  // 更新評估結果表格
+  function updatePerformanceTable(performanceData) {
+  var tbody = $("#performanceTableBody");
+  tbody.empty();
+
+  performanceData.forEach(function(item) {
+    // ✅ 新增這一行：只顯示目前選擇的策略
+    if (item.strategy_type !== currentStrategy) return;
+
+    var tr = $("<tr></tr>");
+    tr.append("<td>" + (item.trend_value !== undefined ? Number(item.trend_value).toFixed(8) : "") + "</td>");
+    tr.append("<td>" + (item.risk !== undefined ? Number(item.risk).toFixed(2) : "") + "</td>");
+    tr.append("<td>" + (item.expected_return !== undefined ? Number(item.expected_return).toFixed(2) : "") + "</td>");
+    tr.append("<td>" + (item.strategy_type || "") + "</td>");
+    tr.append("<td>" + (item.index_name || "") + "</td>");
+    tr.append("<td>" + (item.dataset_name || "") + "</td>");
+    tr.append("<td>" + (item.result_name || "") + "</td>");
+    tbody.append(tr);
+  });
+}
+
+  
+  // 更新成分股表格
+  function updatePortfolioTable(portfolioData) {
+  var tbody = $("#portfolioTableBody");
+  tbody.empty();
+
+  portfolioData.forEach(function(item) {
+    if (item.strategy_type !== currentStrategy) return;
+
+    var tr = $("<tr></tr>");
+    tr.append("<td>" + (item.stock_code || "") + "</td>");
+    
+    var tradingMethod = "";
+
+    if (item.strategy_type.toLowerCase() === "qutrit") {
+      // ✅ 新增：針對 Qutrit 的 category 做映射
+      if (item.category && item.category.toLowerCase() === "long") {
+        tradingMethod = "一般交易";
+      } else if (item.category && item.category.toLowerCase() === "short") {
+        tradingMethod = "融券交易";
+      } else {
+        tradingMethod = item.category || "—";
+      }
+    } else {
+      // 其他策略類型維持原有顯示
+      if (item.strategy_type.toLowerCase() === "long") {
+        tradingMethod = "一般交易";
+      } else if (item.strategy_type.toLowerCase() === "short") {
+        tradingMethod = "融券交易";
+      } else {
+        tradingMethod = item.strategy_type;
+      }
+    }
+
+    tr.append("<td>" + tradingMethod + "</td>");
+    tbody.append(tr);
+  });
+}
+
+
+  
+  // 按下「顯示Qutrit-Long/Short」按鈕（與原來類似）
+  function showLongShortFS() {
+    if (!currentWindow) {
+      alert("請先選擇一筆訓練期結果");
+      return;
+    }
+    var btn = document.getElementById("btnShowLongShortFS");
+    btn.disabled = true;
+    
+    // 檢查目前是否已經顯示 long/short 線，如果有就關閉（移除）
+    var hasLongShort = trendChart.data.datasets.some(function(ds) {
+      return ds.label === "一般交易 FS" || ds.label === "融券交易 FS";
+    });
+
+    if (hasLongShort) {
+      // 關閉：移除 long/short 兩條線
+      trendChart.data.datasets = trendChart.data.datasets.filter(function(ds) {
+        return ds.label !== "一般交易 FS" && ds.label !== "融券交易 FS";
+      });
+      trendChart.update();
+      updateDatasetControls();
+      btn.innerText = "顯示 Qutrit-Long/Short";
+      btn.disabled = false;
+      return;
+    }
+
+    // 開啟：加入 long/short 兩條線
+    // 直接使用前面 selectWindow 載入的 portfolioFS，不再呼叫後端 API
+    if (!portfolioFS || portfolioFS.length === 0) {
+      alert("尚未取得投資組合 FS 資料，請先選擇滑動視窗與策略");
+      btn.disabled = false;
+      return;
+    }
+
+    var longData = [];
+    var shortData = [];
+    portfolioFS.forEach(function(record) {
+      longData.push(record.long_total !== null ? record.long_total : null);
+      shortData.push(record.short_total !== null ? record.short_total : null);
+    });
+
+    var longDataset = {
+        label: "一般交易 FS",
+        data: longData,
+        borderColor: "#00AA00",
+        fill: false,
+        yAxisID: "y"
+    };
+    var shortDataset = {
+        label: "融券交易 FS",
+        data: shortData,
+        borderColor: "#AA0000",
+        fill: false,
+        yAxisID: "y"
+    };
+
+    // 先保險移除舊的 long/short 線，再加入新的
+    trendChart.data.datasets = trendChart.data.datasets.filter(function(ds) {
+        return ds.label !== "一般交易 FS" && ds.label !== "融券交易 FS";
+    });
+    trendChart.data.datasets.push(longDataset);
+    trendChart.data.datasets.push(shortDataset);
+
+    if (trendChart.options.scales.y2) {
+        trendChart.options.scales.y2.display = false;
+    }
+
+    // labels 直接沿用主圖的天數，不重新覆蓋
+    trendChart.update();
+    updateDatasetControls();
+    btn.innerText = "隱藏 Qutrit-Long/Short";
+    btn.disabled = false;
+  }
+</script>
 </html>
