@@ -495,7 +495,7 @@
             return;
           }
 
-          const csvPath = `FS_data/${entry.file}`;
+          const csvPath = `FS_data/${encodeURIComponent(entry.file)}`;
 
           fetch(csvPath)
             .then(response => response.text())
@@ -520,7 +520,7 @@
             return;
           }
 
-          const csvPath = `FS_data/${entry.file}`;
+          const csvPath = `FS_data/${encodeURIComponent(entry.file)}`;
 
           fetch(csvPath)
             .then(response => response.text())
@@ -565,7 +565,7 @@
             return;
           }
 
-          const csvPath = `Portfolio_data/${entry.file}`;
+          const csvPath = `Portfolio_data/${encodeURIComponent(entry.file)}`;
 
           fetch(csvPath)
             .then(response => response.text())
