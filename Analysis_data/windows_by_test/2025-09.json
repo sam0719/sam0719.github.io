@@ -1,0 +1,19 @@
+{
+  "count": 1,
+  "results": [
+    {
+      "window": "M*",
+      "train_str": "2025 09",
+      "records": [
+        {
+          "strategy_type": "Qutrit",
+          "dataset_name": "2025 Q1",
+          "result_name": "2025 09",
+          "trend_value": 2.1021278940759105,
+          "risk": 20695.27351309794,
+          "expected_return": 43504.111727413546
+        }
+      ]
+    }
+  ]
+}
