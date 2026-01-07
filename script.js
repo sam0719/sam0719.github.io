@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 元素引用
   const initialMoneyInput = document.getElementById("initialMoney")
   const uploadFileInput = document.getElementById("uploadFile")
+  const uploadStatusElement = document.getElementById("uploadStatus")
   const stockListContainer = document.getElementById("stockList")
   const calculateBtn = document.getElementById("calculateBtn")
   const resetBtn = document.getElementById("resetBtn")
@@ -44,6 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showError(element, message) {
     element.innerHTML = `<div class="error-message">${message}</div>`
+  }
+
+  function setUploadStatus(type, message) {
+    if (!uploadStatusElement) return
+    uploadStatusElement.className = "status-message"
+    if (type) {
+      uploadStatusElement.classList.add(type)
+    }
+    uploadStatusElement.textContent = message || ""
   }
 
   // 初始化目錄和文件數據
@@ -239,12 +249,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const file = e.target.files[0]
     if (!file) return
 
+    setUploadStatus("loading", "讀取中...")
     const reader = new FileReader()
     reader.onload = (event) => {
-      processCSVData(event.target.result)
+      const ok = processCSVData(event.target.result)
+      if (ok) {
+        setUploadStatus("success", `已成功載入 ${file.name}`)
+      } else {
+        setUploadStatus("error", `載入 ${file.name} 失敗：CSV 格式不正確或沒有有效數據`)
+      }
+
+      uploadFileInput.value = ""
     }
     reader.onerror = () => {
       alert("讀取文件失敗")
+      setUploadStatus("error", "讀取文件失敗")
+      uploadFileInput.value = ""
     }
     reader.readAsText(file)
   })
@@ -254,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lines = csvText.split("\n")
     if (lines.length < 2) {
       alert("CSV文件格式不正確")
-      return
+      return false
     }
 
     // 解析標題行
@@ -289,6 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 更新UI
     renderStockList()
+    return true
   }
 
   // 渲染股票列表

@@ -470,6 +470,25 @@ input[type="number"] {
   margin-top: 1rem;
 }
 
+ .status-message {
+  margin-top: 0.5rem;
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+ }
+
+ .status-message.success {
+  color: #16a34a;
+ }
+
+ .status-message.error {
+  color: var(--danger-color);
+ }
+
+ .status-message.loading {
+  color: var(--secondary-color);
+ }
+
 /* 添加加載中的樣式 */
 .loading {
   display: flex;
