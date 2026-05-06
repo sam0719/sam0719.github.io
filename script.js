@@ -274,31 +274,52 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.readAsText(file)
   }
 
+  function hasDraggedFiles(event) {
+    return Array.from(event.dataTransfer?.types ?? []).includes("Files")
+  }
+
+  function setPageDragActive(active) {
+    document.body.classList.toggle("page-drag-active", active)
+    uploadDropZone.classList.toggle("drag-active", active)
+  }
+
+  let pageDragDepth = 0
+
   // 處理用戶上傳的CSV文件
   uploadFileInput.addEventListener("change", (e) => {
     handleCustomStockFile(e.target.files[0])
   })
 
-  uploadDropZone.addEventListener("dragover", (e) => {
+  document.addEventListener("dragenter", (e) => {
+    if (!hasDraggedFiles(e)) return
+
+    e.preventDefault()
+    pageDragDepth += 1
+    setPageDragActive(true)
+  })
+
+  document.addEventListener("dragover", (e) => {
+    if (!hasDraggedFiles(e)) return
+
     e.preventDefault()
     e.dataTransfer.dropEffect = "copy"
   })
 
-  uploadDropZone.addEventListener("dragenter", (e) => {
-    e.preventDefault()
-    uploadDropZone.classList.add("drag-active")
-  })
+  document.addEventListener("dragleave", (e) => {
+    if (!hasDraggedFiles(e)) return
 
-  uploadDropZone.addEventListener("dragleave", (e) => {
-    if (e.relatedTarget instanceof Node && uploadDropZone.contains(e.relatedTarget)) {
-      return
+    pageDragDepth = Math.max(0, pageDragDepth - 1)
+    if (pageDragDepth === 0) {
+      setPageDragActive(false)
     }
-    uploadDropZone.classList.remove("drag-active")
   })
 
-  uploadDropZone.addEventListener("drop", (e) => {
+  document.addEventListener("drop", (e) => {
+    if (!hasDraggedFiles(e)) return
+
     e.preventDefault()
-    uploadDropZone.classList.remove("drag-active")
+    pageDragDepth = 0
+    setPageDragActive(false)
     handleCustomStockFile(e.dataTransfer.files[0])
   })
 

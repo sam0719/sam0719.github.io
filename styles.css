@@ -26,6 +26,23 @@ body {
   line-height: 1.6;
 }
 
+body.page-drag-active::before {
+  content: "放開即可上傳 CSV 檔案";
+  position: fixed;
+  inset: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed var(--primary-color);
+  border-radius: 12px;
+  background: rgba(239, 246, 255, 0.92);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
 .container {
   max-width: 1000px;
   margin: 2rem auto;
