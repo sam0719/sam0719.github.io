@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 元素引用
   const initialMoneyInput = document.getElementById("initialMoney")
   const uploadFileInput = document.getElementById("uploadFile")
+  const uploadDropZone = document.getElementById("uploadDropZone")
   const uploadStatusElement = document.getElementById("uploadStatus")
   const stockListContainer = document.getElementById("stockList")
   const calculateBtn = document.getElementById("calculateBtn")
@@ -244,10 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初始化文件瀏覽器
   initializeFileBrowser()
 
-  // 處理用戶上傳的CSV文件
-  uploadFileInput.addEventListener("change", (e) => {
-    const file = e.target.files[0]
+  function handleCustomStockFile(file) {
     if (!file) return
+
+    if (!file.name.toLowerCase().endsWith(".csv") && file.type !== "text/csv") {
+      setUploadStatus("error", "請上傳 CSV 檔案")
+      uploadFileInput.value = ""
+      return
+    }
 
     setUploadStatus("loading", "讀取中...")
     const reader = new FileReader()
@@ -267,6 +272,34 @@ document.addEventListener("DOMContentLoaded", () => {
       uploadFileInput.value = ""
     }
     reader.readAsText(file)
+  }
+
+  // 處理用戶上傳的CSV文件
+  uploadFileInput.addEventListener("change", (e) => {
+    handleCustomStockFile(e.target.files[0])
+  })
+
+  uploadDropZone.addEventListener("dragover", (e) => {
+    e.preventDefault()
+    e.dataTransfer.dropEffect = "copy"
+  })
+
+  uploadDropZone.addEventListener("dragenter", (e) => {
+    e.preventDefault()
+    uploadDropZone.classList.add("drag-active")
+  })
+
+  uploadDropZone.addEventListener("dragleave", (e) => {
+    if (e.relatedTarget instanceof Node && uploadDropZone.contains(e.relatedTarget)) {
+      return
+    }
+    uploadDropZone.classList.remove("drag-active")
+  })
+
+  uploadDropZone.addEventListener("drop", (e) => {
+    e.preventDefault()
+    uploadDropZone.classList.remove("drag-active")
+    handleCustomStockFile(e.dataTransfer.files[0])
   })
 
   // 處理CSV數據

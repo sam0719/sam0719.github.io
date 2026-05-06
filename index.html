@@ -51,9 +51,12 @@
                     </div>
                 </div>
                 <div class="upload-section">
-                    <div class="upload-container">
-                        <label for="uploadFile" class="btn">上傳自定義股價檔</label>
-                        <input type="file" id="uploadFile" accept=".csv">
+                    <div class="upload-container" id="uploadDropZone">
+                        <label for="uploadFile" class="upload-drop-label">
+                            <span class="upload-drop-title">上傳自定義股價檔</span>
+                            <span class="upload-drop-hint">將 CSV 檔拖到這裡，或點擊選擇檔案</span>
+                        </label>
+                        <input type="file" id="uploadFile" accept=".csv,text/csv">
                     </div>
                     <div id="uploadStatus" class="status-message" aria-live="polite"></div>
                 </div>

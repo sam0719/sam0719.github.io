@@ -116,6 +116,33 @@ input[type="number"] {
 
 .upload-container {
   position: relative;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.upload-container.drag-active {
+  border-color: var(--primary-color);
+  background-color: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.upload-drop-label {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.upload-drop-title {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.upload-drop-hint {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
 }
 
 .upload-container input[type="file"] {
